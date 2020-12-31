@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "rflawyers"
+  "defaultProject": "rflawyers",
+  "cli": {
+    "analytics": "7275ad7a-8b7e-4828-9405-bb93a237721d"
+  }
 }

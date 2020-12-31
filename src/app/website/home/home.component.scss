@@ -1,0 +1,20 @@
+:host {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(/assets/images/background-home.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+mat-nav-list.list-horizontal {
+  padding: 0;
+
+  .mat-list-item {
+    color: #ffffff;
+    font-family: "Julius Sans One", sans-serif;
+  }
+}
