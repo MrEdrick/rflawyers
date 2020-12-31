@@ -4,11 +4,15 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { AngularMaterialModule } from '../angular-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { WebsiteComponent } from './website.component';
+import { ExpertiseComponent } from './expertise/expertise.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    FooterComponent
+    ExpertiseComponent,
+    FooterComponent,
+    WebsiteComponent,
   ],
   imports: [
     FlexLayoutModule,
@@ -17,7 +21,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   exports: [
     HomeComponent,
-    FooterComponent
+    ExpertiseComponent,
+    FooterComponent,
+    WebsiteComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
