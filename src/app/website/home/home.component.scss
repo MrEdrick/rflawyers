@@ -7,14 +7,29 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center; 
+    background-position: center;
 }
 
-mat-nav-list.list-horizontal {
-  padding: 0;
+mat-nav-list.list-menu {
+    margin-top: 2%;
+    padding: 0 6%;
 
-  .mat-list-item {
-    color: #ffffff;
-    font-family: "Julius Sans One", sans-serif;
-  }
+    .mat-list-item {
+        color: #ffffff;
+        font-family: "Julius Sans One", sans-serif;
+        text-align: center;
+    }
+}
+
+mat-nav-list.list-social-midia {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin-bottom: 6%;
+    margin-right: 6%;
+
+    .mat-list-item {
+        color: #ffffff;
+        text-align: center;
+    }
 }
