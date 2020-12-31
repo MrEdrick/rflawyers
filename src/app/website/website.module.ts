@@ -6,11 +6,13 @@ import { AngularMaterialModule } from '../angular-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { WebsiteComponent } from './website.component';
 import { ExpertiseComponent } from './expertise/expertise.component';
+import { ExpertiseCardComponent } from './expertise-card/expertise-card.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     ExpertiseComponent,
+    ExpertiseCardComponent,
     FooterComponent,
     WebsiteComponent,
   ],
@@ -22,6 +24,7 @@ import { ExpertiseComponent } from './expertise/expertise.component';
   exports: [
     HomeComponent,
     ExpertiseComponent,
+    ExpertiseCardComponent,
     FooterComponent,
     WebsiteComponent,
   ],

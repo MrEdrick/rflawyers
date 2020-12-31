@@ -10,8 +10,22 @@
 
     <div
         class="expertises-container"
-        fxFlex>
+        fxFlex
+        fxLayout="column wrap"
+        fxLayoutAlign="start stretch">
 
-        <h1> NOSSA EXPERTISE </h1>
+        <h1
+            fxFlex="25">
+            NOSSA EXPERTISE
+        </h1>
+
+        <div
+            fxFlex
+            fxLayout="row wrap"
+            fxLayoutAlign="start space-between">
+            <app-expertise-card fxFlex="25">
+                
+            </app-expertise-card>
+        </div>
     </div>
 </div>
