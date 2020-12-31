@@ -7,6 +7,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { WebsiteComponent } from './website.component';
 import { ExpertiseComponent } from './expertise/expertise.component';
 import { ExpertiseCardComponent } from './expertise-card/expertise-card.component';
+import { CommonModule } from '@angular/common';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { ExpertiseCardComponent } from './expertise-card/expertise-card.componen
     WebsiteComponent,
   ],
   imports: [
+    CommonModule,
+    LayoutModule,
     FlexLayoutModule,
     AngularMaterialModule,
     WebsiteRoutingModule,

@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WebsiteModule } from './website/website.module';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { WebsiteModule } from './website/website.module';
     AppComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,

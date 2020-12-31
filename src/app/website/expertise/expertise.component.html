@@ -1,11 +1,11 @@
 <div
     fxFill
     fxLayout="column wrap"
-    fxLayoutAlign="start stretch">
+    fxLayoutAlign="start start">
 
     <div
         class="evidences-container"
-        fxFlex="40">
+        fxFlex="30">
     </div>
 
     <div
@@ -15,17 +15,19 @@
         fxLayoutAlign="start stretch">
 
         <h1
-            fxFlex="25">
+            fxFlex="15">
             NOSSA EXPERTISE
         </h1>
 
         <div
             fxFlex
             fxLayout="row wrap"
-            fxLayoutAlign="start center">
-            <app-expertise-card 
-                fxFlex="150px"
-                fxLayout="row wrap">
+            fxLayoutAlign="space-evenly start">
+            <app-expertise-card
+                *ngFor="let expertise of expertisesList"
+                fxFlex="25"
+                fxLayout="row wrap"
+                [expertise]="expertise">
             </app-expertise-card>
         </div>
     </div>
