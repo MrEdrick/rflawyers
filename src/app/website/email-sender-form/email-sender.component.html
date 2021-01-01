@@ -1,0 +1,67 @@
+<form
+    novalidate
+    [formGroup]="form"
+    fxLayout="row"
+    fxLayoutAlign="center stretch"
+    fxFill
+    class="email-sender-form-container">
+
+    <div
+        fxFlex="50"
+        fxLayout="row wrap"
+        fxLayoutAlign="space-evenly stretch"
+        style="padding: 0px 32px 32px 32px;">
+
+        <mat-form-field fxFlex="80">
+            <input matInput placeholder="Nome" formControlName="name">
+            <mat-error *ngIf="formControls.name.hasError('required')">
+                <strong>Informe seu nome</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="80">
+            <input matInput placeholder="Telefone"
+                formControlName="telephone">
+            <mat-error *ngIf="formControls.telephone.hasError('required')">
+                <strong>Informe seu telefone</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="80">
+            <input matInput placeholder="E-mail"
+                formControlName="email">
+            <mat-error *ngIf="formControls.email.hasError('required')">
+                <strong>Informe seu e-mail</strong>
+            </mat-error>
+        </mat-form-field>
+
+    </div>
+
+
+    <div
+        fxFlex="50"
+        fxLayout="row wrap"
+        style="padding: 0px 32px 32px 32px;">
+
+        <mat-form-field
+            fxFlex="100"
+            fxFlexAlign="start">
+            <textarea placeholder="Mensagem" formControlName="message"
+                matInput cdkTextareaAutosize CdkTextareaAutosize
+                cdkAutosizeMinRows="1" cdkAutosizeMaxRows="6">
+            </textarea>
+            <mat-error *ngIf="formControls.message.hasError('required')">
+                <strong>Preencha a mensagem</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <button
+            fxFlex="50"
+            fxFlexAlign="end"
+            mat-flat-button
+            class="email-sender-button">
+            Enviar
+        </button>
+
+    </div>
+</form>

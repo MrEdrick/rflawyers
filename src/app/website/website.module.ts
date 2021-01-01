@@ -15,6 +15,8 @@ import { EffectsModule } from '../effects/effects.module';
 import { OurStoryComponent } from './our-story/our-story.component';
 import { PhilosophyComponent } from './philosophy/philosophy.component';
 import { CallToActionComponent } from './call-to-action/call-to-action.component';
+import { EmailSenderComponent } from './email-sender-form/email-sender.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,10 +30,13 @@ import { CallToActionComponent } from './call-to-action/call-to-action.component
     PhilosophyComponent,
     CallToActionComponent,
     FooterComponent,
+    EmailSenderComponent,
   ],
   imports: [
     CommonModule,
     LayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
     AngularMaterialModule,
     EffectsModule,
@@ -48,6 +53,7 @@ import { CallToActionComponent } from './call-to-action/call-to-action.component
     PhilosophyComponent,
     FooterComponent,
     CallToActionComponent,
+    EmailSenderComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
