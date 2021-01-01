@@ -22,7 +22,7 @@ mat-nav-list.list-menu {
         bottom: 0;
         content: "";
         display: block;
-        height: 2px;
+        height: 1px;
         left: 50%;
         position: absolute;
         background: #ffffff;
@@ -46,5 +46,10 @@ mat-nav-list.list-social-midia {
     .mat-list-item {
         color: #ffffff;
         text-align: center;
+        opacity: 0.75;
+
+        &:hover {
+            opacity: 1.0;
+        }
     }
 }

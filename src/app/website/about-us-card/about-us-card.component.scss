@@ -2,35 +2,33 @@
     background-image: url(/assets/images/background-card.png);
     background-color: #d0d3d4;
     background-size: cover;
-    max-width: 300px;
-    max-height: 320px;
+    top: 0px;
+    width: 300px;
+    height: 330px;
     color: #d0d3d4;
     text-align: center;
     border-radius: 0px;
     box-shadow: #212322;
-    border-bottom: rgba($color: #000000, $alpha: 0) solid 4px;
-    transition: boerder 2s ease;
+    transition: width 0.3s ease 0s, height 0.3s ease 0s,
+    top 0.3s ease 0s;
 
     h1 {
         font-family: "Julius Sans One", sans-serif;
         font-weight: 100;
-        font-size: 30px;
+        font-size: 27.5px;
     }
 
     &:hover {
         cursor: pointer;
-        border-bottom: #005683 solid 4px;
-    }
-
-    &:hover:hover .slider {
-        width: 100%;
+        width: 320px;
+        height: 350px;
+        top: -20px;
     }
 }
 
 .about-us-image {
     width: 150px;
     height: 150px;
-    background-image: url(/assets/images/vitor.jpg);
     background-size: cover;
     border-radius: 50%;
 }

@@ -24,8 +24,13 @@
     <div
         fxFlex
         fxLayout="row wrap"
-        fxLayoutAlign="center stretch">
+        fxLayoutAlign="space-evenly stretch">
 
-        <app-about-us-card></app-about-us-card>
+        <app-about-us-card 
+            *ngFor="let lawyer of lawyersList;"
+            [name]="lawyer.name"
+            [expertises]="lawyer.expertises"
+            [image]="lawyer.image">
+        </app-about-us-card>
     </div>
 </div>
