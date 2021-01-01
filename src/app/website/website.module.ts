@@ -9,12 +9,14 @@ import { ExpertiseComponent } from './expertise/expertise.component';
 import { ExpertiseCardComponent } from './expertise-card/expertise-card.component';
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from '@angular/cdk/layout';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     ExpertiseComponent,
     ExpertiseCardComponent,
+    AboutUsComponent,
     FooterComponent,
     WebsiteComponent,
   ],
@@ -29,6 +31,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     HomeComponent,
     ExpertiseComponent,
     ExpertiseCardComponent,
+    AboutUsComponent,
     FooterComponent,
     WebsiteComponent,
   ],
