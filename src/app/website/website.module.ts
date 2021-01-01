@@ -14,9 +14,11 @@ import { AboutUsCardComponent } from './about-us-card/about-us-card.component';
 import { EffectsModule } from '../effects/effects.module';
 import { OurStoryComponent } from './our-story/our-story.component';
 import { PhilosophyComponent } from './philosophy/philosophy.component';
+import { CallToActionComponent } from './call-to-action/call-to-action.component';
 
 @NgModule({
   declarations: [
+    WebsiteComponent,
     HomeComponent,
     ExpertiseComponent,
     ExpertiseCardComponent,
@@ -24,8 +26,8 @@ import { PhilosophyComponent } from './philosophy/philosophy.component';
     AboutUsCardComponent,
     OurStoryComponent,
     PhilosophyComponent,
+    CallToActionComponent,
     FooterComponent,
-    WebsiteComponent,
   ],
   imports: [
     CommonModule,
@@ -36,6 +38,7 @@ import { PhilosophyComponent } from './philosophy/philosophy.component';
     WebsiteRoutingModule,
   ],
   exports: [
+    WebsiteComponent,
     HomeComponent,
     ExpertiseComponent,
     ExpertiseCardComponent,
@@ -44,7 +47,7 @@ import { PhilosophyComponent } from './philosophy/philosophy.component';
     OurStoryComponent,
     PhilosophyComponent,
     FooterComponent,
-    WebsiteComponent,
+    CallToActionComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
