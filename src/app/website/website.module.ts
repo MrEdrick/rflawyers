@@ -10,6 +10,8 @@ import { ExpertiseCardComponent } from './expertise-card/expertise-card.componen
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { AboutUsCardComponent } from './about-us-card/about-us-card.component';
+import { EffectsModule } from '../effects/effects.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ExpertiseComponent,
     ExpertiseCardComponent,
     AboutUsComponent,
+    AboutUsCardComponent,
     FooterComponent,
     WebsiteComponent,
   ],
@@ -25,6 +28,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     LayoutModule,
     FlexLayoutModule,
     AngularMaterialModule,
+    EffectsModule,
     WebsiteRoutingModule,
   ],
   exports: [
@@ -32,6 +36,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ExpertiseComponent,
     ExpertiseCardComponent,
     AboutUsComponent,
+    AboutUsCardComponent,
     FooterComponent,
     WebsiteComponent,
   ],

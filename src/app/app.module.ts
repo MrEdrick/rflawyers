@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WebsiteModule } from './website/website.module';
 import { CommonModule } from '@angular/common';
+import { EffectsModule } from './effects/effects.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
+    EffectsModule,
     WebsiteModule
   ],
   providers: [

@@ -13,6 +13,26 @@ mat-nav-list.list-menu {
         color: #ffffff;
         font-family: "Julius Sans One", sans-serif;
         text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mat-list-item:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #ffffff;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+
+    .mat-list-item:hover:after {
+        width: 100%;
+        left: 0;
     }
 }
 
