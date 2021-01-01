@@ -10,11 +10,18 @@ mat-nav-list.list-menu {
     padding: 0 6%;
 
     .mat-list-item {
-        color: #ffffff;
+        color: #d0d3d4;
         font-family: "Julius Sans One", sans-serif;
+        font-weight: 100;
         text-align: center;
         justify-content: center;
         align-items: center;
+        opacity: 0.8;
+    }
+
+    .mat-list-item:hover {
+        opacity: 1.0;
+        font-weight: 600;
     }
 
     .mat-list-item:after {
@@ -25,9 +32,9 @@ mat-nav-list.list-menu {
         height: 1px;
         left: 50%;
         position: absolute;
-        background: #ffffff;
+        background: #d0d3d4;
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
-        width: 0;
+        width: 0px;
     }
 
     .mat-list-item:hover:after {
@@ -44,9 +51,9 @@ mat-nav-list.list-social-midia {
     margin-right: 6%;
 
     .mat-list-item {
-        color: #ffffff;
+        color: #d0d3d4;
         text-align: center;
-        opacity: 0.75;
+        opacity: 0.8;
 
         &:hover {
             opacity: 1.0;

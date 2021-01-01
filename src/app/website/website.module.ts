@@ -12,6 +12,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AboutUsCardComponent } from './about-us-card/about-us-card.component';
 import { EffectsModule } from '../effects/effects.module';
+import { OurStoryComponent } from './our-story/our-story.component';
+import { PhilosophyComponent } from './philosophy/philosophy.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { EffectsModule } from '../effects/effects.module';
     ExpertiseCardComponent,
     AboutUsComponent,
     AboutUsCardComponent,
+    OurStoryComponent,
+    PhilosophyComponent,
     FooterComponent,
     WebsiteComponent,
   ],
@@ -37,6 +41,8 @@ import { EffectsModule } from '../effects/effects.module';
     ExpertiseCardComponent,
     AboutUsComponent,
     AboutUsCardComponent,
+    OurStoryComponent,
+    PhilosophyComponent,
     FooterComponent,
     WebsiteComponent,
   ],
