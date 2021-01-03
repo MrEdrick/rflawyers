@@ -1,7 +1,7 @@
 <div
-    fxFill
     fxLayout="column wrap"
-    fxLayoutAlign="start stretch">
+    fxLayoutAlign="center stretch"
+    class="abour-us-container">
 
     <div
         fxFlex="40"
@@ -9,11 +9,15 @@
         fxLayoutAlign="center center"
         class="about-us-title-container">
 
-        <h1 fxFlex="40">
-            SOBRE NÓS
-        </h1>
+        <span
+            fxFlex="40">
+            <h1>
+                SOBRE NÓS
+            </h1>
+        </span>
 
-        <p fxFlex="40">
+        <p
+            fxFlex="40">
             Contamos com uma equipe altamente experiênte en diversos âmbitos do
             direito.<br>
             Prestamos acessoria em todo o Brasil, Lisboa, Porto e Buenos Aires.
@@ -23,10 +27,12 @@
 
     <div
         fxFlex
-        fxLayout="row wrap"
-        fxLayoutAlign="space-evenly stretch">
+        fxLayout="row"
+        fxLayoutAlign="space-evenly stretch"
+        fxLayoutGap="16px"
+        style="padding: 2%;">
 
-        <app-about-us-card 
+        <app-about-us-card
             *ngFor="let lawyer of lawyersList;"
             [name]="lawyer.name"
             [expertises]="lawyer.expertises"

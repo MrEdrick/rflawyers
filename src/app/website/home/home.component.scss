@@ -1,62 +1,8 @@
-:host {
+.background-home {
     background-image: url(/assets/images/background-home.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-}
-
-mat-nav-list.list-menu {
-    margin-top: 2%;
-    padding: 0 6%;
-
-    .mat-list-item {
-        color: #d0d3d4;
-        font-family: "Julius Sans One", sans-serif;
-        font-weight: 100;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        opacity: 0.8;
-    }
-
-    .mat-list-item:hover {
-        opacity: 1.0;
-        font-weight: 600;
-    }
-
-    .mat-list-item:after {
-        background: none repeat scroll 0 0 transparent;
-        bottom: 0;
-        content: "";
-        display: block;
-        height: 1px;
-        left: 50%;
-        position: absolute;
-        background: #d0d3d4;
-        transition: width 0.3s ease 0s, left 0.3s ease 0s;
-        width: 0px;
-    }
-
-    .mat-list-item:hover:after {
-        width: 100%;
-        left: 0;
-    }
-}
-
-mat-nav-list.list-social-midia {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    margin-bottom: 6%;
-    margin-right: 6%;
-
-    .mat-list-item {
-        color: #d0d3d4;
-        text-align: center;
-        opacity: 0.8;
-
-        &:hover {
-            opacity: 1.0;
-        }
-    }
+    width: 100%;
+    height: 100%;
 }
