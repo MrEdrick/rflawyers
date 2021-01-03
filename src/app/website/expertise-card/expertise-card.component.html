@@ -3,9 +3,13 @@
     fxLayoutAlign="center center"
     class="card-container">
 
-    <div class="losango"></div>
+    <div [ngStyle.gt-sm]="{'width': '5.0vw', 'height': '5.0vw'}" 
+        class="losango">
+    </div>
 
-    <h2>{{expertise}}</h2>
+    <h2 [ngStyle.gt-sm]="{'font-size': '2.0vw'}">
+        {{expertise}}
+    </h2>
 
     
 </div>
