@@ -1,5 +1,4 @@
 <div
-    fxFill
     fxLayout="column wrap"
     fxLayoutAlign="start stretch"
     class="philosophy-container">
@@ -13,13 +12,18 @@
         fxFlex="40"
         fxLayout="column wrap"
         fxLayoutAlign="space-between stretch"
-        class="philosophy-title-container">
+        class="philosophy-title-container"
+        [ngStyle.gt-xs]="{'padding': '4% 6%'}">
 
-        <h1 fxFlex="40">
+        <h1 
+            fxFlex="40"
+            [ngStyle.gt-xs]="{'font-size': '2.0vw'}">
             “ACREDITAMOS QUE CADA CASO TEM SUAS PARTICULARIDADES, POR ISSO PRECISA SER ANALIZADO ARTESANALMENTE.”
         </h1>
 
-        <h1 fxFlex="20">
+        <h1 
+            fxFlex="20"
+            [ngStyle.gt-xs]="{'font-size': '2.0vw'}">
             RODRIGUES & FRANCESCHINI
         </h1>
     </div>

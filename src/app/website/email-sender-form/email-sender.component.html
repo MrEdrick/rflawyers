@@ -1,25 +1,27 @@
 <form
     novalidate
     [formGroup]="form"
-    fxLayout="row"
+    fxLayout="row wrap"
     fxLayoutAlign="center stretch"
-    fxFill
     class="email-sender-form-container">
 
     <div
-        fxFlex="50"
+        fxFlex.gt-xs="50"
+        fxFlex="100"
         fxLayout="row wrap"
-        fxLayoutAlign="space-evenly stretch"
-        style="padding: 0px 32px 32px 32px;">
+        fxLayoutAlign.gt-xs="space-evenly stretch"
+        fxLayoutAlign="start start"
+        class="inputs-container"
+        [ngStyle.gt-xs]="{'padding': '0px 32px 32px 32px'}">
 
-        <mat-form-field fxFlex="80">
+        <mat-form-field fxFlex="100">
             <input matInput placeholder="Nome" formControlName="name">
             <mat-error *ngIf="formControls.name.hasError('required')">
                 <strong>Informe seu nome</strong>
             </mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="80">
+        <mat-form-field fxFlex="100">
             <input matInput placeholder="Telefone"
                 formControlName="telephone">
             <mat-error *ngIf="formControls.telephone.hasError('required')">
@@ -27,7 +29,7 @@
             </mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="80">
+        <mat-form-field fxFlex="100">
             <input matInput placeholder="E-mail"
                 formControlName="email">
             <mat-error *ngIf="formControls.email.hasError('required')">
@@ -39,9 +41,11 @@
 
 
     <div
-        fxFlex="50"
+        fxFlex.gt-xs="50"
+        fxFlex="100"
         fxLayout="row wrap"
-        style="padding: 0px 32px 32px 32px;">
+        class="inputs-container"
+        [ngStyle.gt-xs]="{'padding': '0px 32px 32px 32px'}">
 
         <mat-form-field
             fxFlex="100"

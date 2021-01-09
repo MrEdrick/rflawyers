@@ -7,14 +7,14 @@
         fxFlex="40"
         fxLayout="column wrap"
         fxLayoutAlign="center center"
-        class="about-us-title-container">
+        class="about-us-title-container"
+        [ngStyle.gt-xs]="{'padding': '4% 6%'}">
 
-        <span
-            fxFlex="40">
-            <h1>
-                SOBRE NÓS
-            </h1>
-        </span>
+        <h1
+            fxFlex="40"
+            [ngStyle.gt-xs]="{'font-size': '4.0vw'}">
+            SOBRE NÓS
+        </h1>
 
         <p
             fxFlex="40">

@@ -9,9 +9,12 @@
         fxFlex="65"
         fxLayout="column wrap"
         fxLayoutAlign="space-between stretch"
-        class="call-to-action-title-container">
+        class="call-to-action-title-container"
+        [ngStyle.gt-xs]="{'padding': '4% 6%'}">
 
-        <h1 fxFlex="20">
+        <h1 
+            fxFlex="20"
+            [ngStyle.gt-xs]="{'font-size': '4.0vw'}">
             O QUE OS NOSSOS CLIENTES DIZEM
         </h1>
     </div>
@@ -25,7 +28,8 @@
         <mat-card
             appElevationEffect
             class="call-to-action-card"
-            fxFlex="400px">
+            fxFlex="250px"
+            fxFlex.gt-xs="400px">
 
             <h1>AGENDE UMA CONSULTORIA</h1>
 

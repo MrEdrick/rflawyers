@@ -18,8 +18,16 @@
             fxLayout="column wrap"
             fxLayoutAlign="center center"
             class="evidences-cards">
-            <h1 FxFlex="40">+50</h1>
-            <h4 FxFlex="40">Anos de experiência</h4>
+            <h1
+                [ngStyle.gt-xs]="{'font-size': '4.0vw'}"
+                FxFlex="40">
+                +50
+            </h1>
+            <h4
+                [ngStyle.gt-xs]="{'font-size': '2.0vw'}"
+                FxFlex="40">
+                Anos de experiência
+            </h4>
         </div>
 
         <div
@@ -28,8 +36,16 @@
             fxLayout="column wrap"
             fxLayoutAlign="center center"
             class="evidences-cards">
-            <h1 FxFlex="40">+50</h1>
-            <h4 FxFlex="40">Clientes</h4>
+            <h1
+                [ngStyle.gt-xs]="{'font-size': '4.0vw'}"
+                FxFlex="40">
+                +50
+            </h1>
+            <h4
+                [ngStyle.gt-xs]="{'font-size': '2.0vw'}"
+                FxFlex="40">
+                Clientes
+            </h4>
         </div>
 
         <div
@@ -38,8 +54,16 @@
             fxLayout="column wrap"
             fxLayoutAlign="center center"
             class="evidences-cards">
-            <h1 FxFlex="40">+100</h1>
-            <h4 FxFlex="40">Precessos vencidos</h4>
+            <h1
+                [ngStyle.gt-xs]="{'font-size': '4.0vw'}"
+                FxFlex="40">
+                +100
+            </h1>
+            <h4
+                [ngStyle.gt-xs]="{'font-size': '2.0vw'}"
+                FxFlex="40">
+                Precessos vencidos
+            </h4>
         </div>
 
         <div
@@ -48,8 +72,16 @@
             fxLayout="column wrap"
             fxLayoutAlign="center center"
             class="evidences-cards">
-            <h1 FxFlex="40">+200</h1>
-            <h4 FxFlex="40">Premiassões da equipe</h4>
+            <h1
+                [ngStyle.gt-xs]="{'font-size': '4.0vw'}"
+                FxFlex="40">
+                +200
+            </h1>
+            <h4
+                [ngStyle.gt-xs]="{'font-size': '2.0vw'}"
+                FxFlex="40">
+                Premiassões da equipe
+            </h4>
         </div>
     </div>
 
@@ -58,9 +90,11 @@
         fxFlex.gt-xs="auto"
         fxFlex="grow"
         fxLayout="column wrap"
-        fxLayoutAlign="start stretch">
+        fxLayoutAlign="start stretch"
+        [ngStyle.gt-xs]="{'padding': '4% 6%'}">
 
         <h1
+            [ngStyle.gt-xs]="{'font-size': '4.0vw'}"
             fxFlex="20">
             NOSSA EXPERTISE
         </h1>
@@ -72,7 +106,8 @@
             fxLayoutAlign="space-evenly center">
             <app-expertise-card
                 *ngFor="let expertise of expertisesList"
-                fxFlex="25"
+                fxFlex.gt-xs="25"
+                fxFlex="50"
                 fxLayout="row wrap"
                 style="height: 25%;"
                 [expertise]="expertise">

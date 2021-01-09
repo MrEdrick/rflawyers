@@ -1,15 +1,19 @@
 .call-to-action-container  {
     background-color: #ffffff;
+    width: 100%;
+    height: auto;
 }
 
 .call-to-action-title-container {
-    padding: 2% 6%;
+    padding: 6vh 4vw;
     color: #212322;
+    width: 100%;
+    height: auto;
 
     h1 {
         font-family: "Julius Sans One", sans-serif;
         font-weight: 100;
-        font-size: 4.0vw;
+        font-size: 6vh;
         text-align: center;
         line-height: 1.3;
     }

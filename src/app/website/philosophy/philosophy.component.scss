@@ -1,12 +1,15 @@
 .philosophy-container  {
     background-color: #ffffff;
+    width: 100%;
+    height: auto;
 }
 
 .background-philosophy {
+    min-height: 400px;
     background-image: url(/assets/images/background-philosophy.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0px 10%; 
+    background-position: -10% 10%; 
 }
 
 .philosophy-title-container {
@@ -16,7 +19,7 @@
     h1 {
         font-family: "Julius Sans One", sans-serif;
         font-weight: 100;
-        font-size: 25px;
+        font-size: 3vh;
         text-align: center;
         line-height: 1.3;
     }

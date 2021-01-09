@@ -1,21 +1,24 @@
 .footer-container {
     background-color: #ffffff;
+    width: 100%;
+    height: auto;
 }
 
 .footer-title-contact-us-container {
-    padding: 4% 6% 0% 6%;
+    padding: 6vh 4vw;
     color: #212322;
 
     h1 {
         font-family: "Julius Sans One", sans-serif;
         font-weight: 100;
-        font-size: 4.0vw;
+        font-size: 6.0vh;
         text-align: center;
         line-height: 1.3;
     }
 }
 
 .background-footer {
+    min-height: 400px;
     background-image: url(/assets/images/background-footer.png);
     background-size: cover;
     background-position: center;

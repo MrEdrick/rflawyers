@@ -1,5 +1,4 @@
 <div
-    fxFill
     fxLayout="column wrap"
     fxLayoutAlign="start stretch"
     class="footer-container">
@@ -8,9 +7,12 @@
         fxFlex="70"
         fxLayout="column wrap"
         fxLayoutAlign="space-between stretch"
-        class="footer-title-contact-us-container">
+        class="footer-title-contact-us-container"
+        [ngStyle.gt-xs]="{'padding': '4% 6%'}">
 
-        <h1 fxFlex>
+        <h1 
+            fxFlex="20"
+            [ngStyle.gt-xs]="{'font-size': '4.0vw'}">
             ENTRE EM CONTATO
         </h1>
 
@@ -21,7 +23,7 @@
     </div>
 
     <div
-        fxFlex
+        fxFlex="30"
         class="background-footer">
     </div>
 </div>

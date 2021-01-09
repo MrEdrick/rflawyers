@@ -1,5 +1,7 @@
 .email-sender-form-container {
     font-size: large;
+    width: 100%;
+    height: auto;
 }
 
 .email-sender-button {
@@ -9,6 +11,10 @@
     border-radius: 0px;
     padding: 8px;
     margin-bottom: 1.25em;
+}
+
+.inputs-container {
+    padding: 0px 4vh 4vh 4vh;
 }
 
 $custom-main-color: #005683;
