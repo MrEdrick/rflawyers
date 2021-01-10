@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-menu',
@@ -6,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  @ViewChild('drawer')
+  sidenav: MatSidenav | undefined;
 
-  constructor() { }
+  drawerOpened = false;
+
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay());
+
+  constructor(private breakpointObserver: BreakpointObserver,) { }
 
   ngOnInit(): void { }
+
+  closeNavBar() {
+    (this.sidenav as MatSidenav).close();
+    this.drawerOpened = false;
+  }
+
+  openNavBar() {
+    if (this.drawerOpened) {
+      (this.sidenav as MatSidenav).open();
+      console.log((this.sidenav as MatSidenav).opened);
+    }
+  }
 
 }
