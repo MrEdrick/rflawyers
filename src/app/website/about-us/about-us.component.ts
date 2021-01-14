@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-about-us',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-us.component.scss']
 })
 export class AboutUsComponent implements OnInit {
+  @ViewChild('cardListContainer')
+  cardListContainerRef: ElementRef | undefined;
 
   lawyersList = [
     {
@@ -28,5 +30,19 @@ export class AboutUsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void { }
+
+  scrollToLeft() {
+    this.cardListContainerRef?.nativeElement.scrollBy({
+      left: -350,
+      behavior: 'smooth'
+    });
+  }
+
+  scrollToRigth() {
+    this.cardListContainerRef?.nativeElement.scrollBy({
+      left: 350,
+      behavior: 'smooth'
+    });
+  }
 
 }

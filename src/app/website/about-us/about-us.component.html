@@ -25,18 +25,54 @@
 
     </div>
 
+
     <div
+        cardListContainer
         fxFlex
         fxLayout="row"
         fxLayoutAlign="space-evenly stretch"
-        fxLayoutGap="16px"
-        style="padding: 2%;">
+        fxLayoutGap="16px">
 
-        <app-about-us-card
-            *ngFor="let lawyer of lawyersList;"
-            [name]="lawyer.name"
-            [expertises]="lawyer.expertises"
-            [image]="lawyer.image">
-        </app-about-us-card>
+        <div
+            fxFlex
+            fxLayout="column"
+            fxLayoutAlign="center center">
+            <a 
+                type="button"
+                (click)="scrollToLeft()"
+                class="card-arrow-button">
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </a>
+        </div>
+
+        <div
+            cardListContainer
+            fxFlex="80"
+            fxLayout="row"
+            fxLayoutAlign="space-between stretch"
+            fxLayoutGap="16px"
+            style="padding: 2% 1% 4% 1%;"
+            class="card-list-container">
+
+            <app-about-us-card
+                *ngFor="let lawyer of lawyersList;"
+                [name]="lawyer.name"
+                [expertises]="lawyer.expertises"
+                [image]="lawyer.image">
+            </app-about-us-card>
+
+        </div>
+
+        <div
+            fxFlex
+            fxLayout="column"
+            fxLayoutAlign="center center">
+            <a 
+                type="button"
+                (click)="scrollToRigth()"
+                class="card-arrow-button">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </a>
+        </div>
     </div>
 </div>
