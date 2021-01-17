@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -20,6 +20,9 @@ export class MenuComponent implements OnInit {
       map(result => result.matches),
       shareReplay());
 
+  @Output()
+  clickMenuItem = new EventEmitter();
+
   constructor(private breakpointObserver: BreakpointObserver,) { }
 
   ngOnInit(): void { }
@@ -32,7 +35,6 @@ export class MenuComponent implements OnInit {
   openNavBar() {
     if (this.drawerOpened) {
       (this.sidenav as MatSidenav).open();
-      console.log((this.sidenav as MatSidenav).opened);
     }
   }
 

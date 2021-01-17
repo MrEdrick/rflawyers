@@ -38,14 +38,14 @@ export class AboutUsComponent implements OnInit {
 
   scrollToLeft() {
     this.cardListContainerRef?.nativeElement.scrollBy({
-      left: -316,
+      left: -308,
       behavior: 'smooth'
     });
   }
 
   scrollToRigth() {
     this.cardListContainerRef?.nativeElement.scrollBy({
-      left: 316,
+      left: 308,
       behavior: 'smooth'
     });
   }

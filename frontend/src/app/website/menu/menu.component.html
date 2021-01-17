@@ -15,7 +15,8 @@
         <mat-list-item
             fxFlex="20"
             fxFlex.gt-sm="10"
-            role="listitem">
+            role="listitem"
+            (click)="clickMenuItem.emit('#expertise')">
             <span style="position: relative; width: 100%; text-align: center;">
                 EXPERTISE
             </span>
@@ -25,7 +26,8 @@
             fxFlex="20"
             fxFlex.gt-sm="10"
             fxLayout="center center"
-            role="listitem">
+            role="listitem"
+            (click)="clickMenuItem.emit('#aboutUs')">
             <span style="position: relative; width: 100%; text-align: center;">
                 EQUIPE
             </span>
@@ -35,7 +37,8 @@
             fxFlex="20"
             fxFlex.gt-sm="10"
             fxLayout="center center"
-            role="listitem">
+            role="listitem"
+            (click)="clickMenuItem.emit('#ourStory')">
             <span style="position: relative; width: 100%; text-align: center;">
                 HISTÓRIA
             </span>
@@ -45,7 +48,8 @@
             fxFlex="20"
             fxFlex.gt-sm="10"
             fxLayout="center center"
-            role="listitem">
+            role="listitem"
+            (click)="clickMenuItem.emit('#callToAction')">
             <span style="position: relative; width: 100%; text-align: center;">
                 AGENDAR
             </span>
@@ -54,7 +58,8 @@
         <mat-list-item
             fxFlex="20"
             fxFlex.gt-sm="10"
-            role="listitem">
+            role="listitem"
+            (click)="clickMenuItem.emit('#footer')">
             <span style="position: relative; width: 100%; text-align: center;">
                 CONTATO
             </span>
@@ -174,7 +179,21 @@
                     fxFlex="10"
                     role="listitem"
                     fxLayout="row wrap"
-                    fxLayoutAlign="start stretch">
+                    fxLayoutAlign="start stretch"
+                    (click)="clickMenuItem.emit('#home')">
+                    <span
+                        fxFlex="100"
+                        style="text-align: center;">
+                        HOME
+                    </span>
+                </mat-list-item>
+
+                <mat-list-item
+                    fxFlex="10"
+                    role="listitem"
+                    fxLayout="row wrap"
+                    fxLayoutAlign="start stretch"
+                    (click)="clickMenuItem.emit('#expertise')">
                     <span
                         fxFlex="100"
                         style="text-align: center;">
@@ -185,7 +204,8 @@
                 <mat-list-item
                     fxFlex="10"
                     role="listitem"
-                    fxLayoutAlign="start stretch">
+                    fxLayoutAlign="start stretch"
+                    (click)="clickMenuItem.emit('#aboutUs')">
                     <span style="position: relative; width: 100%; text-align:
                         center;">
                         EQUIPE
@@ -195,7 +215,8 @@
                 <mat-list-item
                     fxFlex="10"
                     role="listitem"
-                    fxLayoutAlign="start stretch">
+                    fxLayoutAlign="start stretch"
+                    (click)="clickMenuItem.emit('#ourStory')">
                     <span style="position: relative; width: 100%; text-align:
                         center;">
                         HISTÓRIA
@@ -205,7 +226,8 @@
                 <mat-list-item
                     fxFlex="10"
                     role="listitem"
-                    fxLayoutAlign="start stretch">
+                    fxLayoutAlign="start stretch"
+                    (click)="clickMenuItem.emit('#callToAction')">
                     <span style="position: relative; width: 100%; text-align:
                         center;">
                         AGENDAR
@@ -215,7 +237,8 @@
                 <mat-list-item
                     fxFlex="10"
                     role="listitem"
-                    fxLayoutAlign="start stretch">
+                    fxLayoutAlign="start stretch"
+                    (click)="clickMenuItem.emit('#footer')">
                     <span
                         style="position: relative; width: 100%; text-align:
                         center;">

@@ -1,16 +1,41 @@
-<app-menu fxFill></app-menu>
+<app-menu
+    fxFill
+    (clickMenuItem)="scrollToElement($event)">
+</app-menu>
 
-<app-home fxFill></app-home>
+<app-home
+    #home
+    id="home"
+    fxFill>
+</app-home>
 
-<app-expertise fxFill></app-expertise>
+<app-expertise
+    #expertise
+    id="expertise"
+    fxFill>
+</app-expertise>
 
-<app-about-us fxFill>
+<app-about-us
+    #aboutUs
+    id="aboutUs"
+    fxFill>
 </app-about-us>
 
-<app-our-story fxFill></app-our-story>
+<app-our-story
+    #ourStory
+    id="ourStory"
+    fxFill></app-our-story>
 
-<app-philosophy fxFill></app-philosophy>
+<app-philosophy
+    #philosophy
+    fxFill></app-philosophy>
 
-<app-call-to-action fxFill></app-call-to-action>
+<app-call-to-action
+    #callToAction
+    id="callToAction"
+    fxFill></app-call-to-action>
 
-<app-footer fxFill></app-footer>
+<app-footer
+    #footer
+    id="footer"
+    fxFill></app-footer>
