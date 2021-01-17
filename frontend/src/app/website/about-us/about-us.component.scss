@@ -1,0 +1,43 @@
+.about-us-container {
+    width: 100%;
+    height: auto;
+}
+
+.about-us-title-container {
+    max-width: 100%;
+    padding: 6vh 4vw;
+    color: #212322;
+
+    h1 {
+        font-family: "Julius Sans One", sans-serif;
+        font-style: normal;
+        font-size: 7vh;
+        text-align: center;
+    }
+
+    p {
+        width: 80%;
+        font-size: medium;
+        font-weight: 400;
+        text-align: center;
+    }
+
+}
+
+.card-list-container {
+    width: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.mat-icon {
+    color: #005683;
+}
