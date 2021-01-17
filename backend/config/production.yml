@@ -1,0 +1,15 @@
+server:
+  origin: http://localhost:4200
+
+db:
+  synchronize: false
+
+email-sender:
+  host: ''
+  port: ''
+  secure: ''
+  tls: ''
+  user: ''
+  password: ''
+  from: ''
+  live: true

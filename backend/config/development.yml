@@ -1,0 +1,24 @@
+server:
+  origin: http://localhost:4200
+
+db:
+  host: 'localhost'
+  username: 'postgres'
+  password: 'postgres'
+  synchronize: true
+
+jwt:
+  secret: 'topSecret42'
+
+person-jwt:
+  secret: 'topSecretPerson42'
+
+email-sender:
+  host: 'smtp.gmail.com'
+  port: 465
+  secure: true
+  tls: true
+  user: 'jddedrick42@gmail.com'
+  pass: 'r2d2paradoxo42'
+  from: 'Edrick Manoel'
+  live: true
