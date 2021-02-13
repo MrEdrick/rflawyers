@@ -18,6 +18,7 @@ import { PhilosophyComponent } from './philosophy/philosophy.component';
 import { CallToActionComponent } from './call-to-action/call-to-action.component';
 import { EmailSenderComponent } from './email-sender-form/email-sender.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmailSenderService } from './email-sender-form/email-sender.service';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CallToActionComponent,
     EmailSenderComponent,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [
+    EmailSenderService
+  ]
 })
 export class WebsiteModule { }

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { CUSTOM_ELEMENTS_SCHEMA, DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule, Injector } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,7 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WebsiteModule } from './website/website.module';
 import { CommonModule } from '@angular/common';
 import { EffectsModule } from './effects/effects.module';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedComponentsModule } from './shared-components/shared-components.module';
 
+import { InjectorService } from './services/injector.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { EffectsModule } from './effects/effects.module';
     AppRoutingModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     EffectsModule,
+    SharedComponentsModule,
     WebsiteModule
   ],
   providers: [
@@ -30,4 +35,8 @@ import { EffectsModule } from './effects/effects.module';
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(injector: Injector) {
+    InjectorService.injector = injector;
+  }
+}
