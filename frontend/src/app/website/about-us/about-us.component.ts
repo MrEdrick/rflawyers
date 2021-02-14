@@ -28,7 +28,7 @@ export class AboutUsComponent implements OnInit {
     {
       name: 'Dara',
       image: '/assets/images/dara.jpg',
-      expertises: 'Direito Penal, Aeronáutico, Constitucional e Civil.'
+      expertises: 'Direito Civil.'
     }
   ];
 

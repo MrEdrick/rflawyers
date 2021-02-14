@@ -5,7 +5,7 @@
     fxLayoutAlign="start stretch"
     class="call-to-action-container">
 
-    <div
+    <!--div
         fxFlex="65"
         fxLayout="column wrap"
         fxLayoutAlign="space-between stretch"
@@ -17,7 +17,7 @@
             [ngStyle.gt-xs]="{'font-size': '4.0vw'}">
             O QUE OS NOSSOS CLIENTES DIZEM
         </h1>
-    </div>
+    </div-->
 
     <div
         fxFlex
@@ -25,14 +25,20 @@
         fxLayoutAlign="center center"
         class="background-call-to-action">
 
-        <mat-card
-            appElevationEffect
-            class="call-to-action-card"
-            fxFlex="250px"
-            fxFlex.gt-xs="400px">
 
-            <h1>AGENDE UMA CONSULTORIA</h1>
+        <a 
+            style="text-decoration: none;"
+            href="https://wa.me/55021997684446" 
+            target="_blank">
+            <mat-card
+                appElevationEffect
+                class="call-to-action-card"
+                fxFlex="250px"
+                fxFlex.gt-xs="400px">
+            
+                <h1>AGENDE UMA CONSULTORIA</h1>
 
-        </mat-card>
+            </mat-card>
+        </a>
     </div>
 </div>

@@ -10,13 +10,13 @@
         class="footer-title-contact-us-container"
         [ngStyle.gt-xs]="{'padding': '4% 6%'}">
 
-        <h1 
+        <h1
             fxFlex="20"
             [ngStyle.gt-xs]="{'font-size': '4.0vw'}">
             ENTRE EM CONTATO
         </h1>
 
-        <app-email-sender 
+        <app-email-sender
             fxFlex="70">
 
         </app-email-sender>
@@ -24,6 +24,17 @@
 
     <div
         fxFlex="30"
-        class="background-footer">
+        class="background-footer"
+        fxLayout="row wrap"
+        fxLayoutAlign="center center">
+
+        <div
+            fxFlex="80"
+            fxFlex.gt-xs="35">
+            <h4 [ngStyle.gt-xs]="{'font-size': '3.0vh'}">Av. Presidente Vargas, 542 - gr. 1.405 - Centro</h4>
+            <h4 [ngStyle.gt-xs]="{'font-size': '3.0vh'}">Rio de Janeiro - RJ - CEP: 20071-003</h4>
+            <h4 [ngStyle.gt-xs]="{'font-size': '3.0vh'}">Tel.: (21) 2253-3889</h4>
+            <h4 [ngStyle.gt-xs]="{'font-size': '3.0vh'}">Whatsapp: (21) 99768-4446</h4>
+        </div>
     </div>
 </div>

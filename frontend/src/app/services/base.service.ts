@@ -68,7 +68,6 @@ export class BaseService {
       .pipe(
         map(
           (response: any) => response.json(),
-
         ),
         catchError((error) => {
           return this.handleError(error);
@@ -81,7 +80,6 @@ export class BaseService {
       .pipe(
         map(
           (response: any) => response.json(),
-
         ),
         catchError((error) => {
           return this.handleError(error);
@@ -94,7 +92,6 @@ export class BaseService {
       .pipe(
         map(
           (response: any) => response.json(),
-
         ),
         catchError((error) => {
           return this.handleError(error);
@@ -107,7 +104,6 @@ export class BaseService {
       .pipe(
         map(
           (response: any) => response.json(),
-
         ),
         catchError((error) => {
           return this.handleError(error);
@@ -119,8 +115,13 @@ export class BaseService {
     return this.http.post(this.url + '/' + path, resource)
       .pipe(
         map(
-          (response: any) => response.json(),
-
+          (response: any) => {
+            if (response) {
+              return response;
+            } else {
+              return this.handleError(response);
+            }
+          }
         ),
         catchError((error) => {
           return this.handleError(error);

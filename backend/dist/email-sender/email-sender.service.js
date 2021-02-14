@@ -31,18 +31,18 @@ let EmailSenderService = class EmailSenderService {
                 template: email_sender_constants_1.CONTACT_US_TEMPLATE,
                 context: contactUsDto,
                 subject: `E-mail enviado para RODRIGUES & FRANCESCHINI Advogados Associados!`,
-                to: EMAIL_SENDER,
+                to: EMAIL_SENDER.user,
             }).then(async () => {
-                await this.mailerService.sendMail({
+                return await this.mailerService.sendMail({
                     template: email_sender_constants_1.CONTACT_US_TEMPLATE,
                     context: contactUsDto,
                     subject: `Não responda: E-mail enviado para RODRIGUES & FRANCESCHINI Advogados Associados!`,
                     to: contactUsDto.email,
                 }).catch((error) => {
-                    console.log(error);
+                    return error;
                 });
             }).catch((error) => {
-                console.log(error);
+                return error;
             });
             return result;
         }

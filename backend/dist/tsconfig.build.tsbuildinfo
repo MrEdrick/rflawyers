@@ -1176,16 +1176,6 @@
         "signature": "95b5a3078fdc51508d5d9cde59a1dd9525b53fd42dc12265a55261fd415d3274",
         "affectsGlobalScope": false
       },
-      "../src/app.service.ts": {
-        "version": "eaf8514ce110fa428a93a27408df4d06d133dbd9ed0a775c315ddfdd507853a9",
-        "signature": "653711fba8904aa27fd8911b63cf526e7b334e13a292da4cefdbbe179ac3f3f2",
-        "affectsGlobalScope": false
-      },
-      "../src/app.controller.ts": {
-        "version": "260f889b9e2b69f77be1155348eb345166aec664b3efff6720053c6844a41f28",
-        "signature": "ef022c91ea9e75ab4082f2e881f9c4db7b346be2da706e876b253bebce5e6140",
-        "affectsGlobalScope": false
-      },
       "../node_modules/@nestjs-modules/mailer/dist/interfaces/template-adapter.interface.d.ts": {
         "version": "265eb1121b47854a6712f47169befdf959c313f825ed0af68ce220fb56b21887",
         "signature": "265eb1121b47854a6712f47169befdf959c313f825ed0af68ce220fb56b21887",
@@ -2112,13 +2102,13 @@
         "affectsGlobalScope": false
       },
       "../src/email-sender/email-sender.service.ts": {
-        "version": "fc00e9cf8b21ad98c990d5aca0901ada66dcff0880290032e0ff4e8c89dd9d78",
+        "version": "007f4adf8218601bf491bb62c306d216c55f70bc26baceb8bbf9026e05441cab",
         "signature": "0cee30d4a2adea9f548bad807e20b9ff7990aea5c299394e3c373c988524d27b",
         "affectsGlobalScope": false
       },
       "../src/email-sender/email-sender.controller.ts": {
-        "version": "739027cd962384403ee84b7d99ec4fdc7269e5e73af01f40c0f4fe953d393ccf",
-        "signature": "4f5fca5603f821e3364848bbfcd583d688601d4164319b687e75b78a71f072b2",
+        "version": "2bc2f4bd24ca594515842bcc8c76330b3af0b360b67a231e6f6d1daf1f8f6524",
+        "signature": "5de4fd6a692691d88012fb69fff70141e1b6481850031df66d15d713f998c9d3",
         "affectsGlobalScope": false
       },
       "../node_modules/handlebars/types/index.d.ts": {
@@ -2142,7 +2132,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "c60e861e9dbcb6a1e49deaf9736a5b08de6492b46b08cffed6c2f9a8af0ea687",
+        "version": "8d7803f48ae80b8dff804244e34cbca91ec648077aab435a20374279a430e223",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -4495,18 +4485,9 @@
       "../node_modules/rxjs/internal/util/pipe.d.ts": [
         "../node_modules/rxjs/internal/types.d.ts"
       ],
-      "../src/app.controller.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../src/app.service.ts"
-      ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/app.controller.ts",
-        "../src/app.service.ts",
         "../src/email-sender/email-sender.module.ts"
-      ],
-      "../src/app.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/email-sender/dto/contact-us.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
@@ -4524,7 +4505,9 @@
         "../src/email-sender/email-sender.constants.ts"
       ],
       "../src/email-sender/email-sender.controller.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/email-sender/dto/contact-us.dto.ts",
+        "../src/email-sender/email-sender.service.ts"
       ],
       "../src/email-sender/email-sender.module.ts": [
         "../node_modules/@nestjs-modules/mailer/index.d.ts",
@@ -6360,11 +6343,12 @@
       "../node_modules/rxjs/internal/util/pipe.d.ts": [
         "../node_modules/rxjs/internal/types.d.ts"
       ],
-      "../src/app.controller.ts": [
-        "../src/app.service.ts"
-      ],
       "../src/email-sender/email-sender.config.ts": [
         "../node_modules/@nestjs-modules/mailer/index.d.ts"
+      ],
+      "../src/email-sender/email-sender.controller.ts": [
+        "../src/email-sender/dto/contact-us.dto.ts",
+        "../src/email-sender/email-sender.service.ts"
       ],
       "../src/email-sender/email-sender.service.ts": [
         "../node_modules/@nestjs-modules/mailer/index.d.ts",

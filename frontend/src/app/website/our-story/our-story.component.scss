@@ -1,10 +1,18 @@
 .our-story-container  {
+    color: #d0d3d4;
     background-color: #212322;
+
+    p {
+        width: 80%;
+        font-size: medium;
+        font-weight: 100;
+        text-align: left;
+        line-height: 1.8
+    }
 }
 
 .our-story-title-container {
     padding: 6vh 4vw;
-    color: #d0d3d4;
 
     h1 {
         font-family: "Julius Sans One", sans-serif;
