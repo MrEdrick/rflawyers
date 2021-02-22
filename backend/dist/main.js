@@ -6,6 +6,7 @@ const config = require("config");
 async function bootstrap() {
     const serverConfig = config.get('server');
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
+    app.setGlobalPrefix('api');
     app.enableCors({ origin: serverConfig.origin });
     const port = process.env.PORT || serverConfig.port;
     await app.listen(port);
