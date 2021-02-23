@@ -5,11 +5,11 @@ db:
   synchronize: false
 
 email-sender:
-  host: ''
-  port: ''
-  secure: ''
-  tls: ''
-  user: ''
-  password: ''
-  from: ''
+  host: 'smtp.gmail.com'
+  port: 465
+  secure: true
+  tls: true
+  user: 'jddedrick42@gmail.com'
+  pass: 'r2d2paradoxo42'
+  from: 'Edrick Manoel'
   live: true

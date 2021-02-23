@@ -1,5 +1,5 @@
 server:
-  origin: http://localhost:4200
+  origin: http://localhost:80
 
 db:
   host: 'localhost'
