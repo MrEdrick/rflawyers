@@ -1,1 +1,1 @@
-export const BASE_BACKEND_PATH = 'http://localhost:3000/api/';
+export const BASE_BACKEND_PATH = 'http://127.0.0.1:3000/api/';
