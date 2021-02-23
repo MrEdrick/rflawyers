@@ -13,7 +13,7 @@ export class AboutUsComponent implements OnInit {
     {
       name: 'Vitor Rodrigues',
       image: '/assets/images/vitor.jpg',
-      expertises: 'Direito Internacional, Aeronáutico, Civil, Constitucional e Eleitoral.'
+      expertises: 'Direito Internacional, Aeronáutico, Civil,    Constitucional e Eleitoral.'
     },
     {
       name: 'Helem Franceschini',
@@ -23,10 +23,10 @@ export class AboutUsComponent implements OnInit {
     {
       name: 'Dolimar Pimentel',
       image: '/assets/images/dolimar.jpg',
-      expertises: 'Direito Sindical, Civil, Constitucional e Tributário.'
+      expertises: 'Direito Sindical, Civil, Constitucional e    Tributário.'
     },
     {
-      name: 'Dara',
+      name: 'Dara Mazula',
       image: '/assets/images/dara.jpg',
       expertises: 'Direito Civil.'
     }
