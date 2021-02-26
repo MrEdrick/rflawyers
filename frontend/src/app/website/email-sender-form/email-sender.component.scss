@@ -11,6 +11,10 @@
     border-radius: 0px;
     padding: 8px;
     margin-bottom: 1.25em;
+
+    &:hover {
+        color: #ffffff;
+    }
 }
 
 .inputs-container {

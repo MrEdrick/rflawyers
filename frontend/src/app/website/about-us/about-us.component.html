@@ -34,21 +34,22 @@
 
         <button
             type="button"
-            mat-mini-fab
+            mat-icon-button
             color="#ffffff"
             (click)="scrollToLeft()"
-            style="position: absolute; left: 16px; z-index: 1;">
+            [ngStyle]="{'position': 'absolute', 'left': '0px', 'z-index': '1'}"
+            [ngStyle.gt-xs]="{'position': 'absolute', 'left': '16px', 'z-index': '1'}">
             <mat-icon>keyboard_arrow_left</mat-icon>
         </button>
 
         <div
             #cardListContainer
             fxFlex.gt-xs="90"
-            fxFlex="70"
+            fxFlex="100"
             fxLayout="row"
             fxLayoutAlign="start center"
             fxLayoutGap="16px"
-            style="padding: 2% 1% 4% 1%;"
+            style="padding: 2% 1% 4% 3%;"
             class="card-list-container">
 
             <app-about-us-card
@@ -63,10 +64,11 @@
 
         <button
             type="button"
-            mat-mini-fab
+            mat-icon-button
             color="#ffffff"
             (click)="scrollToRigth()"
-            style="position: absolute; right: 16px;; z-index: 1;">
+            [ngStyle]="{'position': 'absolute', 'right': '0px', 'z-index': '1'}"
+            [ngStyle.gt-xs]="{'position': 'absolute', 'right': '16px', 'z-index': '1'}">
             <mat-icon>keyboard_arrow_right</mat-icon>
         </button>
     </div>
