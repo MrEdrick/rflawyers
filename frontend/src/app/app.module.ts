@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedComponentsModule } from './shared-components/shared-components.module';
 
 import { InjectorService } from './services/injector.service';
+import { AdministrationModule } from './administration/administration.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { InjectorService } from './services/injector.service';
     HttpClientModule,
     EffectsModule,
     SharedComponentsModule,
+    AdministrationModule,
     WebsiteModule
   ],
   providers: [

@@ -1,0 +1,15 @@
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+  <app-card-avatar *ngFor="let user of users" 
+    fxFlex="30%" 
+    fxFlex.xs="100%"
+    fxFlex.sm="33%" [title]="user.name"
+    [firstSubtitle]="user.username" 
+    [secondSubtitle]="user.email"
+    [cardImage]="user.image" (clickDeleteButton)="onDelete(user.id)"
+    (dblclick)="onDblClick(user.id)"></app-card-avatar>
+</div>
+<a routerLink="./user">
+  <button class="fab-add" mat-fab color="accent" fxLayoutAlign="center">
+    <mat-icon>add</mat-icon>
+  </button>
+</a>

@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { EmailSenderModule } from './email-sender/email-sender.module';
+import { AdministrationModule } from './administration/administration.module';
 
 @Module({
   imports: [
-    EmailSenderModule
+    AdministrationModule
   ]
 })
 export class AppModule {}

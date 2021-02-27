@@ -1,0 +1,110 @@
+<form
+  [formGroup]="form"
+  novalidate
+  fxLayout="row"
+  fxLayoutAlign="center end"
+  fxFill
+  fxFlex.lt-md="auto">
+
+  <div fxLayout="column" fxFill fxFlex="90" fxFlex.lt-md="auto" class="sheet
+    mat-elevation-z4">
+
+    <app-uplaod-image
+      #uploadImageMobile
+      fxFlex="30"
+      fxShow.lt-md
+      fxHide.gt-sm>
+    </app-uplaod-image>
+
+    <mat-card-content fxFlex="70" fxFlex="90">
+      <div 
+        fxLayout="row" 
+        fxLayout.lt-md="column" 
+        fxLayoutAlign="space-around center">
+
+        <mat-card class="picture-container" fxFlex="30" fxFlex.lt-md="40"
+          fxShow.gt-sm fxHide.lt-md>
+          <app-uplaod-image
+            #uploadImageDesktop
+            fxShow.gt-sm
+            fxHide.lt-md>
+          </app-uplaod-image>
+        </mat-card>
+
+        <div fxFlex="60" fxLayout="column" fxLayoutAlign="start start"
+          fxFlexAlign="stretch">
+          <div fxLayout="row" fxFlexAlign="stretch" fxLayoutAlign="start center"
+            fxLayoutGap="16px">
+            <mat-form-field fxFlex="50" fxFlex.lt-md="70">
+              <input matInput placeholder="Nome" formControlName="name">
+              <mat-error *ngIf="formControls.name.hasError('required')">
+                <strong>Nome obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-checkbox fxFlex class="mat-checkbox" placeholder="Ativo"
+              formControlName="active">Ativo
+            </mat-checkbox>
+            <mat-checkbox fxFlex class="mat-checkbox"
+              placeholder="Administrador" formControlName="isAdministrator">Administrador
+            </mat-checkbox>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px"
+            fxFlexAlign="stretch">
+            <mat-form-field fxFlex="30">
+              <input matInput placeholder="Nome do usuário"
+                formControlName="username">
+              <mat-error *ngIf="formControls.username.hasError('required')">
+                <strong>Nome do usuário obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="65">
+              <input matInput placeholder="E-mail" formControlName="email">
+              <mat-error *ngIf="formControls.email.hasError('required')">
+                <strong>E-mail obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <button
+            *ngIf="formControls.id.value"
+            mat-raised-button
+            color="accent"
+            (click)="onResetPassword()">
+            <mat-icon>cached</mat-icon> Alterar Senha
+          </button>
+
+          <div *ngIf="!formControls.id.value" fxLayout="row"
+            fxLayoutAlign="start center" fxLayoutGap="16px"
+            fxFlexAlign="stretch">
+            <mat-form-field fxFlex="50">
+              <input matInput placeholder="Senha" formControlName="password"
+                [type]="hide ? 'password' : 'text'">
+              <mat-icon matSuffix (click)="hide= !hide">{{hide ?
+                'visibility_off' : 'visibility'}}</mat-icon>
+              <mat-error *ngIf="formControls.password.hasError('required')">
+                <strong>Senha do usuário obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="65">
+              <input matInput placeholder="Confirmação de senha"
+                formControlName="passwordConfirmation" [type]="hideConfirmation ? 'password'
+                : 'text'">
+              <mat-icon matSuffix (click)="hideConfirmation = !hideConfirmation">{{hideConfirmation
+                ? 'visibility_off' : 'visibility'}}</mat-icon>
+              <mat-error
+                *ngIf="formControls.passwordConfirmation.hasError('required')">
+                <strong>Digite a confirmação da senha</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+      </div>
+    </mat-card-content>
+    <app-footer-form-actions 
+      (submitClick)="onClickSubmit()"
+      (cancelClick)="onClickCancel()">
+    </app-footer-form-actions>
+  </div>
+</form>

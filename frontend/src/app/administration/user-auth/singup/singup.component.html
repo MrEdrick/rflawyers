@@ -1,0 +1,54 @@
+<form [formGroup]="singUpForm" novalidate (ngSubmit)="onSubmit()"
+  class="sing-up-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Cadastre-se</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content fxLayout="column">
+      <mat-form-field fxFlex="50" fxFlex.lt-md="70">
+        <input matInput placeholder="Nome" formControlName="name">
+        <mat-error *ngIf="singUpControls.name.hasError('required')">
+          <strong>Nome obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="30">
+        <input matInput placeholder="Nome do usuário"
+          formControlName="username">
+        <mat-error *ngIf="singUpControls.username.hasError('required')">
+          <strong>Nome do usuário obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field fxFlex>
+        <input matInput placeholder="E-mail" formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field fxFlex="50">
+        <input matInput placeholder="Senha" formControlName="password"
+          [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide= !hide">{{hide ? 'visibility_off' :
+          'visibility'}}</mat-icon>
+        <mat-error *ngIf="singUpControls.password.hasError('required')">
+          <strong>Senha do usuário obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+      
+      <mat-form-field fxFlex="50">
+        <input matInput placeholder="Confirmação de senha"
+          formControlName="passwordConfirmation" [type]="hideConfirmation ? 'password' :
+          'text'">
+        <mat-icon matSuffix (click)="hideConfirmation= !hideConfirmation">{{hideConfirmation
+          ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error
+          *ngIf="singUpControls.passwordConfirmation.hasError('required')">
+          <strong>Digite a confirmação da senha</strong>
+        </mat-error>
+      </mat-form-field>
+
+    </mat-card-content>
+
+    <button mat-raised-button color="primary" class="btn-block">Cadastrar</button>
+  </mat-card>
+</form>
