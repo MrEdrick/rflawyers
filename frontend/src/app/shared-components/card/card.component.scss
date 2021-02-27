@@ -1,0 +1,28 @@
+.mat-card {
+    display: block;
+    position: relative;
+    height: 100%;
+    padding-bottom: 0px;
+}
+
+.card-images-dots {
+    text-align: center;
+    cursor: pointer;
+}
+
+.images-dots {
+    font-size: 12px;
+    opacity: 0.75;
+}
+
+.images-dots:hover {
+    opacity: 1;
+}
+
+img {
+    height: 300px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    object-fit: cover;
+}

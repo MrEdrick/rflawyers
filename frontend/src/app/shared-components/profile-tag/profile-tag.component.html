@@ -1,0 +1,30 @@
+<span fxLayout="row" fxFlexAlign="start center" fxLayoutGap="4px">
+  <!--mat-divider [vertical]="true"></mat-divider-->
+
+  <mat-card fxFlex> 
+    <mat-card-header fxLayout="row" fxFlexAlign="space-around center">
+      <div
+        fxFlex="40px"
+        fxFlexAlign="center"
+        mat-card-avatar
+        style="background-size: cover;"
+        [style.background-image]="'url(' + image + ')'">
+      </div>
+      <div fxFlex>
+        <mat-card-title>{{name}}</mat-card-title>
+        <mat-card-subtitle>{{email}}</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+  </mat-card>
+
+  <span 
+    fxFlex 
+    fxFlexAlign="center">
+    <a
+      style="padding: 0px" 
+      mat-button 
+      (click)="this.logoutClick.emit()">
+      <mat-icon>exit_to_app</mat-icon>
+    </a>
+  </span>
+</span>

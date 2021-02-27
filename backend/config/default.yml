@@ -5,8 +5,13 @@ db:
   type: 'postgres'
   port: 5432
   database: 'rflawyers'
+  host: 'localhost'
+  username: 'postgres'
+  password: 'postgres'
+  synchronize: true
 
 jwt:
+  secret: 'topSecret42'
   expiresIn: '7d'
 
 person-jwt:

@@ -1,0 +1,12 @@
+<mat-card *ngIf="selectWithImageList" fxLayout="row" fxLayoutAlign="start center" style="padding: 0px 16px 0px 16px;">
+    <img fxFlex="nogrow" fxFlexAlign="center" mat-card-avatar [src]="selectedImage">
+    <mat-form-field fxFlexOffset="16px">
+        <mat-select [(value)]="selectedId" (selectionChange)="valueChange($event)" placeholder="Título" mat-form-field>
+            <mat-option></mat-option>
+            <mat-option *ngFor="let selectWithImage of selectWithImageList" [value]="selectWithImage.id">
+                <img fxFlex="nogrow" fxFlexAlign="center" mat-card-avatar [src]="selectWithImage.image">
+                <span fxFlex="grow" fxFlexOffset="16px">{{selectWithImage?.name}}</span>
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</mat-card>

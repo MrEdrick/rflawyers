@@ -1,0 +1,29 @@
+<mat-card class="mat-elevation-z4" fxLayout="column" fxLayputGap="4px">
+    <div fxFlex="80">
+        <img 
+            mat-card-image
+            [src]="cardImages ? cardImages[cardImageIndex] :
+            'assets/images/no-image.jpg'">
+        <div class="card-images-dots" *ngIf="(cardImages.length> 1)">
+            <mat-icon 
+                class="images-dots" 
+                *ngFor="let cardImage of cardImages; index as i" 
+                (click)="cardImageIndex = i; $event.stopPropagation()">lens</mat-icon>
+        </div>
+    </div>
+    <mat-card-actions
+        fxLayout="row"
+        fxLayoutAlign="start start">
+        <div
+            fxFlex="70"
+            fxLayout="column"
+            fxLayoutAlign="start start">
+            <span fxFlex class="card-display-title">{{title}}</span>
+            <span fxFlex class="card-display-subtitle">{{subtitle}}</span>
+        </div>
+        <div fxFlex>
+            <span fxFlex class="card-display-price">{{price |
+                currency:'BRL':'symbol':'2.2'}}</span>
+        </div>
+    </mat-card-actions>
+</mat-card>

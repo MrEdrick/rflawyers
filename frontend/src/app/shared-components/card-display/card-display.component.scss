@@ -1,0 +1,64 @@
+:host:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.mat-card {
+    display: block;
+    position: relative;
+    min-width: 300px;
+    height: 100%;
+    padding-bottom: 0px;
+    background-color: rgba($color: #fff, $alpha: 0);
+}
+
+.card-images-dots {
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    top: 75%;
+    width: 100%;
+    color: #fff;
+}
+
+.images-dots {
+    font-size: 10px;
+    opacity: 0.75;
+}
+
+.images-dots:hover {
+    color: #efefef;
+    font-size: 12px;
+}
+
+img {
+    height: 300px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.card-display-title {
+    font-size: 18px;
+    text-align: left;
+    font-weight: 600;
+    color: #424242;
+    margin: 4px 0px;
+}
+
+.card-display-subtitle {
+    font-size: 14px;
+    text-align: left;
+    font-weight: 600;
+    color: #ababab;
+    margin: 4px 0px;
+}
+
+.card-display-price {
+    font-size: 18px;
+    text-align: right;
+    font-weight: 600;
+    color: #424242;
+    margin: 4px 0px;
+}

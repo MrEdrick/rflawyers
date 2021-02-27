@@ -1,0 +1,44 @@
+<mat-card
+    fxLayout="row wrap"
+    fxLayoutAlign="space-around start"
+    [ngClass]="'mat-elevation-z0'">
+
+    <div fxFlex="30">
+        <img
+            fxFill
+            mat-card-image
+            [src]="cardImages ? cardImages[cardImageIndex] :
+            'assets/images/no-image.jpg'">
+        <div class="card-images-dots" *ngIf="(cardImages.length> 1)">
+            <mat-icon
+                class="images-dots"
+                *ngFor="let cardImage of cardImages; index as i"
+                (click)="cardImageIndex= i; $event.stopPropagation()">lens</mat-icon>
+        </div>
+    </div>
+    <mat-card-actions
+        fxFlex
+        fxLayout="column"
+        fxLayoutAlign="start start">
+        <div
+            fxFlex
+            fxLayout="column"
+            fxLayoutAlign="start start">
+            <span fxFlex class="title">{{title}}</span>
+            <span fxFlex class="subtitle">{{subtitle}}</span>
+        </div>
+        <div fxFlex>
+            <span fxFlex class="price">{{price |
+                currency:'BRL':'symbol':'2.2'}}</span>
+        </div>
+    </mat-card-actions>
+    <div 
+        *ngIf="showDeleteButton" 
+        fxFlex="5" 
+        fxLayout="column" 
+        fxLayoutAlign="start center">
+        <button mat-icon-button (click)="onDelete()">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</mat-card>

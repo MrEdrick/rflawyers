@@ -10,61 +10,6 @@
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Registros de Produtos
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active current"
-            routerLink="./product-category-groups"
-            (click)="onChangePageName('Lista de
-            Grupos')">Grupos</a>
-          <a mat-list-item routerLinkActive="active current"
-            routerLink="./product-categories" (click)="onChangePageName('Lista
-            de
-            Categorias')">Categorias</a>
-          <a mat-list-item routerLinkActive="active current"
-            routerLink="./products" (click)="onChangePageName('Lista de
-            Produtos')">Produtos</a>
-          <a mat-list-item routerLinkActive="active current"
-            routerLink="./product-properties" (click)="onChangePageName('Lista
-            de Propriedades dos Produtos')">Propriedades</a>
-          <a mat-list-item routerLinkActive="active current"
-            routerLink="./packaging" (click)="onChangePageName('Lista
-            de Embalagens')">Embalagens</a>
-        </mat-nav-list>
-      </mat-expansion-panel>
-
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Gerenciamento de Estoques
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active current"
-            routerLink="./stock-input-movement-actions"
-            (click)="onChangePageName('Ações de Entrada no Estoque')">Ações de
-            Entrada</a>
-          <a mat-list-item routerLinkActive="active current"
-            routerLink="./stock-output-movement-actions"
-            (click)="onChangePageName('Ações de Saída do Estoque')">Ações de
-            Saída</a>
-          <a mat-list-item routerLinkActive="active current"
-            routerLink="./stocks" (click)="onChangePageName('Lista de
-            Estoques')">Estoques</a>
-          <a mat-list-item routerLinkActive="active current"
-            routerLink="./stock-item-categories"
-            (click)="onChangePageName('Lista de Itens')">Itens</a>
-          <a mat-list-item routerLinkActive="active current"
-            routerLink="./stocks-items-list" (click)="onChangePageName('Lista de
-            Itens
-            por Esqoue')">Itens por Estoques</a>
-        </mat-nav-list>
-      </mat-expansion-panel>
-
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
             Configurações
           </mat-panel-title>
         </mat-expansion-panel-header>
@@ -78,17 +23,6 @@
             Usuários
           </a>
         </mat-nav-list>
-
-        <mat-nav-list>
-          <a 
-            mat-list-item 
-            routerLinkActive="active current"
-            routerLink="./shipping-ways" 
-            (click)="onChangePageName('Lista de Formas de Envio')">
-            Formas de Envio
-          </a>
-        </mat-nav-list>
-
       </mat-expansion-panel>
     </mat-nav-list>
   </mat-sidenav>
@@ -102,7 +36,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <span fxFlex="70">Shop - {{pageName}}</span>
+      <span fxFlex="70">Rodrigues & Franceschini - {{pageName}}</span>
 
       <app-profile-tag
         fxFlex="22"

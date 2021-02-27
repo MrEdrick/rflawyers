@@ -1,0 +1,43 @@
+<mat-card
+    class="mat-elevation-z4"
+    fxLayout="row"
+    fxLayoutAlign="start space-around"
+    fxLayoutGap="16px"
+    style="padding: 0px;">
+
+    <button
+        fxFlex="grow"
+        style="text-align: left;"
+        mat-flat-button
+        type="button">{{name}}
+    </button>
+
+    <button
+        fxFlex="grow"
+        *ngIf="showColorValue"
+        mat-flat-button
+        type="button">
+        <div
+            style="width: 16px; height: 16px;
+            border-radius: 50%;"
+            [ngStyle]="{'background-color': value}">
+        </div>
+    </button>
+
+    <button
+        fxFlex="grow"
+        *ngIf="!showColorValue"
+        mat-flat-button
+        type="button">{{value}}
+    </button>
+
+    <span style="flex: 1 1 auto;"></span>
+
+    <button
+        fxFlex="auto"
+        *ngIf="showDeleteButton"
+        mat-flat-button
+        (click)="onDelete()">
+        <mat-icon>clear</mat-icon>
+    </button>
+</mat-card>

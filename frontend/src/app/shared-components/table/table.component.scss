@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+}
+
+.table-header-row {
+    height: 32px !important;
+}
+
+.table-row {
+    height: 32px !important;
+}
+
+.mat-cell {
+    font-size: 14px;
+}
+
+.delete-icon {
+    opacity: 0.8;
+    text-align: center;
+}
+
+.delete-icon:hover {
+    opacity: 1;
+    cursor: pointer;
+}

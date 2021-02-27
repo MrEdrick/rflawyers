@@ -1,0 +1,18 @@
+<app-uplaod-image #uploadImage [image]="images[imageIndex]" (imageChange)="updateImage($event)"
+    (selectedImageFileChange)="updateImageFile($event)"></app-uplaod-image>
+<div style="width: 100%; margin-top: 16px;" fxLayout="row" fxLayoutGap="16px">
+    <button type="button" mat-icon-button (click)="previousImage()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <button type="button" mat-icon-button>{{(imageIndex + 1)}}</button>
+    <button type="button" mat-icon-button (click)="nextImage()">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+    <span style="flex: 1 1 auto;"></span>
+    <button type="button" mat-icon-button (click)="removeImage()">
+        <mat-icon>remove</mat-icon>
+    </button>
+    <button type="button" mat-icon-button (click)="addImage()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>

@@ -1,0 +1,11 @@
+<input type="file" #fileUpload name="fileUpload"
+    multiple="single" accept="image/*"
+    style="display: none;" (change)="this.onChangeFile($event)" />
+<img [src]="image" alt="Sem imagem"
+    (click)="this.onImageClick()">
+<button type="button" *ngIf="showImageUploadButton"
+    class="fab-img-upload"
+    mat-fab color="accent"
+    fxLayoutAlign="center" (click)="this.onUploadImage(fileUpload)">
+    <mat-icon>edit</mat-icon>
+</button>
