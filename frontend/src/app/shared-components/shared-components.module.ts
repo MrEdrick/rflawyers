@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { UplaodImageComponent } from './uplaod-image/uplaod-image.component';
 import { SelectWithAvatarComponent } from './select-with-avatar/select-with-avatar.component';
 import { CardComponent } from './card/card.component';
-import { CardTagComponent } from './card-tag/card-tag.component';
 import { CardAvatarComponent } from './card-avatar/card-avatar.component';
 import { AngularMaterialModule } from '../angular-material.module';
 import { FooterFormActionsComponent } from './footer-form-actions/footer-form-actions.component';
@@ -30,7 +29,6 @@ import { DialogComponent } from './dialog/dialog.component';
     CardComponent,
     CardDisplayComponent,
     CardHorizontalComponent,
-    CardTagComponent,
     CardAvatarComponent,
     CardWithoutImageComponent,
     FooterFormActionsComponent,
@@ -54,7 +52,6 @@ import { DialogComponent } from './dialog/dialog.component';
     CardComponent,
     CardDisplayComponent,
     CardHorizontalComponent,
-    CardTagComponent,
     CardAvatarComponent,
     CardWithoutImageComponent,
     FooterFormActionsComponent,

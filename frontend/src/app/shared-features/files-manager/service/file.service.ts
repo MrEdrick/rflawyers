@@ -2,12 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BaseService } from '../../../services/base.service';
-import { BASE_BACKEND_PATH_ADM } from '../../../common/const/base-backend-path.const';
+import { BASE_BACKEND_PATH } from '../../../common/const/base-backend-path.const';
 
 @Injectable()
 export class FilesService extends BaseService {
     constructor(http: HttpClient) {
-        super(BASE_BACKEND_PATH_ADM + 'files', http);
+        super(BASE_BACKEND_PATH + 'files', http);
     }
 
     public selectFilesPaths(datas: {}): Observable<any> {

@@ -10,17 +10,11 @@ import { UserFormComponent } from './users/form/user-form.component';
 import { UsersService } from './service/users.service';
 import { AdministrationRoutingModule } from '../administration-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ShippingWaysCardsComponent } from './shipping-ways/cards/shipping-ways-cards.component';
-import { ShippingWaysService } from './service/shipping-ways.service';
-import { ShippingConfigurationsService } from './service/shipping-configurations.service';
-import { ShippingWayFormComponent } from './shipping-ways/form/shipping-way-form.component';
 
 @NgModule({
   declarations: [
     UsersCardsComponent,
-    UserFormComponent,
-    ShippingWaysCardsComponent,
-    ShippingWayFormComponent,
+    UserFormComponent
    ],
   imports: [
     CommonModule,
@@ -34,14 +28,10 @@ import { ShippingWayFormComponent } from './shipping-ways/form/shipping-way-form
   ],
   exports: [
     UsersCardsComponent,
-    UserFormComponent,
-    ShippingWaysCardsComponent,
-    ShippingWayFormComponent,
+    UserFormComponent
   ],
   providers: [
     UsersService,
-    ShippingWaysService,
-    ShippingConfigurationsService,
     {provide: LOCALE_ID, useValue: 'pt-BR'},
     {provide: ErrorHandler, useClass: AppErrorHandler}
   ],
