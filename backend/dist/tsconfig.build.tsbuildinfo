@@ -4007,7 +4007,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/user-auth/user-auth.controller.ts": {
-        "version": "a0dfb8ae32492fb0f0fb99369954d7f2d05a122f61397a735f381f69e31c9b6b",
+        "version": "0e8a878500048a1f30d4fa85bc399d4413d9ae14aa8d300d1b712ba27493a591",
         "signature": "5241b8e8e02e85ce93d578ed639dc6eb382146aabf7ab748a13f3ca76c2d646f",
         "affectsGlobalScope": false
       },

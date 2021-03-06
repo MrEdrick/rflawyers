@@ -8,6 +8,11 @@ const routes: Routes = [
     redirectTo: 'website/index',
   },
   {
+    path: 'website',
+    loadChildren: () => import('./website/website.module').then(module => module.WebsiteModule),
+    runGuardsAndResolvers: 'always'
+  },
+  {
     path: 'adm',
     loadChildren: () => import('./administration/administration.module').then(module => module.AdministrationModule),
     runGuardsAndResolvers: 'always'

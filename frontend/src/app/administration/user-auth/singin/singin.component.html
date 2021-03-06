@@ -1,7 +1,8 @@
 <form [formGroup]="singInForm" novalidate (ngSubmit)="onSubmit()"
   class="sing-in-wrapper" fxLayout="row" fxLayoutAlign="center center">
   <mat-card class="box">
-    <mat-card-header>
+    <mat-card-header 
+      style="margin-bottom: 16px;">
       <mat-card-title>Entrar</mat-card-title>
     </mat-card-header>
 
@@ -25,8 +26,20 @@
       </span>
     
     </mat-card-content>
-    <button mat-raised-button color="accent" class="btn-block">Entrar</button>
-    <button mat-raised-button style="margin-top: 16px;" (click)="onClick()"
-      color="primary" class="btn-block">Cadastrar</button>
+    
+    <button 
+      mat-raised-button
+      class="btn-block"
+      style="background-color: #005683; color: #d0d3d4;">
+      Entrar
+    </button>
+    
+    <button 
+      mat-raised-button 
+      (click)="onClick()"
+      style="margin-top: 16px; background-color: #d0d3d4; color: #212322;"
+      class="btn-block">
+      Cadastrar
+    </button>
   </mat-card>
 </form>

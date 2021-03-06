@@ -5,7 +5,7 @@ import { User } from '../configurations/users/user.entity';
 import { AuthEmailConfirmationDto } from './dto/auth-email-confirmation.dto';
 import { AuthResetPasswordDto } from './dto/auth-reset-password.dto';
 
-@Controller('adm/user-auth')
+@Controller('user-auth')
 export class UserAuthController {
     constructor(private service: UserAuthService) { }
 

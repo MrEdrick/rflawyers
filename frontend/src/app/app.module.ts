@@ -1,18 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { CUSTOM_ELEMENTS_SCHEMA, DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule, Injector } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Injector, DEFAULT_CURRENCY_CODE } from '@angular/core';
+import { HttpClientModule, HttpRequest } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { WebsiteModule } from './website/website.module';
-import { CommonModule } from '@angular/common';
-import { EffectsModule } from './effects/effects.module';
-import { HttpClientModule } from '@angular/common/http';
 import { SharedComponentsModule } from './shared-components/shared-components.module';
+import { JwtModule } from '@auth0/angular-jwt';
+import { CommonModule, registerLocaleData } from '@angular/common';
 
-import { InjectorService } from './services/injector.service';
 import { AdministrationModule } from './administration/administration.module';
+import { WebsiteModule } from './website/website.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { BASE_BACKEND_PATH } from './common/const/base-backend-path.const';
+
+import { LOCALE_ID } from '@angular/core';
+
+import localePt from '@angular/common/locales/pt';
+import { InjectorService } from './services/injector.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { EffectsModule } from './effects/effects.module';
+
+registerLocaleData(localePt, 'pt-BR');
+
+export function getToken() {
+  return Promise.resolve(localStorage.getItem('access_token'));
+}
 
 @NgModule({
   declarations: [
@@ -28,9 +40,17 @@ import { AdministrationModule } from './administration/administration.module';
     EffectsModule,
     SharedComponentsModule,
     AdministrationModule,
-    WebsiteModule
+    WebsiteModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: getToken,
+        allowedDomains: ['localhost:3000'],
+        authScheme: 'Bearer '
+      },
+    })
   ],
   providers: [
+    JwtModule,
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' }
   ],

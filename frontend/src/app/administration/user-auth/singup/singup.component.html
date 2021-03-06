@@ -1,7 +1,8 @@
 <form [formGroup]="singUpForm" novalidate (ngSubmit)="onSubmit()"
   class="sing-up-wrapper" fxLayout="row" fxLayoutAlign="center center">
   <mat-card class="box">
-    <mat-card-header>
+    <mat-card-header
+      style="margin-bottom: 16px;">
       <mat-card-title>Cadastre-se</mat-card-title>
     </mat-card-header>
 
@@ -34,10 +35,11 @@
           <strong>Senha do usuário obrigatório</strong>
         </mat-error>
       </mat-form-field>
-      
+
       <mat-form-field fxFlex="50">
         <input matInput placeholder="Confirmação de senha"
-          formControlName="passwordConfirmation" [type]="hideConfirmation ? 'password' :
+          formControlName="passwordConfirmation" [type]="hideConfirmation ?
+          'password' :
           'text'">
         <mat-icon matSuffix (click)="hideConfirmation= !hideConfirmation">{{hideConfirmation
           ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -49,6 +51,11 @@
 
     </mat-card-content>
 
-    <button mat-raised-button color="primary" class="btn-block">Cadastrar</button>
+    <button 
+      mat-raised-button 
+      style="background-color: #005683; color: #d0d3d4;"
+      class="btn-block">
+      Cadastrar
+    </button>
   </mat-card>
 </form>

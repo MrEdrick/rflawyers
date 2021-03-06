@@ -74,7 +74,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserAuthController.prototype, "resetPassword", null);
 UserAuthController = __decorate([
-    common_1.Controller('adm/user-auth'),
+    common_1.Controller('user-auth'),
     __metadata("design:paramtypes", [user_auth_service_1.UserAuthService])
 ], UserAuthController);
 exports.UserAuthController = UserAuthController;
