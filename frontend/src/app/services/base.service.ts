@@ -22,7 +22,7 @@ export class BaseService {
     return this.http.get(this.url + '/' + id)
       .pipe(
         map(
-          (response: any) => response.json(),
+          (response: any) => response,
 
         ),
         catchError((error) => {
@@ -35,7 +35,7 @@ export class BaseService {
     return this.http.get(this.url)
       .pipe(
         map(
-          (response: any) => response.json(),
+          (response: any) => response,
 
         ),
         catchError((error) => {
@@ -54,7 +54,7 @@ export class BaseService {
     return this.http.get(this.url, { params: httpParams })
       .pipe(
         map(
-          (response: any) => response.json(),
+          (response: any) => response,
 
         ),
         catchError((error) => {
@@ -67,7 +67,7 @@ export class BaseService {
     return this.http.post(this.url, resource)
       .pipe(
         map(
-          (response: any) => response.json(),
+          (response: any) => response,
         ),
         catchError((error) => {
           return this.handleError(error);
@@ -79,7 +79,7 @@ export class BaseService {
     return this.http.patch(this.url, resource)
       .pipe(
         map(
-          (response: any) => response.json(),
+          (response: any) => response,
         ),
         catchError((error) => {
           return this.handleError(error);
@@ -91,7 +91,7 @@ export class BaseService {
     return this.http.delete(this.url + '/' + id)
       .pipe(
         map(
-          (response: any) => response.json(),
+          (response: any) => response,
         ),
         catchError((error) => {
           return this.handleError(error);
@@ -103,7 +103,7 @@ export class BaseService {
     return this.http.get(this.url + '/' + path)
       .pipe(
         map(
-          (response: any) => response.json(),
+          (response: any) => response,
         ),
         catchError((error) => {
           return this.handleError(error);

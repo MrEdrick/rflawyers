@@ -12,7 +12,7 @@ export class UplaodImageComponent implements OnInit, OnDestroy {
   private destroy: Subject<any> = new Subject();
 
   @Input()
-  selectedImageFile: File;
+  selectedImageFile!: File;
 
   showImageUploadButton = false;
 
@@ -52,11 +52,11 @@ export class UplaodImageComponent implements OnInit, OnDestroy {
     this.showImageUploadButton = !this.showImageUploadButton;
   }
 
-  onUploadImage(fileUpload) {
+  onUploadImage(fileUpload: any) {
     (fileUpload as HTMLElement).click();
   }
 
-  onChangeFile($event) {
+  onChangeFile($event: any) {
     if ($event.target.files && $event.target.files[0]) {
       const fileReader = new FileReader();
       this.selectedImageFile = $event.target.files[0];

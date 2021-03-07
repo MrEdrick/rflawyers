@@ -32,6 +32,7 @@ exports.storageImage = {
     storage: multer_1.diskStorage({
         destination: (req, file, cb) => {
             const path = './' + BASE_PATH_IMAGES + req.body.tableName;
+            console.log(path);
             fs.mkdirSync(path, { recursive: true });
             cb(null, path);
         },
@@ -138,7 +139,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], FilesController.prototype, "getUploadedImages", null);
 FilesController = __decorate([
-    common_1.Controller('adm/files'),
+    common_1.Controller('files'),
     __metadata("design:paramtypes", [files_service_1.FilesService])
 ], FilesController);
 exports.FilesController = FilesController;

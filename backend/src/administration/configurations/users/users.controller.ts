@@ -7,7 +7,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { UpdateUserPasswordDto } from './dto/update-user-password.dto';
 import { AuthGuard } from '@nestjs/passport';
 
-@Controller('adm/users')
+@Controller('users')
 export class UsersController {
     constructor(private service: UsersService) { }
 

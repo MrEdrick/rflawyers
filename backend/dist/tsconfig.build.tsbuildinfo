@@ -4117,7 +4117,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/files-manager/file.repository.ts": {
-        "version": "372e0c264f60a776cfb456bcc82067c57b1bd9b3750b99f10405dbdce9542a74",
+        "version": "d3edaaf2465db2fbe97dc3022c25e2191f0fdff971889c3ec3bace6829c4288a",
         "signature": "4db33e03d647f629bb9eae1040b37bea9651890194f709a94c3ed9950320fbb8",
         "affectsGlobalScope": false
       },
@@ -4217,7 +4217,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/files-manager/files.controller.ts": {
-        "version": "2b4b44284451800fcbbc6c3f16f715d08d14f49fee8ff613e38a24b3bb8af0de",
+        "version": "787135372ba617eb19853519be0e1cfa9616b3463e2b22abc2af9d0d01a53d24",
         "signature": "08848f962497b52c51779a6446a573c8cce1a27ba2f98df286f1e847f53a6049",
         "affectsGlobalScope": false
       },
@@ -4227,7 +4227,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/configurations/users/users.controller.ts": {
-        "version": "4ed9bc77ad186710fa98f9ec45f51ea9982c90d7e5896f4e998f75cb3689dddf",
+        "version": "0772c1bef0b7bd30572d4c921dce5069a6bae1ee3e12017e037937fd31c2543f",
         "signature": "b4e56af721ca6e9331f238e85c685126a3f16e396f0e4b4d982695d61e19f2e9",
         "affectsGlobalScope": false
       },

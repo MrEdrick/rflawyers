@@ -11,8 +11,7 @@ import { DialogService } from '../../../shared-features/dialog-presenter/service
   templateUrl: './singin.component.html',
   styleUrls: ['./singin.component.scss']
 })
-export class SingInComponent implements OnInit, OnDestroy {
-  private destroy: Subject<any> = new Subject();
+export class SingInComponent implements OnInit {
 
   hide = true;
 
@@ -31,35 +30,34 @@ export class SingInComponent implements OnInit, OnDestroy {
     private dialogService: DialogService) { }
 
   ngOnInit(): void {
-    this.route.queryParamMap.pipe(takeUntil(this.destroy)).subscribe(queryParam => {
+    this.route.queryParamMap.toPromise().then(queryParam => {
       const confirmationToken = queryParam.get('confirmationToken');
 
       if (confirmationToken) {
         this.authService.emailConfirmation({ confirmationToken })
-          .pipe(takeUntil(this.destroy))
-          .subscribe(
+          .toPromise()
+          .then(
             () => {
               this.dialogService.showAlert('E-mail confirmado com sucesso!');
-            },
-            (error) => {
-              this.dialogService.showAlert('Ocorreu algum erro durante o processo de confirmação do e-mail. Erro: ' + error);
-            });
+            })
+          .catch((error) => {
+            this.dialogService.showAlert('Ocorreu algum erro durante o processo de confirmação do e-mail. Erro: ' + error);
+          });
       }
     });
   }
 
-  ngOnDestroy(): void {
-    this.destroy.next();
-    this.destroy.complete();
-  }
-
   onSubmit() {
     this.authService.singin(this.singInForm.value)
-      .pipe(takeUntil(this.destroy))
-      .subscribe(() => {
+      .toPromise()
+      .then(() => {
+        console.log(this.authService);
         if (this.authService.isLoggedIn()) {
           this.router.navigate(['/adm/navigation-menu']);
         }
+      })
+      .catch((error) => {
+        console.log(error)
       });
   }
 
@@ -70,14 +68,14 @@ export class SingInComponent implements OnInit, OnDestroy {
   onRecoverPassword() {
     if (this.singInControls.email.value) {
       this.authService.recoverPassword({ email: this.singInControls.email.value })
-        .pipe(takeUntil(this.destroy))
-        .subscribe(
+        .toPromise()
+        .then(
           () => {
             this.dialogService.showAlert('Será enviado um e-mail para recuperação de senha.');
-          },
-          (error) => {
-            this.dialogService.showAlert('Houve algum problema durante o envio do e-mail para recuperação de senha. Error: ' + error);
-          });
+          })
+        .catch((error) => {
+          this.dialogService.showAlert('Houve algum problema durante o envio do e-mail para recuperação de senha. Error: ' + error);
+        });
     }
   }
 }

@@ -13,7 +13,7 @@ const { v4: uuidv4 } = require('uuid');
 const DATA_BASE_SCHEMA = 'public';
 let FileRepository = class FileRepository {
     async updateRecordWithFilePath(filePathFolder, fileName, uploadFileDto) {
-        const filePath = 'http://localhost:3000/adm/' + filePathFolder + fileName;
+        const filePath = 'http://localhost:3000/api/' + filePathFolder + fileName;
         const { tableName, columnName, tableId } = uploadFileDto;
         const response = await typeorm_1.getConnection().query(`update ${DATA_BASE_SCHEMA}.${tableName}
             set ${columnName} = '${filePath}'

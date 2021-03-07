@@ -1,7 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { UsersService } from '../../service/users.service';
 import { UserDto } from '../dto/user.dto';
 
@@ -10,28 +8,27 @@ import { UserDto } from '../dto/user.dto';
   templateUrl: './users-cards.component.html',
   styleUrls: ['./users-cards.component.scss']
 })
-export class UsersCardsComponent implements OnInit, OnDestroy {
-  private destroy: Subject<any> = new Subject();
+export class UsersCardsComponent implements OnInit {
 
   users: UserDto[] = [];
 
-  constructor(private router: Router, private route: ActivatedRoute, private usersService: UsersService) { }
-
-  ngOnDestroy(): void {
-    this.destroy.next();
-    this.destroy.complete();
-  }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private usersService: UsersService) { }
 
   ngOnInit() {
     this.usersService.getAll()
-      .pipe(takeUntil(this.destroy))
-      .subscribe(users => this.users = users);
+      .toPromise()
+      .then(users => {
+        this.users = users;
+      });
   }
 
   onDelete(id: string) {
     this.usersService.delete(id)
-      .pipe(takeUntil(this.destroy))
-      .subscribe(users => console.log(users));
+      .toPromise()
+      .then(users => console.log(users));
   }
 
   onDblClick(id: string) {

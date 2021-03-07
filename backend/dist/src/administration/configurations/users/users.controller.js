@@ -91,7 +91,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "updatePassword", null);
 UsersController = __decorate([
-    common_1.Controller('adm/users'),
+    common_1.Controller('users'),
     __metadata("design:paramtypes", [users_service_1.UsersService])
 ], UsersController);
 exports.UsersController = UsersController;

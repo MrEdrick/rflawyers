@@ -16,6 +16,7 @@ export class AuthService extends BaseService {
 
     public singin(value: any): Observable<any> {
         return super.post('singin', value).pipe(map((response) => {
+            localStorage.setItem(this.ACCESS_TOKEN, response.accessToken);
             return response;
         }));
     }

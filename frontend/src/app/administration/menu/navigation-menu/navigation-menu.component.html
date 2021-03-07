@@ -29,7 +29,10 @@
 
   <mat-sidenav-content fxLayout="column" fxFlexAlign="stretch">
 
-    <mat-toolbar color="primary" fxFlexAlign="start center" fxFlex="10"
+    <mat-toolbar 
+      style="background-color: #005683; color: #d0d3d4;"
+      fxFlexAlign="start center" 
+      fxFlex="10"
       fxLayout="row" fxLayoutGap="16px">
       <button fxFlexAlign="center center" type="button" aria-label="Toggle
         sidenav" mat-icon-button (click)="drawer.toggle()">
@@ -40,7 +43,7 @@
 
       <app-profile-tag
         fxFlex="22"
-        [image]="user.image"
+        [image]="user.image || 'assets/images/no-image.jpg'"
         [name]="user.username"
         [email]="user.email"
         (logoutClick)="onLogout()">

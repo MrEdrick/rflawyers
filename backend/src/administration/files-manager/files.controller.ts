@@ -19,6 +19,7 @@ export const storageImage = {
     storage: diskStorage({
         destination: (req, file, cb) => {
             const path = './' + BASE_PATH_IMAGES + req.body.tableName;
+            console.log(path);
             fs.mkdirSync(path, { recursive: true });
             cb(null, path);
         },
@@ -28,7 +29,7 @@ export const storageImage = {
     })
 }
 
-@Controller('adm/files')
+@Controller('files')
 export class FilesController {
     constructor(private fileService: FilesService) { }
 

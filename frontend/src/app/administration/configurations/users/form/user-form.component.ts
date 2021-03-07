@@ -15,14 +15,12 @@ import { GENERIC_SAVE_ERROR_MESSAGE } from '../../../../common/const/error-messa
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.scss']
 })
-export class UserFormComponent implements OnInit, OnDestroy {
-  private destroy: Subject<any> = new Subject();
-
+export class UserFormComponent implements OnInit {
   @ViewChild('uploadImageMobile')
-  uploadImageMobileComponent: UplaodImageComponent;
+  uploadImageMobileComponent!: UplaodImageComponent;
 
   @ViewChild('uploadImageDesktop')
-  uploadImageDesktopComponent: UplaodImageComponent;
+  uploadImageDesktopComponent!: UplaodImageComponent;
 
   submitError = '';
 
@@ -51,40 +49,39 @@ export class UserFormComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private dialogService: DialogService) { }
 
-  ngOnDestroy(): void {
-    this.destroy.next();
-    this.destroy.complete();
-  }
-
   ngOnInit() {
-    this.route.paramMap
-      .pipe(takeUntil(this.destroy))
-      .subscribe(params => {
-        this.formControls.id.setValue(params.get('id'));
+    const id = this.route.snapshot.params.id;
 
-        if (this.formControls.id.value) {
-          this.usersService.getId(this.formControls.id.value)
-            .pipe(takeUntil(this.destroy))
-            .subscribe(user => {
-              this.formControls.name.setValue(user.name);
-              this.formControls.email.setValue(user.email);
-              this.formControls.username.setValue(user.username);
-              this.formControls.active.setValue(user.active);
-              this.formControls.isAdministrator.setValue(user.isAdministrator);
+    if (id) {
+      this.formControls.id.setValue(id);
+
+      if (this.formControls.id.value) {
+        this.usersService.getId(this.formControls.id.value)
+          .toPromise()
+          .then(user => {
+            this.formControls.name.setValue(user.name);
+            this.formControls.email.setValue(user.email);
+            this.formControls.username.setValue(user.username);
+            this.formControls.active.setValue(user.active);
+            this.formControls.isAdministrator.setValue(user.isAdministrator);
+            
+            if (user.image) {
               this.formControls.image.setValue(user.image);
-
-              this.uploadImageMobileComponent.image = user.image;
-              this.uploadImageDesktopComponent.image = user.image;
-            });
-        }
-      });
+            } 
+              
+            this.uploadImageMobileComponent.image = user.image;
+            this.uploadImageDesktopComponent.image = user.image;
+          });
+      }
+    }
   }
 
   onClickSubmit() {
     console.log(this.form.value);
     if (this.formControls.id.value) {
       this.usersService.update(this.form.value)
-        .subscribe(
+        .toPromise()
+        .then(
           () => {
             this.uplaodImages();
             this.location.back();
@@ -95,7 +92,8 @@ export class UserFormComponent implements OnInit, OnDestroy {
           });
     } else {
       this.usersService.create(this.form.value)
-        .subscribe(
+        .toPromise()
+        .then(
           response => {
             if (response?.id) {
               this.formControls.id.setValue(response.id);
@@ -134,8 +132,8 @@ export class UserFormComponent implements OnInit, OnDestroy {
   onResetPassword() {
     if (this.formControls.email.value) {
       this.authService.recoverPassword({ email: this.formControls.email.value })
-        .pipe(takeUntil(this.destroy))
-        .subscribe((response) => {
+        .toPromise()
+        .then((response) => {
           console.log(response);
         });
     }

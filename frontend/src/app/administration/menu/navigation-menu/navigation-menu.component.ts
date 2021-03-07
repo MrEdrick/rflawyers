@@ -14,11 +14,11 @@ import { UserDto } from '../../configurations/users/dto/user.dto';
 export class NavigationMenuComponent implements OnInit, OnDestroy {
   private destroy: Subject<any> = new Subject();
 
-  subscription: Subscription;
+  subscription!: Subscription;
 
   pageName = 'Dashboard';
 
-  user: UserDto;
+  user!: UserDto;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
