@@ -44,7 +44,7 @@ export function getToken() {
     JwtModule.forRoot({
       config: {
         tokenGetter: getToken,
-        allowedDomains: ['localhost:3000'],
+        allowedDomains: ['http://127.0.0.1:3000'], //localhost:3000
         authScheme: 'Bearer '
       },
     })
