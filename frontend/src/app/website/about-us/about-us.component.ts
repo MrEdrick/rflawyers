@@ -24,12 +24,12 @@ export class AboutUsComponent implements OnInit {
       name: 'Dolimar Pimentel',
       image: '/assets/images/dolimar.jpg',
       expertises: 'Direito Sindical, Civil, Constitucional e    Tributário.'
-    },
-    {
-      name: 'Dara Mazula',
-      image: '/assets/images/dara.jpg',
-      expertises: 'Direito Civil.'
-    }
+    }//,
+    //{
+    //  name: 'Dara Mazula',
+    //  image: '/assets/images/dara.jpg',
+    //  expertises: 'Direito Civil.'
+    //}
   ];
 
   constructor() { }

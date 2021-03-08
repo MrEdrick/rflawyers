@@ -19,6 +19,7 @@ import { CallToActionComponent } from './call-to-action/call-to-action.component
 import { EmailSenderComponent } from './email-sender-form/email-sender.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmailSenderService } from './email-sender-form/email-sender.service';
+import { CurriculumCardComponent } from './curriculum-card/curriculum-card.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { EmailSenderService } from './email-sender-form/email-sender.service';
     ExpertiseCardComponent,
     AboutUsComponent,
     AboutUsCardComponent,
+    CurriculumCardComponent,
     OurStoryComponent,
     PhilosophyComponent,
     CallToActionComponent,
@@ -53,6 +55,7 @@ import { EmailSenderService } from './email-sender-form/email-sender.service';
     ExpertiseCardComponent,
     AboutUsComponent,
     AboutUsCardComponent,
+    CurriculumCardComponent,
     OurStoryComponent,
     PhilosophyComponent,
     FooterComponent,

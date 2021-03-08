@@ -1,0 +1,23 @@
+<mat-card
+    appElevationEffect
+    class="about-us-card"
+    fxFlex
+    fxLayout="row wrap"
+    fxLayoutAlign="space-evenly center">
+
+    <div
+        fxFlex="30%"
+        class="about-us-image"
+        [ngStyle]="{'background-image': 'url(' + image + ')', 'margin': '4px' }">
+    </div>
+
+    <mat-card-content
+        fxFlex="auto">
+
+        <h1>{{name}}</h1>
+
+        <p style="white-space: normal;">
+            {{expertises}}
+        </p>
+    </mat-card-content>
+</mat-card>
