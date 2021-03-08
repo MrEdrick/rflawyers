@@ -13,8 +13,8 @@ const DATA_BASE_SCHEMA = 'public';
 @Injectable()
 export class FileRepository {
     async updateRecordWithFilePath(filePathFolder: string, fileName: string, uploadFileDto: UploadFileDto): Promise<string> {
-        const filePath = 'http://localhost:3000/api/' + filePathFolder + fileName;
-        //'http://99.79.89.235/api/'
+        const filePath = 'http://99.79.89.235/api/' + filePathFolder + fileName;
+        //'http://localhost:3000/api/'
 
         const { tableName, columnName, tableId } = uploadFileDto;
 
