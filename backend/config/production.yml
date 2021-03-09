@@ -1,5 +1,5 @@
 server:
-  origin: http://127.0.0.1:80 ##http://localhost:4200
+  origin: https://127.0.0.1:80 ##http://localhost:4200
 
 db:
   synchronize: false
