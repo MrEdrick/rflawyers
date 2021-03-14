@@ -7,6 +7,8 @@ import { UsersCardsComponent } from './configurations/users/cards/users-cards.co
 import { UserFormComponent } from './configurations/users/form/user-form.component';
 import { NavigationMenuComponent } from './menu/navigation-menu/navigation-menu.component';
 import { ResetPasswordComponent } from './user-auth/reset-password/reset-password.component';
+import { LawyerFormComponent } from './lawyers-registrations/lawyers/form/lawyer-form.component';
+import { LawyersCardsComponent } from './lawyers-registrations/lawyers/cards/lawyers-cards.component';
 
 const routes: Routes = [
   { path: 'singin', component: SingInComponent },
@@ -21,6 +23,10 @@ const routes: Routes = [
       { path: 'users/user/:id', component: UserFormComponent },
       { path: 'users/user', component: UserFormComponent },
       { path: 'users', component: UsersCardsComponent },
+
+      { path: 'lawyers/lawyer/:id', component: LawyerFormComponent },
+      { path: 'lawyers/lawyer', component: LawyerFormComponent },
+      { path: 'lawyers', component: LawyersCardsComponent },
     ]
   },
 ];

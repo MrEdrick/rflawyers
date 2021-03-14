@@ -1,0 +1,26 @@
+<div
+  class="content"
+  fxLayout="row wrap">
+  <app-card
+    *ngFor="let lawyer of lawyers"
+    style="margin:16px 16px 16px 0px;"
+    fxFlex="30%" fxFlex.xs="100%"
+    fxFlex.sm="33%"
+    [title]="lawyer.firstName"
+    [subtitle]="lawyer.lastName"
+    [content]="lawyer.description"
+    [cardImages]="[lawyer.image]"
+    (clickDeleteButton)="onDelete(lawyer.id)"
+    (dblclick)="onDblClick(lawyer.id)">
+  </app-card>
+</div>
+
+<a routerLink="./lawyer">
+  <button
+    style="background-color: #005683; color: #d0d3d4;"
+    mat-fab
+    class="fab-add"
+    fxLayoutAlign="center">
+    <mat-icon>add</mat-icon>
+  </button>
+</a>

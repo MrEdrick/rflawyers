@@ -1,7 +1,7 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, Unique, OneToMany } from "typeorm";
 import { CreateUserDto } from "./dto/create-user.dto";
 import { UpdateUserDto } from "./dto/update-user.dto";
-import { UpdateUserPasswordDto } from "./dto/update-user-password.dto";
+import { Lawyer } from "src/administration/lawyers-registrations/lawyers/lawyer.entity";
 
 import * as bcrypt from 'bcrypt';
 import * as crypto from "crypto";
@@ -49,6 +49,9 @@ export class User extends BaseEntity {
 
     @Column()
     insertionDateTime: Date;
+
+    @OneToMany(type => Lawyer, lawyer => lawyer.user, { eager: false })
+    lawyers: Lawyer[];
 
     async validatePassword(password: string): Promise<boolean> {
         return this.password === (await bcrypt.hash(password, this.salt));

@@ -1,0 +1,103 @@
+<form
+  novalidate
+  [formGroup]="form"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  fxFill
+  fxFlex="auto">
+
+  <div
+    fxLayout="column"
+    fxFill
+    fxFlex="auto"
+    class="sheet
+    mat-elevation-z4">
+
+    <mat-card-header>
+      <mat-card-title>{{formControls.firstName.value}} {{formControls.lastName.value}}</mat-card-title>
+      <!--mat-card-subtitle>{{formControls.code.value}}</mat-card-subtitle-->
+    </mat-card-header>
+
+    <mat-card-content
+      fxFlex="auto"
+      fxLayout="row"
+      fxLayout.lt-md="column"
+      fxLayoutAlign="space-around center">
+
+      <mat-card
+        class="picture-container"
+        fxFlex="30"
+        fxFlex.lt-md="40"
+        fxShow.gt-sm
+        fxHide.lt-md>
+
+        <app-uplaod-image
+          style="height: 300px;"
+          fxShow.gt-sm fxHide.lt-md
+          #uploadImage></app-uplaod-image>
+
+      </mat-card>
+
+      <div 
+        fxFlex="60"
+        fxLayout="column wrap"
+        fxLayoutAlign="center stretch"
+        fxFlexAlign="stretch">
+
+        <div 
+          fxLayout="row"
+          fxFlexAlign="stretch"
+          fxLayoutAlign="start center"
+          fxLayoutGap="16px">
+
+          <mat-form-field 
+            fxFlex="50" 
+            fxFlex.lt-md="70">
+            
+            <input matInput placeholder="Primeiro nome" formControlName="firstName">
+            
+            <mat-error *ngIf="formControls.firstName.hasError('required')">
+              <strong>Primeiro nome obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+          
+          <mat-checkbox fxFlex class="mat-checkbox" placeholder="active"
+            formControlName="active">Ativo
+          </mat-checkbox>
+        </div>
+
+        <mat-form-field 
+          fxFlexAlign="stretch">
+
+          <input matInput placeholder="Segundo Nome" formControlName="lastName">
+          
+          <mat-error *ngIf="formControls.lastName.hasError('required')">
+            <strong>Segundo nome obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field 
+          fxFlexAlign="stretch">
+          
+          <textarea 
+            placeholder="Descrição" 
+            formControlName="description"
+            matInput 
+            cdkTextareaAutosize 
+            CdkTextareaAutosize
+            cdkAutosizeMinRows="1" 
+            cdkAutosizeMaxRows="6">
+          </textarea>
+          
+          <mat-error *ngIf="formControls.description.hasError('required')">
+            <strong>Descrição obrigatória</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <app-footer-form-actions (submitClick)="onClickSubmit()"
+      (cancelClick)="onClickCancel()">
+    </app-footer-form-actions>
+  </div>
+</form>
