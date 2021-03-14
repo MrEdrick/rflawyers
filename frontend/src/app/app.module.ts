@@ -11,8 +11,6 @@ import { WebsiteModule } from './website/website.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { BASE_BACKEND_PATH } from './common/const/base-backend-path.const';
-
 import { LOCALE_ID } from '@angular/core';
 
 import localePt from '@angular/common/locales/pt';
@@ -44,7 +42,7 @@ export function getToken() {
     JwtModule.forRoot({
       config: {
         tokenGetter: getToken,
-        allowedDomains: ['http://127.0.0.1:3000'], //localhost:3000
+        allowedDomains: ['https://99.79.89.235:3000'], // localhost:3000 http://127.0.0.1:3000
         authScheme: 'Bearer '
       },
     })

@@ -3,9 +3,12 @@
     style="display: none;" (change)="this.onChangeFile($event)" />
 <img [src]="image" alt="Sem imagem"
     (click)="this.onImageClick()">
-<button type="button" *ngIf="showImageUploadButton"
+<button 
+    type="button" 
+    *ngIf="showImageUploadButton"
+    style="background-color: #005683; color: #d0d3d4;"
     class="fab-img-upload"
-    mat-fab color="accent"
+    mat-fab
     fxLayoutAlign="center" (click)="this.onUploadImage(fileUpload)">
     <mat-icon>edit</mat-icon>
 </button>

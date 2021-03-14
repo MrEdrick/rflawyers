@@ -15,7 +15,7 @@ export class Lawyer extends BaseEntity {
     userId: string;
     
     @Column()
-    fisrtName: string;
+    firstName: string;
 
     @Column()
     lastName: string;

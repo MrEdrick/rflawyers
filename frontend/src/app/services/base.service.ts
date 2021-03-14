@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { BadInput } from '../common/error-handler/bad-input';
 import { NotFoundError } from '../common/error-handler/not-found-error';
 import { AppError } from '../common/error-handler/app-error';
@@ -11,15 +11,19 @@ import { Observable, throwError } from 'rxjs';
 
 export class BaseService {
   private dialogService: DialogService;
+  private headers!: HttpHeaders;
 
   constructor(
     private url: string,
     private http: HttpClient) {
+
     this.dialogService = InjectorService.injector.get(DialogService);
+    this.headers = new HttpHeaders()
+      .set('Access-Control-Allow-Origin', '*');
   }
 
   getId(id: any): Observable<any> {
-    return this.http.get(this.url + '/' + id)
+    return this.http.get(this.url + '/' + id, { headers: this.headers })
       .pipe(
         map(
           (response: any) => response,
@@ -32,7 +36,7 @@ export class BaseService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get(this.url)
+    return this.http.get(this.url, { headers: this.headers })
       .pipe(
         map(
           (response: any) => response,
@@ -51,7 +55,7 @@ export class BaseService {
       httpParams = httpParams.append(paramDto.key, paramDto.value);
     });
 
-    return this.http.get(this.url, { params: httpParams })
+    return this.http.get(this.url, { headers: this.headers, params: httpParams })
       .pipe(
         map(
           (response: any) => response,
@@ -64,7 +68,7 @@ export class BaseService {
   }
 
   create(resource: any): Observable<any> {
-    return this.http.post(this.url, resource)
+    return this.http.post(this.url, resource, { headers: this.headers })
       .pipe(
         map(
           (response: any) => response,
@@ -76,7 +80,7 @@ export class BaseService {
   }
 
   update(resource: any): Observable<any> {
-    return this.http.patch(this.url, resource)
+    return this.http.patch(this.url, resource, { headers: this.headers })
       .pipe(
         map(
           (response: any) => response,
@@ -88,7 +92,7 @@ export class BaseService {
   }
 
   delete(id: any): Observable<any> {
-    return this.http.delete(this.url + '/' + id)
+    return this.http.delete(this.url + '/' + id, { headers: this.headers })
       .pipe(
         map(
           (response: any) => response,
@@ -100,7 +104,7 @@ export class BaseService {
   }
 
   get(path: any): Observable<any> {
-    return this.http.get(this.url + '/' + path)
+    return this.http.get(this.url + '/' + path, { headers: this.headers })
       .pipe(
         map(
           (response: any) => response,
@@ -112,7 +116,7 @@ export class BaseService {
   }
 
   post(path: any, resource: any, options?: any): Observable<any> {
-    return this.http.post(this.url + '/' + path, resource)
+    return this.http.post(this.url + '/' + path, resource, { headers: this.headers })
       .pipe(
         map(
           (response: any) => {

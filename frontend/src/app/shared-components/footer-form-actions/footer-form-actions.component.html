@@ -1,9 +1,19 @@
-<mat-card-actions 
+<mat-card-actions
     style="margin: 16px 0px 16px 0px;"
     fxFlex="grow"
     fxLayoutGap="16px"
-    dir="rtl" 
+    dir="rtl"
     [ngStyle]="{'margin-right.px': marginRight}">
-    <button *ngIf="showSubmitButton" mat-raised-button color="primary" type="button" (click)="this.submitClick.emit()">Salvar</button>
-    <button *ngIf="showCancelButton" mat-raised-button color="warn" type="button" (click)="this.cancelClick.emit()">Cancelar</button>
+    <button
+        style="background-color: #d0d3d4; color: #212322;"
+        *ngIf="showSubmitButton"
+        mat-raised-button type="button"
+        (click)="this.submitClick.emit()">Salvar
+    </button>
+    <button
+        style="background-color: #005683; color: #d0d3d4;"
+        *ngIf="showCancelButton"
+        mat-raised-button
+        type="button"
+        (click)="this.cancelClick.emit()">Cancelar</button>
 </mat-card-actions>

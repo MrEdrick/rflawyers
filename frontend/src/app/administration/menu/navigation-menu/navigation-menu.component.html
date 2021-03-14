@@ -1,12 +1,45 @@
-<mat-sidenav-container class="sidenav-container" fxLayoutAlign="center start"
+<mat-sidenav-container 
+  class="sidenav-container"
+  fxLayoutAlign="center start"
   fxLayout="column">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$
-    | async) ? 'dialog' : 'navigation'"
-    [mode]="'over'" [opened]="false">
+  
+  <mat-sidenav 
+    #drawer
+    class="sidenav"
+    fixedInViewport 
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="'over'" 
+    [opened]="false">
+    
     <mat-toolbar></mat-toolbar>
+    
     <mat-nav-list>
-      <a mat-list-item style="padding: 0 8px;" routerLinkActive="active current"
-        (click)="onChangePageName('Deshboard')" routerLink="./">Dashboard</a>
+      <a 
+        mat-list-item 
+        style="padding: 0 8px;" 
+        routerLinkActive="active current"
+        (click)="onChangePageName('Deshboard')" 
+        routerLink="./">Dashboard
+      </a>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Cadastros
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-nav-list>
+          <a 
+            mat-list-item 
+            routerLinkActive="active current"
+            routerLink="./lawyers" 
+            (click)="onChangePageName('Lista de Advogados')">
+            Advogados
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>

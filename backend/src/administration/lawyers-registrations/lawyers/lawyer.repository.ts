@@ -6,6 +6,7 @@ import { FilterLawyerDto } from "./dto/filter-lawyer.dto";
 import { EnumErrorCodes } from "../../../enums/enum-errorcodes";
 import { ConflictException } from "@nestjs/common";
 import { User } from "../../configurations/users/user.entity";
+import { Exception } from "handlebars";
 
 @EntityRepository(Lawyer)
 export class LawyerRepository extends Repository<Lawyer> {
@@ -18,7 +19,8 @@ export class LawyerRepository extends Repository<Lawyer> {
             if (error.code == EnumErrorCodes.DUPLICATED_DATA) {
                 throw new ConflictException('Some data is duplicated');
             } else {
-                throw new console.log(error);
+                console.log(error);
+                throw new Exception(error);
             }
         }
 
