@@ -9,13 +9,13 @@ const routes: Routes = [
   },
   {
     path: 'website',
-    loadChildren: () => import('./website/website.module').then(module => module.WebsiteModule),
-    runGuardsAndResolvers: 'always'
+    loadChildren: () => import('./website/website.module').then(module => module.WebsiteModule)
+    // runGuardsAndResolvers: 'always'
   },
   {
     path: 'adm',
-    loadChildren: () => import('./administration/administration.module').then(module => module.AdministrationModule),
-    runGuardsAndResolvers: 'always'
+    loadChildren: () => import('./administration/administration.module').then(module => module.AdministrationModule)
+    // runGuardsAndResolvers: 'always'
   }
 ];
 
