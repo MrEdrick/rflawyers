@@ -1,5 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Injector, DEFAULT_CURRENCY_CODE } from '@angular/core';
-import { HttpClientModule, HttpRequest } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedComponentsModule } from './shared-components/shared-components.module';
