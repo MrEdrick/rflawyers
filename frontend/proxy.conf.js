@@ -1,11 +1,11 @@
 const PROXY_CONFIG = [
     {
       context: ['/api/'],
-      target: 'http://172.0.0.1:3000/api/',
-      secure: true,
+      target: 'https://www.rodriguesfranceschini.com/api',
+      secure: false,
       logLevel: 'debug',
-      changeOrigin: true 
-      //pathRewrite: {'^/api' : ''}
+      changeOrigin: true, 
+      pathRewrite: {'^/api' : ''}
     }
   ];
 
