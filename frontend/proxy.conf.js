@@ -4,7 +4,8 @@ const PROXY_CONFIG = [
       target: 'http://172.26.9.156/api/',
       secure: true,
       logLevel: 'debug',
-      pathRewrite: {'^/api' : ''}
+      changeOrigin: true
+      //pathRewrite: {'^/api' : ''}
     }
   ];
 
