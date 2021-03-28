@@ -1,10 +1,10 @@
 const PROXY_CONFIG = [
     {
       context: ['/api/'],
-      target: 'https://99.79.89.235/api/',
+      target: 'http://172.26.9.156/api/',
       secure: true,
-      logLevel: 'debug'
-      // pathRewrite: {'^/api' : ''}
+      logLevel: 'debug',
+      pathRewrite: {'^/api' : ''}
     }
   ];
 
