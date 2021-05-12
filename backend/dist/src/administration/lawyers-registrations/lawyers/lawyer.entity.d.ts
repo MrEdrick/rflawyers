@@ -8,6 +8,7 @@ export declare class Lawyer extends BaseEntity {
     firstName: string;
     lastName: string;
     description: string;
+    oab: number;
     image: string;
     active: boolean;
     insertionDateTime: Date;

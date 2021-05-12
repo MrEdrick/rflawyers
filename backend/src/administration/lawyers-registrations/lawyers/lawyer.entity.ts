@@ -23,6 +23,9 @@ export class Lawyer extends BaseEntity {
     @Column({ nullable: true })
     description: string;
 
+    @Column()
+    oab: number;
+
     @Column({ nullable: true })
     image: string;
 

@@ -10,6 +10,9 @@ export class CreateLawyerDto {
     @IsNotEmpty()
     description: string;
 
+    @IsNotEmpty()
+    oab: number;
+
     @IsOptional()
     image: string;
     

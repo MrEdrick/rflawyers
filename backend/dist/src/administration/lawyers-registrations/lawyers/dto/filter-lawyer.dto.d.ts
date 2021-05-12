@@ -3,5 +3,6 @@ export declare class FilterLawyerDto {
     firstName: string;
     lastName: string;
     description: string;
+    oab: string;
     active: boolean;
 }

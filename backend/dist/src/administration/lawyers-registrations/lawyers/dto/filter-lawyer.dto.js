@@ -31,6 +31,10 @@ __decorate([
 ], FilterLawyerDto.prototype, "description", void 0);
 __decorate([
     class_validator_1.IsOptional(),
+    __metadata("design:type", String)
+], FilterLawyerDto.prototype, "oab", void 0);
+__decorate([
+    class_validator_1.IsOptional(),
     __metadata("design:type", Boolean)
 ], FilterLawyerDto.prototype, "active", void 0);
 exports.FilterLawyerDto = FilterLawyerDto;

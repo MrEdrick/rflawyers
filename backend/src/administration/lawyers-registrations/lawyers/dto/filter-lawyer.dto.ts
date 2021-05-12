@@ -14,5 +14,8 @@ export class FilterLawyerDto {
     description: string;
 
     @IsOptional()
+    oab: string;
+
+    @IsOptional()
     active: boolean;
 }

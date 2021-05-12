@@ -43,7 +43,7 @@ let LawyerRepository = class LawyerRepository extends typeorm_1.Repository {
     }
     async repositoryGetByFilter(filterDto) {
         const query = this.createQueryBuilder(this.metadata.tableName);
-        const { userId, firstName, lastName, description, active } = filterDto;
+        const { userId, firstName, lastName, description, oab, active } = filterDto;
         if (filterDto.userId) {
             query.andWhere(`"userId" = ${userId}`);
         }
@@ -55,6 +55,9 @@ let LawyerRepository = class LawyerRepository extends typeorm_1.Repository {
         }
         if (filterDto.description) {
             query.andWhere(`"description" ILIKE '%${description}%'`);
+        }
+        if (filterDto.description) {
+            query.andWhere(`"oab" = ${oab}`);
         }
         if (filterDto.active) {
             query.andWhere(`"active" = ${active}`);

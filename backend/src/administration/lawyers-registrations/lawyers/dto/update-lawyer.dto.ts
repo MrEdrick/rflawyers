@@ -17,6 +17,9 @@ export class UpdateLawyerDto {
     descripton: string;
 
     @IsOptional()
+    oab: string;
+
+    @IsOptional()
     image: string;
 
     @IsOptional()

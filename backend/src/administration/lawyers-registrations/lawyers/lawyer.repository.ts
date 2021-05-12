@@ -43,7 +43,7 @@ export class LawyerRepository extends Repository<Lawyer> {
 
     async repositoryGetByFilter(filterDto: FilterLawyerDto): Promise<Lawyer[]> {
         const query = this.createQueryBuilder(this.metadata.tableName);
-        const { userId, firstName, lastName, description, active } = filterDto;
+        const { userId, firstName, lastName, description, oab, active } = filterDto;
 
         if (filterDto.userId) {
             query.andWhere(`"userId" = ${userId}`);
@@ -59,6 +59,10 @@ export class LawyerRepository extends Repository<Lawyer> {
 
         if (filterDto.description) {
             query.andWhere(`"description" ILIKE '%${description}%'`);
+        }
+
+        if (filterDto.description) {
+            query.andWhere(`"oab" = ${oab}`);
         }
 
         if (filterDto.active) {

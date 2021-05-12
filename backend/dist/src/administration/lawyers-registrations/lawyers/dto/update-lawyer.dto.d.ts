@@ -4,6 +4,7 @@ export declare class UpdateLawyerDto {
     firstName: string;
     lastName: string;
     descripton: string;
+    oab: string;
     image: string;
     active: boolean;
 }
