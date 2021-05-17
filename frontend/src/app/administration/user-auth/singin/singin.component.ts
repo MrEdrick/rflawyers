@@ -1,10 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../service/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { DialogService } from '../../../shared-features/dialog-presenter/service/dialog.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-singin',
@@ -29,22 +28,21 @@ export class SingInComponent implements OnInit {
     private authService: AuthService,
     private dialogService: DialogService) { }
 
-  ngOnInit(): void {
-    this.route.queryParamMap.toPromise().then(queryParam => {
-      const confirmationToken = queryParam.get('confirmationToken');
+  async ngOnInit(): Promise<void> {
+    const confirmationToken = 
+      (await this.route.queryParamMap.pipe(first()).toPromise()).get('confirmationToken');
 
-      if (confirmationToken) {
-        this.authService.emailConfirmation({ confirmationToken })
-          .toPromise()
-          .then(
-            () => {
-              this.dialogService.showAlert('E-mail confirmado com sucesso!');
-            })
-          .catch((error) => {
-            this.dialogService.showAlert('Ocorreu algum erro durante o processo de confirmação do e-mail. Erro: ' + error);
-          });
-      }
-    });
+    if (confirmationToken) {
+      this.authService.emailConfirmation({ confirmationToken })
+        .toPromise()
+        .then(
+          () => {
+            this.dialogService.showAlert('E-mail confirmado com sucesso!');
+          })
+        .catch((error) => {
+          this.dialogService.showAlert('Ocorreu algum erro durante o processo de confirmação do e-mail. Erro: ' + error);
+        });
+    };
   }
 
   onSubmit() {
