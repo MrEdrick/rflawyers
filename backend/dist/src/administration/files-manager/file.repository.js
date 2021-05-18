@@ -9,11 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FileRepository = void 0;
 const typeorm_1 = require("typeorm");
 const common_1 = require("@nestjs/common");
+const config = require("config");
 const { v4: uuidv4 } = require('uuid');
 const DATA_BASE_SCHEMA = 'public';
 let FileRepository = class FileRepository {
     async updateRecordWithFilePath(filePathFolder, fileName, uploadFileDto) {
-        const filePath = 'https://99.79.89.235/api/' + filePathFolder + fileName;
+        const serverConfig = config.get('server');
+        const filePath = serverConfig.localhost + '/' + filePathFolder + fileName;
         const { tableName, columnName, tableId } = uploadFileDto;
         const response = await typeorm_1.getConnection().query(`update ${DATA_BASE_SCHEMA}.${tableName}
             set ${columnName} = '${filePath}'

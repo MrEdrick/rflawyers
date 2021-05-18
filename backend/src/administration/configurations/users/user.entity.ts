@@ -5,6 +5,7 @@ import { Lawyer } from "src/administration/lawyers-registrations/lawyers/lawyer.
 
 import * as bcrypt from 'bcrypt';
 import * as crypto from "crypto";
+import { Resume } from "src/administration/lawyers-registrations/resumes/resume.entity";
 
 const { v4: uuidv4 } = require('uuid');
 
@@ -52,6 +53,9 @@ export class User extends BaseEntity {
 
     @OneToMany(type => Lawyer, lawyer => lawyer.user, { eager: false })
     lawyers: Lawyer[];
+
+    @OneToMany(type => Resume, resume => resume.user, { eager: false })
+    resumes: Resume[];
 
     async validatePassword(password: string): Promise<boolean> {
         return this.password === (await bcrypt.hash(password, this.salt));

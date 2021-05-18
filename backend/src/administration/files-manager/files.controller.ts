@@ -7,11 +7,12 @@ import { User } from '../configurations/users/user.entity';
 import { UploadFileDto } from './dto/upload-file.dto';
 import { FilesService } from './files.service';
 import { v4 as uuidv4 } from 'uuid';
-import fs = require('fs')
-import path = require('path');
 import { InsertNewRecordDto } from './dto/insert-new-record.dto';
 import { DeleteRecordDto } from './dto/delete-record.dto';
 import { SelectFilesNamesDto } from './dto/select-files-names.dto';
+
+import fs = require('fs')
+import path = require('path');
 
 const BASE_PATH_IMAGES = 'files/uploaded/images/';
 
@@ -19,7 +20,6 @@ export const storageImage = {
     storage: diskStorage({
         destination: (req, file, cb) => {
             const path = './' + BASE_PATH_IMAGES + req.body.tableName;
-            console.log(path);
             fs.mkdirSync(path, { recursive: true });
             cb(null, path);
         },

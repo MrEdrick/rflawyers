@@ -22,17 +22,16 @@ const user_entity_1 = require("../configurations/users/user.entity");
 const upload_file_dto_1 = require("./dto/upload-file.dto");
 const files_service_1 = require("./files.service");
 const uuid_1 = require("uuid");
-const fs = require("fs");
-const path = require("path");
 const insert_new_record_dto_1 = require("./dto/insert-new-record.dto");
 const delete_record_dto_1 = require("./dto/delete-record.dto");
 const select_files_names_dto_1 = require("./dto/select-files-names.dto");
+const fs = require("fs");
+const path = require("path");
 const BASE_PATH_IMAGES = 'files/uploaded/images/';
 exports.storageImage = {
     storage: multer_1.diskStorage({
         destination: (req, file, cb) => {
             const path = './' + BASE_PATH_IMAGES + req.body.tableName;
-            console.log(path);
             fs.mkdirSync(path, { recursive: true });
             cb(null, path);
         },

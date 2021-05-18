@@ -4137,7 +4137,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/files-manager/file.repository.ts": {
-        "version": "9c0b3bc1b1a7fc07b6c7d2a71daf93bdb7c84be5b11a559db0bfbe7e35772e67",
+        "version": "acb5d4fad350411f552043865be18fde25b9c46c3009ffccc459180b7541c54f",
         "signature": "8e071871213e98108e817765b6fddc30949ebd015c867f946eeec07874d3bc0f",
         "affectsGlobalScope": false
       },
@@ -4237,7 +4237,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/files-manager/files.controller.ts": {
-        "version": "33e61df9a4bc398a98cd1fa52a93e6c09f372929e90ad7f6da0f24a849c22d2a",
+        "version": "af88f08a54becf312aeaeb7e141826c254d2c38b2714553831535e59f6e44a2d",
         "signature": "ee5422609784c214ec4115175ac9df588e8e862b3d8aea2476ab65ca59f63185",
         "affectsGlobalScope": false
       },

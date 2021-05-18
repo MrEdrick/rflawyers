@@ -5,6 +5,7 @@ import { InsertNewRecordDto } from "./dto/insert-new-record.dto";
 import { DeleteRecordDto } from "./dto/delete-record.dto";
 import { User } from "../configurations/users/user.entity";
 import { SelectFilesNamesDto } from "./dto/select-files-names.dto";
+import * as config from 'config';
 
 const { v4: uuidv4 } = require('uuid');
 
@@ -13,8 +14,9 @@ const DATA_BASE_SCHEMA = 'public';
 @Injectable()
 export class FileRepository {
     async updateRecordWithFilePath(filePathFolder: string, fileName: string, uploadFileDto: UploadFileDto): Promise<string> {
-        const filePath = 'https://99.79.89.235/api/' + filePathFolder + fileName;
-        //'http://localhost:3000/api/'
+        const serverConfig = config.get('server');
+
+        const filePath = serverConfig.localhost + '/' + filePathFolder + fileName;
 
         const { tableName, columnName, tableId } = uploadFileDto;
 

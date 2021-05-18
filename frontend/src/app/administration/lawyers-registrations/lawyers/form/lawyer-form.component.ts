@@ -22,6 +22,7 @@ export class LawyerFormComponent implements OnInit {
     id: [null],
     firstName: [null, Validators.required],
     lastName: [null, Validators.required],
+    oab: [null, Validators.required],
     description: [null, Validators.required],
     active: [true, Validators.required]
   });
@@ -45,8 +46,9 @@ export class LawyerFormComponent implements OnInit {
 
       this.lawyersService.getId(this.formControls.id.value)
         .toPromise().then(lawyer => {
-          this.formControls.code.setValue(lawyer.firstName);
-          this.formControls.name.setValue(lawyer.lastName);
+          this.formControls.firstName.setValue(lawyer.firstName);
+          this.formControls.lastName.setValue(lawyer.lastName);
+          this.formControls.oab.setValue(lawyer.oab);
           this.formControls.description.setValue(lawyer.description);
           this.formControls.active.setValue(lawyer.active);
 
@@ -98,7 +100,7 @@ export class LawyerFormComponent implements OnInit {
     this.uploadImageComponent.tableId = this.formControls.id.value;
     this.uploadImageComponent.tableName = 'lawyer';
     this.uploadImageComponent.columnName = 'image';
-
+    
     this.uploadImageComponent.uploadImage();
   }
 }

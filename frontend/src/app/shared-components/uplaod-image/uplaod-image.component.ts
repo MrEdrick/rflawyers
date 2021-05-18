@@ -90,7 +90,7 @@ export class UplaodImageComponent implements OnInit, OnDestroy {
     this.filesService.uploadImage(formData)
       .pipe(takeUntil(this.destroy))
       .subscribe(
-      // (response) => console.log(response)
+        (response) => console.log(response)
     );
   }
 }
