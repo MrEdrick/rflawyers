@@ -43,14 +43,18 @@ export class ResumeRepository extends Repository<Resume> {
 
     async repositoryGetByFilter(filterDto: FilterResumeDto): Promise<Resume[]> {
         const query = this.createQueryBuilder(this.metadata.tableName);
-        const { userId, name, active } = filterDto;
+        const { userId, title, description, active } = filterDto;
 
         if (filterDto.userId) {
             query.andWhere(`"userId" = ${userId}`);
         }
 
-        if (filterDto.name) {
-            query.andWhere(`"name" ILIKE '%${name}%'`);
+        if (filterDto.title) {
+            query.andWhere(`"title" ILIKE '%${title}%'`);
+        }
+
+        if (filterDto.description) {
+            query.andWhere(`"description" ILIKE '%${description}%'`);
         }
 
         if (filterDto.active) {

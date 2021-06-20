@@ -2,10 +2,11 @@ import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, Unique, OneToMany }
 import { CreateUserDto } from "./dto/create-user.dto";
 import { UpdateUserDto } from "./dto/update-user.dto";
 import { Lawyer } from "src/administration/lawyers-registrations/lawyers/lawyer.entity";
+import { Resume } from "src/administration/lawyers-registrations/resumes/resume.entity";
+import { ResumeItem } from "src/administration/lawyers-registrations/resume-items/resume-item.entity";
 
 import * as bcrypt from 'bcrypt';
 import * as crypto from "crypto";
-import { Resume } from "src/administration/lawyers-registrations/resumes/resume.entity";
 
 const { v4: uuidv4 } = require('uuid');
 
@@ -56,6 +57,9 @@ export class User extends BaseEntity {
 
     @OneToMany(type => Resume, resume => resume.user, { eager: false })
     resumes: Resume[];
+
+    @OneToMany(type => ResumeItem, resumeItem => resumeItem.user, { eager: false })
+    resumeItems: ResumeItem[];
 
     async validatePassword(password: string): Promise<boolean> {
         return this.password === (await bcrypt.hash(password, this.salt));

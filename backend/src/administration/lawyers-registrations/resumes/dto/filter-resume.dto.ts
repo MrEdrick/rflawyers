@@ -1,11 +1,17 @@
 import { IsOptional } from 'class-validator';
 
-export class FilterLawyerDto {
+export class FilterResumeDto {
+    @IsOptional()
+    lawyerId: string;
+
     @IsOptional()
     userId: string;
 
     @IsOptional()
-    name: string;
+    title: string;
+
+    @IsOptional()
+    description: string;
 
     @IsOptional()
     active: boolean;

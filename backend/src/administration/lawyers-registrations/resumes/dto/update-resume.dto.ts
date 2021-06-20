@@ -5,10 +5,16 @@ export class UpdateResumeDto {
     id: string;
 
     @IsOptional()
+    lawyerId: string;
+
+    @IsOptional()
     userId: string;
     
     @IsOptional()
-    name: string;
+    title: string;
+    
+    @IsOptional()
+    description: string;
 
     @IsOptional()
     active: boolean;

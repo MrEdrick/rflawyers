@@ -1,5 +1,6 @@
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, Generated, Unique, ManyToOne, OneToMany } from "typeorm";
+import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, Generated, ManyToOne, OneToMany } from "typeorm";
 import { User } from "../../configurations/users/user.entity";
+import { Resume } from "../resumes/resume.entity";
 import { CreateLawyerDto } from "./dto/create-lawyer.dto";
 import { UpdateLawyerDto } from "./dto/update-lawyer.dto";
 
@@ -34,6 +35,9 @@ export class Lawyer extends BaseEntity {
 
     @Column()
     insertionDateTime: Date;
+
+    @OneToMany(type => Resume, resume => resume.user, { eager: false })
+    resumes: Resume[];
 
     @ManyToOne(type => User, user => user.lawyers, {eager: true})
     user: User;

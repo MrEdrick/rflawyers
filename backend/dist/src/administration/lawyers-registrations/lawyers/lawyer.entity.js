@@ -13,6 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Lawyer = void 0;
 const typeorm_1 = require("typeorm");
 const user_entity_1 = require("../../configurations/users/user.entity");
+const resume_entity_1 = require("../resumes/resume.entity");
 const { v4: uuidv4 } = require('uuid');
 let Lawyer = Lawyer_1 = class Lawyer extends typeorm_1.BaseEntity {
     static fromCreateDto(props, userId) {
@@ -66,6 +67,10 @@ __decorate([
     typeorm_1.Column(),
     __metadata("design:type", Date)
 ], Lawyer.prototype, "insertionDateTime", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => resume_entity_1.Resume, resume => resume.user, { eager: false }),
+    __metadata("design:type", Array)
+], Lawyer.prototype, "resumes", void 0);
 __decorate([
     typeorm_1.ManyToOne(type => user_entity_1.User, user => user.lawyers, { eager: true }),
     __metadata("design:type", user_entity_1.User)

@@ -2,6 +2,7 @@ import { BaseEntity } from "typeorm";
 import { CreateUserDto } from "./dto/create-user.dto";
 import { UpdateUserDto } from "./dto/update-user.dto";
 import { Lawyer } from "src/administration/lawyers-registrations/lawyers/lawyer.entity";
+import { Resume } from "src/administration/lawyers-registrations/resumes/resume.entity";
 export declare class User extends BaseEntity {
     id: string;
     name: string;
@@ -17,6 +18,7 @@ export declare class User extends BaseEntity {
     isAdministrator: boolean;
     insertionDateTime: Date;
     lawyers: Lawyer[];
+    resumes: Resume[];
     validatePassword(password: string): Promise<boolean>;
     static fromCreateDto(props: CreateUserDto): Promise<User>;
     static fromUpdateUserDto(props: UpdateUserDto): User;
