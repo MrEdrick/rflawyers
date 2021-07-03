@@ -10,10 +10,17 @@ import { AdministrationRoutingModule } from '../administration-routing.module';
 import { LawyersCardsComponent } from './lawyers/cards/lawyers-cards.component';
 import { LawyerFormComponent } from './lawyers/form/lawyer-form.component';
 import { LawyersService } from './services/lawyers.service';
+import { LawyerTabComponent } from './lawyers/tab/lawyer-tab.component';
+import { ResumeFormComponent } from './resume/form/resume-form.component';
+import { ResumesCardsComponent } from './resume/cards/resumes-cards.component';
+import { ResumesService } from './services/resumes.service';
 
 @NgModule({
   declarations: [
+    ResumesCardsComponent,
+    ResumeFormComponent,
     LawyersCardsComponent,
+    LawyerTabComponent,
     LawyerFormComponent
   ],
   imports: [
@@ -27,11 +34,15 @@ import { LawyersService } from './services/lawyers.service';
     SharedComponentsModule
   ],
   exports: [
+    ResumesCardsComponent,
+    ResumeFormComponent,
     LawyersCardsComponent,
+    LawyerTabComponent,
     LawyerFormComponent
   ],
   providers: [
     LawyersService,
+    ResumesService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -1,0 +1,24 @@
+<div
+  class="content"
+  fxLayout="row wrap">
+  <app-card
+    *ngFor="let resume of resumes"
+    style="margin:16px 16px 16px 0px;"
+    fxFlex="30%" fxFlex.xs="100%"
+    fxFlex.sm="33%"
+    [title]="resume.title"
+    [content]="resume.description"
+    (clickDeleteButton)="onDelete(resume.id)"
+    (dblclick)="onDblClick(resume.id)">
+  </app-card>
+</div>
+
+<a routerLink="./resume">
+  <button
+    style="background-color: #005683; color: #d0d3d4;"
+    mat-fab
+    class="fab-add"
+    fxLayoutAlign="center">
+    <mat-icon>add</mat-icon>
+  </button>
+</a>

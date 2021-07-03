@@ -1,6 +1,7 @@
 import { BaseEntity } from "typeorm";
 import { User } from "../../configurations/users/user.entity";
 import { Lawyer } from "../lawyers/lawyer.entity";
+import { ResumeItem } from "../resume-items/resume-item.entity";
 import { CreateResumeDto } from "./dto/create-resume.dto";
 import { UpdateResumeDto } from "./dto/update-resume.dto";
 export declare class Resume extends BaseEntity {
@@ -13,6 +14,7 @@ export declare class Resume extends BaseEntity {
     insertionDateTime: Date;
     user: User;
     lawyer: Lawyer;
+    resumeItems: ResumeItem[];
     static fromCreateDto(props: CreateResumeDto, userId: string): Resume;
     static fromUpdateResumeDto(props: UpdateResumeDto): Resume;
 }

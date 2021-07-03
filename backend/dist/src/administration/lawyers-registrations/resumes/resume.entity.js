@@ -14,6 +14,7 @@ exports.Resume = void 0;
 const typeorm_1 = require("typeorm");
 const user_entity_1 = require("../../configurations/users/user.entity");
 const lawyer_entity_1 = require("../lawyers/lawyer.entity");
+const resume_item_entity_1 = require("../resume-items/resume-item.entity");
 const { v4: uuidv4 } = require('uuid');
 let Resume = Resume_1 = class Resume extends typeorm_1.BaseEntity {
     static fromCreateDto(props, userId) {
@@ -68,6 +69,10 @@ __decorate([
     typeorm_1.ManyToOne(type => lawyer_entity_1.Lawyer, lawyer => lawyer.resumes, { eager: true }),
     __metadata("design:type", lawyer_entity_1.Lawyer)
 ], Resume.prototype, "lawyer", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => resume_item_entity_1.ResumeItem, resumeItem => resumeItem.resume, { eager: false }),
+    __metadata("design:type", Array)
+], Resume.prototype, "resumeItems", void 0);
 Resume = Resume_1 = __decorate([
     typeorm_1.Entity()
 ], Resume);

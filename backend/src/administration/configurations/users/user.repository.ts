@@ -159,7 +159,9 @@ export class UserRepository extends Repository<User> {
     async validatePassword(email: string, password: string): Promise<User> {
         var user = await this.findOne({ email });
 
-        if (!user) null;
+        if (!user) {
+            return null;
+        }
 
         const valid = (await user.validatePassword(password));
         if (valid) {

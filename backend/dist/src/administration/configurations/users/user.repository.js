@@ -134,8 +134,9 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
     }
     async validatePassword(email, password) {
         var user = await this.findOne({ email });
-        if (!user)
-            null;
+        if (!user) {
+            return null;
+        }
         const valid = (await user.validatePassword(password));
         if (valid) {
             return user;

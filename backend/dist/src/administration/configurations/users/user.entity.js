@@ -13,9 +13,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const typeorm_1 = require("typeorm");
 const lawyer_entity_1 = require("../../lawyers-registrations/lawyers/lawyer.entity");
+const resume_entity_1 = require("../../lawyers-registrations/resumes/resume.entity");
+const resume_item_entity_1 = require("../../lawyers-registrations/resume-items/resume-item.entity");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
-const resume_entity_1 = require("../../lawyers-registrations/resumes/resume.entity");
 const { v4: uuidv4 } = require('uuid');
 let User = User_1 = class User extends typeorm_1.BaseEntity {
     async validatePassword(password) {
@@ -106,6 +107,10 @@ __decorate([
     typeorm_1.OneToMany(type => resume_entity_1.Resume, resume => resume.user, { eager: false }),
     __metadata("design:type", Array)
 ], User.prototype, "resumes", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => resume_item_entity_1.ResumeItem, resumeItem => resumeItem.user, { eager: false }),
+    __metadata("design:type", Array)
+], User.prototype, "resumeItems", void 0);
 User = User_1 = __decorate([
     typeorm_1.Entity(),
     typeorm_1.Unique(['username', 'email'])
