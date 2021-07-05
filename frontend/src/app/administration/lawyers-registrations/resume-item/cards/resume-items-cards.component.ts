@@ -33,7 +33,7 @@ export class ResumeItemsCardsComponent implements OnInit {
     this.dialog.open(
       ResumeItemFormComponent, {
       width: '30%',
-      data: ''
+      data: {id: '', resumeId: this.resumeId}
     }).afterClosed().toPromise().then(_ => this.laodCards());
   }
 
@@ -41,7 +41,7 @@ export class ResumeItemsCardsComponent implements OnInit {
     this.dialog.open(
       ResumeItemFormComponent, {
         width: '30%',
-        data: id
+        data: {id, resumeId: this.resumeId}
       }
     ).afterClosed().toPromise().then(_ => this.laodCards());
   }

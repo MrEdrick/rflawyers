@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ResumeItemsService } from '../../services/resume-items.service';
-import { ActivatedRoute } from '@angular/router';
 import { DialogService } from '../../../../shared-features/dialog-presenter/service/dialog.service';
 import { GENERIC_SAVE_ERROR_MESSAGE } from '../../../../common/const/error-messages.const';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ResumeItemDto } from '../dto/resume-item.dto';
 
 @Component({
   selector: 'app-resume-item-form',
@@ -16,6 +16,7 @@ export class ResumeItemFormComponent implements OnInit {
 
   form = this.fb.group({
     id: [null],
+    resumeId: [null],
     title: [null, Validators.required],
     description: [null, Validators.required],
     active: [true, Validators.required]
@@ -26,24 +27,27 @@ export class ResumeItemFormComponent implements OnInit {
   hasUnitNumber = false;
 
   constructor(
-    private route: ActivatedRoute,
-    private location: Location,
+    private dialogRef: MatDialogRef<ResumeItemFormComponent>,
+    @Inject(MAT_DIALOG_DATA) private resumeItemKey: {id: string, resumeId: string},
     private fb: FormBuilder,
     private service: ResumeItemsService,
     private dialogService: DialogService) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.params.id;
+    const id = this.resumeItemKey.id;
 
     if (id) {
       this.formControls.id.setValue(id);
 
       this.service.getId(this.formControls.id.value)
         .toPromise().then(resumeItem => {
+          this.formControls.resumeId.setValue(resumeItem.resumeId);
           this.formControls.title.setValue(resumeItem.title);
           this.formControls.description.setValue(resumeItem.description);
           this.formControls.active.setValue(resumeItem.active);
         });
+    } else {
+      this.formControls.resumeId.setValue(this.resumeItemKey.resumeId);
     }
   }
 
@@ -55,7 +59,7 @@ export class ResumeItemFormComponent implements OnInit {
         .toPromise()
         .then(
           response => {
-            this.location.back();
+            this.dialogRef.close();
           },
           error => {
             this.submitError = error;
@@ -68,7 +72,7 @@ export class ResumeItemFormComponent implements OnInit {
           response => {
             if (response?.id) {
               this.formControls.id.setValue(response.id);
-              this.location.back();
+              this.dialogRef.close();
             }
           },
           error => {
@@ -79,6 +83,6 @@ export class ResumeItemFormComponent implements OnInit {
   }
 
   onClickCancel() {
-    this.location.back();
+    this.dialogRef.close();
   }
 }

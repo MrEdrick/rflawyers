@@ -1,5 +1,6 @@
 export interface ResumeItemDto {
     id: string;
+    resumeId: string;
     userId: string;
     title: string;
     description: string;
