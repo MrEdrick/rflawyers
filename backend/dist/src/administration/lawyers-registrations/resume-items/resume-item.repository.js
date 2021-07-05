@@ -56,7 +56,7 @@ let ResumeItemRepository = class ResumeItemRepository extends typeorm_1.Reposito
         if (filterDto.active) {
             query.andWhere(`"active" = ${active}`);
         }
-        return query.getParameters() ? query.getMany() : [];
+        return await query.getMany();
     }
 };
 ResumeItemRepository = __decorate([

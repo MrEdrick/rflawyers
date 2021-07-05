@@ -1,0 +1,37 @@
+<div
+  fxFill
+  class="content"
+  fxLayout="row wrap"
+  fxLayoutAlign="space-around stretch" >
+  
+  <div       
+    fxFlex="30%" 
+    fxFlex.xs="100%"
+    fxFlex.sm="33%">
+    
+    <app-card-without-image
+      *ngFor="let resume of resumes"
+      style="margin:16px 16px 16px 0px;"
+      fxFlex="100%" 
+      [title]="resume.title"
+      [content]="resume.description"
+      (clickDeleteButton)="onDelete(resume.id)"
+      (dblclick)="onDblClick(resume.id)">
+    </app-card-without-image>
+    
+    <button
+      mat-button
+      style="background-color: #d0d3d4; color: #005683;"
+      fxLayoutAlign="center">
+      Adicionar especialidade
+    </button>
+
+  </div>
+
+  <mat-divider [vertical]="true"></mat-divider>
+
+  <div       
+    fxFlex="auto" 
+    fxFlex.xs="100%">
+  </div>
+</div>

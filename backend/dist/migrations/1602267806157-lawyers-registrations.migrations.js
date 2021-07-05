@@ -82,16 +82,8 @@ class LawyersRegistrationsMigrations1602267806157 {
                     type: "varchar",
                 },
                 {
-                    name: "image",
-                    type: "varchar",
-                },
-                {
                     name: "active",
                     type: "boolean",
-                },
-                {
-                    name: "oab",
-                    type: "number",
                 },
                 {
                     name: "insertionDateTime",
@@ -139,16 +131,8 @@ class LawyersRegistrationsMigrations1602267806157 {
                     type: "varchar",
                 },
                 {
-                    name: "image",
-                    type: "varchar",
-                },
-                {
                     name: "active",
                     type: "boolean",
-                },
-                {
-                    name: "oab",
-                    type: "number",
                 },
                 {
                     name: "insertionDateTime",

@@ -60,7 +60,7 @@ export class ResumeRepository extends Repository<Resume> {
         if (filterDto.active) {
             query.andWhere(`"active" = ${active}`);
         }
-
-        return query.getParameters() ? query.getMany() : [];
+        
+        return await query.getMany();
     }
 }

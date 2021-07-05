@@ -13,11 +13,18 @@ import { LawyersService } from './services/lawyers.service';
 import { LawyerTabComponent } from './lawyers/tab/lawyer-tab.component';
 import { ResumeFormComponent } from './resume/form/resume-form.component';
 import { ResumesCardsComponent } from './resume/cards/resumes-cards.component';
+import { ResumesCardsWithDetailComponent } from './resume/cards-with-detail/resumes-cards-with-detail.component';
+import { ResumeItemFormComponent } from './resume-item/form/resume-item-form.component';
+import { ResumeItemsCardsComponent } from './resume-item/cards/resume-items-cards.component';
 import { ResumesService } from './services/resumes.service';
+import { ResumeItemsService } from './services/resume-items.service';
 
 @NgModule({
   declarations: [
+    ResumeItemsCardsComponent,
+    ResumeItemFormComponent,
     ResumesCardsComponent,
+    ResumesCardsWithDetailComponent,
     ResumeFormComponent,
     LawyersCardsComponent,
     LawyerTabComponent,
@@ -34,7 +41,10 @@ import { ResumesService } from './services/resumes.service';
     SharedComponentsModule
   ],
   exports: [
+    ResumeItemsCardsComponent,
+    ResumeItemFormComponent,
     ResumesCardsComponent,
+    ResumesCardsWithDetailComponent,
     ResumeFormComponent,
     LawyersCardsComponent,
     LawyerTabComponent,
@@ -43,6 +53,7 @@ import { ResumesService } from './services/resumes.service';
   providers: [
     LawyersService,
     ResumesService,
+    ResumeItemsService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

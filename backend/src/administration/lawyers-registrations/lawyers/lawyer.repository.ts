@@ -69,6 +69,6 @@ export class LawyerRepository extends Repository<Lawyer> {
             query.andWhere(`"active" = ${active}`);
         }
 
-        return query.getParameters() ? query.getMany() : [];
+        return await query.getMany();
     }
 }

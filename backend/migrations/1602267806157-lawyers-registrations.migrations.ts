@@ -83,16 +83,8 @@ export class LawyersRegistrationsMigrations1602267806157 implements MigrationInt
                     type: "varchar",
                 },
                 {
-                    name: "image",
-                    type: "varchar",
-                },
-                {
                     name: "active",
                     type: "boolean",
-                },
-                {
-                    name: "oab",
-                    type: "number",
                 },
                 {
                     name: "insertionDateTime",
@@ -144,16 +136,8 @@ export class LawyersRegistrationsMigrations1602267806157 implements MigrationInt
                     type: "varchar",
                 },
                 {
-                    name: "image",
-                    type: "varchar",
-                },
-                {
                     name: "active",
                     type: "boolean",
-                },
-                {
-                    name: "oab",
-                    type: "number",
                 },
                 {
                     name: "insertionDateTime",

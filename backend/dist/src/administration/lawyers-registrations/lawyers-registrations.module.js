@@ -9,16 +9,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LawyersRegistrationsModule = void 0;
 const common_1 = require("@nestjs/common");
 const lawyers_module_1 = require("./lawyers/lawyers.module");
+const resume_items_module_1 = require("./resume-items/resume-items.module");
 const resumes_module_1 = require("./resumes/resumes.module");
 let LawyersRegistrationsModule = class LawyersRegistrationsModule {
 };
 LawyersRegistrationsModule = __decorate([
     common_1.Module({
         imports: [
+            resume_items_module_1.ResumeItemsModule,
             resumes_module_1.ResumesModule,
             lawyers_module_1.LawyersModule
         ],
         exports: [
+            resume_items_module_1.ResumeItemsModule,
             resumes_module_1.ResumesModule,
             lawyers_module_1.LawyersModule
         ]

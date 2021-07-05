@@ -62,7 +62,7 @@ let LawyerRepository = class LawyerRepository extends typeorm_1.Repository {
         if (filterDto.active) {
             query.andWhere(`"active" = ${active}`);
         }
-        return query.getParameters() ? query.getMany() : [];
+        return await query.getMany();
     }
 };
 LawyerRepository = __decorate([

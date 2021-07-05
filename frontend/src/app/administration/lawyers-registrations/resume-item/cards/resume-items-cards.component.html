@@ -1,19 +1,19 @@
 <div
   class="content"
   fxLayout="row wrap">
-  <CardWithoutImageComponent
-    *ngFor="let resume of resumes"
+  <app-resumes-cards
+    *ngFor="let resumeItem of resumeItems"
     style="margin:16px 16px 16px 0px;"
     fxFlex="30%" fxFlex.xs="100%"
     fxFlex.sm="33%"
-    [title]="resume.title"
-    [content]="resume.description"
-    (clickDeleteButton)="onDelete(resume.id)"
-    (dblclick)="onDblClick(resume.id)">
-  </CardWithoutImageComponent>
+    [title]="resumeItem.title"
+    [content]="resumeItem.description"
+    (clickDeleteButton)="onDelete(resumeItem.id)"
+    (dblclick)="onDblClick(resumeItem.id)">
+  </app-resumes-cards>
 </div>
 
-<a routerLink="./resume">
+<a routerLink="./resumeItem">
   <button
     style="background-color: #005683; color: #d0d3d4;"
     mat-fab

@@ -61,6 +61,6 @@ export class ResumeItemRepository extends Repository<ResumeItem> {
             query.andWhere(`"active" = ${active}`);
         }
 
-        return query.getParameters() ? query.getMany() : [];
+        return await query.getMany();
     }
 }

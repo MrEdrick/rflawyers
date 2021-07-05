@@ -1787,7 +1787,7 @@
         "affectsGlobalScope": false
       },
       "../migrations/1602267806157-lawyers-registrations.migrations.ts": {
-        "version": "74281e1f16a0593f29b040bb2e082e121802304b592d3048d1e0a03f5a2d5ec1",
+        "version": "32fe6e5c3be2224d9d464628f67781eee5a879108234658bd91f0918cbccebed",
         "signature": "9f9f5438a2566fc589c6957bdd0993439e80a561dfa0bf39818c4974b2bf4ecc",
         "affectsGlobalScope": false
       },
@@ -4312,7 +4312,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/lawyers/lawyer.repository.ts": {
-        "version": "1d842bd524d06c1526b2ad18c976a7ec34d5b2822c816be76803f61a327e5590",
+        "version": "2069ea1266a505b0c979e5d59a820eba127542f816d38fc74ae50b5d10b6dbfe",
         "signature": "9f9427c8c5b448ff8361dd1d4b93fb7f258b60ec78e831f3b008e066eee79783",
         "affectsGlobalScope": false
       },
@@ -4331,13 +4331,38 @@
         "signature": "ee6dcb5c4bec883d8157cd01f9281d04242595cbea800c7f61374f89ddc13540",
         "affectsGlobalScope": false
       },
+      "../src/administration/lawyers-registrations/resume-items/dto/filter-resume-item.dto.ts": {
+        "version": "29d075352fbfde13b11661e124a4cee529cf35cfb1ce4d7fd1fb2ca56a6529f8",
+        "signature": "aad970cc4847c826dfd7ff3ac7134f0045fef6da1afc12d6655896d9311ae0ef",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/lawyers-registrations/resume-items/resume-item.repository.ts": {
+        "version": "4687eb2c1648be6c6186e79cad98a4fde270417854672e0558f936397fd8635e",
+        "signature": "aa1658abf6013b484ba397c3ecf0b04fa037bf83c0ef13ded2c5b200f7622f18",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/lawyers-registrations/resume-items/resume-items.service.ts": {
+        "version": "11aacb4292e98cc40e469c9128b223e93463461ad73f7c8001de7adbda883562",
+        "signature": "549a4d84941927d9b8e1c8797eb3a4d1ed7043f1012821ba443a03d92daad69d",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/lawyers-registrations/resume-items/resume-items.controller.ts": {
+        "version": "3d7e560af88946b98314d671036ae604329fc406506688423fd4fceff863e472",
+        "signature": "7e2ec99e15a46c1411ad6c26b99cc7f136b64448ba8940e222defcc072e2717e",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/lawyers-registrations/resume-items/resume-items.module.ts": {
+        "version": "42864646c73afcc82e497b49e95ee0c8e305b666666b0223450e3f6159dae51c",
+        "signature": "2242ba848fa975f9716e155dfbcbe32d6069ef5853e1c86d030717f83478d632",
+        "affectsGlobalScope": false
+      },
       "../src/administration/lawyers-registrations/resumes/dto/filter-resume.dto.ts": {
         "version": "8379b97f2f9c95b2710310b9646829b42bcf3abdf31e2e6ce612ed84ad48b022",
         "signature": "45e13e1e399b137a931fc7920211467abdf09c15161c3f168da89867cf45e3da",
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/resumes/resume.repository.ts": {
-        "version": "e21c5f19bd93db97fefa5a2d911acfbecd807c5c563cf9aefeaf84065df07684",
+        "version": "11fa2e5fede40c08cbd085ab5c7a2f97d3cb8202fe19317130e4c5577965f444",
         "signature": "a4e537f714da47a6f825a1e3b2114081d675c61c58d964aa7635efdf219efa76",
         "affectsGlobalScope": false
       },
@@ -4357,7 +4382,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/lawyers-registrations.module.ts": {
-        "version": "ec9073e9ad38b04dc6b41f99454e441692561ae0e5695a9510c8c9eef8cb569f",
+        "version": "5f73348cd50aacf1b77db1a596e483c7f219996e0721f6028898068a0906e1e3",
         "signature": "a67449fd2d3cee4e0bccfad27ba2aca41bf3b0257223d006302e6f77858463dc",
         "affectsGlobalScope": false
       },
@@ -4554,31 +4579,6 @@
       "../src/main.ts": {
         "version": "84c8b5f394bba743ecbf4823142e34257b879ee82ecdb6c6bdc732a1576a7193",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
-        "affectsGlobalScope": false
-      },
-      "../src/administration/lawyers-registrations/resume-items/dto/filter-resume-item.dto.ts": {
-        "version": "29d075352fbfde13b11661e124a4cee529cf35cfb1ce4d7fd1fb2ca56a6529f8",
-        "signature": "aad970cc4847c826dfd7ff3ac7134f0045fef6da1afc12d6655896d9311ae0ef",
-        "affectsGlobalScope": false
-      },
-      "../src/administration/lawyers-registrations/resume-items/resume-item.repository.ts": {
-        "version": "0e6aeee52cf0093fa12d46ade5d488f468e4d41a56cc940b79d72f64c04544d1",
-        "signature": "aa1658abf6013b484ba397c3ecf0b04fa037bf83c0ef13ded2c5b200f7622f18",
-        "affectsGlobalScope": false
-      },
-      "../src/administration/lawyers-registrations/resume-items/resume-items.service.ts": {
-        "version": "11aacb4292e98cc40e469c9128b223e93463461ad73f7c8001de7adbda883562",
-        "signature": "549a4d84941927d9b8e1c8797eb3a4d1ed7043f1012821ba443a03d92daad69d",
-        "affectsGlobalScope": false
-      },
-      "../src/administration/lawyers-registrations/resume-items/resume-items.controller.ts": {
-        "version": "3d7e560af88946b98314d671036ae604329fc406506688423fd4fceff863e472",
-        "signature": "7e2ec99e15a46c1411ad6c26b99cc7f136b64448ba8940e222defcc072e2717e",
-        "affectsGlobalScope": false
-      },
-      "../src/administration/lawyers-registrations/resume-items/resume-items.module.ts": {
-        "version": "42864646c73afcc82e497b49e95ee0c8e305b666666b0223450e3f6159dae51c",
-        "signature": "2242ba848fa975f9716e155dfbcbe32d6069ef5853e1c86d030717f83478d632",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -8391,6 +8391,7 @@
       "../src/administration/lawyers-registrations/lawyers-registrations.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/administration/lawyers-registrations/lawyers/lawyers.module.ts",
+        "../src/administration/lawyers-registrations/resume-items/resume-items.module.ts",
         "../src/administration/lawyers-registrations/resumes/resumes.module.ts"
       ],
       "../src/administration/lawyers-registrations/lawyers/dto/create-lawyer.dto.ts": [

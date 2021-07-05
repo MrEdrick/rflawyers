@@ -1,18 +1,17 @@
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ResumesService } from '../../services/resumes.service';
+import { ResumeItemsService } from '../../services/resume-items.service';
 import { ActivatedRoute } from '@angular/router';
 import { DialogService } from '../../../../shared-features/dialog-presenter/service/dialog.service';
 import { GENERIC_SAVE_ERROR_MESSAGE } from '../../../../common/const/error-messages.const';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-resume-form',
-  templateUrl: './resume-form.component.html',
-  styleUrls: ['./resume-form.component.scss'],
+  selector: 'app-resume-item-form',
+  templateUrl: './resume-item-form.component.html',
+  styleUrls: ['./resume-item-form.component.scss'],
 })
-export class ResumeFormComponent implements OnInit {
+export class ResumeItemFormComponent implements OnInit {
   submitError = '';
 
   form = this.fb.group({
@@ -27,23 +26,23 @@ export class ResumeFormComponent implements OnInit {
   hasUnitNumber = false;
 
   constructor(
-    private dialogRef: MatDialogRef<ResumeFormComponent>,
-    @Inject(MAT_DIALOG_DATA) private id: string,
+    private route: ActivatedRoute,
+    private location: Location,
     private fb: FormBuilder,
-    private service: ResumesService,
+    private service: ResumeItemsService,
     private dialogService: DialogService) { }
 
   ngOnInit() {
-    const id = this.id;
+    const id = this.route.snapshot.params.id;
 
     if (id) {
       this.formControls.id.setValue(id);
 
       this.service.getId(this.formControls.id.value)
-        .toPromise().then(resume => {
-          this.formControls.title.setValue(resume.title);
-          this.formControls.description.setValue(resume.description);
-          this.formControls.active.setValue(resume.active);
+        .toPromise().then(resumeItem => {
+          this.formControls.title.setValue(resumeItem.title);
+          this.formControls.description.setValue(resumeItem.description);
+          this.formControls.active.setValue(resumeItem.active);
         });
     }
   }
@@ -56,7 +55,7 @@ export class ResumeFormComponent implements OnInit {
         .toPromise()
         .then(
           response => {
-            this.dialogRef.close();
+            this.location.back();
           },
           error => {
             this.submitError = error;
@@ -69,7 +68,7 @@ export class ResumeFormComponent implements OnInit {
           response => {
             if (response?.id) {
               this.formControls.id.setValue(response.id);
-              this.dialogRef.close();
+              this.location.back();
             }
           },
           error => {
@@ -80,6 +79,6 @@ export class ResumeFormComponent implements OnInit {
   }
 
   onClickCancel() {
-    this.dialogRef.close();
+    this.location.back();
   }
 }
