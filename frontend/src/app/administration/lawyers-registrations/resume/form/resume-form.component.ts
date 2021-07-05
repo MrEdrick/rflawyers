@@ -13,10 +13,12 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./resume-form.component.scss'],
 })
 export class ResumeFormComponent implements OnInit {
+  lawyerId  = '';
   submitError = '';
 
   form = this.fb.group({
     id: [null],
+    lawyerId: [null],
     title: [null, Validators.required],
     description: [null, Validators.required],
     active: [true, Validators.required]
@@ -27,6 +29,7 @@ export class ResumeFormComponent implements OnInit {
   hasUnitNumber = false;
 
   constructor(
+    private route: ActivatedRoute,
     private dialogRef: MatDialogRef<ResumeFormComponent>,
     @Inject(MAT_DIALOG_DATA) private id: string,
     private fb: FormBuilder,
@@ -34,6 +37,7 @@ export class ResumeFormComponent implements OnInit {
     private dialogService: DialogService) { }
 
   ngOnInit() {
+    this.lawyerId = this.route.snapshot.params.id;
     const id = this.id;
 
     if (id) {
@@ -41,6 +45,7 @@ export class ResumeFormComponent implements OnInit {
 
       this.service.getId(this.formControls.id.value)
         .toPromise().then(resume => {
+          this.formControls.lawyerId.setValue(this.lawyerId);
           this.formControls.title.setValue(resume.title);
           this.formControls.description.setValue(resume.description);
           this.formControls.active.setValue(resume.active);

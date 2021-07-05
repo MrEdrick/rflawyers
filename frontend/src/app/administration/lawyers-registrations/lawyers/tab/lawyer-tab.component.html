@@ -7,7 +7,7 @@
     </app-lawyer-form>
   </mat-tab>
   
-  <mat-tab label="Curriculum">
+  <mat-tab *ngIf="lawyerId" label="Curriculum">
     <app-resumes-cards-with-detail fxFill>
     </app-resumes-cards-with-detail>
   </mat-tab>

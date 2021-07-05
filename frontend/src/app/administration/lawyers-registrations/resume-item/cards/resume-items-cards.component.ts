@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { ResumeItemDto } from '../dto/resume-item.dto';
 import { ResumeItemsService } from '../../services/resume-items.service';
+import { ResumeItemFormComponent } from '../form/resume-item-form.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-resume-items-cards',
@@ -9,26 +10,45 @@ import { ResumeItemsService } from '../../services/resume-items.service';
   styleUrls: ['./resume-items-cards.component.scss']
 })
 export class ResumeItemsCardsComponent implements OnInit {
+  @Input() 
+  resumeId = '';
+
   resumeItems: ResumeItemDto[] = [];
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private resumeItemsService: ResumeItemsService) { }
+    private dialog: MatDialog,
+    private service: ResumeItemsService) { }
 
   ngOnInit() {
-    this.resumeItemsService.getAll()
-      .toPromise()
-      .then(resumeItems => this.resumeItems = resumeItems);
+    this.laodCards();
   }
 
   onDelete(id: string) {
-    this.resumeItemsService.delete(id)
+    this.service.delete(id)
       .toPromise()
-      .then(resumeItem => console.log(resumeItem));
+      .then(_ => this.laodCards());
   }
 
-  onDblClick(id: string) {
-    this.router.navigate(['./resumeItem', id], { relativeTo: this.route });
+  onAdd() {
+    this.dialog.open(
+      ResumeItemFormComponent, {
+      width: '30%',
+      data: ''
+    }).afterClosed().toPromise().then(_ => this.laodCards());
+  }
+
+  onEdit(id: string) {
+    this.dialog.open(
+      ResumeItemFormComponent, {
+        width: '30%',
+        data: id
+      }
+    ).afterClosed().toPromise().then(_ => this.laodCards());
+  }
+
+  laodCards() {
+    this.service.getWithFilter([{key: 'resumeId', value: this.resumeId}])
+      .toPromise()
+      .then(resumeItems => this.resumeItems = resumeItems);
   }
 }

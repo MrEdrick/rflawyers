@@ -16,13 +16,15 @@
       [title]="resume.title"
       [content]="resume.description"
       (clickDeleteButton)="onDelete(resume.id)"
-      (dblclick)="onDblClick(resume.id)">
+      (click)="onSelect(resume)"
+      (dblclick)="onEdit(resume.id)">
     </app-card-without-image>
     
     <button
       mat-button
       style="background-color: #d0d3d4; color: #005683;"
-      fxLayoutAlign="center">
+      fxLayoutAlign="center"
+      (click)="onAdd()">
       Adicionar especialidade
     </button>
 
@@ -33,5 +35,10 @@
   <div       
     fxFlex="auto" 
     fxFlex.xs="100%">
+    <app-resume-items-cards
+      *ngIf="resumeSelected && resumeSelected.id"
+      [resumeId]="resumeSelected.id">
+
+    </app-resume-items-cards>
   </div>
 </div>

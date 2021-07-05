@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-lawyer-tab',
@@ -6,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lawyer-tab.component.scss'],
 })
 export class LawyerTabComponent implements OnInit {
-  constructor() { }
+  lawyerId  = '';
 
-  ngOnInit() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
+
+  ngOnInit() { 
+    this.lawyerId = this.route.snapshot.params.id;
+  }
 }
