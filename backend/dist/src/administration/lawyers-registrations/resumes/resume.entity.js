@@ -19,7 +19,7 @@ const { v4: uuidv4 } = require('uuid');
 let Resume = Resume_1 = class Resume extends typeorm_1.BaseEntity {
     static fromCreateDto(props, userId) {
         let resume = new Resume_1;
-        Object.assign(Resume_1, props);
+        Object.assign(resume, props);
         resume.id = uuidv4();
         resume.insertionDateTime = new Date();
         resume.userId = userId;

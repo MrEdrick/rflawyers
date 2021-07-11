@@ -3897,7 +3897,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/resume-items/dto/create-resume-item.dto.ts": {
-        "version": "d8328cb533f39fc5c29c1fa8ccdaca7c60661d08d6fbaa3aa94f8e00a7545e2f",
+        "version": "00cd0932f2a1ae590fadab1f95fc686c56e762e01c1abdf165454a607a2564cb",
         "signature": "bc3b8d10fa31c377895c4e884b190d1c6e93f1ec0dea564b46b4c7e4c8b1db93",
         "affectsGlobalScope": false
       },
@@ -3907,12 +3907,12 @@
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/resume-items/resume-item.entity.ts": {
-        "version": "f98501988cbae8f30d80d117e32dbdfd2380debd075e5f63af4c6e856fa43836",
+        "version": "81f89913191ddff7fb48c8d03a439725b45f192fa9164521326448f622a3915b",
         "signature": "6c06e20d0beb77435e6b1ab59a954d35ae730276115e8f5e08816c81119ad4a4",
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/resumes/dto/create-resume.dto.ts": {
-        "version": "07de0b13b504b906581321af16786bf1a4b71dd4f3d250bb8e44ddde17b69821",
+        "version": "8149db7b59a88dda997f8a8e00d52e4e0c3c9414eac05c97a2d5fdf7e5a4abf6",
         "signature": "0f2cb9ed1b78a8a86bb038be690ab76ff3a400290a9eb5763091a07f8d5a4087",
         "affectsGlobalScope": false
       },
@@ -3922,12 +3922,12 @@
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/resumes/resume.entity.ts": {
-        "version": "19d8db1f6a6dff5f45e8c0bd199d32601ffc7dce6deb9603703797fac336c742",
+        "version": "a2a28b715e77b513a8b3b1e11cda41d3aa35da65e444265a59bb7078ec2ed833",
         "signature": "ff85c5e4303f089dcc50c8b6215d1b45f44f9700a381dd08e17b2bc39e195015",
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/lawyers/dto/create-lawyer.dto.ts": {
-        "version": "12eeee1f4c339a8c00c7570a0bd4c4f242eae7bf714ea91473efdbc26391de87",
+        "version": "ba14f0400bc355324c6375300fbc7a784b8e6453832bcaad25d436c4cf090705",
         "signature": "87f9dbc0e319eaf5bbb8cbfa4fc2349106b9bd830243a63f014dbf5e6c7d8640",
         "affectsGlobalScope": false
       },

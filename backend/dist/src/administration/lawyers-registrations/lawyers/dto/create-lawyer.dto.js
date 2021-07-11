@@ -22,7 +22,7 @@ __decorate([
     __metadata("design:type", String)
 ], CreateLawyerDto.prototype, "lastName", void 0);
 __decorate([
-    class_validator_1.IsNotEmpty(),
+    class_validator_1.IsOptional(),
     __metadata("design:type", String)
 ], CreateLawyerDto.prototype, "description", void 0);
 __decorate([

@@ -7,7 +7,7 @@ export class CreateLawyerDto {
     @IsNotEmpty()
     lastName: string;
 
-    @IsNotEmpty()
+    @IsOptional()
     description: string;
 
     @IsNotEmpty()

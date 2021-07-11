@@ -1,7 +1,7 @@
 <div
   class="content"
   fxLayout="row wrap">
-  <CardWithoutImageComponent
+  <app-card-without-image
     *ngFor="let resume of resumes"
     style="margin:16px 16px 16px 0px;"
     fxFlex="30%" fxFlex.xs="100%"
@@ -10,7 +10,7 @@
     [content]="resume.description"
     (clickDeleteButton)="onDelete(resume.id)"
     (dblclick)="onDblClick(resume.id)">
-  </CardWithoutImageComponent>
+  </app-card-without-image>
 </div>
 
 <a routerLink="./resume">

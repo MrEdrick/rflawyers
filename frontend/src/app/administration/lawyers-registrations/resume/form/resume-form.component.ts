@@ -1,8 +1,6 @@
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ResumesService } from '../../services/resumes.service';
-import { ActivatedRoute } from '@angular/router';
 import { DialogService } from '../../../../shared-features/dialog-presenter/service/dialog.service';
 import { GENERIC_SAVE_ERROR_MESSAGE } from '../../../../common/const/error-messages.const';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -29,16 +27,15 @@ export class ResumeFormComponent implements OnInit {
   hasUnitNumber = false;
 
   constructor(
-    private route: ActivatedRoute,
     private dialogRef: MatDialogRef<ResumeFormComponent>,
-    @Inject(MAT_DIALOG_DATA) private id: string,
+    @Inject(MAT_DIALOG_DATA) private idLawyerId: {id: string, lawyerId: string},
     private fb: FormBuilder,
     private service: ResumesService,
     private dialogService: DialogService) { }
 
   ngOnInit() {
-    this.lawyerId = this.route.snapshot.params.id;
-    const id = this.id;
+    this.lawyerId = this.idLawyerId.lawyerId;
+    const id = this.idLawyerId.id;
 
     if (id) {
       this.formControls.id.setValue(id);
@@ -50,6 +47,8 @@ export class ResumeFormComponent implements OnInit {
           this.formControls.description.setValue(resume.description);
           this.formControls.active.setValue(resume.active);
         });
+    } else {
+      this.formControls.lawyerId.setValue(this.lawyerId);
     }
   }
 

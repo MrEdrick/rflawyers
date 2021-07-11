@@ -22,7 +22,7 @@ __decorate([
     __metadata("design:type", String)
 ], CreateResumeItemDto.prototype, "title", void 0);
 __decorate([
-    class_validator_1.IsNotEmpty(),
+    class_validator_1.IsOptional(),
     __metadata("design:type", String)
 ], CreateResumeItemDto.prototype, "description", void 0);
 __decorate([

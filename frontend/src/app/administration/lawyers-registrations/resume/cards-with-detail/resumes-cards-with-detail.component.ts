@@ -35,7 +35,7 @@ export class ResumesCardsWithDetailComponent implements OnInit {
     this.dialog.open(
       ResumeFormComponent, {
       width: '30%',
-      data: ''
+      data: {id: '', lawyerId: this.lawyerId}
     }).afterClosed().toPromise().then(_ => this.laodCards());
   }
 
@@ -43,7 +43,7 @@ export class ResumesCardsWithDetailComponent implements OnInit {
     this.dialog.open(
         ResumeFormComponent, {
         width: '30%',
-        data: id
+        data: {id, lawyerId: this.lawyerId}
       }
     ).afterClosed().toPromise().then(_ => this.laodCards());
   }

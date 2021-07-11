@@ -1,24 +1,25 @@
 <div
+  fxFill
   class="content"
-  fxLayout="row wrap">
-  <app-resumes-cards
+  fxLayout="column" 
+  fxLayoutAlign="start start">
+  
+  <app-card-without-image
     *ngFor="let resumeItem of resumeItems"
     style="margin:16px 16px 16px 0px;"
-    fxFlex="30%" fxFlex.xs="100%"
+    fxFlex="30%" 
+    fxFlex.xs="100%"
     fxFlex.sm="33%"
     [title]="resumeItem.title"
     [content]="resumeItem.description"
     (clickDeleteButton)="onDelete(resumeItem.id)"
     (dblclick)="onDblClick(resumeItem.id)">
-  </app-resumes-cards>
+  </app-card-without-image>
 </div>
 
-<a routerLink="./resumeItem">
-  <button
-    style="background-color: #005683; color: #d0d3d4;"
-    mat-fab
-    class="fab-add"
-    fxLayoutAlign="center">
-    <mat-icon>add</mat-icon>
-  </button>
-</a>
+<button
+  mat-button
+  style="background-color: #d0d3d4; color: #005683;"
+  (click)="onAdd()">
+  Adicionar item
+</button>

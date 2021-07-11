@@ -40,7 +40,7 @@ export class ResumeItem extends BaseEntity {
     static fromCreateDto(props: CreateResumeItemDto, userId: string): ResumeItem {
         let resumeItem: ResumeItem = new ResumeItem;
 
-        Object.assign(ResumeItem, props);
+        Object.assign(resumeItem, props);
         resumeItem.id = uuidv4();
         resumeItem.insertionDateTime = new Date();
         resumeItem.userId = userId;

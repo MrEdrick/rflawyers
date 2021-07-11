@@ -1,4 +1,4 @@
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class CreateResumeDto {   
     @IsNotEmpty()
@@ -7,7 +7,7 @@ export class CreateResumeDto {
     @IsNotEmpty()
     title: string;
 
-    @IsNotEmpty()
+    @IsOptional()
     description: string;
 
     @IsNotEmpty()

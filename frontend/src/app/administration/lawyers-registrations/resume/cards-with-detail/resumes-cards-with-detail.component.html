@@ -2,12 +2,14 @@
   fxFill
   class="content"
   fxLayout="row wrap"
-  fxLayoutAlign="space-around stretch" >
+  fxLayoutAlign="space-around stretch">
   
   <div       
     fxFlex="30%" 
     fxFlex.xs="100%"
-    fxFlex.sm="33%">
+    fxFlex.sm="33%"
+    fxLayout="column" 
+    fxLayoutAlign="space-around center" >
     
     <app-card-without-image
       *ngFor="let resume of resumes"
@@ -34,11 +36,12 @@
 
   <div       
     fxFlex="auto" 
-    fxFlex.xs="100%">
+    fxFlex.xs="100%"
+    fxLayoutAlign="space-around stretch">
+
     <app-resume-items-cards
       *ngIf="resumeSelected && resumeSelected.id"
       [resumeId]="resumeSelected.id">
-
     </app-resume-items-cards>
   </div>
 </div>
