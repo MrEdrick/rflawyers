@@ -1,14 +1,14 @@
 <div
   class="content"
   fxLayout="row" 
-  fxLayoutAlign="space-between start">
+  fxLayoutAlign="start start">
   
   <app-card-without-image
     *ngFor="let resumeItem of resumeItems"
     style="margin:16px 16px 16px 0px;"
-    fxFlex="30%" 
+    fxFlex="380px" 
     fxFlex.xs="100%"
-    fxFlex.sm="33%"
+    fxFlex.sm="380px"
     [title]="resumeItem.title"
     [content]="resumeItem.description"
     (clickDeleteButton)="onDelete(resumeItem.id)"
