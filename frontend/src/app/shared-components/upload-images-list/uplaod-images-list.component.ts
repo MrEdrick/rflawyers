@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild, Output, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { FilesService } from '../../shared-features/files-manager/service/file.service';
+import { FilesService } from '../../services/file.service';
 import { UplaodImageComponent } from '../uplaod-image/uplaod-image.component';
 import { DeleteRecordDto } from './dto/delete-record.dto';
 import { InsertNewRecordDto } from './dto/insert-new-record.dto';

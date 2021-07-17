@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { FilesService } from '../../shared-features/files-manager/service/file.service';
+import { FilesService } from '../../services/file.service';
 
 @Component({
   selector: 'app-uplaod-image',

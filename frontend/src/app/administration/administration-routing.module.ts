@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuardService } from './user-auth/service/auth-guard.service';
+import { AuthGuardService } from '../services/auth-guard.service';
 import { SingInComponent } from './user-auth/singin/singin.component';
 import { SingUpComponent } from './user-auth/singup/singup.component';
 import { UsersCardsComponent } from './configurations/users/cards/users-cards.component';

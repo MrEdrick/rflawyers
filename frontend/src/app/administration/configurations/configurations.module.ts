@@ -7,7 +7,7 @@ import { AngularMaterialModule } from '../../angular-material.module';
 import { SharedComponentsModule } from '../../shared-components/shared-components.module';
 import { AppErrorHandler } from '../../common/error-handler/app-error-handler';
 import { UserFormComponent } from './users/form/user-form.component';
-import { UsersService } from './service/users.service';
+import { UsersService } from '../../services/users.service';
 import { AdministrationRoutingModule } from '../administration-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 

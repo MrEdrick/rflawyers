@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder, Validators } from '@angular/forms';
-import { LawyersService } from '../../services/lawyers.service';
+import { LawyersService } from '../../../../services/lawyers.service';
 import { ActivatedRoute } from '@angular/router';
 import { UplaodImageComponent } from '../../../../shared-components/uplaod-image/uplaod-image.component';
 import { DialogService } from '../../../../shared-features/dialog-presenter/service/dialog.service';

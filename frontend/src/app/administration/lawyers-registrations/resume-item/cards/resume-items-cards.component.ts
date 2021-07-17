@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ResumeItemDto } from '../dto/resume-item.dto';
-import { ResumeItemsService } from '../../services/resume-items.service';
+import { ResumeItemDto } from '../../../../dto/resume-item.dto';
+import { ResumeItemsService } from '../../../../services/resume-items.service';
 import { ResumeItemFormComponent } from '../form/resume-item-form.component';
 import { MatDialog } from '@angular/material/dialog';
 

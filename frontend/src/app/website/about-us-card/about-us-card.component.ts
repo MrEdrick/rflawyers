@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CurriculumCardComponent } from '../curriculum-card/curriculum-card.component';
+import { LawyerDto } from 'src/app/dto/lawyer.dto';
+import { ResumeDto } from 'src/app/dto/resume.dto';
+import { ResumesService } from 'src/app/services/resumes.service';
+import { ResumeComponent } from '../resume/resume.component';
 
 @Component({
   selector: 'app-about-us-card',
@@ -8,28 +11,37 @@ import { CurriculumCardComponent } from '../curriculum-card/curriculum-card.comp
   styleUrls: ['./about-us-card.component.scss']
 })
 export class AboutUsCardComponent implements OnInit {
+  @Input()
+  lawyerDto!: LawyerDto;
 
-  @Input()
-  name = '';
-  
-  @Input()
-  image = '';
-
-  @Input()
-  expertises = '';
+  resumeTitles = '';
 
   constructor(
-    private dialog: MatDialog
-  ) { }
+    private dialog: MatDialog,
+    private resumesService: ResumesService
+  ) { 
+    this.resumesService.getWithFilter([{key: 'id', value: this.lawyerDto.id}])
+      .toPromise().then((resumes: ResumeDto[]) => {
+        resumes.forEach((resume: ResumeDto) => {
+          this.resumeTitles = this.resumeTitles + resume.title;
+
+          if (resume.id != resumes[resumes.length - 1].id) {
+            this.resumeTitles = this.resumeTitles + ', ';
+          }
+        });
+      });
+  }
 
   ngOnInit(): void { }
 
-  onClick(curriculumDto: any) {
-    const dialogRef = this.dialog.open(
-      CurriculumCardComponent, {
-      width: '90%',
-      data: curriculumDto
-    }
+  onClick() {
+    this.dialog.open(
+      ResumeComponent, {
+        width: '100%',
+        height: '100%',
+        maxWidth: 'none',
+        data: this.lawyerDto
+      }
     );
   }
 

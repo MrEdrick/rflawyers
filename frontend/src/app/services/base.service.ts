@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { BadInput } from '../common/error-handler/bad-input';
 import { NotFoundError } from '../common/error-handler/not-found-error';
 import { AppError } from '../common/error-handler/app-error';
-import { ParamDto } from './dto/param.dto';
+import { ParamDto } from '../dto/param.dto';
 import { DialogService } from '../shared-features/dialog-presenter/service/dialog.service';
 import { GENERIC_DELETE_ERROR_MESSAGE } from '../common/const/error-messages.const';
 import { InjectorService } from './injector.service';

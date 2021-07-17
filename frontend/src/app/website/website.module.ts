@@ -19,7 +19,11 @@ import { CallToActionComponent } from './call-to-action/call-to-action.component
 import { EmailSenderComponent } from './email-sender-form/email-sender.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmailSenderService } from './email-sender-form/email-sender.service';
-import { CurriculumCardComponent } from './curriculum-card/curriculum-card.component';
+import { ResumeComponent } from './resume/resume.component';
+import { LawyersService } from '../services/lawyers.service';
+import { ResumesService } from '../services/resumes.service';
+import { ResumeItemsService } from '../services/resume-items.service';
+import { ResumeItemListComponent } from './resume-item-list/resume-item-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { CurriculumCardComponent } from './curriculum-card/curriculum-card.compo
     ExpertiseCardComponent,
     AboutUsComponent,
     AboutUsCardComponent,
-    CurriculumCardComponent,
+    ResumeComponent,
+    ResumeItemListComponent,
     OurStoryComponent,
     PhilosophyComponent,
     CallToActionComponent,
@@ -45,7 +50,7 @@ import { CurriculumCardComponent } from './curriculum-card/curriculum-card.compo
     FlexLayoutModule,
     AngularMaterialModule,
     EffectsModule,
-    WebsiteRoutingModule,
+    WebsiteRoutingModule
   ],
   exports: [
     WebsiteComponent,
@@ -55,16 +60,20 @@ import { CurriculumCardComponent } from './curriculum-card/curriculum-card.compo
     ExpertiseCardComponent,
     AboutUsComponent,
     AboutUsCardComponent,
-    CurriculumCardComponent,
+    ResumeComponent,
+    ResumeItemListComponent,
     OurStoryComponent,
     PhilosophyComponent,
     FooterComponent,
     CallToActionComponent,
-    EmailSenderComponent,
+    EmailSenderComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
-    EmailSenderService
+    EmailSenderService,
+    LawyersService,
+    ResumesService,
+    ResumeItemsService
   ]
 })
 export class WebsiteModule { }

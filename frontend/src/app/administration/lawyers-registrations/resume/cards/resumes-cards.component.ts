@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ResumeDto } from '../dto/resume.dto';
-import { ResumesService } from '../../services/resumes.service';
+import { ResumeDto } from '../../../../dto/resume.dto';
+import { ResumesService } from '../../../../services/resumes.service';
 
 @Component({
   selector: 'app-resumes-cards',

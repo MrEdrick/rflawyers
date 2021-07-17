@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
-import { BaseService } from '../../../services/base.service';
 import { BASE_BACKEND_PATH } from 'src/app/common/const/base-backend-path.const';
 import { map } from 'rxjs/operators';
+import { BaseService } from './base.service';
 
 @Injectable()
 export class AuthService extends BaseService {

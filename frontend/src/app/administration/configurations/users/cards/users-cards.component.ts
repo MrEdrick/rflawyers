@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { UsersService } from '../../service/users.service';
-import { UserDto } from '../dto/user.dto';
+import { UsersService } from '../../../../services/users.service';
+import { UserDto } from '../../../../dto/user.dto';
 
 @Component({
   selector: 'app-users-cards',

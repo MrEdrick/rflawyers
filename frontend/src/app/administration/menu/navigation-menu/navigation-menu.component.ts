@@ -3,8 +3,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { map, shareReplay, takeUntil } from 'rxjs/operators';
 import { NavigationStart, Router } from '@angular/router';
-import { AuthService } from '../../user-auth/service/auth.service';
-import { UserDto } from '../../configurations/users/dto/user.dto';
+import { UserDto } from '../../../dto/user.dto';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navigation-menu',

@@ -1,0 +1,26 @@
+<div
+    fxFill
+    class="resume-container"
+    fxLayout="row wrap"
+    fxLayoutAlign="space-evenly stretch">
+
+    <div
+        fxFlex="30%"
+        class="resume-image"
+        [ngStyle]="{'background-image': 'url(' + image + ')', 'margin': '4px' }">
+    </div>
+
+    <div
+        fxFlex="auto"
+        fxLayout="column wrap"
+        fxLayoutAlign="start start">
+        <mat-tab-group>
+            <mat-tab  *ngFor="let resume of resumes"  label="resume.title">
+                <app-resume-item-lis
+                    [resume]="resume">
+
+                </app-resume-item-lis>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

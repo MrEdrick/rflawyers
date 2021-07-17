@@ -1,14 +1,12 @@
-import { Component, Pipe, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { UsersService } from '../../service/users.service';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { UsersService } from '../../../../services/users.service';
 import { UplaodImageComponent } from '../../../../shared-components/uplaod-image/uplaod-image.component';
-import { AuthService } from '../../../user-auth/service/auth.service';
 import { DialogService } from '../../../../shared-features/dialog-presenter/service/dialog.service';
 import { GENERIC_SAVE_ERROR_MESSAGE } from '../../../../common/const/error-messages.const';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user-form',

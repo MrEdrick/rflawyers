@@ -8,7 +8,7 @@ import { AngularMaterialModule } from '../angular-material.module';
 import { FooterFormActionsComponent } from './footer-form-actions/footer-form-actions.component';
 import { ProfileTagComponent } from './profile-tag/profile-tag.component';
 import { CardWithoutImageComponent } from './card-without-image/card-without-image.component';
-import { FilesService } from '../shared-features/files-manager/service/file.service';
+import { FilesService } from '../services/file.service';
 import { TableComponent } from './table/table.component';
 import { UplaodImagesListComponent } from './upload-images-list/uplaod-images-list.component';
 import { SelectWithAddComponent } from './select-with-add/select-with-add.component';

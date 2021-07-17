@@ -1,10 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ResumeItemsService } from '../../services/resume-items.service';
+import { ResumeItemsService } from '../../../../services/resume-items.service';
 import { DialogService } from '../../../../shared-features/dialog-presenter/service/dialog.service';
 import { GENERIC_SAVE_ERROR_MESSAGE } from '../../../../common/const/error-messages.const';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ResumeItemDto } from '../dto/resume-item.dto';
 
 @Component({
   selector: 'app-resume-item-form',

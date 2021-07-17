@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BaseService } from '../../../services/base.service';
-import { BASE_BACKEND_PATH } from '../../../common/const/base-backend-path.const';
+import { BaseService } from './base.service';
+import { BASE_BACKEND_PATH } from '../common/const/base-backend-path.const';
 
 @Injectable()
 export class FilesService extends BaseService {

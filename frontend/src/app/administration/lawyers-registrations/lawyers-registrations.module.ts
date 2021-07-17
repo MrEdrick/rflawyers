@@ -9,15 +9,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AdministrationRoutingModule } from '../administration-routing.module';
 import { LawyersCardsComponent } from './lawyers/cards/lawyers-cards.component';
 import { LawyerFormComponent } from './lawyers/form/lawyer-form.component';
-import { LawyersService } from './services/lawyers.service';
+import { LawyersService } from '../../services/lawyers.service';
 import { LawyerTabComponent } from './lawyers/tab/lawyer-tab.component';
 import { ResumeFormComponent } from './resume/form/resume-form.component';
 import { ResumesCardsComponent } from './resume/cards/resumes-cards.component';
 import { ResumesCardsWithDetailComponent } from './resume/cards-with-detail/resumes-cards-with-detail.component';
 import { ResumeItemFormComponent } from './resume-item/form/resume-item-form.component';
 import { ResumeItemsCardsComponent } from './resume-item/cards/resume-items-cards.component';
-import { ResumesService } from './services/resumes.service';
-import { ResumeItemsService } from './services/resume-items.service';
+import { ResumesService } from '../../services/resumes.service';
+import { ResumeItemsService } from '../../services/resume-items.service';
 
 @NgModule({
   declarations: [

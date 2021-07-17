@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ResumeDto } from '../dto/resume.dto';
-import { ResumesService } from '../../services/resumes.service';
+import { ResumeDto } from '../../../../dto/resume.dto';
+import { ResumesService } from '../../../../services/resumes.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ResumeFormComponent } from '../form/resume-form.component';
 import { ActivatedRoute } from '@angular/router';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { LawyerDto } from '../dto/lawyer.dto';
-import { LawyersService } from '../../services/lawyers.service';
+import { LawyersService } from 'src/app/services/lawyers.service';
+import { LawyerDto } from '../../../../dto/lawyer.dto';
 
 @Component({
   selector: 'app-lawyers-cards',

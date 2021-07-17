@@ -5,11 +5,11 @@ import { SingInComponent } from './singin/singin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AngularMaterialModule } from '../../angular-material.module';
-import { AuthService } from './service/auth.service';
-import { AuthGuardService } from './service/auth-guard.service';
+import { AuthGuardService } from '../../services/auth-guard.service';
 import { AdministrationRoutingModule } from '../administration-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { AuthService } from 'src/app/services/auth.service';
 
 @NgModule({
   declarations: [

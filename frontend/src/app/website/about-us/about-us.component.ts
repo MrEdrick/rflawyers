@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { LawyerDto } from 'src/app/dto/lawyer.dto';
+import { LawyersService } from 'src/app/services/lawyers.service';
 
 @Component({
   selector: 'app-about-us',
@@ -9,32 +11,17 @@ export class AboutUsComponent implements OnInit {
   @ViewChild('cardListContainer')
   cardListContainerRef: ElementRef | undefined;
 
-  lawyersList = [
-    {
-      name: 'Vitor Rodrigues',
-      image: '/assets/images/vitor.jpg',
-      expertises: 'Direito Internacional, Aeronáutico, Civil,    Constitucional e Eleitoral.'
-    },
-    {
-      name: 'Helem Franceschini',
-      image: '/assets/images/helem.jpg',
-      expertises: 'Direito Penal, Aeronáutico, Constitucional e Civil.'
-    },
-    {
-      name: 'Dolimar Pimentel',
-      image: '/assets/images/dolimar.jpg',
-      expertises: 'Direito Sindical, Civil, Constitucional e    Tributário.'
-    }//,
-    //{
-    //  name: 'Dara Mazula',
-    //  image: '/assets/images/dara.jpg',
-    //  expertises: 'Direito Civil.'
-    //}
-  ];
+  lawyers: LawyerDto[] = [];
 
-  constructor() { }
+  constructor(
+    private lawyersService: LawyersService
+  ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    this.lawyersService.getAll()
+      .toPromise()
+      .then(lawyers => this.lawyers = lawyers);
+  }
 
   scrollToLeft() {
     this.cardListContainerRef?.nativeElement.scrollBy({

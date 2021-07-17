@@ -3,21 +3,22 @@
     class="about-us-card"
     fxFlex
     fxLayout="column wrap"
-    fxLayoutAlign="space-evenly center">
+    fxLayoutAlign="space-evenly center"
+    (click)="onClick()">
 
     <div
         fxFlex="150px"
         class="about-us-image"
-        [ngStyle]="{'background-image': 'url(' + image + ')', 'margin': '4px' }">
+        [ngStyle]="{'background-image': 'url(' + lawyerDto.image + ')', 'margin': '4px' }">
     </div>
 
     <mat-card-content
         fxFlex="auto">
 
-        <h1>{{name}}</h1>
+        <h1>{{[lawyerDto.firstName + ' ' + lawyerDto.lastName]}}</h1>
 
         <p style="white-space: normal;">
-            {{expertises}}
+            {{resumeTitles}}
         </p>
     </mat-card-content>
 </mat-card>
