@@ -2,29 +2,27 @@
     width: 100%;
     height: 100%;
 
-    h1 {
-        text-align: center;
+    .resume-card {
         font-family: "Julius Sans One", sans-serif;
-        font-weight: 600;
-        font-size: 25px;
-    }
-
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.05);
-        transform-origin: center top;
-    }
-
-    .mat-card-content {
-        max-width: 100%;
-        text-align: center;
-        text-justify: auto;
+        background-image: url(/assets/images/background-card.jpg);
+        background-color: #212322;
+        background-size: cover;
+        color: #d0d3d4;
+        border-radius: 0px;
+        max-width: 400px;
     }
 }
 
-.resume-image {
-    width: 150px;
-    height: 150px;
-    background-size: cover;
-    border-radius: 50%;
+img {
+    max-height: 350px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    object-fit: cover;
+    object-position: top center;
+}
+
+p {
+    font-weight: 500;
+    font-family: 'Libre Franklin', sans-serif;
 }

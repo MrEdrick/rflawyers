@@ -20,7 +20,9 @@ export class AboutUsComponent implements OnInit {
   ngOnInit(): void { 
     this.lawyersService.getAll()
       .toPromise()
-      .then(lawyers => this.lawyers = lawyers);
+      .then(lawyers => {
+        this.lawyers = lawyers;
+      });
   }
 
   scrollToLeft() {

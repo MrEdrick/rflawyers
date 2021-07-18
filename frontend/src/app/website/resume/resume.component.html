@@ -4,23 +4,42 @@
     fxLayout="row wrap"
     fxLayoutAlign="space-evenly stretch">
 
-    <div
+    <mat-card 
         fxFlex="30%"
-        class="resume-image"
-        [ngStyle]="{'background-image': 'url(' + image + ')', 'margin': '4px' }">
-    </div>
-
+        class="mat-elevation-z0 resume-card">
+        <mat-card-header>
+          <div mat-card-avatar 
+            [ngStyle]="{'background-image': 'url(' + lawyer.image + ')', 'background-size': 'cover'}">
+          </div>
+          <mat-card-title>{{[lawyer.firstName + ' ' + lawyer.lastName]}}</mat-card-title>
+          <mat-card-subtitle style="font-family: 'Libre Franklin', sans-serif; color: #d0d3d4;">{{lawyer.oab}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{lawyer.image}}">
+        <mat-card-content>
+          <p>
+            {{lawyer.description}}
+          </p>
+        </mat-card-content>
+    </mat-card>
     <div
         fxFlex="auto"
         fxLayout="column wrap"
         fxLayoutAlign="start start">
-        <mat-tab-group>
-            <mat-tab  *ngFor="let resume of resumes"  label="resume.title">
-                <app-resume-item-lis
+        <mat-tab-group
+            fxFill>
+            <mat-tab *ngFor="let resume of resumes" 
+                label="{{resume.title}}">
+                <app-resume-item-list
                     [resume]="resume">
-
-                </app-resume-item-lis>
+                </app-resume-item-list>
             </mat-tab>
         </mat-tab-group>
     </div>
+
+    <!--button 
+        mat-icon-button color="primary" 
+        style="position: relative; top: 0px; right: 0px; color: #005683;" 
+        (click)="onClose()">
+        <mat-icon>close</mat-icon>
+    </button-->
 </div>

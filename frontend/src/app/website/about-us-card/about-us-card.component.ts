@@ -12,7 +12,7 @@ import { ResumeComponent } from '../resume/resume.component';
 })
 export class AboutUsCardComponent implements OnInit {
   @Input()
-  lawyerDto!: LawyerDto;
+  lawyer!: LawyerDto;
 
   resumeTitles = '';
 
@@ -20,7 +20,7 @@ export class AboutUsCardComponent implements OnInit {
     private dialog: MatDialog,
     private resumesService: ResumesService
   ) { 
-    this.resumesService.getWithFilter([{key: 'id', value: this.lawyerDto.id}])
+    this.resumesService.getWithFilter([{key: 'id', value: this.lawyer?.id}])
       .toPromise().then((resumes: ResumeDto[]) => {
         resumes.forEach((resume: ResumeDto) => {
           this.resumeTitles = this.resumeTitles + resume.title;
@@ -38,9 +38,8 @@ export class AboutUsCardComponent implements OnInit {
     this.dialog.open(
       ResumeComponent, {
         width: '100%',
-        height: '100%',
-        maxWidth: 'none',
-        data: this.lawyerDto
+        height: '90%',
+        data: this.lawyer
       }
     );
   }

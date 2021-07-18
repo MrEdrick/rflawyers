@@ -10,20 +10,20 @@ import { ResumesService } from 'src/app/services/resumes.service';
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
-  image = '';
   resumes: ResumeDto[] = [];
 
   constructor(
     private dialogRef: MatDialogRef<ResumeComponent>,
-    @Inject(MAT_DIALOG_DATA) private lawyerDto: LawyerDto,
+    @Inject(MAT_DIALOG_DATA) public lawyer: LawyerDto,
     private resumesService: ResumesService
-  ) {
-    this.image = this.lawyerDto.image; 
-  }
+  ) { }
 
   ngOnInit(): void {
-    this.resumesService.getWithFilter([{key: 'lawyerId', value: this.lawyerDto.id}])
+    this.resumesService.getWithFilter([{key: 'lawyerId', value: this.lawyer.id}])
       .toPromise().then(resumes => this.resumes = resumes)
   }
 
+  onClose() {
+    this.dialogRef.close();
+  }
 }

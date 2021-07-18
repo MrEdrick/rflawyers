@@ -9,13 +9,13 @@
     <div
         fxFlex="150px"
         class="about-us-image"
-        [ngStyle]="{'background-image': 'url(' + lawyerDto.image + ')', 'margin': '4px' }">
+        [ngStyle]="{'background-image': 'url(' + lawyer.image + ')', 'margin': '4px' }">
     </div>
 
     <mat-card-content
         fxFlex="auto">
 
-        <h1>{{[lawyerDto.firstName + ' ' + lawyerDto.lastName]}}</h1>
+        <h1>{{[lawyer.firstName + ' ' + lawyer.lastName]}}</h1>
 
         <p style="white-space: normal;">
             {{resumeTitles}}
