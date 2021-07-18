@@ -17,6 +17,12 @@ export class UpdateLawyerDto {
     descripton: string;
 
     @IsOptional()
+    specializations: string;
+
+    @IsOptional()
+    languages: string;
+    
+    @IsOptional()
     oab: string;
 
     @IsOptional()

@@ -11,6 +11,7 @@ const common_1 = require("@nestjs/common");
 const lawyers_module_1 = require("./lawyers/lawyers.module");
 const resume_items_module_1 = require("./resume-items/resume-items.module");
 const resumes_module_1 = require("./resumes/resumes.module");
+const schooling_module_1 = require("./schooling/schooling.module");
 let LawyersRegistrationsModule = class LawyersRegistrationsModule {
 };
 LawyersRegistrationsModule = __decorate([
@@ -18,11 +19,13 @@ LawyersRegistrationsModule = __decorate([
         imports: [
             resume_items_module_1.ResumeItemsModule,
             resumes_module_1.ResumesModule,
+            schooling_module_1.SchoolingModule,
             lawyers_module_1.LawyersModule
         ],
         exports: [
             resume_items_module_1.ResumeItemsModule,
             resumes_module_1.ResumesModule,
+            schooling_module_1.SchoolingModule,
             lawyers_module_1.LawyersModule
         ]
     })

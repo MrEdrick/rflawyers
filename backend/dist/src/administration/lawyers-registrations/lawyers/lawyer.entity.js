@@ -52,6 +52,14 @@ __decorate([
     __metadata("design:type", String)
 ], Lawyer.prototype, "description", void 0);
 __decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], Lawyer.prototype, "specializations", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], Lawyer.prototype, "languages", void 0);
+__decorate([
     typeorm_1.Column(),
     __metadata("design:type", Number)
 ], Lawyer.prototype, "oab", void 0);

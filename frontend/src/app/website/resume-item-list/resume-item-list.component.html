@@ -1,11 +1,21 @@
 <div
     fxFill
     class="resume-tem-list"
-    fxLayout="row wrap"
-    fxLayoutAlign="space-evenly stretch">
+    fxLayout="column" 
+    fxLayoutAlign="start stretch">
 
-    <mat-accordion fxFill multi>
-        <mat-expansion-panel 
+    <div 
+      fxFlex="30"
+      fxLayout="row wrap" 
+      fxLayoutAlign="start stretch"
+      style='padding: 16px; word-break: break-all; word-wrap: break-word;'>
+      <p fxFill>
+        {{resume.description}}
+      </p>
+    </div>
+
+    <mat-accordion fxFlex="auto" multi>
+      <mat-expansion-panel 
           *ngFor="let resumeItem of resumeItems"
           expanded="true">
           <mat-expansion-panel-header>

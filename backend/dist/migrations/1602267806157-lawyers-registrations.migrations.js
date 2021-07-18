@@ -31,6 +31,14 @@ class LawyersRegistrationsMigrations1602267806157 {
                     type: "varchar",
                 },
                 {
+                    name: "specializations",
+                    type: "varchar",
+                },
+                {
+                    name: "languages",
+                    type: "varchar",
+                },
+                {
                     name: "image",
                     type: "varchar",
                 },
@@ -50,6 +58,55 @@ class LawyersRegistrationsMigrations1602267806157 {
             ]
         }), true);
         await queryRunner.createForeignKey("lawyer", new typeorm_1.TableForeignKey({
+            columnNames: ["userId"],
+            referencedColumnNames: ["id"],
+            referencedTableName: "user",
+            onDelete: "CASCADE"
+        }));
+        await queryRunner.createTable(new typeorm_1.Table({
+            name: "schooling",
+            columns: [
+                {
+                    name: "id",
+                    type: "uuid",
+                    isPrimary: true,
+                    isUnique: true,
+                    generationStrategy: 'uuid'
+                },
+                {
+                    name: "lawyerId",
+                    type: "uuid",
+                },
+                {
+                    name: "userId",
+                    type: "uuid",
+                },
+                {
+                    name: "title",
+                    type: "varchar",
+                },
+                {
+                    name: "description",
+                    type: "varchar",
+                },
+                {
+                    name: "active",
+                    type: "boolean",
+                },
+                {
+                    name: "insertionDateTime",
+                    type: "timestamp",
+                    default: "now()"
+                },
+            ]
+        }), true);
+        await queryRunner.createForeignKey("schooling", new typeorm_1.TableForeignKey({
+            columnNames: ["lawyerId"],
+            referencedColumnNames: ["id"],
+            referencedTableName: "lawyer",
+            onDelete: "CASCADE"
+        }));
+        await queryRunner.createForeignKey("schooling", new typeorm_1.TableForeignKey({
             columnNames: ["userId"],
             referencedColumnNames: ["id"],
             referencedTableName: "user",

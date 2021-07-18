@@ -4,6 +4,7 @@ import { UpdateUserDto } from "./dto/update-user.dto";
 import { Lawyer } from "src/administration/lawyers-registrations/lawyers/lawyer.entity";
 import { Resume } from "src/administration/lawyers-registrations/resumes/resume.entity";
 import { ResumeItem } from "src/administration/lawyers-registrations/resume-items/resume-item.entity";
+import { Schooling } from "src/administration/lawyers-registrations/schooling/schooling.entity";
 export declare class User extends BaseEntity {
     id: string;
     name: string;
@@ -21,6 +22,7 @@ export declare class User extends BaseEntity {
     lawyers: Lawyer[];
     resumes: Resume[];
     resumeItems: ResumeItem[];
+    schooling: Schooling[];
     validatePassword(password: string): Promise<boolean>;
     static fromCreateDto(props: CreateUserDto): Promise<User>;
     static fromUpdateUserDto(props: UpdateUserDto): User;

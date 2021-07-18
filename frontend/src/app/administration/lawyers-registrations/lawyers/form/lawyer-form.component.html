@@ -114,6 +114,42 @@
             <strong>Descrição obrigatória</strong>
           </mat-error>
         </mat-form-field>
+
+        <mat-form-field 
+          fxFlexAlign="stretch">
+          
+          <textarea 
+            placeholder="Especializações" 
+            formControlName="specializations"
+            matInput 
+            cdkTextareaAutosize 
+            CdkTextareaAutosize
+            cdkAutosizeMinRows="1" 
+            cdkAutosizeMaxRows="6">
+          </textarea>
+          
+          <mat-error *ngIf="formControls.specializations.hasError('required')">
+            <strong>Especializações obrigatórias</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field 
+          fxFlexAlign="stretch">
+          
+          <textarea 
+            placeholder="Idiomas" 
+            formControlName="languages"
+            matInput 
+            cdkTextareaAutosize 
+            CdkTextareaAutosize
+            cdkAutosizeMinRows="1" 
+            cdkAutosizeMaxRows="6">
+          </textarea>
+          
+          <mat-error *ngIf="formControls.languages.hasError('required')">
+            <strong>Idiomas obrigatória</strong>
+          </mat-error>
+        </mat-form-field>
       </div>
     </mat-card-content>
 

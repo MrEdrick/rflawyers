@@ -10,6 +10,12 @@ export class CreateLawyerDto {
     @IsOptional()
     description: string;
 
+    @IsOptional()
+    specializations: string;
+
+    @IsOptional()
+    languages: string;
+
     @IsNotEmpty()
     oab: number;
 

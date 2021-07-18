@@ -36,6 +36,14 @@ __decorate([
 __decorate([
     class_validator_1.IsOptional(),
     __metadata("design:type", String)
+], UpdateLawyerDto.prototype, "specializations", void 0);
+__decorate([
+    class_validator_1.IsOptional(),
+    __metadata("design:type", String)
+], UpdateLawyerDto.prototype, "languages", void 0);
+__decorate([
+    class_validator_1.IsOptional(),
+    __metadata("design:type", String)
 ], UpdateLawyerDto.prototype, "oab", void 0);
 __decorate([
     class_validator_1.IsOptional(),

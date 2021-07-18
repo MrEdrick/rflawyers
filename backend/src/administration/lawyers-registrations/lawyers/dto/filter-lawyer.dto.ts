@@ -14,6 +14,12 @@ export class FilterLawyerDto {
     description: string;
 
     @IsOptional()
+    specializations: string;
+
+    @IsOptional()
+    languages: string;
+    
+    @IsOptional()
     oab: string;
 
     @IsOptional()

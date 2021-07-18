@@ -24,6 +24,12 @@ export class Lawyer extends BaseEntity {
     @Column({ nullable: true })
     description: string;
 
+    @Column({ nullable: true })
+    specializations: string;
+
+    @Column({ nullable: true })
+    languages: string;
+
     @Column()
     oab: number;
 

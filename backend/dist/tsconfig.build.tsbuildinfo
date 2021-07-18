@@ -1787,7 +1787,7 @@
         "affectsGlobalScope": false
       },
       "../migrations/1602267806157-lawyers-registrations.migrations.ts": {
-        "version": "32fe6e5c3be2224d9d464628f67781eee5a879108234658bd91f0918cbccebed",
+        "version": "313158bf1a6c1f6bf5b3bf99173dae5dec1f73ae24115194c91a709c0633154c",
         "signature": "9f9f5438a2566fc589c6957bdd0993439e80a561dfa0bf39818c4974b2bf4ecc",
         "affectsGlobalScope": false
       },
@@ -3927,23 +3927,38 @@
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/lawyers/dto/create-lawyer.dto.ts": {
-        "version": "ba14f0400bc355324c6375300fbc7a784b8e6453832bcaad25d436c4cf090705",
-        "signature": "87f9dbc0e319eaf5bbb8cbfa4fc2349106b9bd830243a63f014dbf5e6c7d8640",
+        "version": "d0a17f8098eb3dea6610479527f54a2112633a7feaef2632df15eb12043e633c",
+        "signature": "cc1b9259c35854ff3ef4b0d0a623c41951d51b1a22c5ab65fa7b6046781e1caf",
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/lawyers/dto/update-lawyer.dto.ts": {
-        "version": "91e0de905245826868b28230e1f5c69caa7a4242246145e6705d896b6a144e3c",
-        "signature": "4763b1d00255ba3b2a23f2c685dd893a93a7960b7caf92bfcacca9b566570916",
+        "version": "1ed52786923b38ba43d8ca9e4666f28d334fad8e3f92955e7972b69643a53d6d",
+        "signature": "2c01fa04cc027c969410776aef53e536e493bd7e427dad098b1b12b3a15071d7",
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts": {
-        "version": "40466b74afcdaf8c20f54052fad126db1074bb646c7c279d330a1e405cf871b6",
-        "signature": "0586382fe39ff14d254c24be7c350c8062e607f5750923b0f1a70046b02df051",
+        "version": "7b80718eb56e27b27e7b80e8d2c39017a86eeb73d46c10ceb1a39fa97df75ffc",
+        "signature": "c645a570027f67989aac9a2505ddba17e8e5adc676b83b9c305d52358a75adc9",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/lawyers-registrations/schooling/dto/create-schooling.dto.ts": {
+        "version": "4d4769eed0c59dd737b9e751acf0bc172756144a344f9bd13ea1e0cabd99dcb1",
+        "signature": "c37c8f969db00d524abdfe3863cdab4876381cf5673851472ef45580b7201e04",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/lawyers-registrations/schooling/dto/update-schooling.dto.ts": {
+        "version": "159a8a3de315b2e18f4f0a01d7c68d3dded4392ef46d099bdbf171b0866305a7",
+        "signature": "0643044ff0dc34a82247bb16723be80c47aa6491b40ae03d6a09cf2de6d5ea64",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/lawyers-registrations/schooling/schooling.entity.ts": {
+        "version": "eb167836b3bf8f57fd36e61c68e69ce7b9571c1ef05af2bb51ed3c2627f54f37",
+        "signature": "90d473c5829f62ac28f978bf6a487211bb770a5f06e52112b65e4b46e279a3f9",
         "affectsGlobalScope": false
       },
       "../src/administration/configurations/users/user.entity.ts": {
-        "version": "2b52ee578c0f2d8d96b8b9b35499760b97b02cf55664e657554299c11be4ac67",
-        "signature": "085c4029a22e3a981b701ceb4baba62de65f3fd0f66054f86908efaa7d414f89",
+        "version": "8fc7b05f52da03f72ed271e2041d76704b8c13ece04c04f74dcbce6140ca902a",
+        "signature": "fea7fa2633812f4ad50708ecd22b733c8e3a1ada69db1652086ab2d0550de8a2",
         "affectsGlobalScope": false
       },
       "../src/administration/configurations/users/dto/filter-user.dto.ts": {
@@ -4307,8 +4322,8 @@
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/lawyers/dto/filter-lawyer.dto.ts": {
-        "version": "d66d761fbf9a9f1f6fb384232e336469d6c21931070b46b811b9b0fde449175c",
-        "signature": "ccbc6d6aec7332f67dcdd121c6a403dd8d928095b2bb1ecd2b6894d575a5378a",
+        "version": "a85ee296db51838b03018e8ba5194be16e7e3797af0274ceecf45581f64ede8c",
+        "signature": "74202fb1e83ccc4e3a7bd4cf3ba34c068a28884cb2c1651a2bf02ad17204b1ce",
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/lawyers/lawyer.repository.ts": {
@@ -4381,8 +4396,33 @@
         "signature": "f7efe8041d6fd29c751743415433ceb1fee3ad516b2271aec844821262514c62",
         "affectsGlobalScope": false
       },
+      "../src/administration/lawyers-registrations/schooling/dto/filter-schooling.dto.ts": {
+        "version": "7a50604db1cd4e8b9153c86f26bf95f1d3b8959b063844c607fec1dae357b50c",
+        "signature": "f8accb59cdbcdc3a776d9642be5fc68d05fb92a6eb76c84d1e0038eac35f0ade",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/lawyers-registrations/schooling/schooling.repository.ts": {
+        "version": "f36cf837eef4279988d2e539a7010b13e5978bad10b2c4bf00f6338a2ee43922",
+        "signature": "b6e6f6e13ef7662ebc81dc32de6a875b37df5248723911365d9a3534bdcb0a60",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/lawyers-registrations/schooling/schooling.service.ts": {
+        "version": "e46e0bcc2cd08a58bf3aaf99ec73dd3be9ae0d329151aa670d9e40e24fb4a282",
+        "signature": "2668be99bbbb7d46cb1bbc6093c3b743bb5af47b5c00300d5ee9595bebf74c6f",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/lawyers-registrations/schooling/schooling.controller.ts": {
+        "version": "69a2b45dba33c8f952fe50543191fce08077940914272c232963ff921429256b",
+        "signature": "8a28d938156297c46a8789776f32e0815a85f354475face028646a258a3ac000",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/lawyers-registrations/schooling/schooling.module.ts": {
+        "version": "4faa439bdb9b2f0ea759e8724041478123d433c35aea6583bcf3797b0573ca96",
+        "signature": "1f374f341b15a585eb9ee8588dfc66044f37b679e40baafe7a7aed828baefe97",
+        "affectsGlobalScope": false
+      },
       "../src/administration/lawyers-registrations/lawyers-registrations.module.ts": {
-        "version": "5f73348cd50aacf1b77db1a596e483c7f219996e0721f6028898068a0906e1e3",
+        "version": "05425e505de125845a9b0afda52b904953fdc930f3e99060e781ddd3196abf12",
         "signature": "a67449fd2d3cee4e0bccfad27ba2aca41bf3b0257223d006302e6f77858463dc",
         "affectsGlobalScope": false
       },
@@ -8269,7 +8309,8 @@
         "../src/administration/configurations/users/dto/update-user.dto.ts",
         "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts",
         "../src/administration/lawyers-registrations/resume-items/resume-item.entity.ts",
-        "../src/administration/lawyers-registrations/resumes/resume.entity.ts"
+        "../src/administration/lawyers-registrations/resumes/resume.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.entity.ts"
       ],
       "../src/administration/configurations/users/user.repository.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -8392,7 +8433,8 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/administration/lawyers-registrations/lawyers/lawyers.module.ts",
         "../src/administration/lawyers-registrations/resume-items/resume-items.module.ts",
-        "../src/administration/lawyers-registrations/resumes/resumes.module.ts"
+        "../src/administration/lawyers-registrations/resumes/resumes.module.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.module.ts"
       ],
       "../src/administration/lawyers-registrations/lawyers/dto/create-lawyer.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
@@ -8562,6 +8604,62 @@
         "../src/administration/lawyers-registrations/resumes/dto/update-resume.dto.ts",
         "../src/administration/lawyers-registrations/resumes/resume.entity.ts",
         "../src/administration/lawyers-registrations/resumes/resume.repository.ts"
+      ],
+      "../src/administration/lawyers-registrations/schooling/dto/create-schooling.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/administration/lawyers-registrations/schooling/dto/filter-schooling.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/administration/lawyers-registrations/schooling/dto/update-schooling.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/administration/lawyers-registrations/schooling/schooling.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
+        "../src/administration/configurations/users/user.decorator.ts",
+        "../src/administration/configurations/users/user.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/create-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/filter-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/update-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.service.ts"
+      ],
+      "../src/administration/lawyers-registrations/schooling/schooling.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/configurations/users/user.entity.ts",
+        "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/create-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/update-schooling.dto.ts"
+      ],
+      "../src/administration/lawyers-registrations/schooling/schooling.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.controller.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.repository.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.service.ts",
+        "../src/administration/user-auth/user-auth.module.ts"
+      ],
+      "../src/administration/lawyers-registrations/schooling/schooling.repository.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/handlebars/types/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/configurations/users/user.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/create-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/filter-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/update-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.entity.ts",
+        "../src/enums/enum-errorcodes.ts"
+      ],
+      "../src/administration/lawyers-registrations/schooling/schooling.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/administration/configurations/users/user.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/create-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/filter-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/update-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.repository.ts"
       ],
       "../src/administration/user-auth/dto/auth-credentials.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
@@ -11936,7 +12034,8 @@
         "../src/administration/configurations/users/dto/update-user.dto.ts",
         "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts",
         "../src/administration/lawyers-registrations/resume-items/resume-item.entity.ts",
-        "../src/administration/lawyers-registrations/resumes/resume.entity.ts"
+        "../src/administration/lawyers-registrations/resumes/resume.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.entity.ts"
       ],
       "../src/administration/configurations/users/user.repository.ts": [
         "../node_modules/typeorm/index.d.ts",
@@ -12093,6 +12192,37 @@
         "../src/administration/lawyers-registrations/resumes/dto/update-resume.dto.ts",
         "../src/administration/lawyers-registrations/resumes/resume.entity.ts",
         "../src/administration/lawyers-registrations/resumes/resume.repository.ts"
+      ],
+      "../src/administration/lawyers-registrations/schooling/schooling.controller.ts": [
+        "../src/administration/configurations/users/user.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/create-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/filter-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/update-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.service.ts"
+      ],
+      "../src/administration/lawyers-registrations/schooling/schooling.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/configurations/users/user.entity.ts",
+        "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/create-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/update-schooling.dto.ts"
+      ],
+      "../src/administration/lawyers-registrations/schooling/schooling.repository.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/configurations/users/user.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/create-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/filter-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/update-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.entity.ts"
+      ],
+      "../src/administration/lawyers-registrations/schooling/schooling.service.ts": [
+        "../src/administration/configurations/users/user.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/create-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/filter-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/dto/update-schooling.dto.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.entity.ts",
+        "../src/administration/lawyers-registrations/schooling/schooling.repository.ts"
       ],
       "../src/administration/user-auth/user-auth.controller.ts": [
         "../src/administration/configurations/users/user.entity.ts",

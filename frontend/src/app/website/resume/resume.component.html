@@ -5,7 +5,7 @@
     fxLayoutAlign="space-evenly stretch">
 
     <mat-card 
-        fxFlex="30%"
+        fxFlex="35"
         class="mat-elevation-z0 resume-card">
         <mat-card-header>
           <div mat-card-avatar 
@@ -17,16 +17,23 @@
         <img mat-card-image src="{{lawyer.image}}">
         <mat-card-content>
           <p>
-            {{lawyer.description}}
+            <b>{{lawyer.description}}</b>
+          </p>
+          <p>
+            <b>Especializações:</b>
+            {{lawyer.specializations}}
+          </p>
+          <p> 
+            <b>Idiomas:</b> 
+            {{lawyer.languages}}
           </p>
         </mat-card-content>
     </mat-card>
     <div
-        fxFlex="auto"
+        fxFlex="65"
         fxLayout="column wrap"
         fxLayoutAlign="start start">
-        <mat-tab-group
-            fxFill>
+        <mat-tab-group fxFill>
             <mat-tab *ngFor="let resume of resumes" 
                 label="{{resume.title}}">
                 <app-resume-item-list

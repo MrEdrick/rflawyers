@@ -24,6 +24,8 @@ export class LawyerFormComponent implements OnInit {
     lastName: [null, Validators.required],
     oab: [null, Validators.required],
     description: [null, Validators.required],
+    languages: [null, Validators.required],
+    specializations: [null, Validators.required],
     active: [true, Validators.required]
   });
 
@@ -50,6 +52,8 @@ export class LawyerFormComponent implements OnInit {
           this.formControls.lastName.setValue(lawyer.lastName);
           this.formControls.oab.setValue(lawyer.oab);
           this.formControls.description.setValue(lawyer.description);
+          this.formControls.languages.setValue(lawyer.languages);
+          this.formControls.specializations.setValue(lawyer.specializations),
           this.formControls.active.setValue(lawyer.active);
 
           this.uploadImageComponent.image = lawyer.image;

@@ -15,6 +15,7 @@ const typeorm_1 = require("typeorm");
 const lawyer_entity_1 = require("../../lawyers-registrations/lawyers/lawyer.entity");
 const resume_entity_1 = require("../../lawyers-registrations/resumes/resume.entity");
 const resume_item_entity_1 = require("../../lawyers-registrations/resume-items/resume-item.entity");
+const schooling_entity_1 = require("../../lawyers-registrations/schooling/schooling.entity");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 const { v4: uuidv4 } = require('uuid');
@@ -111,6 +112,10 @@ __decorate([
     typeorm_1.OneToMany(type => resume_item_entity_1.ResumeItem, resumeItem => resumeItem.user, { eager: false }),
     __metadata("design:type", Array)
 ], User.prototype, "resumeItems", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => schooling_entity_1.Schooling, schooling => schooling.user, { eager: false }),
+    __metadata("design:type", Array)
+], User.prototype, "schooling", void 0);
 User = User_1 = __decorate([
     typeorm_1.Entity(),
     typeorm_1.Unique(['username', 'email'])

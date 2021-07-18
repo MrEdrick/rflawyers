@@ -30,6 +30,14 @@ export class LawyersRegistrationsMigrations1602267806157 implements MigrationInt
                     type: "varchar",
                 },
                 {
+                    name: "specializations",
+                    type: "varchar",
+                }, 
+                {
+                    name: "languages",
+                    type: "varchar",
+                },                 
+                {
                     name: "image",
                     type: "varchar",
                 },
@@ -50,6 +58,58 @@ export class LawyersRegistrationsMigrations1602267806157 implements MigrationInt
         }), true);
 
         await queryRunner.createForeignKey("lawyer", new TableForeignKey({
+            columnNames: ["userId"],
+            referencedColumnNames: ["id"],
+            referencedTableName: "user",
+            onDelete: "CASCADE"
+        }));
+        
+        await queryRunner.createTable(new Table({
+            name: "schooling",
+            columns: [
+                {
+                    name: "id",
+                    type: "uuid",
+                    isPrimary: true,
+                    isUnique: true,
+                    generationStrategy: 'uuid'
+                },
+                {
+                    name: "lawyerId",
+                    type: "uuid",
+                },
+                {
+                    name: "userId",
+                    type: "uuid",
+                },
+                {
+                    name: "title",
+                    type: "varchar",
+                },
+                {
+                    name: "description",
+                    type: "varchar",
+                },
+                {
+                    name: "active",
+                    type: "boolean",
+                },
+                {
+                    name: "insertionDateTime",
+                    type: "timestamp",
+                    default: "now()"
+                },
+            ]
+        }), true);
+
+        await queryRunner.createForeignKey("schooling", new TableForeignKey({
+            columnNames: ["lawyerId"],
+            referencedColumnNames: ["id"],
+            referencedTableName: "lawyer",
+            onDelete: "CASCADE"
+        }));
+
+        await queryRunner.createForeignKey("schooling", new TableForeignKey({
             columnNames: ["userId"],
             referencedColumnNames: ["id"],
             referencedTableName: "user",
@@ -107,7 +167,6 @@ export class LawyersRegistrationsMigrations1602267806157 implements MigrationInt
             referencedTableName: "user",
             onDelete: "CASCADE"
         }));
-
 
         await queryRunner.createTable(new Table({
             name: "resume_item",
