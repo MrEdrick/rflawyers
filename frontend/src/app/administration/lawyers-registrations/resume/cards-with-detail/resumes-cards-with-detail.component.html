@@ -3,48 +3,23 @@
   class="content"
   div fxLayout="row wrap" 
   fxLayoutAlign="space-around stretch">
-  
-  <div       
-    fxFlex="30%" 
-    fxFlex.xs="100%"
-    fxFlex.sm="33%"
-    fxLayout="column" 
-    fxLayoutAlign="space-around center" >
+
+  <app-card-without-image
+    *ngFor="let resume of resumes"
+    style="margin:16px 16px 16px 0px;"
+    fxFlex="100%" 
+    [title]="resume.title"
+    [content]="resume.description"
+    (clickDeleteButton)="onDelete(resume.id)"
+    (click)="onSelect(resume)"
+    (dblclick)="onEdit(resume.id)">
+  </app-card-without-image>
     
-    <app-card-without-image
-      *ngFor="let resume of resumes"
-      style="margin:16px 16px 16px 0px;"
-      fxFlex="100%" 
-      [title]="resume.title"
-      [content]="resume.description"
-      (clickDeleteButton)="onDelete(resume.id)"
-      (click)="onSelect(resume)"
-      (dblclick)="onEdit(resume.id)">
-    </app-card-without-image>
-    
-    <button
-      mat-button
-      style="background-color: #d0d3d4; color: #005683;"
-      fxLayoutAlign="center"
-      (click)="onAdd()">
-      Adicionar especialidade
-    </button>
-
-  </div>
-
-  <mat-divider 
-    style="margin-right: 16px;"
-    [vertical]="true">
-  </mat-divider>
-
-  <div       
-    fxFlex="auto" 
-    fxFlex.xs="100%"
-    fxLayoutAlign="space-around stretch">
-
-    <app-resume-items-cards
-      *ngIf="resumeSelected && resumeSelected.id"
-      [resumeId]="resumeSelected.id">
-    </app-resume-items-cards>
-  </div>
+  <button
+    mat-button
+    style="background-color: #d0d3d4; color: #005683;"
+    fxLayoutAlign="center"
+    (click)="onAdd()">
+      Adicionar informações
+  </button>
 </div>

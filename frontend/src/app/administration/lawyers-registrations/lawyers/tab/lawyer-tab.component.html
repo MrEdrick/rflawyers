@@ -2,15 +2,29 @@
   fxFill
   mat-align-tabs="start">
   
-  <mat-tab label="Dados Gerais"
-    fxLayout="row wrap">
-    <app-lawyer-form fxFill>
+  <mat-tab 
+    label="Dados Gerais">
+    <app-lawyer-form 
+      fxFill>
     </app-lawyer-form>
   </mat-tab>
   
-  <mat-tab *ngIf="lawyerId" label="Curriculum">
-    <app-resumes-cards-with-detail fxFill>
-    </app-resumes-cards-with-detail>
+  <mat-tab 
+    *ngIf="lawyerId" 
+    label="Curriculum">
+    <app-resumes-cards 
+      fxFill
+      [lawyerId]="lawyerId">
+    </app-resumes-cards>
+  </mat-tab>
+
+  <mat-tab 
+    *ngIf="lawyerId" 
+    label="Escolaridade">
+    <app-schooling-cards
+      fxFill
+      [lawyerId]="lawyerId">
+    </app-schooling-cards>
   </mat-tab>
 
 </mat-tab-group>

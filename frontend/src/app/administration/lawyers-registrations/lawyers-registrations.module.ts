@@ -18,9 +18,14 @@ import { ResumeItemFormComponent } from './resume-item/form/resume-item-form.com
 import { ResumeItemsCardsComponent } from './resume-item/cards/resume-items-cards.component';
 import { ResumesService } from '../../services/resumes.service';
 import { ResumeItemsService } from '../../services/resume-items.service';
+import { SchoolingCardsComponent } from './schooling/cards/schooling-cards.component';
+import { SchoolingFormComponent } from './schooling/form/schooling-form.component';
+import { SchoolingService } from 'src/app/services/schooling.service';
 
 @NgModule({
   declarations: [
+    SchoolingCardsComponent,
+    SchoolingFormComponent,
     ResumeItemsCardsComponent,
     ResumeItemFormComponent,
     ResumesCardsComponent,
@@ -41,6 +46,8 @@ import { ResumeItemsService } from '../../services/resume-items.service';
     SharedComponentsModule
   ],
   exports: [
+    SchoolingCardsComponent,
+    SchoolingFormComponent,
     ResumeItemsCardsComponent,
     ResumeItemFormComponent,
     ResumesCardsComponent,
@@ -51,6 +58,7 @@ import { ResumeItemsService } from '../../services/resume-items.service';
     LawyerFormComponent
   ],
   providers: [
+    SchoolingService,
     LawyersService,
     ResumesService,
     ResumeItemsService,

@@ -1,23 +1,23 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SchoolingFormComponent } from '../form/schooling-form.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ResumeDto } from '../../../../dto/resume.dto';
-import { ResumesService } from '../../../../services/resumes.service';
-import { ResumeFormComponent } from '../form/resume-form.component';
+import { SchoolingDto } from 'src/app/dto/schooling.dto';
+import { SchoolingService } from 'src/app/services/schooling.service';
 
 @Component({
-  selector: 'app-resumes-cards',
-  templateUrl: './resumes-cards.component.html',
-  styleUrls: ['./resumes-cards.component.scss']
+  selector: 'app-schooling-cards',
+  templateUrl: './schooling-cards.component.html',
+  styleUrls: ['./schooling-cards.component.scss']
 })
-export class ResumesCardsComponent implements OnInit {
+export class SchoolingCardsComponent implements OnInit {
   @Input() 
   lawyerId = '';
 
-  resumes: ResumeDto[] = [];
+  schooling: SchoolingDto[] = [];
 
   constructor(
     private dialog: MatDialog,
-    private service: ResumesService) { }
+    private service: SchoolingService) { }
 
   ngOnInit() {
     this.laodCards();
@@ -31,16 +31,16 @@ export class ResumesCardsComponent implements OnInit {
 
   onAdd() {
     this.dialog.open(
-      ResumeFormComponent, {
-      width: '50%',
+      SchoolingFormComponent, {
+      width: '30%',
       data: {id: '', lawyerId: this.lawyerId}
     }).afterClosed().toPromise().then(_ => this.laodCards());
   }
 
   onEdit(id: string) {
     this.dialog.open(
-      ResumeFormComponent, {
-        width: '50%',
+      SchoolingFormComponent, {
+        width: '30%',
         data: {id, lawyerId: this.lawyerId}
       }
     ).afterClosed().toPromise().then(_ => this.laodCards());
@@ -49,6 +49,6 @@ export class ResumesCardsComponent implements OnInit {
   laodCards() {
     this.service.getWithFilter([{key: 'lawyerId', value: this.lawyerId}])
       .toPromise()
-      .then(schooling => this.resumes = schooling);
+      .then(schooling => this.schooling = schooling);
   }
 }
