@@ -18,6 +18,7 @@ import localePt from '@angular/common/locales/pt';
 import { InjectorService } from './services/injector.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { EffectsModule } from './effects/effects.module';
+import { QuillModule } from 'ngx-quill';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -40,6 +41,12 @@ export function getToken() {
     SharedComponentsModule,
     AdministrationModule,
     WebsiteModule,
+    QuillModule.forRoot({
+      customOptions: [{
+        import: 'formats/font',
+        whitelist: ['mirza', 'roboto', 'aref', 'serif', 'sansserif', 'monospace']
+      }]
+    }),
     JwtModule.forRoot({
       config: {
         tokenGetter: getToken,
