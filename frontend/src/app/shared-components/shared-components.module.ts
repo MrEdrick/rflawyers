@@ -42,7 +42,7 @@ import { DialogComponent } from './dialog/dialog.component';
     FormsModule,
     ReactiveFormsModule,
     LayoutModule,
-    AngularMaterialModule,
+    AngularMaterialModule
   ],
   exports: [
     UplaodImageComponent,

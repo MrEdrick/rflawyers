@@ -41,12 +41,7 @@ export function getToken() {
     SharedComponentsModule,
     AdministrationModule,
     WebsiteModule,
-    QuillModule.forRoot({
-      customOptions: [{
-        import: 'formats/font',
-        whitelist: ['mirza', 'roboto', 'aref', 'serif', 'sansserif', 'monospace']
-      }]
-    }),
+    QuillModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: getToken,
