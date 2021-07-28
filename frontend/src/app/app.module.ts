@@ -52,6 +52,7 @@ export function getToken() {
   ],
   providers: [
     JwtModule,
+    QuillModule,
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
     { provide: LocationStrategy, useClass: HashLocationStrategy}
