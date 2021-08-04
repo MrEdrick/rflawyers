@@ -17,7 +17,7 @@
         <img mat-card-image src="{{lawyer.image}}">
         <mat-card-content>
           <p>
-            <b>{{lawyer.description}}</b>
+            <b [innerHTML]="lawyer.description"></b>
           </p>
           <p>
             <b>Especializações:</b>
@@ -42,11 +42,4 @@
             </mat-tab>
         </mat-tab-group>
     </div>
-
-    <!--button 
-        mat-icon-button color="primary" 
-        style="position: relative; top: 0px; right: 0px; color: #005683;" 
-        (click)="onClose()">
-        <mat-icon>close</mat-icon>
-    </button-->
 </div>

@@ -101,24 +101,6 @@
           fxFlexAlign="stretch">
           
           <textarea 
-            placeholder="Descrição" 
-            formControlName="description"
-            matInput 
-            cdkTextareaAutosize 
-            CdkTextareaAutosize
-            cdkAutosizeMinRows="1" 
-            cdkAutosizeMaxRows="6">
-          </textarea>
-          
-          <mat-error *ngIf="formControls.description.hasError('required')">
-            <strong>Descrição obrigatória</strong>
-          </mat-error>
-        </mat-form-field>
-
-        <mat-form-field 
-          fxFlexAlign="stretch">
-          
-          <textarea 
             placeholder="Especializações" 
             formControlName="specializations"
             matInput 
@@ -150,6 +132,11 @@
             <strong>Idiomas obrigatória</strong>
           </mat-error>
         </mat-form-field>
+
+        <quill-editor
+          fxFlexAlign="stretch"
+          formControlName="description">
+        </quill-editor>
       </div>
     </mat-card-content>
 

@@ -27,7 +27,7 @@ export class LawyersRegistrationsMigrations1602267806157 implements MigrationInt
                 },
                 {
                     name: "description",
-                    type: "varchar",
+                    type: "text",
                 },
                 {
                     name: "specializations",
@@ -88,7 +88,7 @@ export class LawyersRegistrationsMigrations1602267806157 implements MigrationInt
                 },
                 {
                     name: "description",
-                    type: "varchar",
+                    type: "text",
                 },
                 {
                     name: "active",
@@ -140,7 +140,7 @@ export class LawyersRegistrationsMigrations1602267806157 implements MigrationInt
                 },
                 {
                     name: "description",
-                    type: "varchar",
+                    type: "text",
                 },
                 {
                     name: "active",
@@ -192,7 +192,7 @@ export class LawyersRegistrationsMigrations1602267806157 implements MigrationInt
                 },
                 {
                     name: "description",
-                    type: "varchar",
+                    type: "text",
                 },
                 {
                     name: "active",

@@ -9,8 +9,7 @@
       fxLayout="row wrap" 
       fxLayoutAlign="start stretch"
       style='padding: 16px; word-break: break-all; word-wrap: break-word;'>
-      <p fxFill>
-        {{resume.description}}
+      <p fxFill [innerHTML]="resume.description">
       </p>
     </div>
 
@@ -23,7 +22,7 @@
               {{resumeItem.title}}
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <p>{{resumeItem.description}}</p>
+          <p [innerHTML]="resumeItem.description"></p>
         </mat-expansion-panel>
     </mat-accordion>
 </div>
