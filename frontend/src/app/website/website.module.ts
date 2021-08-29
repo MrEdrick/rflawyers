@@ -69,6 +69,7 @@ import { ResumeItemListComponent } from './resume-item-list/resume-item-list.com
     EmailSenderComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  entryComponents: [ResumeComponent],
   providers: [
     EmailSenderService,
     LawyersService,

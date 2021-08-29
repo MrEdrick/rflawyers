@@ -1787,7 +1787,7 @@
         "affectsGlobalScope": false
       },
       "../migrations/1602267806157-lawyers-registrations.migrations.ts": {
-        "version": "313158bf1a6c1f6bf5b3bf99173dae5dec1f73ae24115194c91a709c0633154c",
+        "version": "74aa15268f2c0b09967586f7883cdb6a3420fc73dcb055eb2481a01acdaafde9",
         "signature": "9f9f5438a2566fc589c6957bdd0993439e80a561dfa0bf39818c4974b2bf4ecc",
         "affectsGlobalScope": false
       },

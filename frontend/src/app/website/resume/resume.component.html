@@ -1,45 +1,54 @@
 <div
     fxFill
     class="resume-container"
-    fxLayout="row wrap"
+    fxLayout.gt-xs="row wrap"
+    fxLayout="column"
     fxLayoutAlign="space-evenly stretch">
-
     <mat-card 
-        fxFlex="35"
+        fxFlex.gt-xs="40"
+        fxFlex="auto"
         class="mat-elevation-z0 resume-card">
         <mat-card-header>
           <div mat-card-avatar 
-            [ngStyle]="{'background-image': 'url(' + lawyer.image + ')', 'background-size': 'cover'}">
+            [ngStyle]="{'background-image': 'url(' + lawyer?.image + ')', 'background-size': 'cover'}">
           </div>
-          <mat-card-title>{{[lawyer.firstName + ' ' + lawyer.lastName]}}</mat-card-title>
-          <mat-card-subtitle style="font-family: 'Libre Franklin', sans-serif; color: #d0d3d4;">{{lawyer.oab}}</mat-card-subtitle>
+          <mat-card-title>{{[lawyer?.firstName + ' ' + lawyer?.lastName]}}</mat-card-title>
+          <mat-card-subtitle style="font-family: 'Libre Franklin', sans-serif; color: #d0d3d4;">{{lawyer?.oab}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="{{lawyer.image}}">
-        <mat-card-content>
+        <img
+          mat-card-image  
+          [ngStyle.gt-xs]="{'max-height': '380px'}" 
+          src="{{lawyer?.image}}">
+        <mat-card-content 
+          [ngStyle.gt-xs]="{'font-size': '1.0vw', 'font-weight': '500', 'letter-spacing': '1px', 'font-family': 'Libre Franklin'}">
           <p>
-            <b [innerHTML]="lawyer.description"></b>
+            <b [innerHTML]="lawyer?.description"></b>
           </p>
           <p>
             <b>Especializações:</b>
-            {{lawyer.specializations}}
+            {{lawyer?.specializations}}
           </p>
           <p> 
             <b>Idiomas:</b> 
-            {{lawyer.languages}}
+            {{lawyer?.languages}}
           </p>
         </mat-card-content>
     </mat-card>
     <div
-        fxFlex="65"
-        fxLayout="column wrap"
+        fxFlex.gt-xs="60"
+        fxFlex="auto"
+        fxLayout="row wrap"
         fxLayoutAlign="start start">
-        <mat-tab-group fxFill>
-            <mat-tab *ngFor="let resume of resumes" 
-                label="{{resume.title}}">
-                <app-resume-item-list
-                    [resume]="resume">
-                </app-resume-item-list>
-            </mat-tab>
-        </mat-tab-group>
+
+        <mat-list role="list" fxFlex="auto">
+          <mat-list-item 
+            fxFill
+            role="listitem"  
+            *ngFor="let resume of resumes">
+            <app-resume-item-list
+                [resume]="resume">
+            </app-resume-item-list>
+          </mat-list-item>
+        </mat-list>
     </div>
 </div>

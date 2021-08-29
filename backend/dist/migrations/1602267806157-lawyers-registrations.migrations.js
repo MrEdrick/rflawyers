@@ -28,7 +28,7 @@ class LawyersRegistrationsMigrations1602267806157 {
                 },
                 {
                     name: "description",
-                    type: "varchar",
+                    type: "text",
                 },
                 {
                     name: "specializations",
@@ -87,7 +87,7 @@ class LawyersRegistrationsMigrations1602267806157 {
                 },
                 {
                     name: "description",
-                    type: "varchar",
+                    type: "text",
                 },
                 {
                     name: "active",
@@ -136,7 +136,7 @@ class LawyersRegistrationsMigrations1602267806157 {
                 },
                 {
                     name: "description",
-                    type: "varchar",
+                    type: "text",
                 },
                 {
                     name: "active",
@@ -185,7 +185,7 @@ class LawyersRegistrationsMigrations1602267806157 {
                 },
                 {
                     name: "description",
-                    type: "varchar",
+                    type: "text",
                 },
                 {
                     name: "active",
