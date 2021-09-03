@@ -1,26 +1,35 @@
 <div
-    fxFill
+    fxFlex="100"
+    fxFlex.gt-xs="50"
+    [ngStyle.gt-xs]="{'margin-left': '25%'}"
     class="resume-container"
-    fxLayout.gt-xs="row wrap"
     fxLayout="column"
-    fxLayoutAlign="space-evenly stretch">
+    fxLayoutAlign="start stretch">
     <mat-card 
-        fxFlex.gt-xs="40"
         fxFlex="auto"
+        fxLayout="column wrap"
+        fxLayoutAlign="start stretch"
         class="mat-elevation-z0 resume-card">
-        <mat-card-header>
+        <mat-card-header fxFlex="58px">
           <div mat-card-avatar 
             [ngStyle]="{'background-image': 'url(' + lawyer?.image + ')', 'background-size': 'cover'}">
           </div>
           <mat-card-title>{{[lawyer?.firstName + ' ' + lawyer?.lastName]}}</mat-card-title>
           <mat-card-subtitle style="font-family: 'Libre Franklin', sans-serif; color: #d0d3d4;">{{lawyer?.oab}}</mat-card-subtitle>
+          <button 
+            mat-icon-button 
+            style="color: #d0d3d4; right: 16px; position: absolute;"
+            (click)="onClose()">
+            <mat-icon>close</mat-icon>
+          </button>
         </mat-card-header>
         <img
-          mat-card-image  
-          [ngStyle.gt-xs]="{'max-height': '380px'}" 
+          fxFlex="540px"
+          mat-card-image
           src="{{lawyer?.image}}">
         <mat-card-content 
-          [ngStyle.gt-xs]="{'font-size': '1.0vw', 'font-weight': '500', 'letter-spacing': '1px', 'font-family': 'Libre Franklin'}">
+          fxFlex="auto"
+          [ngStyle.gt-xs]="{'font-size': '1vw'}">
           <p>
             <b [innerHTML]="lawyer?.description"></b>
           </p>
@@ -35,7 +44,6 @@
         </mat-card-content>
     </mat-card>
     <div
-        fxFlex.gt-xs="60"
         fxFlex="auto"
         fxLayout="row wrap"
         fxLayoutAlign="start start">

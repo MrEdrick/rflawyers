@@ -7,32 +7,47 @@
     background-color: #005683 !important;
 }
 
+:host {
+    background-color: #d0d3d4;
+}
+
 .resume-container {
-    width: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background-color: #ffffff;
 
     .resume-card {
         font-family: "Julius Sans One", sans-serif;
-        background-image: url(/assets/images/background-card.jpg);
         background-color: #212322;
         background-size: cover;
         color: #d0d3d4;
         border-radius: 0px;
-        max-width: 400px;
+    }
+
+    mat-card-title {
+        font-size: 2vw;
+    }
+
+    mat-card-content {
+        padding-top: 16px;
+        padding-bottom: 16px;
     }
 }
 
 img {
-    max-height: 100%;
     display: table-cell;
-    text-align: center;
+    text-align: top;
     vertical-align: middle;
     object-fit: cover;
     object-position: top center;
 }
 
 p {
-    font-size: 2.5vh;
-    font-weight: 500;
+    font-size: 2vh;
+    font-weight: 400;
     letter-spacing: 1px;
     font-family: 'Libre Franklin', sans-serif;
+
+    b {
+        font-weight: 600;
+    }
 }

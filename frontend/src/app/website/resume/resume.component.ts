@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LawyerDto } from 'src/app/dto/lawyer.dto';
 import { ResumeDto } from 'src/app/dto/resume.dto';
 import { LawyersService } from 'src/app/services/lawyers.service';
@@ -16,6 +16,7 @@ export class ResumeComponent implements OnInit {
   lawyerImage: string = '';
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private resumesService: ResumesService,
     private lawyersService: LawyersService
@@ -34,5 +35,6 @@ export class ResumeComponent implements OnInit {
   }
 
   onClose() {
+    this.router.navigate(['./website/index']);
   }
 }
