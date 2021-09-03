@@ -43,10 +43,14 @@ export class ResumeRepository extends Repository<Resume> {
 
     async repositoryGetByFilter(filterDto: FilterResumeDto): Promise<Resume[]> {
         const query = this.createQueryBuilder(this.metadata.tableName);
-        const { userId, title, description, active } = filterDto;
+        const { userId, lawyerId, title, description, active } = filterDto;
 
         if (filterDto.userId) {
-            query.andWhere(`"userId" = ${userId}`);
+            query.andWhere(`"userId" = '${userId}'::uuid`);
+        }
+
+        if (filterDto.lawyerId) {
+            query.andWhere(`"lawyerId" = '${lawyerId}'::uuid`);
         }
 
         if (filterDto.title) {
@@ -60,7 +64,7 @@ export class ResumeRepository extends Repository<Resume> {
         if (filterDto.active) {
             query.andWhere(`"active" = ${active}`);
         }
-        
+
         return await query.getMany();
     }
 }

@@ -45,7 +45,7 @@ let LawyerRepository = class LawyerRepository extends typeorm_1.Repository {
         const query = this.createQueryBuilder(this.metadata.tableName);
         const { userId, firstName, lastName, description, oab, active } = filterDto;
         if (filterDto.userId) {
-            query.andWhere(`"userId" = ${userId}`);
+            query.andWhere(`"userId" = '${userId}'::uuid`);
         }
         if (filterDto.firstName) {
             query.andWhere(`"firstName" ILIKE '%${firstName}%'`);

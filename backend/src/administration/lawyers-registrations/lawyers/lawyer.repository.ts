@@ -46,7 +46,7 @@ export class LawyerRepository extends Repository<Lawyer> {
         const { userId, firstName, lastName, description, oab, active } = filterDto;
 
         if (filterDto.userId) {
-            query.andWhere(`"userId" = ${userId}`);
+            query.andWhere(`"userId" = '${userId}'::uuid`);
         }
 
         if (filterDto.firstName) {

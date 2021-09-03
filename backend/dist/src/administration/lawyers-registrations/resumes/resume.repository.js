@@ -43,9 +43,12 @@ let ResumeRepository = class ResumeRepository extends typeorm_1.Repository {
     }
     async repositoryGetByFilter(filterDto) {
         const query = this.createQueryBuilder(this.metadata.tableName);
-        const { userId, title, description, active } = filterDto;
+        const { userId, lawyerId, title, description, active } = filterDto;
         if (filterDto.userId) {
-            query.andWhere(`"userId" = ${userId}`);
+            query.andWhere(`"userId" = '${userId}'::uuid`);
+        }
+        if (filterDto.lawyerId) {
+            query.andWhere(`"lawyerId" = '${lawyerId}'::uuid`);
         }
         if (filterDto.title) {
             query.andWhere(`"title" ILIKE '%${title}%'`);

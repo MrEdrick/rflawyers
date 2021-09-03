@@ -4327,7 +4327,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/lawyers/lawyer.repository.ts": {
-        "version": "2069ea1266a505b0c979e5d59a820eba127542f816d38fc74ae50b5d10b6dbfe",
+        "version": "c417ff1c8daf699fee4c93250392d202587a34d9418790883dc0b22c50302925",
         "signature": "9f9427c8c5b448ff8361dd1d4b93fb7f258b60ec78e831f3b008e066eee79783",
         "affectsGlobalScope": false
       },
@@ -4377,7 +4377,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/resumes/resume.repository.ts": {
-        "version": "11fa2e5fede40c08cbd085ab5c7a2f97d3cb8202fe19317130e4c5577965f444",
+        "version": "2818328b88e1da9de577d5f95fc7f211da3bd30ffd4d33594eb716e2bd839f0f",
         "signature": "a4e537f714da47a6f825a1e3b2114081d675c61c58d964aa7635efdf219efa76",
         "affectsGlobalScope": false
       },
@@ -4402,7 +4402,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/schooling/schooling.repository.ts": {
-        "version": "f36cf837eef4279988d2e539a7010b13e5978bad10b2c4bf00f6338a2ee43922",
+        "version": "3eaca1c9b1adb91a30b93a678cf5fd6429f06515c674b4b9b01c5f983b81f394",
         "signature": "b6e6f6e13ef7662ebc81dc32de6a875b37df5248723911365d9a3534bdcb0a60",
         "affectsGlobalScope": false
       },

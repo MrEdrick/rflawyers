@@ -49,6 +49,8 @@ export class ResumesCardsComponent implements OnInit {
   laodCards() {
     this.service.getWithFilter([{key: 'lawyerId', value: this.lawyerId}])
       .toPromise()
-      .then(schooling => this.resumes = schooling);
+      .then(resumes => {
+        this.resumes = resumes;
+      });
   }
 }

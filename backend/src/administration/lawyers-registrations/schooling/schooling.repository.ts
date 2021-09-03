@@ -43,10 +43,14 @@ export class SchoolingRepository extends Repository<Schooling> {
 
     async repositoryGetByFilter(filterDto: FilterSchoolingDto): Promise<Schooling[]> {
         const query = this.createQueryBuilder(this.metadata.tableName);
-        const { userId, title, description, active } = filterDto;
+        const { userId, lawyerId, title, description, active } = filterDto;
 
         if (filterDto.userId) {
-            query.andWhere(`"userId" = ${userId}`);
+            query.andWhere(`"userId" = '${userId}'::uuid`);
+        }
+
+        if (filterDto.lawyerId) {
+            query.andWhere(`"lawyerId" = '${lawyerId}'::uuid`);
         }
 
         if (filterDto.title) {
