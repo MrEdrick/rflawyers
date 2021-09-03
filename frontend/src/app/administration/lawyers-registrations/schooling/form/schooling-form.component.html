@@ -42,10 +42,23 @@
         </mat-checkbox>
       </div>
 
-      <quill-editor
-        fxFlexAlign="stretch"
-        formControlName="description">
-      </quill-editor>
+      <mat-form-field 
+      fxFlexAlign="stretch">
+      
+        <textarea 
+          placeholder="Descrição" 
+          formControlName="description"
+          matInput 
+          cdkTextareaAutosize 
+          CdkTextareaAutosize
+          cdkAutosizeMinRows="1" 
+          cdkAutosizeMaxRows="6">
+        </textarea>
+        
+        <mat-error *ngIf="formControls.description.hasError('required')">
+          <strong>Descrição é obrigatória</strong>
+        </mat-error>
+      </mat-form-field>
     </div>
   </mat-card-content>
 

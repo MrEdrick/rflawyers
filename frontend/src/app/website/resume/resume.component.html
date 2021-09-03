@@ -14,7 +14,7 @@
           <div mat-card-avatar 
             [ngStyle]="{'background-image': 'url(' + lawyer?.image + ')', 'background-size': 'cover'}">
           </div>
-          <mat-card-title>{{[lawyer?.firstName + ' ' + lawyer?.lastName]}}</mat-card-title>
+          <mat-card-title [ngStyle.gt-xs]="{'font-size': '2vw'}">{{[lawyer?.firstName + ' ' + lawyer?.lastName]}}</mat-card-title>
           <mat-card-subtitle style="font-family: 'Libre Franklin', sans-serif; color: #d0d3d4;">{{lawyer?.oab}}</mat-card-subtitle>
           <button 
             mat-icon-button 
@@ -40,6 +40,10 @@
           <p> 
             <b>Idiomas:</b> 
             {{lawyer?.languages}}
+          </p>
+          <p *ngFor="let schooling of schooling"> 
+            <b>{{schooling?.title}}: </b> 
+            <span>{{schooling?.description}}</span>
           </p>
         </mat-card-content>
     </mat-card>

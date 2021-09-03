@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ResumeItemsService } from '../../../../services/resume-items.service';
+import { SchoolingService } from '../../../../services/schooling.service';
 import { DialogService } from '../../../../shared-features/dialog-presenter/service/dialog.service';
 import { GENERIC_SAVE_ERROR_MESSAGE } from '../../../../common/const/error-messages.const';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -29,7 +29,7 @@ export class SchoolingFormComponent implements OnInit {
     private dialogRef: MatDialogRef<SchoolingFormComponent>,
     @Inject(MAT_DIALOG_DATA) private lawyerKey: {id: string, lawyerId: string},
     private fb: FormBuilder,
-    private service: ResumeItemsService,
+    private service: SchoolingService,
     private dialogService: DialogService) { }
 
   ngOnInit() {
@@ -39,14 +39,14 @@ export class SchoolingFormComponent implements OnInit {
       this.formControls.id.setValue(id);
 
       this.service.getId(this.formControls.id.value)
-        .toPromise().then(resumeItem => {
-          this.formControls.resumeId.setValue(resumeItem.resumeId);
-          this.formControls.title.setValue(resumeItem.title);
-          this.formControls.description.setValue(resumeItem.description);
-          this.formControls.active.setValue(resumeItem.active);
+        .toPromise().then(schooling => {
+          this.formControls.lawyerId.setValue(schooling.lawyerId);
+          this.formControls.title.setValue(schooling.title);
+          this.formControls.description.setValue(schooling.description);
+          this.formControls.active.setValue(schooling.active);
         });
     } else {
-      this.formControls.resumeId.setValue(this.lawyerKey.lawyerId);
+      this.formControls.lawyerId.setValue(this.lawyerKey.lawyerId);
     }
   }
 
