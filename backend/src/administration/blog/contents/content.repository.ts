@@ -1,19 +1,20 @@
 import { Repository, EntityRepository } from "typeorm";
-import { Lawyer } from "./lawyer.entity";
-import { CreateLawyerDto } from "./dto/create-lawyer.dto";
-import { UpdateLawyerDto } from "./dto/update-lawyer.dto";
-import { FilterLawyerDto } from "./dto/filter-lawyer.dto";
+import { Content } from "./content.entity";
+import { CreateContentDto } from "./dto/create-content.dto";
+import { UpdateContentDto } from "./dto/update-content.dto";
+import { FilterContentDto } from "./dto/filter-content.dto";
 import { EnumErrorCodes } from "../../../enums/enum-errorcodes";
 import { ConflictException } from "@nestjs/common";
 import { User } from "../../configurations/users/user.entity";
 import { Exception } from "handlebars";
 
-@EntityRepository(Lawyer)
-export class LawyerRepository extends Repository<Lawyer> {
-    async repositoryCreate(createDto: CreateLawyerDto, user: User): Promise<Lawyer> {
-        const datas = Lawyer.fromCreateDto(createDto, user.id);
-
+@EntityRepository(Content)
+export class ContentRepository extends Repository<Content> {
+    async repositoryCreate(createDto: CreateContentDto, user: User): Promise<Content> {
+        const datas = Content.fromCreateDto(createDto, user.id);
+        
         try {
+            datas.order = (await this.repositoryGetCount(createDto.articleId)) + 1;
             await this.save(datas);
         } catch (error) {
             if (error.code == EnumErrorCodes.DUPLICATED_DATA) {
@@ -27,8 +28,8 @@ export class LawyerRepository extends Repository<Lawyer> {
         return datas;
     }
 
-    async repositoryUpdate(updateDto: UpdateLawyerDto): Promise<Lawyer> {
-        const datas = Lawyer.fromUpdateLawyerDto(updateDto);
+    async repositoryUpdate(updateDto: UpdateContentDto): Promise<Content> {
+        const datas = Content.fromUpdateArticleDto(updateDto);
 
         try {
             await this.save({ ...datas, id: datas.id });
@@ -41,28 +42,24 @@ export class LawyerRepository extends Repository<Lawyer> {
         return datas;
     }
 
-    async repositoryGetByFilter(filterDto: FilterLawyerDto): Promise<Lawyer[]> {
+    async repositoryGetByFilter(filterDto: FilterContentDto): Promise<Content[]> {
         const query = this.createQueryBuilder(this.metadata.tableName);
-        const { userId, firstName, lastName, description, oab, active } = filterDto;
+        const { userId, title, description, date, active } = filterDto;
 
         if (filterDto.userId) {
             query.andWhere(`"userId" = '${userId}'::uuid`);
         }
 
-        if (filterDto.firstName) {
-            query.andWhere(`"firstName" ILIKE '%${firstName}%'`);
-        }
-
-        if (filterDto.lastName) {
-            query.andWhere(`"lastName" ILIKE '%${lastName}%'`);
+        if (filterDto.title) {
+            query.andWhere(`"title" ILIKE '%${title}%'`);
         }
 
         if (filterDto.description) {
             query.andWhere(`"description" ILIKE '%${description}%'`);
         }
 
-        if (filterDto.oab) {
-            query.andWhere(`"oab" = ${oab}`);
+        if (filterDto.date) {
+            query.andWhere(`"oab" = ${date}`);
         }
 
         if (filterDto.active) {
@@ -70,5 +67,14 @@ export class LawyerRepository extends Repository<Lawyer> {
         }
 
         return await query.getMany();
+    }
+
+    
+    async repositoryGetCount(articleId: string): Promise<number> {
+        const query = this.createQueryBuilder(this.metadata.tableName);
+
+        query.andWhere(`"articleId" = ${articleId}::uuid`);
+
+        return await query.getCount();
     }
 }

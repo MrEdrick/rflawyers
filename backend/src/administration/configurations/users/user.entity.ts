@@ -8,6 +8,8 @@ import { Schooling } from "src/administration/lawyers-registrations/schooling/sc
 
 import * as bcrypt from 'bcrypt';
 import * as crypto from "crypto";
+import { Article } from "src/administration/blog/articles/article.entity";
+import { Content } from "src/administration/blog/contents/content.entity";
 
 const { v4: uuidv4 } = require('uuid');
 
@@ -64,6 +66,12 @@ export class User extends BaseEntity {
 
     @OneToMany(type => Schooling, schooling => schooling.user, { eager: false })
     schooling: Schooling[];
+
+    @OneToMany(type => Article, article => article.user, { eager: false })
+    articles: Article[];
+
+    @OneToMany(type => Content, content => content.user, { eager: false })
+    content: Content[];
 
     async validatePassword(password: string): Promise<boolean> {
         return this.password === (await bcrypt.hash(password, this.salt));
