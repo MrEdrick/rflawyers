@@ -5,6 +5,7 @@ import { DialogService } from '../../../../shared-features/dialog-presenter/serv
 import { GENERIC_SAVE_ERROR_MESSAGE } from '../../../../common/const/error-messages.const';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UplaodImageComponent } from 'src/app/shared-components/uplaod-image/uplaod-image.component';
+import { LawyerDto } from 'src/app/dto/lawyer.dto';
 
 @Component({
   selector: 'app-article-form',
@@ -12,8 +13,8 @@ import { UplaodImageComponent } from 'src/app/shared-components/uplaod-image/upl
   styleUrls: ['./article-form.component.scss'],
 })
 export class ArticleFormComponent implements OnInit {
-  lawyerId  = '';
-  submitError = '';
+  lawyerIdSelected = '';
+  lawyers: LawyerDto[] = [];
 
   @ViewChild('uploadImage')
   uploadImageComponent!: UplaodImageComponent;
@@ -23,7 +24,8 @@ export class ArticleFormComponent implements OnInit {
     lawyerId: [null],
     title: [null, Validators.required],
     description: [null, Validators.required],
-    active: [true, Validators.required]
+    active: [true, Validators.required],
+    date: [null, Validators.required]
   });
 
   formControls = this.form.controls;
@@ -36,27 +38,25 @@ export class ArticleFormComponent implements OnInit {
     private dialogService: DialogService) { }
 
   ngOnInit() {
-    this.lawyerId = this.idLawyerId.lawyerId;
     const id = this.idLawyerId.id;
 
     if (id) {
       this.formControls.id.setValue(id);
 
       this.service.getId(this.formControls.id.value)
-        .toPromise().then(resume => {
-          this.formControls.lawyerId.setValue(this.lawyerId);
-          this.formControls.title.setValue(resume.title);
-          this.formControls.description.setValue(resume.description);
-          this.formControls.active.setValue(resume.active);
+        .toPromise().then(article => {
+          this.lawyerIdSelected = article.lawyer.lawyerId;
+
+          this.formControls.lawyerId.setValue(this.lawyerIdSelected);
+          this.formControls.title.setValue(article.title);
+          this.formControls.description.setValue(article.description);
+          this.formControls.active.setValue(article.active);
+          this.formControls.date.setValue(article.date);
         });
-    } else {
-      this.formControls.lawyerId.setValue(this.lawyerId);
     }
   }
 
   onClickSubmit() {
-    this.submitError = '';
-
     if (this.formControls.id.value) {
       this.service.update(this.form.value)
         .toPromise()
@@ -65,7 +65,6 @@ export class ArticleFormComponent implements OnInit {
             this.dialogRef.close();
           },
           error => {
-            this.submitError = error;
             this.dialogService.showAlert(GENERIC_SAVE_ERROR_MESSAGE);
           });
     } else {
@@ -79,8 +78,6 @@ export class ArticleFormComponent implements OnInit {
             }
           },
           error => {
-            this.submitError = error;
-            console.log(this.submitError);
           });
     }
   }
@@ -88,4 +85,9 @@ export class ArticleFormComponent implements OnInit {
   onClickCancel() {
     this.dialogRef.close();
   }
+
+  onLawyerSelectionChange($event: { value: string; }) {
+    this.lawyerIdSelected = $event.value;
+  }
+
 }

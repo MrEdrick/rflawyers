@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var Lawyer_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Lawyer = void 0;
+const article_entity_1 = require("../../blog/articles/article.entity");
 const typeorm_1 = require("typeorm");
 const user_entity_1 = require("../../configurations/users/user.entity");
 const resume_entity_1 = require("../resumes/resume.entity");
@@ -76,9 +77,13 @@ __decorate([
     __metadata("design:type", Date)
 ], Lawyer.prototype, "insertionDateTime", void 0);
 __decorate([
-    typeorm_1.OneToMany(type => resume_entity_1.Resume, resume => resume.user, { eager: false }),
+    typeorm_1.OneToMany(type => resume_entity_1.Resume, resume => resume.lawyer, { eager: false }),
     __metadata("design:type", Array)
 ], Lawyer.prototype, "resumes", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => article_entity_1.Article, article => article.lawyer, { eager: false }),
+    __metadata("design:type", Array)
+], Lawyer.prototype, "articles", void 0);
 __decorate([
     typeorm_1.ManyToOne(type => user_entity_1.User, user => user.lawyers, { eager: true }),
     __metadata("design:type", user_entity_1.User)

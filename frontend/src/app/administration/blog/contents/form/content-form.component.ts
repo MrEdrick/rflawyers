@@ -7,11 +7,11 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UplaodImageComponent } from 'src/app/shared-components/uplaod-image/uplaod-image.component';
 
 @Component({
-  selector: 'app-article-form',
-  templateUrl: './article-form.component.html',
-  styleUrls: ['./article-form.component.scss'],
+  selector: 'app-content-form',
+  templateUrl: './content-form.component.html',
+  styleUrls: ['./content-form.component.scss'],
 })
-export class ArticleFormComponent implements OnInit {
+export class ContentFormComponent implements OnInit {
   lawyerId  = '';
   submitError = '';
 
@@ -29,7 +29,7 @@ export class ArticleFormComponent implements OnInit {
   formControls = this.form.controls;
 
   constructor(
-    private dialogRef: MatDialogRef<ArticleFormComponent>,
+    private dialogRef: MatDialogRef<ContentFormComponent>,
     @Inject(MAT_DIALOG_DATA) private idLawyerId: {id: string, lawyerId: string},
     private fb: FormBuilder,
     private service: ResumesService,

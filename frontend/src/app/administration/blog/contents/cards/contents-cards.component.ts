@@ -1,23 +1,23 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ArticleDto } from '../../../../dto/article.dto';
-import { ArticlesService } from '../../../../services/articles.service';
-import { ArticleFormComponent } from '../form/content-form.component';
+import { ContentDto } from '../../../../dto/content.dto';
+import { ContentsService } from '../../../../services/contents.service';
+import { ContentFormComponent } from '../form/content-form.component';
 
 @Component({
-  selector: 'app-articles-cards',
-  templateUrl: './articles-cards.component.html',
-  styleUrls: ['./articles-cards.component.scss']
+  selector: 'app-contents-cards',
+  templateUrl: './contents-cards.component.html',
+  styleUrls: ['./contents-cards.component.scss']
 })
-export class ArticlesCardsComponent implements OnInit {
+export class ContentsCardsComponent implements OnInit {
   @Input() 
   lawyerId = '';
 
-  articles: ArticleDto[] = [];
+  contents: ContentDto[] = [];
 
   constructor(
     private dialog: MatDialog,
-    private service: ArticlesService) { }
+    private service: ContentsService) { }
 
   ngOnInit() {
     this.laodCards();
@@ -31,7 +31,7 @@ export class ArticlesCardsComponent implements OnInit {
 
   onAdd() {
     this.dialog.open(
-      ArticleFormComponent, {
+      ContentFormComponent, {
       width: '50%',
       data: {id: '', lawyerId: this.lawyerId}
     }).afterClosed().toPromise().then(_ => this.laodCards());
@@ -39,7 +39,7 @@ export class ArticlesCardsComponent implements OnInit {
 
   onEdit(id: string) {
     this.dialog.open(
-      ArticleFormComponent, {
+      ContentFormComponent, {
         width: '50%',
         data: {id, lawyerId: this.lawyerId}
       }
@@ -49,8 +49,8 @@ export class ArticlesCardsComponent implements OnInit {
   laodCards() {
     this.service.getWithFilter([{key: 'lawyerId', value: this.lawyerId}])
       .toPromise()
-      .then(articles => {
-        this.articles = articles;
+      .then(contents => {
+        this.contents = contents;
       });
   }
 }

@@ -18,6 +18,8 @@ const resume_item_entity_1 = require("../../lawyers-registrations/resume-items/r
 const schooling_entity_1 = require("../../lawyers-registrations/schooling/schooling.entity");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
+const article_entity_1 = require("../../blog/articles/article.entity");
+const content_entity_1 = require("../../blog/contents/content.entity");
 const { v4: uuidv4 } = require('uuid');
 let User = User_1 = class User extends typeorm_1.BaseEntity {
     async validatePassword(password) {
@@ -116,6 +118,14 @@ __decorate([
     typeorm_1.OneToMany(type => schooling_entity_1.Schooling, schooling => schooling.user, { eager: false }),
     __metadata("design:type", Array)
 ], User.prototype, "schooling", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => article_entity_1.Article, article => article.user, { eager: false }),
+    __metadata("design:type", Array)
+], User.prototype, "articles", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => content_entity_1.Content, content => content.user, { eager: false }),
+    __metadata("design:type", Array)
+], User.prototype, "content", void 0);
 User = User_1 = __decorate([
     typeorm_1.Entity(),
     typeorm_1.Unique(['username', 'email'])

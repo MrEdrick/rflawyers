@@ -1,23 +1,26 @@
 <div
   class="content"
-  fxLayout="row wrap" 
-  fxLayoutAlign="start start">
-
-  <app-card-without-image
-    *ngFor="let resume of resumes"
+  fxLayout="row wrap">
+  <app-card
+    *ngFor="let article of articles"
     style="margin:16px 16px 16px 0px;"
     fxFlex="30%" fxFlex.xs="100%"
     fxFlex.sm="33%"
-    [title]="resume.title"
-    [content]="resume.description"
-    (clickDeleteButton)="onDelete(resume.id)"
-    (dblclick)="onEdit(resume.id)">
-  </app-card-without-image>
-
-  <button
-    mat-button
-    style="background-color: #d0d3d4; color: #005683; margin: 16px 0px 0px 16px;"
-    (click)="onAdd()">
-    Adicionar informações
-  </button>
+    [title]="[article.title]"
+    [subtitle]="article.lawyer.firstName + ' ' + article.lawyer.lastName"
+    [content]="article.description"
+    [cardImages]="[article.image]"
+    (clickDeleteButton)="onDelete(article.id)"
+    (dblclick)="onDblClick(article.id)">
+  </app-card>
 </div>
+
+<a routerLink="./article">
+  <button
+    style="background-color: #005683; color: #d0d3d4;"
+    mat-fab
+    class="fab-add"
+    fxLayoutAlign="center">
+    <mat-icon>add</mat-icon>
+  </button>
+</a>

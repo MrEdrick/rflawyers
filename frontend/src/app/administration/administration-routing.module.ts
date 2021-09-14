@@ -10,6 +10,8 @@ import { ResetPasswordComponent } from './user-auth/reset-password/reset-passwor
 import { LawyerTabComponent } from './lawyers-registrations/lawyers/tab/lawyer-tab.component';
 import { LawyersCardsComponent } from './lawyers-registrations/lawyers/cards/lawyers-cards.component';
 import { ResumeFormComponent } from './lawyers-registrations/resume/form/resume-form.component';
+import { ArticleFormComponent } from './blog/articles/form/article-form.component';
+import { ArticlesCardsComponent } from './blog/articles/cards/articles-cards.component';
 
 const routes: Routes = [
   { path: 'singin', component: SingInComponent },
@@ -24,11 +26,16 @@ const routes: Routes = [
       { path: 'users/user/:id', component: UserFormComponent },
       { path: 'users/user', component: UserFormComponent },
       { path: 'users', component: UsersCardsComponent },
+      
       { path: 'lawyers/lawyer/:id', component: LawyerTabComponent },
       { path: 'lawyers/lawyer', component: LawyerTabComponent },
       { path: 'lawyers/lawyer/resume/resume/:id', component: ResumeFormComponent },
       { path: 'lawyers/lawyer/resume/resume', component: ResumeFormComponent },
       { path: 'lawyers', component: LawyersCardsComponent },
+
+      { path: 'articles/article/:id', component: ArticleFormComponent },
+      { path: 'articles/article/:id', component: ArticleFormComponent },
+      { path: 'articles/', component: ArticlesCardsComponent },
     ]
   },
 ];

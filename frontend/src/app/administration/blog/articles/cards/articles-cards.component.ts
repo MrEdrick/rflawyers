@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleDto } from '../../../../dto/article.dto';
 import { ArticlesService } from '../../../../services/articles.service';
-import { ArticleFormComponent } from '../form/article-form.component';
 
 @Component({
   selector: 'app-articles-cards',
@@ -10,13 +9,11 @@ import { ArticleFormComponent } from '../form/article-form.component';
   styleUrls: ['./articles-cards.component.scss']
 })
 export class ArticlesCardsComponent implements OnInit {
-  @Input() 
-  lawyerId = '';
-
   articles: ArticleDto[] = [];
 
   constructor(
-    private dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute,
     private service: ArticlesService) { }
 
   ngOnInit() {
@@ -26,28 +23,15 @@ export class ArticlesCardsComponent implements OnInit {
   onDelete(id: string) {
     this.service.delete(id)
       .toPromise()
-      .then(_ => this.laodCards());
+      .then();
   }
 
-  onAdd() {
-    this.dialog.open(
-      ArticleFormComponent, {
-      width: '50%',
-      data: {id: '', lawyerId: this.lawyerId}
-    }).afterClosed().toPromise().then(_ => this.laodCards());
-  }
-
-  onEdit(id: string) {
-    this.dialog.open(
-      ArticleFormComponent, {
-        width: '50%',
-        data: {id, lawyerId: this.lawyerId}
-      }
-    ).afterClosed().toPromise().then(_ => this.laodCards());
+  onDblClick(id: string) {
+    this.router.navigate(['./article', id], { relativeTo: this.route });
   }
 
   laodCards() {
-    this.service.getWithFilter([{key: 'lawyerId', value: this.lawyerId}])
+    this.service.getAll()
       .toPromise()
       .then(articles => {
         this.articles = articles;

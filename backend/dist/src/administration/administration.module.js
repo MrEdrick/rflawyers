@@ -13,6 +13,7 @@ const files_module_1 = require("./files-manager/files.module");
 const email_sender_module_1 = require("./email-sender/email-sender.module");
 const configurations_module_1 = require("./configurations/configurations.module");
 const lawyers_registrations_module_1 = require("./lawyers-registrations/lawyers-registrations.module");
+const blog_module_1 = require("./blog/blog.module");
 let AdministrationModule = class AdministrationModule {
 };
 AdministrationModule = __decorate([
@@ -22,7 +23,8 @@ AdministrationModule = __decorate([
             email_sender_module_1.EmailSenderModule,
             user_auth_module_1.UserAuthModule,
             configurations_module_1.ConfigurationsModule,
-            lawyers_registrations_module_1.LawyersRegistrationsModule
+            lawyers_registrations_module_1.LawyersRegistrationsModule,
+            blog_module_1.BlogModule
         ],
     })
 ], AdministrationModule);

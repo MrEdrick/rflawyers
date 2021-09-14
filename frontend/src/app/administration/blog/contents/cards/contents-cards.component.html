@@ -4,14 +4,14 @@
   fxLayoutAlign="start start">
 
   <app-card-without-image
-    *ngFor="let resume of resumes"
+    *ngFor="let content of contents"
     style="margin:16px 16px 16px 0px;"
     fxFlex="30%" fxFlex.xs="100%"
     fxFlex.sm="33%"
-    [title]="resume.title"
-    [content]="resume.description"
-    (clickDeleteButton)="onDelete(resume.id)"
-    (dblclick)="onEdit(resume.id)">
+    [title]="content.title"
+    [content]="content.description"
+    (clickDeleteButton)="onDelete(content.id)"
+    (dblclick)="onEdit(content.id)">
   </app-card-without-image>
 
   <button
