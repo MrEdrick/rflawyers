@@ -1,7 +1,14 @@
+:host{
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+}
+
 .sheet {
     padding: 16px;
-  }
+}
   
 .picture-container {
     position: relative;
+    margin-bottom: 32px;
 }
