@@ -1791,6 +1791,11 @@
         "signature": "9f9f5438a2566fc589c6957bdd0993439e80a561dfa0bf39818c4974b2bf4ecc",
         "affectsGlobalScope": false
       },
+      "../migrations/1602267906157-blog.migrations.ts": {
+        "version": "e0a4d00ba08a80cc10eec8a79d3b9715313d4db64d01fc7237a1df2fc784a153",
+        "signature": "9f9f5438a2566fc589c6957bdd0993439e80a561dfa0bf39818c4974b2bf4ecc",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@nestjs/common/cache/cache.constants.d.ts": {
         "version": "a7ada44a7b0ff5f993b4773cfce0a94da56f04ec60d19995fc9576f92b2e02c1",
         "signature": "a7ada44a7b0ff5f993b4773cfce0a94da56f04ec60d19995fc9576f92b2e02c1",
@@ -5061,6 +5066,9 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../migrations/1602267806157-lawyers-registrations.migrations.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1602267906157-blog.migrations.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [
@@ -8936,6 +8944,9 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../migrations/1602267806157-lawyers-registrations.migrations.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1602267906157-blog.migrations.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [

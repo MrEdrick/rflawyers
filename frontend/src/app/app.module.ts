@@ -9,6 +9,8 @@ import { CommonModule, registerLocaleData } from '@angular/common';
 
 import { AdministrationModule } from './administration/administration.module';
 import { WebsiteModule } from './website/website.module';
+import { BlogModule } from './administration/blog/blog.module';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -41,6 +43,7 @@ export function getToken() {
     SharedComponentsModule,
     AdministrationModule,
     WebsiteModule,
+    BlogModule,
     QuillModule.forRoot(),
     JwtModule.forRoot({
       config: {
