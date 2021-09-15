@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ResumesService } from '../../../../services/resumes.service';
 import { DialogService } from '../../../../shared-features/dialog-presenter/service/dialog.service';
 import { GENERIC_SAVE_ERROR_MESSAGE } from '../../../../common/const/error-messages.const';
 import { UplaodImageComponent } from 'src/app/shared-components/uplaod-image/uplaod-image.component';
 import { LawyerDto } from 'src/app/dto/lawyer.dto';
 import { ActivatedRoute } from '@angular/router';
+import { ArticlesService } from 'src/app/services/articles.service';
+import { LawyersService } from 'src/app/services/lawyers.service';
 
 @Component({
   selector: 'app-article-form',
@@ -36,11 +37,14 @@ export class ArticleFormComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private fb: FormBuilder,
-    private service: ResumesService,
+    private service: ArticlesService,
+    private lawyerService: LawyersService,
     private dialogService: DialogService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.params.id;
+
+    this.laodLawyers();
 
     if (id) {
       this.formControls.id.setValue(id);
@@ -104,6 +108,14 @@ export class ArticleFormComponent implements OnInit {
 
   onLawyerSelectionChange($event: { value: string; }) {
     this.lawyerIdSelected = $event.value;
+  }
+
+  laodLawyers() {
+    this.lawyerService.getAll()
+      .toPromise()
+      .then(lawyers => {
+        this.lawyers = lawyers;
+      });
   }
 
 }
