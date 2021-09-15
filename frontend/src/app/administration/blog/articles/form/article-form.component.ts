@@ -1,11 +1,12 @@
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Location } from '@angular/common';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ResumesService } from '../../../../services/resumes.service';
 import { DialogService } from '../../../../shared-features/dialog-presenter/service/dialog.service';
 import { GENERIC_SAVE_ERROR_MESSAGE } from '../../../../common/const/error-messages.const';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UplaodImageComponent } from 'src/app/shared-components/uplaod-image/uplaod-image.component';
 import { LawyerDto } from 'src/app/dto/lawyer.dto';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article-form',
@@ -13,6 +14,7 @@ import { LawyerDto } from 'src/app/dto/lawyer.dto';
   styleUrls: ['./article-form.component.scss'],
 })
 export class ArticleFormComponent implements OnInit {
+  submitError = '';
   lawyerIdSelected = '';
   lawyers: LawyerDto[] = [];
 
@@ -31,14 +33,14 @@ export class ArticleFormComponent implements OnInit {
   formControls = this.form.controls;
 
   constructor(
-    private dialogRef: MatDialogRef<ArticleFormComponent>,
-    @Inject(MAT_DIALOG_DATA) private idLawyerId: {id: string, lawyerId: string},
+    private route: ActivatedRoute,
+    private location: Location,
     private fb: FormBuilder,
     private service: ResumesService,
     private dialogService: DialogService) { }
 
   ngOnInit() {
-    const id = this.idLawyerId.id;
+    const id = this.route.snapshot.params.id;
 
     if (id) {
       this.formControls.id.setValue(id);
@@ -62,9 +64,11 @@ export class ArticleFormComponent implements OnInit {
         .toPromise()
         .then(
           response => {
-            this.dialogRef.close();
+            this.uplaodImages();
+            this.location.back();
           },
           error => {
+            this.submitError = error;
             this.dialogService.showAlert(GENERIC_SAVE_ERROR_MESSAGE);
           });
     } else {
@@ -74,16 +78,28 @@ export class ArticleFormComponent implements OnInit {
           response => {
             if (response?.id) {
               this.formControls.id.setValue(response.id);
-              this.dialogRef.close();
+              this.uplaodImages();
+              this.location.back();
             }
           },
           error => {
+            this.submitError = error;
           });
     }
   }
 
   onClickCancel() {
-    this.dialogRef.close();
+    this.location.back();
+  }
+
+  uplaodImages() {
+    if ((!this.formControls.id.value) || (this.submitError !== '')) { return; }
+
+    this.uploadImageComponent.tableId = this.formControls.id.value;
+    this.uploadImageComponent.tableName = 'article';
+    this.uploadImageComponent.columnName = 'image';
+    
+    this.uploadImageComponent.uploadImage();
   }
 
   onLawyerSelectionChange($event: { value: string; }) {

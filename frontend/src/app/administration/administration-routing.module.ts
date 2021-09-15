@@ -34,8 +34,8 @@ const routes: Routes = [
       { path: 'lawyers', component: LawyersCardsComponent },
 
       { path: 'articles/article/:id', component: ArticleFormComponent },
-      { path: 'articles/article/:id', component: ArticleFormComponent },
-      { path: 'articles/', component: ArticlesCardsComponent },
+      { path: 'articles/article', component: ArticleFormComponent },
+      { path: 'articles', component: ArticlesCardsComponent },
     ]
   },
 ];

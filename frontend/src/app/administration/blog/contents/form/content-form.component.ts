@@ -1,10 +1,10 @@
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ResumesService } from '../../../../services/resumes.service';
 import { DialogService } from '../../../../shared-features/dialog-presenter/service/dialog.service';
 import { GENERIC_SAVE_ERROR_MESSAGE } from '../../../../common/const/error-messages.const';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UplaodImageComponent } from 'src/app/shared-components/uplaod-image/uplaod-image.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-content-form',
@@ -29,15 +29,15 @@ export class ContentFormComponent implements OnInit {
   formControls = this.form.controls;
 
   constructor(
-    private dialogRef: MatDialogRef<ContentFormComponent>,
-    @Inject(MAT_DIALOG_DATA) private idLawyerId: {id: string, lawyerId: string},
+    private route: ActivatedRoute,
+    private location: Location,
     private fb: FormBuilder,
     private service: ResumesService,
     private dialogService: DialogService) { }
 
   ngOnInit() {
-    this.lawyerId = this.idLawyerId.lawyerId;
-    const id = this.idLawyerId.id;
+    //this.lawyerId = this.idLawyerId.lawyerId;
+    const id = this.route.snapshot.params.id;
 
     if (id) {
       this.formControls.id.setValue(id);
@@ -62,7 +62,6 @@ export class ContentFormComponent implements OnInit {
         .toPromise()
         .then(
           response => {
-            this.dialogRef.close();
           },
           error => {
             this.submitError = error;
@@ -75,7 +74,7 @@ export class ContentFormComponent implements OnInit {
           response => {
             if (response?.id) {
               this.formControls.id.setValue(response.id);
-              this.dialogRef.close();
+
             }
           },
           error => {
@@ -86,6 +85,6 @@ export class ContentFormComponent implements OnInit {
   }
 
   onClickCancel() {
-    this.dialogRef.close();
+
   }
 }
