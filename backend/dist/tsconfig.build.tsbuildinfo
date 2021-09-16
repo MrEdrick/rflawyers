@@ -4532,7 +4532,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/blog/view-articles/view-articles.controller.ts": {
-        "version": "4c035dabe62b27f15b8cdede35d32c992894525c6be06685e83201afac75e5a7",
+        "version": "6767fd8479a1dd86f6d45553bc91fae6833940caba436a5827bd3ebf4b6e9eb4",
         "signature": "d17e65a2be5ea3d50881a21859a64afe0fc72b4bc6b271b92203eed9feea1279",
         "affectsGlobalScope": false
       },

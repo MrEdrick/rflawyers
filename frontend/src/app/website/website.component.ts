@@ -12,9 +12,13 @@ export class WebsiteComponent implements OnInit {
   ngOnInit(): void { }
 
   scrollToElement($elementName: any): void {
-    console.log($elementName);
     const element = document.querySelector($elementName);
-    element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+
+    if (element.value == '#blog') {
+
+    } else {
+      element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    }
   }
 
 }

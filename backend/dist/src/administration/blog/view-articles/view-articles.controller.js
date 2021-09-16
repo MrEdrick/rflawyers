@@ -42,7 +42,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ViewArticlesController.prototype, "getById", null);
 ViewArticlesController = __decorate([
-    common_1.Controller('adm/view-articles'),
+    common_1.Controller('view-articles'),
     __metadata("design:paramtypes", [view_articles_service_1.ViewArticlesService])
 ], ViewArticlesController);
 exports.ViewArticlesController = ViewArticlesController;

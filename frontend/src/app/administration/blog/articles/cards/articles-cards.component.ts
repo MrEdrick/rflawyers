@@ -39,4 +39,16 @@ export class ArticlesCardsComponent implements OnInit {
         this.articles = articles;
       });
   }
+
+  onPublish(id: string) {
+    this.articleService.update({id: id, published: true})
+      .toPromise()
+      .then(_ => this.laodCards());
+  }
+
+  onUnPublish(id: string) {
+    this.articleService.update({id: id, published: false})
+      .toPromise()
+      .then(_ => this.laodCards());
+  }
 }

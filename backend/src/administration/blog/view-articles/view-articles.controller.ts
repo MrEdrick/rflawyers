@@ -3,7 +3,7 @@ import { ViewArticlesService } from './view-articles.service';
 import { ViewArticle } from './view-article.entity';
 import { FilterViewArticleDto } from "./dto/filter-view-article.dto";
 
-@Controller('adm/view-articles')
+@Controller('view-articles')
 export class ViewArticlesController {
     constructor(private service: ViewArticlesService) { }
 

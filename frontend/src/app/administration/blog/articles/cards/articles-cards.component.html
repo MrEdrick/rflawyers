@@ -1,18 +1,38 @@
 <div
   class="content"
   fxLayout="row wrap">
-  <app-card
+  <div
     *ngFor="let article of articles"
     style="margin:16px 16px 16px 0px;"
-    fxFlex="30%" fxFlex.xs="100%"
-    fxFlex.sm="33%"
-    [title]="article.articleTitle"
-    [subtitle]="article.lawyerFirstName + ' ' + article.lawyerLastName"
-    [content]="article.articleDescription"
-    [cardImages]="article.articleImage"
-    (clickDeleteButton)="onDelete(article.articleId)"
-    (dblclick)="onDblClick(article.articleId)">
-  </app-card>
+    fxFlex="30%" 
+    fxFlex.xs="100%"
+    fxLayout="column"
+    fxLayoutAlign="center stretch">
+    <app-card
+      [title]="article.articleTitle"
+      [subtitle]="article.lawyerFirstName + ' ' + article.lawyerLastName + ' • ' + [article.articleDate | date : 'mediumDate']"
+      [content]="article.articleDescription"
+      [cardImages]="[article.articleImage]"
+      (clickDeleteButton)="onDelete(article.articleId)"
+      (dblclick)="onDblClick(article.articleId)">
+    </app-card>
+    <button
+      fxFlex
+      *ngIf="!article.articlePublished"
+      style="margin-top: 32px; background-color: #005683; color: #d0d3d4;"
+      (click)="onPublish(article.articleId)"
+      mat-raised-button>
+      Realizar postagem
+    </button>
+    <button
+      fxFlex
+      *ngIf="article.articlePublished"
+      style="margin-top: 32px; background-color: #ffffff; color: #005683;"
+      (click)="onUnPublish(article.articleId)"
+      mat-raised-button>
+      Remover postagem
+    </button>
+  </div>
 </div>
 
 <a routerLink="./article">
