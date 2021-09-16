@@ -6,12 +6,12 @@
     style="margin:16px 16px 16px 0px;"
     fxFlex="30%" fxFlex.xs="100%"
     fxFlex.sm="33%"
-    [title]="[article.title]"
-    [subtitle]="article.lawyer.firstName + ' ' + article.lawyer.lastName"
-    [content]="article.description"
-    [cardImages]="[article.image]"
-    (clickDeleteButton)="onDelete(article.id)"
-    (dblclick)="onDblClick(article.id)">
+    [title]="article.articleTitle"
+    [subtitle]="article.lawyerFirstName + ' ' + article.lawyerLastName"
+    [content]="article.articleDescription"
+    [cardImages]="article.articleImage"
+    (clickDeleteButton)="onDelete(article.articleId)"
+    (dblclick)="onDblClick(article.articleId)">
   </app-card>
 </div>
 

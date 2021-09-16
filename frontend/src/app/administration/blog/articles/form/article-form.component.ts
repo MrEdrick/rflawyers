@@ -109,7 +109,6 @@ export class ArticleFormComponent implements OnInit {
   onLawyerSelectionChange($event: { value: string; }) {
     this.lawyerIdSelected = $event.value;
     this.formControls.lawyerId.setValue(this.lawyerIdSelected);
-    console.log(this.lawyerIdSelected);
   }
 
   laodLawyers() {

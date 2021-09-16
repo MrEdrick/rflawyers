@@ -13,6 +13,7 @@ import { ContentsCardsComponent } from './contents/cards/contents-cards.componen
 import { ContentFormComponent } from './contents/form/content-form.component';
 import { ArticlesService } from 'src/app/services/articles.service';
 import { ContentsService } from 'src/app/services/contents.service';
+import { ViewArticlesService } from 'src/app/services/view-articles.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ContentsService } from 'src/app/services/contents.service';
   providers: [
     ContentsService,
     ArticlesService,
+    ViewArticlesService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

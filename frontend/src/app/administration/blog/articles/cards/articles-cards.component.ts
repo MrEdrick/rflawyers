@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ArticleDto } from '../../../../dto/article.dto';
-import { ArticlesService } from '../../../../services/articles.service';
+import { ViewArticleDto } from 'src/app/dto/view-article.dto';
+import { ArticlesService } from 'src/app/services/articles.service';
+import { ViewArticlesService } from '../../../../services/view-articles.service';
 
 @Component({
   selector: 'app-articles-cards',
@@ -9,19 +10,20 @@ import { ArticlesService } from '../../../../services/articles.service';
   styleUrls: ['./articles-cards.component.scss']
 })
 export class ArticlesCardsComponent implements OnInit {
-  articles: ArticleDto[] = [];
+  articles: ViewArticleDto[] = [];
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private service: ArticlesService) { }
+    private service: ViewArticlesService,
+    private articleService: ArticlesService) { }
 
   ngOnInit() {
     this.laodCards();
   }
 
   onDelete(id: string) {
-    this.service.delete(id)
+    this.articleService.delete(id)
       .toPromise()
       .then();
   }
