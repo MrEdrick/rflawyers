@@ -16,8 +16,8 @@
             fxFlex="20"
             fxFlex.gt-sm="10"
             role="listitem"
-            (click)="clickMenuItem.emit('#blog')">
-            <span style="position: relative; width: 100%; text-align: center;">
+            (click)="clickMenuItem.emit('blog')">
+            <span style="position: relative; width: 100%; text-align: center; font-weight: 700;">
                 BLOG
             </span>
         </mat-list-item>
@@ -147,10 +147,10 @@
                     role="listitem"
                     fxLayout="row wrap"
                     fxLayoutAlign="start stretch"
-                    (click)="clickMenuItem.emit('#blog')">
+                    (click)="clickMenuItem.emit('blog')">
                     <span
                         fxFlex="100"
-                        style="text-align: center;">
+                        style="text-align: center; font-weight: 700;">
                         BLOG
                     </span>
                 </mat-list-item>

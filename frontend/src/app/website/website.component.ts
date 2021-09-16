@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-website',
@@ -7,15 +8,18 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 })
 export class WebsiteComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void { }
 
   scrollToElement($elementName: any): void {
     const element = document.querySelector($elementName);
 
-    if (element.value == '#blog') {
-
+    if ($elementName == 'blog') {
+      this.router.navigate(['./blog'], { relativeTo: this.route });
     } else {
       element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     }

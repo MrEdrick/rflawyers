@@ -5,11 +5,11 @@ import { map, shareReplay } from 'rxjs/operators';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  selector: 'app-blog',
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.scss']
 })
-export class MenuComponent implements OnInit {
+export class BlogComponent implements OnInit {
   @ViewChild('drawer')
   sidenav: MatSidenav | undefined;
 
@@ -39,7 +39,7 @@ export class MenuComponent implements OnInit {
   }
 
   onClickHome() {
-    
+
   }
 
 }
