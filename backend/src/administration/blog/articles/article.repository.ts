@@ -43,7 +43,7 @@ export class ArticleRepository extends Repository<Article> {
 
     async repositoryGetByFilter(filterDto: FilterArticleDto): Promise<Article[]> {
         const query = this.createQueryBuilder(this.metadata.tableName);
-        const { userId, title, description, date, active } = filterDto;
+        const { userId, title, description, date, active, published } = filterDto;
 
         if (filterDto.userId) {
             query.andWhere(`"userId" = '${userId}'::uuid`);
@@ -64,6 +64,10 @@ export class ArticleRepository extends Repository<Article> {
 
         if (filterDto.active) {
             query.andWhere(`"active" = ${active}`);
+        }
+        
+        if (filterDto.published) {
+            query.andWhere(`"published" = ${published}`);
         }
 
         return await query.getMany();

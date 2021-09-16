@@ -23,6 +23,7 @@ let Article = Article_1 = class Article extends typeorm_1.BaseEntity {
         article.id = uuidv4();
         article.insertionDateTime = new Date();
         article.userId = userId;
+        article.published = true;
         return article;
     }
     static fromUpdateArticleDto(props) {
@@ -65,6 +66,10 @@ __decorate([
     typeorm_1.Column(),
     __metadata("design:type", Boolean)
 ], Article.prototype, "active", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", Boolean)
+], Article.prototype, "published", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", Date)

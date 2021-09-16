@@ -9,10 +9,12 @@
 
   <mat-card
     class="picture-container"
-    fxFill>
+    fxFlex="500px"
+    fxLayout="column wrap"
+    fxLayoutAlign="center stretch">
 
     <app-uplaod-image
-      fxFlex="500px"
+      fxFill
       #uploadImage>
     </app-uplaod-image>
 
@@ -31,8 +33,7 @@
       fxLayoutGap="16px">
 
       <mat-form-field 
-        fxFlex="40" 
-        fxFlex.lt-md="70">
+        fxFlex="50">
         
         <input matInput placeholder="Título" formControlName="title">
         
@@ -41,14 +42,8 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-checkbox 
-        fxFlex 
-        class="mat-checkbox" 
-        placeholder="active"
-        formControlName="active">Ativo
-      </mat-checkbox>
 
-      <mat-form-field fxFlex="30" class="example-full-width" appearance="fill">
+      <mat-form-field fxFlex="20" class="example-full-width" appearance="fill">
         <mat-label>Data do artigo</mat-label>
         <input matInput formControlName="date" [matDatepicker]="picker">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -59,15 +54,26 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-form-field fxFlexOffset="16px">
+      <mat-form-field fxFlex="20">
           <mat-select [(value)]="lawyerIdSelected" (selectionChange)="onLawyerSelectionChange($event)" placeholder="Advogados" mat-form-field>
               <mat-option></mat-option>
               <mat-option *ngFor="let lawyer of lawyers" [value]="lawyer.id">
-                  <img fxFlex="nogrow" fxFlexAlign="center" mat-card-avatar [src]="lawyer.image">
-                  <span fxFlex="grow" fxFlexOffset="16px">{{lawyer?.name}}</span>
+                  <img style="height: 32px; width: 32px;" fxFlexAlign="center" mat-card-avatar [src]="lawyer.image">
+                  <span fxFlex="grow" fxFlexOffset="16px">{{lawyer?.firstName}} {{lawyer?.lastName}}</span>
               </mat-option>
           </mat-select>
+
+          <mat-error *ngIf="formControls.lawyerId.hasError('required')">
+            <strong>Advogado é obrigatório</strong>
+          </mat-error>
       </mat-form-field>
+
+      <mat-checkbox 
+        fxFlex 
+        class="mat-checkbox" 
+        placeholder="active"
+        formControlName="active">Ativo
+      </mat-checkbox>
     </div>
 
     <quill-editor

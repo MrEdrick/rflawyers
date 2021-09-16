@@ -4,4 +4,5 @@ export declare class FilterArticleDto {
     description: string;
     date: Date;
     active: boolean;
+    published: boolean;
 }

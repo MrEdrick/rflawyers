@@ -21,4 +21,7 @@ export class UpdateArticleDto {
 
     @IsOptional()
     active: boolean;
+
+    @IsOptional()
+    published: boolean;
 }

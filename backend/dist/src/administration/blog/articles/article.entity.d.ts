@@ -13,6 +13,7 @@ export declare class Article extends BaseEntity {
     date: Date;
     image: string;
     active: boolean;
+    published: boolean;
     insertionDateTime: Date;
     contents: Content[];
     lawyer: Lawyer;

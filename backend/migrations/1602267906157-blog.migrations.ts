@@ -42,6 +42,10 @@ export class LawyersRegistrationsMigrations1602267806157 implements MigrationInt
                     type: "boolean",
                 },
                 {
+                    name: "published",
+                    type: "boolean",
+                },
+                {
                     name: "insertionDateTime",
                     type: "timestamp",
                     default: "now()"

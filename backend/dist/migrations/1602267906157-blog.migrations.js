@@ -43,6 +43,10 @@ class LawyersRegistrationsMigrations1602267806157 {
                     type: "boolean",
                 },
                 {
+                    name: "published",
+                    type: "boolean",
+                },
+                {
                     name: "insertionDateTime",
                     type: "timestamp",
                     default: "now()"

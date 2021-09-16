@@ -1792,7 +1792,7 @@
         "affectsGlobalScope": false
       },
       "../migrations/1602267906157-blog.migrations.ts": {
-        "version": "e0a4d00ba08a80cc10eec8a79d3b9715313d4db64d01fc7237a1df2fc784a153",
+        "version": "40df099c2cfbaac734d7ba69066c5c4ad9668d87582eda7e96288ef11d289050",
         "signature": "9f9f5438a2566fc589c6957bdd0993439e80a561dfa0bf39818c4974b2bf4ecc",
         "affectsGlobalScope": false
       },
@@ -3922,13 +3922,13 @@
         "affectsGlobalScope": false
       },
       "../src/administration/blog/articles/dto/update-article.dto.ts": {
-        "version": "3f70095710f30b9c924c969757ec8763ea9adebf4cc2eaff3bb814d3fa364e5c",
-        "signature": "c0ac45c748c95995e8ebb1987e1d2420cd4bae44af0c5b43678c764478c76baa",
+        "version": "48ba38a11cc0f55000fc5b32e01f111e07db35e73f9549ce0f0a0357b27093ac",
+        "signature": "96314039bf4d8e7e8639bfdb85e74553d1902a7e388b66ed98d7ba5414e0f6b3",
         "affectsGlobalScope": false
       },
       "../src/administration/blog/articles/article.entity.ts": {
-        "version": "37af29614617ccb6357191a679977e80434c80d252c8c0fc5f10539805f5ab8c",
-        "signature": "c67f8fb64b70c0981b771a0c01fbf9ac84c21dd7037068aecce63f458a617316",
+        "version": "1598faadf9110cb33909abf84c0b7c3ee9ba4ffa6c4b29ba3d61834a9de6cc78",
+        "signature": "1635deaa8052af01bd85e93282ffffd32918dee0f5ff43e101f8151b6bd5f71d",
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/resume-items/dto/create-resume-item.dto.ts": {
@@ -4462,12 +4462,12 @@
         "affectsGlobalScope": false
       },
       "../src/administration/blog/articles/dto/filter-article.dto.ts": {
-        "version": "c8371f6cdf488c9021dcf4d1b5e9942a29667b54b8a6c51e706385ecca976331",
-        "signature": "91d9c9e103cad955e3b5f37d53572d9668453be9f5dfaa9da3453b11797f5001",
+        "version": "de34cdda8707486b6f410bb70803613db2cb044f659924cb4c80b81c8bca2f41",
+        "signature": "c14be228806714d30091c5296b4a3503c735ce98c8622996ec53568a01150d1f",
         "affectsGlobalScope": false
       },
       "../src/administration/blog/articles/article.repository.ts": {
-        "version": "ce0531e2ff30513e40cb663b25f88fe836aeec40c7371158d0aa23fa41cc4182",
+        "version": "caab237894011ac14c2b07639b8eae252c65506e06dcc451364a025e10bfdda2",
         "signature": "a4e5a9205fa423fd24d6a57ff33b0c14e067511d0b6e109567780d47d15738e0",
         "affectsGlobalScope": false
       },

@@ -34,6 +34,9 @@ export class Article extends BaseEntity {
 
     @Column()
     active: boolean;
+    
+    @Column()
+    published: boolean;
 
     @Column()
     insertionDateTime: Date;
@@ -54,6 +57,7 @@ export class Article extends BaseEntity {
         article.id = uuidv4();
         article.insertionDateTime = new Date();
         article.userId = userId;
+        article.published = true;
 
         return article;
     } 

@@ -41,5 +41,9 @@ __decorate([
     class_validator_1.IsOptional(),
     __metadata("design:type", Boolean)
 ], UpdateArticleDto.prototype, "active", void 0);
+__decorate([
+    class_validator_1.IsOptional(),
+    __metadata("design:type", Boolean)
+], UpdateArticleDto.prototype, "published", void 0);
 exports.UpdateArticleDto = UpdateArticleDto;
 //# sourceMappingURL=update-article.dto.js.map

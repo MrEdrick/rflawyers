@@ -24,7 +24,7 @@ export class ArticleFormComponent implements OnInit {
 
   form = this.fb.group({
     id: [null],
-    lawyerId: [null],
+    lawyerId: [null, Validators.required],
     title: [null, Validators.required],
     description: [null, Validators.required],
     active: [true, Validators.required],
@@ -108,6 +108,8 @@ export class ArticleFormComponent implements OnInit {
 
   onLawyerSelectionChange($event: { value: string; }) {
     this.lawyerIdSelected = $event.value;
+    this.formControls.lawyerId.setValue(this.lawyerIdSelected);
+    console.log(this.lawyerIdSelected);
   }
 
   laodLawyers() {

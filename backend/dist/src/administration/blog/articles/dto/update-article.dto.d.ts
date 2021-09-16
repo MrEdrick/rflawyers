@@ -6,4 +6,5 @@ export declare class UpdateArticleDto {
     date: Date;
     image: string;
     active: boolean;
+    published: boolean;
 }

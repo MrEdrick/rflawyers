@@ -33,5 +33,9 @@ __decorate([
     class_validator_1.IsOptional(),
     __metadata("design:type", Boolean)
 ], FilterArticleDto.prototype, "active", void 0);
+__decorate([
+    class_validator_1.IsOptional(),
+    __metadata("design:type", Boolean)
+], FilterArticleDto.prototype, "published", void 0);
 exports.FilterArticleDto = FilterArticleDto;
 //# sourceMappingURL=filter-article.dto.js.map

@@ -1,7 +1,10 @@
 <input type="file" #fileUpload name="fileUpload"
     multiple="single" accept="image/*"
     style="display: none;" (change)="this.onChangeFile($event)" />
-<img [src]="image" alt="Sem imagem"
+<img 
+    fxFill
+    [src]="image" 
+    alt="Sem imagem"
     (click)="this.onImageClick()">
 <button 
     type="button" 

@@ -15,4 +15,7 @@ export class FilterArticleDto {
 
     @IsOptional()
     active: boolean;
+
+    @IsOptional()
+    published: boolean;
 }
