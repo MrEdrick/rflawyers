@@ -1,6 +1,6 @@
 <div
     fxLayout="row wrap"
-    fxLayoutAlign="start start"
+    fxLayoutAlign="center start" 
     class="blog">
 
     <mat-nav-list
@@ -31,6 +31,12 @@
             </span>
         </mat-list-item>
     </mat-nav-list>
+
+    <mat-divider
+        fxHide
+        fxShow.gt-xs
+        fxFlex="100">
+    </mat-divider>
 
     <mat-nav-list
         fxHide
@@ -113,4 +119,11 @@
         </mat-sidenav>
 
     </mat-sidenav-container>
+
+    <app-articles-list
+        fxFlex.gt-xs="80"
+        fxFlex="100"
+        fxFlexAlign="center">
+
+    </app-articles-list>
 </div>

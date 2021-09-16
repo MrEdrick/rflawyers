@@ -1,26 +1,28 @@
 .blog {
-    width: 100%;
+    width: 80%;
     height: 100%;
+    margin-left: 10%;
     position: absolute;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
 }
 
 mat-nav-list.list-blog {
-    margin-top: 2%;
-    padding: 0 6%;
+    padding: 2% 6% 0% 0%;
 
     .mat-list-item {
-        color: #d0d3d4;
+        color: #005683;
         font-family: "Julius Sans One", sans-serif;
         font-weight: 100;
         text-align: center;
         justify-content: center;
         align-items: center;
         opacity: 0.8;
+        font-weight: 700;
     }
 
     .mat-list-item:hover {
         opacity: 1;
-        font-weight: 600;
+        font-weight: 800;
     }
 
     .mat-list-item:after {
@@ -28,7 +30,7 @@ mat-nav-list.list-blog {
         bottom: 0;
         content: "";
         display: block;
-        height: 1px;
+        height: 4px;
         left: 50%;
         position: absolute;
         background: #d0d3d4;

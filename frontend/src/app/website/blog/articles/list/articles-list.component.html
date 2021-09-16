@@ -1,24 +1,30 @@
-<div
+<mat-list 
     fxLayout="column wrap"
-    fxLayoutAlign="center center"
-    class="card-container">
+    fxLayoutAlign="center stretch"
+    class="card-container"
+    *ngFor="let article of articles">
 
-    <mat-list 
-        *ngFor="let article of articles">
-        <mat-list-item
-            fxLayout="row wrap"
-            fxLayoutAlign="start center">  
-            <img 
-                fxFlex="30"
-                mat-card-image 
-                [src]="article ? article.articleImage : 'assets/images/no-image.jpg'">
-            <div
-                fxFlex>
-                <h3>{{article.title}}</h3>
-            </div>
-        </mat-list-item>
+    <div
+        fxFlex="200px"
+        fxLayout="row wrap"
+        fxLayoutAlign="start center">  
+        <img 
+            fxFlex="250px"
+            mat-card-image 
+            style="margin-right: 16px;"
+            [src]="article ? article.articleImage : 'assets/images/no-image.jpg'">
+        <div
+            fxFlex
+            fxFlexAlign="stretch">
+            <h1 style="font-weight: 500; color: #212322; margin: 0px !important;">{{article.articleTitle}}</h1>
+            <h4 style="font-weight: 500; color: #212322; opacity: 0.7">{{article.lawyerFirstName}} {{article.lawyerLastName}} • {{article.articleDate | date : 'mediumDate'}}</h4>
+            <p 
+                style="font-weight: 400; color: #212322; opacity: 0.7"
+                [innerHTML]="article.articleDescription">
 
-        <mat-divider></mat-divider>
-    </mat-list>
-    
-</div>
+            </p>
+        </div>
+    </div>
+
+    <mat-divider fxFlex></mat-divider>
+</mat-list>
