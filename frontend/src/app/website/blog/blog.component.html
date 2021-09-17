@@ -1,6 +1,7 @@
 <div
-    fxLayout="row wrap"
-    fxLayoutAlign="center start" 
+    fxFlex="100"
+    fxLayout="column"
+    fxLayoutAlign="start stretch" 
     class="blog">
 
     <mat-nav-list
@@ -8,7 +9,7 @@
         fxShow.gt-xs
         class="list-blog"
         role="list"
-        fxFlex="100"
+        fxFlex="64px"
         fxLayout="row wrap"
         fxLayoutAlign="end center">
 
@@ -31,12 +32,6 @@
             </span>
         </mat-list-item>
     </mat-nav-list>
-
-    <mat-divider
-        fxHide
-        fxShow.gt-xs
-        fxFlex="100">
-    </mat-divider>
 
     <mat-nav-list
         fxHide
@@ -121,9 +116,7 @@
     </mat-sidenav-container>
 
     <app-articles-list
-        fxFlex.gt-xs="80"
-        fxFlex="100"
+        fxFlex
         fxFlexAlign="center">
-
     </app-articles-list>
 </div>

@@ -1,0 +1,23 @@
+:host {
+    flex-flow: column wrap;
+    place-content: start stretch;
+    align-items: stretch;
+    min-width: 100%;
+    width: 100%;    
+    padding: 0% 10%;
+}
+
+.list-item {
+    padding: 16px;
+}
+
+.list-item:hover {
+    cursor: pointer;
+    background-color: rgba(#efefef, 0.5);
+}
+
+.list-container {
+    ::ng-deep .mat-divider {
+        border-top-width: 3px; 
+    }
+}

@@ -1,13 +1,16 @@
 <mat-list 
+    fxFlex="auto"
     fxLayout="column wrap"
     fxLayoutAlign="center stretch"
-    class="card-container"
+    fxFlexAlign="stretch"
+    class="list-container"
     *ngFor="let article of articles">
 
     <div
         fxFlex="200px"
         fxLayout="row wrap"
-        fxLayoutAlign="start center">  
+        fxLayoutAlign="start center"
+        class="list-item">  
         <img 
             fxFlex="250px"
             mat-card-image 
@@ -26,5 +29,18 @@
         </div>
     </div>
 
-    <mat-divider fxFlex></mat-divider>
+    <mat-divider 
+        fxFlex>
+    </mat-divider>
 </mat-list>
+
+<mat-paginator 
+    fxFlex="60px"
+    fxFlexAlign="end"
+    fxFlexAlign="stretch"
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="pageEvent = $event"
+    aria-label="Select page">
+</mat-paginator>
