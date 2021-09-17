@@ -1,24 +1,40 @@
 <div
+  fxLayout="column"
+  fxLayoutAlign="center stretch"
+  fxFill>
+
+  <mat-card
+    class="picture-container"
+    fxFlex="500px"
     fxLayout="column wrap"
-    fxLayoutAlign="center center"
-    class="card-container">
+    fxLayoutAlign="center stretch">
 
-    <mat-list 
-        *ngFor="let article of articles">
-        <mat-list-item
-            fxLayout="row wrap"
-            fxLayoutAlign="start center">  
-            <img 
-                fxFlex="30"
-                mat-card-image 
-                [src]="article ? article.articleImage : 'assets/images/no-image.jpg'">
-            <div
-                fxFlex>
-                <h3>{{article.title}}</h3>
-            </div>
-        </mat-list-item>
+    <app-uplaod-image
+      fxFill
+      #uploadImage>
+    </app-uplaod-image>
 
-        <mat-divider></mat-divider>
-    </mat-list>
-    
+  </mat-card>
+
+  <div 
+    fxFlex="60"
+    fxLayout="column wrap"
+    fxLayoutAlign="start stretch"
+    fxFlexAlign="stretch">
+
+    <div 
+      fxLayout="row"
+      fxFlexAlign="stretch"
+      fxLayoutAlign="start center"
+      fxLayoutGap="16px">
+
+      <h1>{{article.articleTitle}}</h1>
+      <h4 style="font-weight: 500; color: #212322; opacity: 0.7">{{article.lawyerFirstName}} {{article.lawyerLastName}} • {{article.articleDate | date : 'mediumDate'}}</h4>
+    </div>
+
+    <p
+      fxFill
+      [innerHtml]="article.articleDescription">
+    </p>
+  </div>
 </div>

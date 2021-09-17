@@ -33,7 +33,6 @@ export class ArticlesListComponent implements OnInit {
   }
 
   loadList() {
-    console.log(this.pageIndex);
     this.service.getWithFilter([
         {key: "orderBySort", value: "articleDate"},
         {key: "orderByOrder", value: "DESC"},

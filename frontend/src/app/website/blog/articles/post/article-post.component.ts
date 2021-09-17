@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 import { ViewArticleDto } from 'src/app/dto/view-article.dto';
 import { ViewArticlesService } from 'src/app/services/view-articles.service';
 
@@ -8,16 +10,28 @@ import { ViewArticlesService } from 'src/app/services/view-articles.service';
   styleUrls: ['./article-post.component.scss']
 })
 export class ArticlePostComponent implements OnInit {
-  articles: ViewArticleDto[] = [];
-  
+  article: ViewArticleDto | undefined;
+
+  @Input()
+  articleId = ''; 
+
   constructor(
+    private route: ActivatedRoute,
+    private location: Location,
     private service: ViewArticlesService
   ) { }
 
   ngOnInit(): void {
-    this.service.getAll()
-      .toPromise()
-      .then(articles => this.articles = articles)
+    if (this.route.snapshot.params.id) {
+      this.articleId = this.route.snapshot.params.id;
+    }
+
+    if (this.articleId) {
+      this.service.getId(this.articleId)
+        .toPromise().then(article => {
+          this.article = article;
+        });
+    }
    }
 
 }
