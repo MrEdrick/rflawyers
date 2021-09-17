@@ -40,7 +40,8 @@
     fxFlexAlign="stretch"
     [length]="length"
     [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
     [pageSizeOptions]="pageSizeOptions"
-    (page)="pageEvent = $event"
+    (page)="pageEvent = $event; loadList()"
     aria-label="Select page">
 </mat-paginator>

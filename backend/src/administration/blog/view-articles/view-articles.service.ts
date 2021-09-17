@@ -12,7 +12,7 @@ export class ViewArticlesService {
         private repository: ViewArticleRepository
     ) {}
 
-    getByFilter(filterDto: FilterViewArticleDto): Promise<ViewArticle[]> {
+    getByFilter(filterDto: FilterViewArticleDto): Promise<[ViewArticle[], number?]> {
         return this.repository.repositoryGetByFilter(filterDto);
     }
 
@@ -25,5 +25,4 @@ export class ViewArticlesService {
 
         return found;
     }
-
 }

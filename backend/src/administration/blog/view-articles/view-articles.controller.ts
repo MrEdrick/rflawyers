@@ -8,7 +8,7 @@ export class ViewArticlesController {
     constructor(private service: ViewArticlesService) { }
 
     @Get()
-    getByFilter(@Query(ValidationPipe) filterDto: FilterViewArticleDto): Promise<ViewArticle[]> {
+    getByFilter(@Query(ValidationPipe) filterDto: FilterViewArticleDto): Promise<[ViewArticle[], number?]> {
         return this.service.getByFilter(filterDto);
     }
 

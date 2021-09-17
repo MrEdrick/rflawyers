@@ -73,5 +73,21 @@ __decorate([
     class_validator_1.IsOptional(),
     __metadata("design:type", String)
 ], FilterViewArticleDto.prototype, "lawyerImage", void 0);
+__decorate([
+    class_validator_1.IsOptional(),
+    __metadata("design:type", String)
+], FilterViewArticleDto.prototype, "orderBySort", void 0);
+__decorate([
+    class_validator_1.IsOptional(),
+    __metadata("design:type", String)
+], FilterViewArticleDto.prototype, "orderByOrder", void 0);
+__decorate([
+    class_validator_1.IsOptional(),
+    __metadata("design:type", Number)
+], FilterViewArticleDto.prototype, "paginationTake", void 0);
+__decorate([
+    class_validator_1.IsOptional(),
+    __metadata("design:type", Number)
+], FilterViewArticleDto.prototype, "paginationSkip", void 0);
 exports.FilterViewArticleDto = FilterViewArticleDto;
 //# sourceMappingURL=filter-view-article.dto.js.map

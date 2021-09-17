@@ -4512,8 +4512,8 @@
         "affectsGlobalScope": false
       },
       "../src/administration/blog/view-articles/dto/filter-view-article.dto.ts": {
-        "version": "112c62ae77c2fc05f80bd60a3431642724fb12ddb178ca6f02de22d8f9bb563d",
-        "signature": "9eba16b07d4c4501f5faabf5a01449c17ed698427ac836fdff9b5c89f4f44816",
+        "version": "006964fd7adec1f93e120490589ccb4b898e6d69c66cb79493381290dc1cf07e",
+        "signature": "279454358ca02f2d372599145d1e273f8edd889e2a22b36fd26ec386a3134e02",
         "affectsGlobalScope": false
       },
       "../src/administration/blog/view-articles/view-article.entity.ts": {
@@ -4522,18 +4522,18 @@
         "affectsGlobalScope": false
       },
       "../src/administration/blog/view-articles/view-article.repository.ts": {
-        "version": "51ccf0577275d6e66a2cdd6c4921be741e828885e1fd54361eb635af0af202a4",
-        "signature": "ae9ea60baa7cb1391b2229c33f6dfd4bf3db74a71b7838bfa76e8a9a43c81c20",
+        "version": "7c9344f5ce773bf6de58a36de5910b2eb7daa37890d33bd0968eca035dadbfd0",
+        "signature": "69c213aafb650ee2d72de1a7c550c36747d990dfd2317a7e95ab8f5e81b9a01d",
         "affectsGlobalScope": false
       },
       "../src/administration/blog/view-articles/view-articles.service.ts": {
-        "version": "01e1b0ccb33b76acf733aa8b0e749cd762055dcf56a876a041823d297f97b0ec",
-        "signature": "423b6133967f41e4a0eb53d62d32e6dc17dc97f4deb62a6f5ff2028d730e4d9d",
+        "version": "dc88f4c65cd31640fd770a75b9d440847d06aa10b8bfda68f3c983c86988402b",
+        "signature": "a2495a2c68cb20ead09678f447d59e92eec490820d96f8844f61994c9ff19e24",
         "affectsGlobalScope": false
       },
       "../src/administration/blog/view-articles/view-articles.controller.ts": {
-        "version": "6767fd8479a1dd86f6d45553bc91fae6833940caba436a5827bd3ebf4b6e9eb4",
-        "signature": "d17e65a2be5ea3d50881a21859a64afe0fc72b4bc6b271b92203eed9feea1279",
+        "version": "3513b2609ac5d050881b1be7a6554393b1eb4165f0b9ccbc73d62e794713dbf4",
+        "signature": "9bc43c7292b5ce76bb06774ba1708a570500fb8919c655e8647c66e80b03f311",
         "affectsGlobalScope": false
       },
       "../src/administration/blog/view-articles/view-articles.module.ts": {

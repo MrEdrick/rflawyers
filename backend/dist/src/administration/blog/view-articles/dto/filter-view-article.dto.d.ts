@@ -14,4 +14,8 @@ export declare class FilterViewArticleDto {
     lawyerLastName: string;
     lawyerOab: number;
     lawyerImage: string;
+    orderBySort: string;
+    orderByOrder: "ASC" | "DESC";
+    paginationTake: number;
+    paginationSkip: number;
 }

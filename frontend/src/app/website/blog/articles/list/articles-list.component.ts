@@ -12,6 +12,7 @@ export class ArticlesListComponent implements OnInit {
   // MatPaginator Inputs
   length = 100;
   pageSize = 10;
+  pageIndex = 0;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   pageEvent: PageEvent | undefined;
 
@@ -22,14 +23,26 @@ export class ArticlesListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.service.getAll()
-      .toPromise()
-      .then(articles => this.articles = articles)
-   }
+    this.loadList();
+  }
   
   setPageSizeOptions(setPageSizeOptionsInput: string) {
     if (setPageSizeOptionsInput) {
       this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
     }
+  }
+
+  loadList() {
+    console.log(this.pageIndex);
+    this.service.getWithFilter([
+        {key: "orderBySort", value: "articleDate"},
+        {key: "orderByOrder", value: "DESC"},
+        {key: "paginationSkip", value: this.pageIndex},
+        {key: "paginationTake", value: this.pageSize}])
+      .toPromise()
+      .then((result: [ViewArticleDto[], number]) => {
+        this.articles = result[0];
+        this.length = result[1];
+      })
   }
 }

@@ -4,12 +4,13 @@ import { ViewArticle } from "./view-article.entity";
 
 @EntityRepository(ViewArticle)
 export class ViewArticleRepository extends Repository<ViewArticle> {
-    async repositoryGetByFilter(filterDto: FilterViewArticleDto): Promise<ViewArticle[]> {
+    async repositoryGetByFilter(filterDto: FilterViewArticleDto): Promise<[ViewArticle[], number?]> {
         const query = this.createQueryBuilder(this.metadata.tableName);
         const { 
             articleId, articleUserId, articleTitle, articleDescription,
             articleDate, articleInsertionDateTime, articlePublished, articleActive, 
-            lawyerId, lawyerUserId, lawyerFirstName, lawyerLastName, lawyerOab } = filterDto;
+            lawyerId, lawyerUserId, lawyerFirstName, lawyerLastName, lawyerOab,
+            orderBySort, orderByOrder, paginationTake, paginationSkip } = filterDto;
             
         if (filterDto.articleId) {
             query.andWhere(`"articleId" = '${articleId}'::uuid`);
@@ -62,7 +63,19 @@ export class ViewArticleRepository extends Repository<ViewArticle> {
         if (filterDto.lawyerOab) {
             query.andWhere(`"lawyerOab" = ${lawyerOab}`);
         }
+
+        if ((filterDto.orderBySort) && (filterDto.orderByOrder)) {
+            query.orderBy('"' + orderBySort + '"', orderByOrder);
+        }
+
+        if (filterDto.paginationTake) {
+            query.take(paginationTake);
+        }
+
+        if (filterDto.paginationSkip) {
+            query.skip(paginationSkip);
+        }
         
-        return query.getMany();
+        return query.getManyAndCount();
     }
 }

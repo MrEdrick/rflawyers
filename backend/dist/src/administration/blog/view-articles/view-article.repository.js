@@ -12,7 +12,7 @@ const view_article_entity_1 = require("./view-article.entity");
 let ViewArticleRepository = class ViewArticleRepository extends typeorm_1.Repository {
     async repositoryGetByFilter(filterDto) {
         const query = this.createQueryBuilder(this.metadata.tableName);
-        const { articleId, articleUserId, articleTitle, articleDescription, articleDate, articleInsertionDateTime, articlePublished, articleActive, lawyerId, lawyerUserId, lawyerFirstName, lawyerLastName, lawyerOab } = filterDto;
+        const { articleId, articleUserId, articleTitle, articleDescription, articleDate, articleInsertionDateTime, articlePublished, articleActive, lawyerId, lawyerUserId, lawyerFirstName, lawyerLastName, lawyerOab, orderBySort, orderByOrder, paginationTake, paginationSkip } = filterDto;
         if (filterDto.articleId) {
             query.andWhere(`"articleId" = '${articleId}'::uuid`);
         }
@@ -52,7 +52,16 @@ let ViewArticleRepository = class ViewArticleRepository extends typeorm_1.Reposi
         if (filterDto.lawyerOab) {
             query.andWhere(`"lawyerOab" = ${lawyerOab}`);
         }
-        return query.getMany();
+        if ((filterDto.orderBySort) && (filterDto.orderByOrder)) {
+            query.orderBy('"' + orderBySort + '"', orderByOrder);
+        }
+        if (filterDto.paginationTake) {
+            query.take(paginationTake);
+        }
+        if (filterDto.paginationSkip) {
+            query.skip(paginationSkip);
+        }
+        return query.getManyAndCount();
     }
 };
 ViewArticleRepository = __decorate([

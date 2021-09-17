@@ -45,4 +45,16 @@ export class FilterViewArticleDto {
 
     @IsOptional()
     lawyerImage: string;
+
+    @IsOptional()
+    orderBySort: string;
+
+    @IsOptional()
+    orderByOrder: "ASC" | "DESC";
+
+    @IsOptional()
+    paginationTake: number;
+
+    @IsOptional()
+    paginationSkip: number;
 }
