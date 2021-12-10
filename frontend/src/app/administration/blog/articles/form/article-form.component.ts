@@ -51,13 +51,14 @@ export class ArticleFormComponent implements OnInit {
 
       this.service.getId(this.formControls.id.value)
         .toPromise().then(article => {
-          this.lawyerIdSelected = article.lawyer.lawyerId;
+          this.lawyerIdSelected = article.lawyerId;
 
-          this.formControls.lawyerId.setValue(this.lawyerIdSelected);
+          this.formControls.lawyerId.setValue(article.lawyerId);
           this.formControls.title.setValue(article.title);
           this.formControls.description.setValue(article.description);
           this.formControls.active.setValue(article.active);
           this.formControls.date.setValue(article.date);
+          this.uploadImageComponent.image = article.image;
         });
     }
   }

@@ -6,16 +6,16 @@
     <img mat-card-image (click)='showArrowsButtons= !showArrowsButtons'
         [src]="cardImages ? cardImages[cardImageIndex] :
         'assets/images/no-image.jpg'">
-    <div class="card-images-dots" *ngIf="(cardImages.length > 1)">
+    <div class="card-images-dots" *ngIf="(cardImages?.length > 1)">
         <mat-icon class="images-dots" *ngFor="let cardImage of cardImages; index as i" (click)="cardImageIndex = i">lens</mat-icon>
     </div>
-    <button type="button" *ngIf="((showArrowsButtons) && (cardImages.length>
+    <button type="button" *ngIf="((showArrowsButtons) && (cardImages?.length>
         1))"
         (click)="previousImage()" mat-mini-fab color="#fff" style="position:
         absolute; top: 50%; left: -20px;">
         <mat-icon>keyboard_arrow_left</mat-icon>
     </button>
-    <button type="button" *ngIf="((showArrowsButtons) && (cardImages.length>
+    <button type="button" *ngIf="((showArrowsButtons) && (cardImages?.length>
         1))"
         (click)="nextImage()" mat-mini-fab color="#fff" style="position:
         absolute; top: 50%; right: -20px;">

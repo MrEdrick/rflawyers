@@ -8,7 +8,7 @@
     fxFlex.xs="100%"
     fxLayout="column"
     fxLayoutAlign="center stretch">
-    <app-card
+    <app-card 
       [title]="article.articleTitle"
       [subtitle]="article.lawyerFirstName + ' ' + article.lawyerLastName + ' • ' + [article.articleDate | date : 'mediumDate']"
       [content]="article.articleDescription"

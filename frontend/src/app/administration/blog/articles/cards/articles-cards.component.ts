@@ -25,7 +25,7 @@ export class ArticlesCardsComponent implements OnInit {
   onDelete(id: string) {
     this.articleService.delete(id)
       .toPromise()
-      .then();
+      .then(_ => this.laodCards());
   }
 
   onDblClick(id: string) {
@@ -36,7 +36,7 @@ export class ArticlesCardsComponent implements OnInit {
     this.service.getAll()
       .toPromise()
       .then(articles => {
-        this.articles = articles;
+        this.articles = articles[0];
       });
   }
 
