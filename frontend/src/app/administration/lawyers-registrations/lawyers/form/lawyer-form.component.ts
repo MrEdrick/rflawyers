@@ -46,7 +46,7 @@ export class LawyerFormComponent implements OnInit {
     if (id) {
       this.formControls.id.setValue(id);
 
-      this.lawyersService.getId(this.formControls.id.value)
+      this.lawyersService.getById(this.formControls.id.value)
         .toPromise().then(lawyer => {
           this.formControls.firstName.setValue(lawyer.firstName);
           this.formControls.lastName.setValue(lawyer.lastName);

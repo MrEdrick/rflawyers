@@ -54,7 +54,7 @@ export class UserFormComponent implements OnInit {
       this.formControls.id.setValue(id);
 
       if (this.formControls.id.value) {
-        this.usersService.getId(this.formControls.id.value)
+        this.usersService.getById(this.formControls.id.value)
           .toPromise()
           .then(user => {
             this.formControls.name.setValue(user.name);

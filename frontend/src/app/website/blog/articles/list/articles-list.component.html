@@ -10,7 +10,8 @@
         fxFlex="200px"
         fxLayout="row wrap"
         fxLayoutAlign="start center"
-        class="list-item">  
+        class="list-item"
+        (click)="OnClickIem(article.articleId)">  
         <img 
             fxFlex="250px"
             mat-card-image 
@@ -24,7 +25,6 @@
             <p 
                 style="font-weight: 400; color: #212322; opacity: 0.7"
                 [innerHTML]="article?.articleDescription">
-
             </p>
         </div>
     </div>

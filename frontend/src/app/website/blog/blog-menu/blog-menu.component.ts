@@ -1,19 +1,27 @@
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { ViewArticleDto } from 'src/app/dto/view-article.dto';
-import { ViewArticlesService } from 'src/app/services/view-articles.service';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+  selector: 'app-blog-menu',
+  templateUrl: './blog-menu.component.html',
+  styleUrls: ['./blog-menu.component.scss']
 })
-export class BlogComponent implements OnInit {
+export class BlogMenuComponent implements OnInit {
   lastArticle: ViewArticleDto | undefined;
+ 
+  @Input()
+  showWebSite: Boolean = true;
+
+  @Input()
+  showHome: Boolean = true;
+
+  @Input()
+  showArticles: Boolean = true;
 
   @ViewChild('drawer')
   sidenav: MatSidenav | undefined;
@@ -30,24 +38,9 @@ export class BlogComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private breakpointObserver: BreakpointObserver,
-    private service: ViewArticlesService) { }
+    private breakpointObserver: BreakpointObserver) { }
 
-  ngOnInit(): void {
-    this.recoverLastArticle();
-   }
-
-  recoverLastArticle() {
-    this.service.getWithFilter([
-        {key: "orderBySort", value: "articleDate"},
-        {key: "orderByOrder", value: "DESC"},
-        {key: "paginationSkip", value: 0},
-        {key: "paginationTake", value: 1}])
-      .toPromise()
-      .then((result: [ViewArticleDto[], number]) => {
-        this.lastArticle = result[0][0];
-      })
-  }
+  ngOnInit(): void {  }
 
   closeNavBar() {
     (this.sidenav as MatSidenav).close();
@@ -58,6 +51,10 @@ export class BlogComponent implements OnInit {
     if (this.drawerOpened) {
       (this.sidenav as MatSidenav).open();
     }
+  }
+
+  onClickHome() {
+    this.router.navigate(['./index/blog']);
   }
 
   onClickWebSite() {

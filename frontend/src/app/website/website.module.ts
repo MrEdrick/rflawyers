@@ -26,11 +26,13 @@ import { ResumeItemsService } from '../services/resume-items.service';
 import { ResumeItemListComponent } from './resume-item-list/resume-item-list.component';
 import { BlogComponent } from './blog/blog.component';
 import { ArticlesListComponent } from './blog/articles/list/articles-list.component';
-import { ArticlePostComponent } from './blog/articles/post/article-post.component';
 import { ViewArticlesService } from '../services/view-articles.service';
 import { ArticlesService } from '../services/articles.service';
 import { ContentsService } from '../services/contents.service';
 import { ArticlesMenuComponent } from './blog/articles/menu/articles-menu.component';
+import { PostBodyComponent } from './blog/posts/body/post-body.component';
+import { PostMenuComponent } from './blog/posts/menu/post-menu.component';
+import { BlogMenuComponent } from './blog/blog-menu/blog-menu.component';
 
 @NgModule({
   declarations: [
@@ -49,9 +51,11 @@ import { ArticlesMenuComponent } from './blog/articles/menu/articles-menu.compon
     FooterComponent,
     EmailSenderComponent,
     BlogComponent,
+    BlogMenuComponent,
     ArticlesMenuComponent,
     ArticlesListComponent,
-    ArticlePostComponent
+    PostBodyComponent,
+    PostMenuComponent
   ],
   imports: [
     CommonModule,
@@ -79,9 +83,11 @@ import { ArticlesMenuComponent } from './blog/articles/menu/articles-menu.compon
     CallToActionComponent,
     EmailSenderComponent,
     BlogComponent,
+    BlogMenuComponent,
     ArticlesMenuComponent,
     ArticlesListComponent,
-    ArticlePostComponent
+    PostBodyComponent,
+    PostMenuComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [ResumeComponent],

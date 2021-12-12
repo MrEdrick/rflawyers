@@ -22,7 +22,7 @@ export class BaseService {
       .set('Access-Control-Allow-Origin', '*');
   }
 
-  getId(id: any): Observable<any> {
+  getById(id: any): Observable<any> {
     return this.http.get(this.url + '/' + id, { headers: this.headers })
       .pipe(
         map(

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 import { ViewArticleDto } from 'src/app/dto/view-article.dto';
 import { ViewArticlesService } from 'src/app/services/view-articles.service';
 
@@ -19,6 +20,7 @@ export class ArticlesListComponent implements OnInit {
   articles: ViewArticleDto[] = [];
   
   constructor(
+    private router: Router,
     private service: ViewArticlesService
   ) { }
 
@@ -43,5 +45,9 @@ export class ArticlesListComponent implements OnInit {
         this.articles = result[0];
         this.length = result[1];
       })
+  }
+
+  OnClickIem(articleId: string) {
+    this.router.navigate(['./index/blog/articles/article', articleId]);
   }
 }

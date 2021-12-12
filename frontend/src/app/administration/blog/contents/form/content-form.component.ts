@@ -42,7 +42,7 @@ export class ContentFormComponent implements OnInit {
     if (id) {
       this.formControls.id.setValue(id);
 
-      this.service.getId(this.formControls.id.value)
+      this.service.getById(this.formControls.id.value)
         .toPromise().then(resume => {
           this.formControls.lawyerId.setValue(this.lawyerId);
           this.formControls.title.setValue(resume.title);

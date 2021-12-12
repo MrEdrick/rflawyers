@@ -38,7 +38,7 @@ export class SchoolingFormComponent implements OnInit {
     if (id) {
       this.formControls.id.setValue(id);
 
-      this.service.getId(this.formControls.id.value)
+      this.service.getById(this.formControls.id.value)
         .toPromise().then(schooling => {
           this.formControls.lawyerId.setValue(schooling.lawyerId);
           this.formControls.title.setValue(schooling.title);
