@@ -16,6 +16,7 @@ import { LawyersService } from 'src/app/services/lawyers.service';
 })
 export class ArticleFormComponent implements OnInit {
   submitError = '';
+  id = '';
   lawyerIdSelected = '';
   lawyers: LawyerDto[] = [];
 
@@ -42,12 +43,12 @@ export class ArticleFormComponent implements OnInit {
     private dialogService: DialogService) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.params.id;
+    this.id = this.route.snapshot.params.id;
 
     this.laodLawyers();
 
-    if (id) {
-      this.formControls.id.setValue(id);
+    if (this.id) {
+      this.formControls.id.setValue(this.id);
 
       this.service.getById(this.formControls.id.value)
         .toPromise().then(article => {

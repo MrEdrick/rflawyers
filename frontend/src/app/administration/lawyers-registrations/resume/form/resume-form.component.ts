@@ -59,7 +59,7 @@ export class ResumeFormComponent implements OnInit {
       this.service.update(this.form.value)
         .toPromise()
         .then(
-          response => {
+          _ => {
             this.dialogRef.close();
           },
           error => {
@@ -78,7 +78,7 @@ export class ResumeFormComponent implements OnInit {
           },
           error => {
             this.submitError = error;
-            console.log(this.submitError);
+            this.dialogService.showAlert(GENERIC_SAVE_ERROR_MESSAGE);
           });
     }
   }

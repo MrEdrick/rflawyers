@@ -1,90 +1,104 @@
-<form
-  novalidate
-  [formGroup]="form"
+<div
+  fxFill
   fxLayout="column"
-  fxLayoutAlign="center stretch"
-  fxFlex="auto"
-  style="width: 80%; margin-left: 10%; padding: 32px;"
+  fxLayoutAlign="center stretch"  
+  style="padding: 0% 10%;"
   class="sheet mat-elevation-z4">
 
-  <mat-card
-    class="picture-container"
-    fxFlex="500px"
-    fxLayout="column wrap"
-    fxLayoutAlign="center stretch">
+  <form
+    novalidate
+    [formGroup]="form"
+    fxLayout="column"
+    fxLayoutAlign="center stretch"
+    fxFlex="auto"
+    style="margin-top: 32px;">
 
-    <app-uplaod-image
-      fxFill
-      #uploadImage>
-    </app-uplaod-image>
+    <mat-card
+      class="picture-container"
+      fxFlex="500px"
+      fxLayout="column wrap"
+      fxLayoutAlign="center stretch">
 
-  </mat-card>
+      <app-uplaod-image
+        fxFill
+        #uploadImage>
+      </app-uplaod-image>
 
-  <div 
-    fxFlex="60"
-    fxLayout="column wrap"
-    fxLayoutAlign="start stretch"
-    fxFlexAlign="stretch">
+    </mat-card>
 
     <div 
-      fxLayout="row"
-      fxFlexAlign="stretch"
-      fxLayoutAlign="start center"
-      fxLayoutGap="16px">
+      fxFlex="60"
+      fxLayout="column wrap"
+      fxLayoutAlign="start stretch"
+      fxFlexAlign="stretch">
 
-      <mat-form-field 
-        fxFlex="50">
-        
-        <input matInput placeholder="Título" formControlName="title">
-        
-        <mat-error *ngIf="formControls.title.hasError('required')">
-          <strong>Título obrigatório</strong>
-        </mat-error>
-      </mat-form-field>
+      <div 
+        fxLayout="row"
+        fxFlexAlign="stretch"
+        fxLayoutAlign="start center"
+        fxLayoutGap="16px">
 
-
-      <mat-form-field fxFlex="20" class="example-full-width" appearance="fill">
-        <mat-label>Data do artigo</mat-label>
-        <input matInput formControlName="date" [matDatepicker]="picker">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-  
-        <mat-error *ngIf="formControls.date.hasError('required')">
-          <strong>Data do artigo obrigatória</strong>
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field fxFlex="20">
-          <mat-select [(value)]="lawyerIdSelected" (selectionChange)="onLawyerSelectionChange($event)" placeholder="Advogados" mat-form-field>
-              <mat-option></mat-option>
-              <mat-option *ngFor="let lawyer of lawyers" [value]="lawyer.id">
-                  <img style="height: 32px; width: 32px;" fxFlexAlign="center" mat-card-avatar [src]="lawyer.image">
-                  <span fxFlex="grow" fxFlexOffset="16px">{{lawyer?.firstName}} {{lawyer?.lastName}}</span>
-              </mat-option>
-          </mat-select>
-
-          <mat-error *ngIf="formControls.lawyerId.hasError('required')">
-            <strong>Advogado é obrigatório</strong>
+        <mat-form-field 
+          fxFlex="50">
+          
+          <input matInput placeholder="Título" formControlName="title">
+          
+          <mat-error *ngIf="formControls.title.hasError('required')">
+            <strong>Título obrigatório</strong>
           </mat-error>
-      </mat-form-field>
+        </mat-form-field>
 
-      <mat-checkbox 
-        fxFlex 
-        class="mat-checkbox" 
-        placeholder="active"
-        formControlName="active">Ativo
-      </mat-checkbox>
+
+        <mat-form-field fxFlex="20" class="example-full-width" appearance="fill">
+          <mat-label>Data do artigo</mat-label>
+          <input matInput formControlName="date" [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+    
+          <mat-error *ngIf="formControls.date.hasError('required')">
+            <strong>Data do artigo obrigatória</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="20">
+            <mat-select [(value)]="lawyerIdSelected" (selectionChange)="onLawyerSelectionChange($event)" placeholder="Advogados" mat-form-field>
+                <mat-option></mat-option>
+                <mat-option *ngFor="let lawyer of lawyers" [value]="lawyer.id">
+                    <img style="height: 32px; width: 32px;" fxFlexAlign="center" mat-card-avatar [src]="lawyer.image">
+                    <span fxFlex="grow" fxFlexOffset="16px">{{lawyer?.firstName}} {{lawyer?.lastName}}</span>
+                </mat-option>
+            </mat-select>
+
+            <mat-error *ngIf="formControls.lawyerId.hasError('required')">
+              <strong>Advogado é obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-checkbox 
+          fxFlex 
+          class="mat-checkbox" 
+          placeholder="active"
+          formControlName="active">Ativo
+        </mat-checkbox>
+      </div>
+
+      <quill-editor
+        fxFill
+        formControlName="description">
+      </quill-editor>
+
+      <app-footer-form-actions
+        fxFill
+        (submitClick)="onClickSubmit()"
+        (cancelClick)="onClickCancel()">
+      </app-footer-form-actions>
     </div>
+  </form>
 
-    <quill-editor
-      fxFill
-      formControlName="description">
-    </quill-editor>
+  <mat-divider> 
+  </mat-divider>
 
-    <app-footer-form-actions
-      fxFill
-      (submitClick)="onClickSubmit()"
-      (cancelClick)="onClickCancel()">
-    </app-footer-form-actions>
-  </div>
-</form>
+  <app-contents-cards
+    [articleId]="id">
+  </app-contents-cards>
+</div>

@@ -24,13 +24,13 @@
         fxLayoutGap="16px">
 
         <mat-form-field 
-          fxFlex="40" 
+          fxFlex="70" 
           fxFlex.lt-md="70">
           
-          <input matInput placeholder="Título" formControlName="title">
+          <input matInput placeholder="Subtítulo" formControlName="subTitle">
           
-          <mat-error *ngIf="formControls.title.hasError('required')">
-            <strong>Título é obrigatório</strong>
+          <mat-error *ngIf="formControls.subTitle.hasError('required')">
+            <strong>Subtítulo é obrigatório</strong>
           </mat-error>
         </mat-form-field>
         
@@ -46,7 +46,6 @@
         fxFlexAlign="stretch"
         formControlName="description">
       </quill-editor>
-        
     </div>
   </mat-card-content>
 

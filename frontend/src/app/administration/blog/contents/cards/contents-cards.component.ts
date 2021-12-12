@@ -11,7 +11,7 @@ import { ContentFormComponent } from '../form/content-form.component';
 })
 export class ContentsCardsComponent implements OnInit {
   @Input() 
-  lawyerId = '';
+  articleId = '';
 
   contents: ContentDto[] = [];
 
@@ -33,7 +33,7 @@ export class ContentsCardsComponent implements OnInit {
     this.dialog.open(
       ContentFormComponent, {
       width: '50%',
-      data: {id: '', lawyerId: this.lawyerId}
+      data: {id: '', lawyerId: this.articleId}
     }).afterClosed().toPromise().then(_ => this.laodCards());
   }
 
@@ -41,13 +41,13 @@ export class ContentsCardsComponent implements OnInit {
     this.dialog.open(
       ContentFormComponent, {
         width: '50%',
-        data: {id, lawyerId: this.lawyerId}
+        data: {id, lawyerId: this.articleId}
       }
     ).afterClosed().toPromise().then(_ => this.laodCards());
   }
 
   laodCards() {
-    this.service.getWithFilter([{key: 'lawyerId', value: this.lawyerId}])
+    this.service.getWithFilter([{key: 'articleId', value: this.articleId}])
       .toPromise()
       .then(contents => {
         this.contents = contents;
