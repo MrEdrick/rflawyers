@@ -32,16 +32,6 @@
                 HOME
             </span>
         </mat-list-item>
-
-        <mat-list-item
-            fxFlex="20"
-            fxFlex.gt-sm="10"
-            role="listitem"
-            (click)="onClickArticles()">
-            <span style="position: relative; width: 100%; text-align: center;">
-                ARTIGOS
-            </span>
-        </mat-list-item>
     </mat-nav-list>
 
     <mat-nav-list
@@ -100,19 +90,6 @@
                     role="listitem"
                     fxLayout="row wrap"
                     fxLayoutAlign="start stretch"
-                    (click)="onClickWebSite()">
-                    <span
-                        fxFlex="100"
-                        style="text-align: center;">
-                        WEBSITE
-                    </span>
-                </mat-list-item>
-
-                <mat-list-item
-                    fxFlex="10"
-                    role="listitem"
-                    fxLayout="row wrap"
-                    fxLayoutAlign="start stretch"
                     (click)="onClickHome()">
                     <span
                         fxFlex="100"
@@ -121,29 +98,11 @@
                     </span>
                 </mat-list-item>
 
-                <mat-list-item
-                    fxFlex="10"
-                    role="listitem"
-                    fxLayout="row wrap"
-                    fxLayoutAlign="start stretch"
-                    (click)="onClickArticles()">
-                    <span
-                        fxFlex="100"
-                        style="text-align: center;">
-                        ARTIGO
-                    </span>
-                </mat-list-item>
-
             </mat-nav-list>
 
         </mat-sidenav>
 
     </mat-sidenav-container>
-    
-    <app-article-post
-        *ngIf="lastArticle"
-        [articleId]="lastArticle.articleId">
-    </app-article-post>
 
     <app-articles-list
         fxFlex

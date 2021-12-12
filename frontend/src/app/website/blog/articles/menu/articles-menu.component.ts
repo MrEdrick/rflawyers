@@ -8,11 +8,11 @@ import { ViewArticleDto } from 'src/app/dto/view-article.dto';
 import { ViewArticlesService } from 'src/app/services/view-articles.service';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+  selector: 'app-articles-menu',
+  templateUrl: './articles-menu.component.html',
+  styleUrls: ['./articles-menu.component.scss']
 })
-export class BlogComponent implements OnInit {
+export class ArticlesMenuComponent implements OnInit {
   lastArticle: ViewArticleDto | undefined;
 
   @ViewChild('drawer')
@@ -66,9 +66,5 @@ export class BlogComponent implements OnInit {
 
   onClickWebSite() {
     this.router.navigate(['./index']);
-  }
-
-  onClickArticles() {
-    this.router.navigate(['./index/blog/articles']);
   }
 }

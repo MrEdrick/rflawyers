@@ -30,6 +30,7 @@ import { ArticlePostComponent } from './blog/articles/post/article-post.componen
 import { ViewArticlesService } from '../services/view-articles.service';
 import { ArticlesService } from '../services/articles.service';
 import { ContentsService } from '../services/contents.service';
+import { ArticlesMenuComponent } from './blog/articles/menu/articles-menu.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ContentsService } from '../services/contents.service';
     FooterComponent,
     EmailSenderComponent,
     BlogComponent,
+    ArticlesMenuComponent,
     ArticlesListComponent,
     ArticlePostComponent
   ],
@@ -77,6 +79,7 @@ import { ContentsService } from '../services/contents.service';
     CallToActionComponent,
     EmailSenderComponent,
     BlogComponent,
+    ArticlesMenuComponent,
     ArticlesListComponent,
     ArticlePostComponent
   ],

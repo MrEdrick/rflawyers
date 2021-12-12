@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ViewArticleDto } from 'src/app/dto/view-article.dto';
 import { ViewArticlesService } from 'src/app/services/view-articles.service';
+import { UplaodImageComponent } from 'src/app/shared-components/uplaod-image/uplaod-image.component';
 
 @Component({
   selector: 'app-article-post',
@@ -10,7 +11,6 @@ import { ViewArticlesService } from 'src/app/services/view-articles.service';
 })
 export class ArticlePostComponent implements OnInit {
   article: ViewArticleDto | undefined;
-
   @Input()
   articleId = ''; 
 
