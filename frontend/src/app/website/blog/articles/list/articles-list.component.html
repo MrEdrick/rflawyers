@@ -1,6 +1,6 @@
 <app-article-post
+    *ngIf="articles[0]"
     [articleId]="articles[0].articleId">
-
 </app-article-post>
 
 <mat-list 
@@ -24,11 +24,11 @@
         <div
             fxFlex
             fxFlexAlign="stretch">
-            <h1 style="font-weight: 500; color: #212322; margin: 0px !important;">{{article.articleTitle}}</h1>
-            <h4 style="font-weight: 500; color: #212322; opacity: 0.7">{{article.lawyerFirstName}} {{article.lawyerLastName}} • {{article.articleDate | date : 'mediumDate'}}</h4>
+            <h1 style="font-weight: 500; color: #212322; margin: 0px !important;">{{article?.articleTitle}}</h1>
+            <h4 style="font-weight: 500; color: #212322; opacity: 0.7">{{article?.lawyerFirstName}} {{article?.lawyerLastName}} • {{article?.articleDate | date : 'mediumDate'}}</h4>
             <p 
                 style="font-weight: 400; color: #212322; opacity: 0.7"
-                [innerHTML]="article.articleDescription">
+                [innerHTML]="article?.articleDescription">
 
             </p>
         </div>

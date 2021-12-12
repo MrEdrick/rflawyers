@@ -4522,12 +4522,12 @@
         "affectsGlobalScope": false
       },
       "../src/administration/blog/view-articles/view-article.repository.ts": {
-        "version": "7c9344f5ce773bf6de58a36de5910b2eb7daa37890d33bd0968eca035dadbfd0",
-        "signature": "69c213aafb650ee2d72de1a7c550c36747d990dfd2317a7e95ab8f5e81b9a01d",
+        "version": "1d0ac5e133b1e5b1ca44d350031905f7511c9ce09d053addb31c566fc9cde42d",
+        "signature": "58b94322734196898252072f43b69251652a9be04e6203c9e552deeabd174962",
         "affectsGlobalScope": false
       },
       "../src/administration/blog/view-articles/view-articles.service.ts": {
-        "version": "dc88f4c65cd31640fd770a75b9d440847d06aa10b8bfda68f3c983c86988402b",
+        "version": "59525af29f6207f273aa5a22083f9b2c9148eab2c74241ee947161390844f95a",
         "signature": "a2495a2c68cb20ead09678f447d59e92eec490820d96f8844f61994c9ff19e24",
         "affectsGlobalScope": false
       },

@@ -4,6 +4,14 @@ import { ViewArticle } from "./view-article.entity";
 
 @EntityRepository(ViewArticle)
 export class ViewArticleRepository extends Repository<ViewArticle> {
+    async repositoryGetById(id: String): Promise<ViewArticle> {
+        const query = this.createQueryBuilder(this.metadata.tableName);
+        
+        query.andWhere(`"articleId" = '${id}'::uuid`);
+
+        return query.getOne();
+    }
+
     async repositoryGetByFilter(filterDto: FilterViewArticleDto): Promise<[ViewArticle[], number?]> {
         const query = this.createQueryBuilder(this.metadata.tableName);
         const { 

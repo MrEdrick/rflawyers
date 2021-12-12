@@ -10,6 +10,11 @@ exports.ViewArticleRepository = void 0;
 const typeorm_1 = require("typeorm");
 const view_article_entity_1 = require("./view-article.entity");
 let ViewArticleRepository = class ViewArticleRepository extends typeorm_1.Repository {
+    async repositoryGetById(id) {
+        const query = this.createQueryBuilder(this.metadata.tableName);
+        query.andWhere(`"articleId" = '${id}'::uuid`);
+        return query.getOne();
+    }
     async repositoryGetByFilter(filterDto) {
         const query = this.createQueryBuilder(this.metadata.tableName);
         const { articleId, articleUserId, articleTitle, articleDescription, articleDate, articleInsertionDateTime, articlePublished, articleActive, lawyerId, lawyerUserId, lawyerFirstName, lawyerLastName, lawyerOab, orderBySort, orderByOrder, paginationTake, paginationSkip } = filterDto;

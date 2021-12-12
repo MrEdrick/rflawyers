@@ -17,7 +17,7 @@ export class ViewArticlesService {
     }
 
     async getById(id: string): Promise<ViewArticle> {
-        const found = await this.repository.findOne(id);
+        const found = await this.repository.repositoryGetById(id);
 
         if (!found) {
             throw new NotFoundException(`Record with ID "${id}" not found`);

@@ -24,7 +24,7 @@ let ViewArticlesService = class ViewArticlesService {
         return this.repository.repositoryGetByFilter(filterDto);
     }
     async getById(id) {
-        const found = await this.repository.findOne(id);
+        const found = await this.repository.repositoryGetById(id);
         if (!found) {
             throw new common_1.NotFoundException(`Record with ID "${id}" not found`);
         }

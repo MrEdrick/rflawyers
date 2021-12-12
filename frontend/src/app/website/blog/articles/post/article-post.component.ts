@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ViewArticleDto } from 'src/app/dto/view-article.dto';
 import { ViewArticlesService } from 'src/app/services/view-articles.service';
@@ -17,7 +16,6 @@ export class ArticlePostComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location,
     private service: ViewArticlesService
   ) { }
 

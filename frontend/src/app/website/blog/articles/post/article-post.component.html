@@ -7,7 +7,8 @@
     class="picture-container"
     fxFlex="500px"
     fxLayout="column wrap"
-    fxLayoutAlign="center stretch">
+    fxLayoutAlign="center stretch"
+    style="margin-bottom: 32px !important;">
 
     <app-uplaod-image
       fxFill
@@ -18,23 +19,35 @@
 
   <div 
     fxFlex="60"
-    fxLayout="column wrap"
+    fxLayout="row wrap"
     fxLayoutAlign="start stretch"
     fxFlexAlign="stretch">
 
     <div 
-      fxLayout="row"
+      fxLayout="column wrap"
       fxFlexAlign="stretch"
-      fxLayoutAlign="start center"
+      fxLayoutAlign="start stretch"
       fxLayoutGap="16px">
 
-      <h1>{{article.articleTitle}}</h1>
-      <h4 style="font-weight: 500; color: #212322; opacity: 0.7">{{article.lawyerFirstName}} {{article.lawyerLastName}} • {{article.articleDate | date : 'mediumDate'}}</h4>
+      <h1 
+        fxLayoutAlign="start stretch"
+        style="font-size: 3vw; font-weight: 500; color: #212322; margin: 0px !important;">
+        {{article?.articleTitle}}
+      </h1>
+      <h4
+        fxLayoutAlign="start stretch" 
+        style="padding-left: 8px; font-weight: 400; color: #212322; opacity: 0.7">
+        {{article?.lawyerFirstName}} {{article?.lawyerLastName}} • {{article?.articleDate | date : 'mediumDate'}}
+      </h4>
     </div>
 
-    <p
+    <!--p
       fxFill
-      [innerHtml]="article.articleDescription">
-    </p>
+      [innerHtml]="article?.articleDescription">
+    </p-->
   </div>
+
+  <mat-divider 
+    fxFlex> 
+  </mat-divider>
 </div>
