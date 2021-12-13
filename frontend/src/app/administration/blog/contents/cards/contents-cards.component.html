@@ -1,18 +1,18 @@
 <div
   fxFill
   fxLayout="column wrap" 
-  fxLayoutAlign="start stretch">
+  fxLayoutAlign="start start">
 
   <mat-list 
     fxFill
-    fxLayout="column wrap"
-    fxLayoutAlign="center stretch"
+    fxLayout="row wrap"
+    fxLayoutAlign="start start"
     fxFlexAlign="stretch"
     class="list-container"
     *ngFor="let content of contents">
 
     <div
-        fxFlex="200px"
+        fxFill
         fxLayout="row wrap"
         fxLayoutAlign="start center"
         class="list-item">  
@@ -26,11 +26,28 @@
             </p>
         </div>
     </div>
+    
+    <button
+      mat-button
+      style="background-color: #d0d3d4; color: #005683; margin: 16px 0px 0px 16px;"
+      (click)="onDelete(content.id)">
+      Remover conteúdo
+    </button>
+
+    <button
+      mat-button
+      style="background-color: #005683; color: #d0d3d4; margin: 16px 0px 0px 16px;"
+      (click)="onEdit(content.id)">
+      Editar conteúdo
+    </button>
+  
   </mat-list>
 
   <button
+    fxFlex
+    fxFlexAlign="end" 
     mat-button
-    style="background-color: #d0d3d4; color: #005683; margin: 16px 0px 0px 16px;"
+    style="background-color: #005683; color: #d0d3d4; margin: 16px 0px 0px 16px;"
     (click)="onAdd()">
     Adicionar conteúdo
   </button>
