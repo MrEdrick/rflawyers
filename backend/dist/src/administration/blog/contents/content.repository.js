@@ -64,7 +64,7 @@ let ContentRepository = class ContentRepository extends typeorm_1.Repository {
     }
     async repositoryGetCount(articleId) {
         const query = this.createQueryBuilder(this.metadata.tableName);
-        query.andWhere(`"articleId" = ${articleId}::uuid`);
+        query.andWhere(`"articleId" = '${articleId}'::uuid`);
         return await query.getCount();
     }
 };

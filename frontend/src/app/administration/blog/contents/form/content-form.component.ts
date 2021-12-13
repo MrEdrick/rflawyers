@@ -32,7 +32,7 @@ export class ContentFormComponent implements OnInit {
     private dialogService: DialogService) { }
 
   ngOnInit() {
-    if (this.idArticleId.articleId) {
+    if (this.idArticleId.id) {
       this.formControls.id.setValue(this.idArticleId.articleId);
 
       this.service.getById(this.formControls.id.value)

@@ -1,7 +1,13 @@
-.content { 
-  padding: 16px; 
+:host {
+  margin-bottom: 32px;
 }
 
-.content > mat-card { 
-  width: 200px; 
+.list-item {
+  margin: 32px 0px 0px 0px;
+}
+
+.list-container {
+  ::ng-deep .mat-divider {
+      border-top-width: 3px; 
+  }
 }

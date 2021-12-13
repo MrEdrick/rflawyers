@@ -4492,7 +4492,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/blog/contents/content.repository.ts": {
-        "version": "75a523ba0239caa3d180f364cfdd24bdddadd692b1e5a4039ff2238c61c1f130",
+        "version": "2a6c02281dff87088849464df5e641bdf500c92941e6cc096960686d7ae359d8",
         "signature": "1701033784fb8892da1d4c1fce7677a21684b4ff21f95e83efdf97e46dac8fd1",
         "affectsGlobalScope": false
       },

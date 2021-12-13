@@ -73,7 +73,7 @@ export class ContentRepository extends Repository<Content> {
     async repositoryGetCount(articleId: string): Promise<number> {
         const query = this.createQueryBuilder(this.metadata.tableName);
 
-        query.andWhere(`"articleId" = ${articleId}::uuid`);
+        query.andWhere(`"articleId" = '${articleId}'::uuid`);
 
         return await query.getCount();
     }

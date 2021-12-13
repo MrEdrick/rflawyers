@@ -1,18 +1,32 @@
 <div
-  class="content"
-  fxLayout="row wrap" 
-  fxLayoutAlign="start start">
+  fxFill
+  fxLayout="column wrap" 
+  fxLayoutAlign="start stretch">
 
-  <app-card-without-image
-    *ngFor="let content of contents"
-    style="margin:16px 16px 16px 0px;"
-    fxFlex="30%" fxFlex.xs="100%"
-    fxFlex.sm="33%"
-    [title]="content.title"
-    [content]="content.description"
-    (clickDeleteButton)="onDelete(content.id)"
-    (dblclick)="onEdit(content.id)">
-  </app-card-without-image>
+  <mat-list 
+    fxFill
+    fxLayout="column wrap"
+    fxLayoutAlign="center stretch"
+    fxFlexAlign="stretch"
+    class="list-container"
+    *ngFor="let content of contents">
+
+    <div
+        fxFlex="200px"
+        fxLayout="row wrap"
+        fxLayoutAlign="start center"
+        class="list-item">  
+        <div
+            fxFlex
+            fxFlexAlign="stretch">
+            <h1 style="font-weight: 500; color: #212322; margin: 0px !important;">{{content?.subTitle}}</h1>
+            <p 
+                style="font-weight: 400; color: #212322; opacity: 0.7"
+                [innerHTML]="content?.description">
+            </p>
+        </div>
+    </div>
+  </mat-list>
 
   <button
     mat-button

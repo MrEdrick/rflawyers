@@ -1,7 +1,9 @@
-.sheet {
-    padding: 16px;
-  }
-  
-.picture-container {
-    position: relative;
+:host:-webkit-scrollbar {
+  display: none;
+  max-height: 90%;
+}
+
+:host {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }

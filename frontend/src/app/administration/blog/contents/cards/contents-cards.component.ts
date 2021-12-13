@@ -32,16 +32,16 @@ export class ContentsCardsComponent implements OnInit {
   onAdd() {
     this.dialog.open(
       ContentFormComponent, {
-      width: '50%',
-      data: {id: '', lawyerId: this.articleId}
+      width: '70%',
+      data: {id: '', articleId: this.articleId}
     }).afterClosed().toPromise().then(_ => this.laodCards());
   }
 
   onEdit(id: string) {
     this.dialog.open(
       ContentFormComponent, {
-        width: '50%',
-        data: {id, lawyerId: this.articleId}
+        width: '70%',
+        data: {id, articleId: this.articleId}
       }
     ).afterClosed().toPromise().then(_ => this.laodCards());
   }
