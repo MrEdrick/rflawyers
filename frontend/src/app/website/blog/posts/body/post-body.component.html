@@ -1,0 +1,61 @@
+<div
+  fxLayout="column"
+  fxLayoutAlign="center stretch"
+  fxFill>
+
+  <div
+    *ngIf="article"
+    class="picture-container"
+    fxFlex="500px"
+    fxLayout="column wrap"
+    fxLayoutAlign="center stretch"
+    style="margin-bottom: 32px !important;">
+
+    <img 
+      fxFill
+      style="object-fit: cover"
+      [src]="[article.articleImage]">
+
+  </div>
+
+  <div 
+    fxFlex="60"
+    fxLayout="column wrap"
+    fxLayoutAlign="start stretch"
+    fxFlexAlign="stretch">
+
+    <div 
+      fxFlex
+      fxLayout="column wrap"
+      fxFlexAlign="stretch"
+      fxLayoutAlign="start stretch"
+      fxLayoutGap="16px">
+
+      <h1 
+        fxLayoutAlign="start stretch"
+        style="font-size: 3vw; font-weight: 500; color: #212322; margin: 0px !important;">
+        {{article?.articleTitle}}
+      </h1>
+      <h4
+        fxLayoutAlign="start stretch" 
+        style="padding-left: 8px; font-weight: 400; color: #212322; opacity: 0.7">
+        {{article?.lawyerFirstName}} {{article?.lawyerLastName}} • {{article?.articleDate | date : 'mediumDate'}}
+      </h4>
+    </div>
+
+    <div
+      *ngFor="let content of contents"
+      fxFlex>
+
+      <h1
+        style="margin: 16px 0px 0px 0px !important;">
+        {{content?.subTitle}}
+      </h1>
+
+      <p  
+        [innerHtml]="content?.description">
+      </p>
+  </div>
+  </div>
+
+</div>

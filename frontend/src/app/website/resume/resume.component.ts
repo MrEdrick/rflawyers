@@ -29,7 +29,7 @@ export class ResumeComponent implements OnInit {
   ngOnInit(): void {
     const lawyerId = this.route.snapshot.params.lawyerId;
 
-    this.lawyersService.getId(lawyerId)
+    this.lawyersService.getById(lawyerId)
     .toPromise().then(lawyer => {
       this.lawyer = lawyer;
     });

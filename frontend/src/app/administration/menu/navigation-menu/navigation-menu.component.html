@@ -43,6 +43,24 @@
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
+            Blog
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-nav-list>
+          <a 
+            mat-list-item 
+            routerLinkActive="active current"
+            routerLink="./articles" 
+            (click)="onChangePageName('Lista de Artigos')">
+            Artigos
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
             Configurações
           </mat-panel-title>
         </mat-expansion-panel-header>

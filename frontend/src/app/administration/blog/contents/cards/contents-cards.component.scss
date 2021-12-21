@@ -1,0 +1,14 @@
+:host {
+  margin-bottom: 32px;
+}
+
+.list-item {
+  height: 200px;
+  margin: 32px 0px 0px 0px;
+}
+
+.list-container {
+  ::ng-deep .mat-divider {
+      border-top-width: 3px; 
+  }
+}

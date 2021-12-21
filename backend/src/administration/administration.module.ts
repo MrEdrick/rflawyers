@@ -4,6 +4,7 @@ import { FilesModule } from './files-manager/files.module';
 import { EmailSenderModule } from './email-sender/email-sender.module';
 import { ConfigurationsModule } from './configurations/configurations.module';
 import { LawyersRegistrationsModule } from './lawyers-registrations/lawyers-registrations.module';
+import { BlogModule } from './blog/blog.module';
 
 @Module({
   imports: [
@@ -11,7 +12,8 @@ import { LawyersRegistrationsModule } from './lawyers-registrations/lawyers-regi
     EmailSenderModule,
     UserAuthModule,
     ConfigurationsModule,
-    LawyersRegistrationsModule
+    LawyersRegistrationsModule,
+    BlogModule
   ],
 })
 export class AdministrationModule {}

@@ -1,0 +1,67 @@
+<form
+  novalidate
+  [formGroup]="form"
+  fxLayout="row wrap"
+  fxLayoutAlign="center start"
+  fxFill>
+
+  <div
+    fxFill
+    fxLayout="row wrap"
+    fxLayout.lt-md="column"
+    fxLayoutAlign="space-around start"
+    style="height: auto;">
+
+    <div 
+      fxFill
+      fxLayout="row"
+      fxFlexAlign="stretch"
+      fxLayoutAlign="start center"
+      fxLayoutGap="16px">
+
+      <mat-form-field 
+        fxFlex="70" 
+        fxFlex.lt-md="70">
+        
+        <input matInput placeholder="Subtítulo" formControlName="subTitle">
+        
+        <mat-error *ngIf="formControls.subTitle.hasError('required')">
+          <strong>Subtítulo é obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+
+      
+      <!--mat-form-field 
+        *ngIf="idArticleId.id"
+        fxFlex>
+        
+        <input matInput type="number" placeholder="Ordem" formControlName="order">
+        
+        <mat-error *ngIf="formControls.order.hasError('required')">
+          <strong>Ordem é obrigatório</strong>
+        </mat-error>
+      </mat-form-field-->
+          
+          
+      <mat-checkbox 
+        fxFlex 
+        class="mat-checkbox" 
+        placeholder="active"
+        formControlName="active">Ativo
+      </mat-checkbox>
+    </div>
+      
+    <quill-editor
+      fxFill
+      fxFlexAlign="stretch"
+      formControlName="description"
+      style="overflow: auto; max-height: 400px;">
+    </quill-editor>
+  </div>
+
+  <app-footer-form-actions 
+    fxFill
+    (submitClick)="onClickSubmit()"
+    (cancelClick)="onClickCancel()">
+  </app-footer-form-actions>
+</form>

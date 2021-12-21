@@ -1,0 +1,27 @@
+<div
+    fxFlex="100"
+    fxLayout="column"
+    fxLayoutAlign="start stretch" 
+    class="blog">
+
+    <app-blog-menu
+        fxFlex
+        [showHome]="false"
+        fxFlexAlign="stretch">
+    </app-blog-menu>
+    
+    <app-post-body
+        *ngIf="lastArticle"
+        [articleId]="lastArticle.articleId">
+    </app-post-body>
+
+    <mat-divider 
+        fxFlex
+        style="margin: 16px 10%;"> 
+    </mat-divider>
+
+    <app-articles-list
+        fxFlex
+        fxFlexAlign="center">
+    </app-articles-list>
+</div>

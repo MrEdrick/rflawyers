@@ -1,0 +1,55 @@
+<mat-list 
+    fxFlex="auto"
+    fxLayout="column wrap"
+    fxLayoutAlign="center stretch"
+    fxFlexAlign="stretch"
+    class="list-container"
+    *ngFor="let article of articles">
+
+    <div
+        fxFlex="300px"
+        fxLayout="row wrap"
+        fxLayoutAlign="start stretch"
+        class="list-item"
+        (click)="OnClickIem(article.articleId)">  
+        <img 
+            fxFlex="250px"
+            mat-card-image 
+            style="margin-right: 16px; object-fit: cover"
+            [src]="article ? article.articleImage : 'assets/images/no-image.jpg'"/>
+        <div
+            fxFlex
+            fxLayout="column wrap"
+            fxLayoutAlign="start stretch"
+            fxFlexAlign="stretch">
+            <h1 
+                fxFlex="32px" 
+                style="font-weight: 500; color: #212322; margin: 0px !important;">{{article?.articleTitle}}</h1>
+            <h4 
+                fxFlex="32px"
+                style="font-weight: 500; color: #212322; opacity: 0.7">{{article?.lawyerFirstName}} {{article?.lawyerLastName}} • {{article?.articleDate | date : 'mediumDate'}}</h4>
+            <div 
+                fxFlex
+                class="description-content"
+                [innerHTML]="article?.articleDescription">
+            </div>
+        </div>
+    </div>
+
+    <mat-divider 
+        fxFlex> 
+    </mat-divider>
+
+</mat-list>
+
+<mat-paginator 
+    fxFlex="60px"
+    fxFlexAlign="end"
+    fxFlexAlign="stretch"
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="pageEvent = $event; loadList()"
+    aria-label="Select page">
+</mat-paginator>

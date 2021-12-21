@@ -1,0 +1,9 @@
+:host:-webkit-scrollbar {
+  display: none;
+  max-height: 90%;
+}
+
+:host {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}

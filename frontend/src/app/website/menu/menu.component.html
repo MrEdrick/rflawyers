@@ -16,6 +16,16 @@
             fxFlex="20"
             fxFlex.gt-sm="10"
             role="listitem"
+            (click)="clickMenuItem.emit('blog')">
+            <span style="position: relative; width: 100%; text-align: center; font-weight: 700;">
+                BLOG
+            </span>
+        </mat-list-item>
+
+        <mat-list-item
+            fxFlex="20"
+            fxFlex.gt-sm="10"
+            role="listitem"
             (click)="clickMenuItem.emit('#expertise')">
             <span style="position: relative; width: 100%; text-align: center;">
                 EXPERTISE
@@ -75,39 +85,6 @@
         fxFlex="100"
         fxLayout="column wrap"
         fxLayoutAlign="start space-between">
-
-        <!--mat-list-item
-            fxFlex="40px"
-            role="listitem">
-
-            <a
-                href="https://www.instagram.com/docephie"
-                target="_blank">
-                <i class="fa fa-instagram fa-lg"></i>
-            </a>
-
-        </mat-list-item>
-
-        <mat-list-item
-            fxFlex="40px"
-            role="listitem">
-
-            <a href="https://www.facebook.com/Docephie"
-                target="_blank">
-                <i class="fa fa-linkedin fa-lg"></i>
-            </a>
-
-        </mat-list-item>
-
-        <mat-list-item
-            fxFlex="40px"
-            role="listitem">
-
-            <a href="https://wa.me/5510992548090"
-                target="_blank">
-                <i class="fa fa-whatsapp fa-lg"></i>
-            </a>
-        </mat-list-item-->
     </mat-nav-list>
 
     <mat-toolbar
@@ -125,29 +102,6 @@
         </button>
 
         <span style="flex: 1 1 auto;"></span>
-
-        <!--button
-            mat-icon-button>
-            <a
-                href="https://www.instagram.com/docephie"
-                target="_blank">
-                <i class="fa fa-instagram fa-lg"></i>
-            </a>
-        </button>
-
-        <button mat-icon-button>
-            <a href="https://www.facebook.com/Docephie"
-                target="_blank">
-                <i class="fa fa-linkedin fa-lg"></i>
-            </a>
-        </button>
-
-        <button mat-icon-button>
-            <a href="https://wa.me/5510992548090"
-                target="_blank">
-                <i class="fa fa-whatsapp fa-lg"></i>
-            </a>
-        </button-->
 
     </mat-toolbar>
 
@@ -185,6 +139,19 @@
                         fxFlex="100"
                         style="text-align: center;">
                         HOME
+                    </span>
+                </mat-list-item>
+
+                <mat-list-item
+                    fxFlex="10"
+                    role="listitem"
+                    fxLayout="row wrap"
+                    fxLayoutAlign="start stretch"
+                    (click)="clickMenuItem.emit('blog')">
+                    <span
+                        fxFlex="100"
+                        style="text-align: center; font-weight: 700;">
+                        BLOG
                     </span>
                 </mat-list-item>
 

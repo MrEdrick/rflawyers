@@ -38,7 +38,7 @@ export class ResumeItemFormComponent implements OnInit {
     if (id) {
       this.formControls.id.setValue(id);
 
-      this.service.getId(this.formControls.id.value)
+      this.service.getById(this.formControls.id.value)
         .toPromise().then(resumeItem => {
           this.formControls.resumeId.setValue(resumeItem.resumeId);
           this.formControls.title.setValue(resumeItem.title);

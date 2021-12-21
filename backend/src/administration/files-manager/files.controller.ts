@@ -41,8 +41,6 @@ export class FilesController {
             .updateRecordWithFilePath(
                 BASE_PATH_IMAGES + uploadFileDto.tableName + '/', file.filename, uploadFileDto)
             .catch((error) => {
-                console.log(error);
-
                 fs.unlinkSync('./' + BASE_PATH_IMAGES + uploadFileDto.tableName + '/' + file.filename);
 
                 if (uploadFileDto.deleteRecordIfFail = 'true') {

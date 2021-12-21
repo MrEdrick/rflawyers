@@ -1791,6 +1791,11 @@
         "signature": "9f9f5438a2566fc589c6957bdd0993439e80a561dfa0bf39818c4974b2bf4ecc",
         "affectsGlobalScope": false
       },
+      "../migrations/1602267906157-blog.migrations.ts": {
+        "version": "40df099c2cfbaac734d7ba69066c5c4ad9668d87582eda7e96288ef11d289050",
+        "signature": "9f9f5438a2566fc589c6957bdd0993439e80a561dfa0bf39818c4974b2bf4ecc",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@nestjs/common/cache/cache.constants.d.ts": {
         "version": "a7ada44a7b0ff5f993b4773cfce0a94da56f04ec60d19995fc9576f92b2e02c1",
         "signature": "a7ada44a7b0ff5f993b4773cfce0a94da56f04ec60d19995fc9576f92b2e02c1",
@@ -3896,6 +3901,36 @@
         "signature": "06039e57f71062493c74101c87cab81e143aa17fae47d19b2020eba772abbb84",
         "affectsGlobalScope": false
       },
+      "../src/administration/blog/contents/dto/create-content.dto.ts": {
+        "version": "602d9c7e774bb4799d38aef7853cca091c5d62b242e127f12ca9253582b44764",
+        "signature": "c8f3a5164e4c53bc744f0a04fb499308d4605860557387ec4dba0950b213905d",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/contents/dto/update-content.dto.ts": {
+        "version": "bd1ab8ada20b05aebafe5f76057cedafc774caf091f8dc62232d60ad9bf1f532",
+        "signature": "8b2c1a8130c37afa0869a4fb631424c7a9555c1797ed708e7ae33aa40679b690",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/contents/content.entity.ts": {
+        "version": "800d8ba0bfdfecc20fed6f9363f845406c8eb4606993b4c817227f2e0cbcdfd5",
+        "signature": "35c2e347522b6a5b09229f1c1a20c0b9b08889139a0fe37a5fbf594fe795034d",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/articles/dto/create-article.dto.ts": {
+        "version": "fdcafb496dc0288fa9cf86f1877d478019626119715923d4df8a1afa9cfda970",
+        "signature": "0e5a62d42a3c64b80671626b1667dc3ac18d214c15120d1360a1c5d7d1229acd",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/articles/dto/update-article.dto.ts": {
+        "version": "48ba38a11cc0f55000fc5b32e01f111e07db35e73f9549ce0f0a0357b27093ac",
+        "signature": "96314039bf4d8e7e8639bfdb85e74553d1902a7e388b66ed98d7ba5414e0f6b3",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/articles/article.entity.ts": {
+        "version": "1598faadf9110cb33909abf84c0b7c3ee9ba4ffa6c4b29ba3d61834a9de6cc78",
+        "signature": "1635deaa8052af01bd85e93282ffffd32918dee0f5ff43e101f8151b6bd5f71d",
+        "affectsGlobalScope": false
+      },
       "../src/administration/lawyers-registrations/resume-items/dto/create-resume-item.dto.ts": {
         "version": "00cd0932f2a1ae590fadab1f95fc686c56e762e01c1abdf165454a607a2564cb",
         "signature": "bc3b8d10fa31c377895c4e884b190d1c6e93f1ec0dea564b46b4c7e4c8b1db93",
@@ -3937,8 +3972,8 @@
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts": {
-        "version": "7b80718eb56e27b27e7b80e8d2c39017a86eeb73d46c10ceb1a39fa97df75ffc",
-        "signature": "c645a570027f67989aac9a2505ddba17e8e5adc676b83b9c305d52358a75adc9",
+        "version": "bddb892a757c430e2199af87ba0b1cd98a4b31ff854616dc86c9902aedfa0f7d",
+        "signature": "b3b43a08fdba1ea08781f2682ba5db2af634e76331e9318546a4eeb18c091b62",
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/schooling/dto/create-schooling.dto.ts": {
@@ -3957,8 +3992,8 @@
         "affectsGlobalScope": false
       },
       "../src/administration/configurations/users/user.entity.ts": {
-        "version": "8fc7b05f52da03f72ed271e2041d76704b8c13ece04c04f74dcbce6140ca902a",
-        "signature": "fea7fa2633812f4ad50708ecd22b733c8e3a1ada69db1652086ab2d0550de8a2",
+        "version": "4b3c05e258ad4b22e810d064c044a368dd2f15abe8c1770d6004bbf06250aec9",
+        "signature": "82291407ac36565ff43f223c047e80bf79defc19d6de0e3babdb909f0da5de8e",
         "affectsGlobalScope": false
       },
       "../src/administration/configurations/users/dto/filter-user.dto.ts": {
@@ -4327,7 +4362,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/lawyers-registrations/lawyers/lawyer.repository.ts": {
-        "version": "c417ff1c8daf699fee4c93250392d202587a34d9418790883dc0b22c50302925",
+        "version": "aa9e5d3d861c2cabe42ac5fa4b1ad2011d632c96ec8195f61c9cd48306902e06",
         "signature": "9f9427c8c5b448ff8361dd1d4b93fb7f258b60ec78e831f3b008e066eee79783",
         "affectsGlobalScope": false
       },
@@ -4426,8 +4461,93 @@
         "signature": "a67449fd2d3cee4e0bccfad27ba2aca41bf3b0257223d006302e6f77858463dc",
         "affectsGlobalScope": false
       },
+      "../src/administration/blog/articles/dto/filter-article.dto.ts": {
+        "version": "de34cdda8707486b6f410bb70803613db2cb044f659924cb4c80b81c8bca2f41",
+        "signature": "c14be228806714d30091c5296b4a3503c735ce98c8622996ec53568a01150d1f",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/articles/article.repository.ts": {
+        "version": "caab237894011ac14c2b07639b8eae252c65506e06dcc451364a025e10bfdda2",
+        "signature": "a4e5a9205fa423fd24d6a57ff33b0c14e067511d0b6e109567780d47d15738e0",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/articles/articles.service.ts": {
+        "version": "057b88946c06725a27f6f8241f37258b45a130764d4442c30117b2b94bbcc249",
+        "signature": "13bca231c379212dd3a20202b5e4a02a4cb7dcfa6f7dfa23c0e02825618eb130",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/articles/articles.controller.ts": {
+        "version": "1dbe4df9ca4ed809df61c79bde00827b3c3cdc3f203011b470a23bb2ba35e013",
+        "signature": "d939b768a40467f7ebffd020200cc837d4d62af5ab6edf869380bc67bec565cd",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/articles/articles.module.ts": {
+        "version": "bc9f5226b26b48f1e397f61aef231e77c6bc58df9aaf29de870c6881cfcd94ef",
+        "signature": "43fb572eabf30e76627245c104303cbc38fb2258f2fb4aa1e34cedf5060c48b0",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/contents/dto/filter-content.dto.ts": {
+        "version": "2b260174d7b065f229fa5dff5cbafdf75e74e25aa1d5e511bb0281d8db6a974f",
+        "signature": "521a3f36966f96c5b30a82a8047a04633817a1733a6e96ac098f7ee0f75e5a11",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/contents/content.repository.ts": {
+        "version": "fdbb5ff9bb1e827a710e423c49eb6fcd4d8dbf8c93c58e8ce45b7c81cc44c5a9",
+        "signature": "1701033784fb8892da1d4c1fce7677a21684b4ff21f95e83efdf97e46dac8fd1",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/contents/contents.service.ts": {
+        "version": "fbb665985ad433bc117f1d310f2015be49b5d922b173e52b353ef0a0f2627996",
+        "signature": "66e6725420f01c2c17798b8ac4cc421cc2e50756ee127ea76bac073c77ece176",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/contents/contents.controller.ts": {
+        "version": "6996b7c941f8511ea3db52b95b523f50aeddc877d89f380539fbabbeef74de6c",
+        "signature": "f4ed8e3bed4cf2bcfc2f054c6e1855a4ce0e4fd0d48ef65a4578693855545001",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/contents/contents.module.ts": {
+        "version": "3d1ed8bdcc7c578cb5636cf9ef6782c98a011cd9d15cc0e7f0c93a48cf4cb4fe",
+        "signature": "c9a1f3d6a583e9404427c2a1348b1378a875cbbe87ae33fb020d2fbe8aa5cde5",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/view-articles/dto/filter-view-article.dto.ts": {
+        "version": "006964fd7adec1f93e120490589ccb4b898e6d69c66cb79493381290dc1cf07e",
+        "signature": "279454358ca02f2d372599145d1e273f8edd889e2a22b36fd26ec386a3134e02",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/view-articles/view-article.entity.ts": {
+        "version": "5f444c0fc21dacbf06ffee7c8e85e9562e35d5d0789e268c38fd0aa76eb5188b",
+        "signature": "3df2f9c057965f2a9bf563bca081c09bc0d5cb246e3ce1cd049ecc924a10df8c",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/view-articles/view-article.repository.ts": {
+        "version": "1d0ac5e133b1e5b1ca44d350031905f7511c9ce09d053addb31c566fc9cde42d",
+        "signature": "58b94322734196898252072f43b69251652a9be04e6203c9e552deeabd174962",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/view-articles/view-articles.service.ts": {
+        "version": "59525af29f6207f273aa5a22083f9b2c9148eab2c74241ee947161390844f95a",
+        "signature": "a2495a2c68cb20ead09678f447d59e92eec490820d96f8844f61994c9ff19e24",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/view-articles/view-articles.controller.ts": {
+        "version": "3513b2609ac5d050881b1be7a6554393b1eb4165f0b9ccbc73d62e794713dbf4",
+        "signature": "9bc43c7292b5ce76bb06774ba1708a570500fb8919c655e8647c66e80b03f311",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/view-articles/view-articles.module.ts": {
+        "version": "39317118acdee029c56a599132d5824876f99073a659dd45092470bca4358b56",
+        "signature": "7259a02f0314cca7bc7050c1654d9f642deba5701d3027ea48e6bd8d12754012",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/blog/blog.module.ts": {
+        "version": "6bcf29b24a263493e9a3c633b9806b8aa8031becdf016723f5b7952257f5819a",
+        "signature": "e5e6635a67b9f56ba8ed94d439b2a5821d1b719cbc025f94ae1f63d31a9aa8d1",
+        "affectsGlobalScope": false
+      },
       "../src/administration/administration.module.ts": {
-        "version": "2959446b188de12d84312b90b7706762eb1ff7b0271d20f6fb8bd456186c096a",
+        "version": "e1db4ec8bd4b907d6e2e79919efbaba725621dbcfb89759cd3aed7d644ded805",
         "signature": "9890e4d218bf49dd982c0f7ed115230a653f8f599f808e0f6eb55af2f23dcc71",
         "affectsGlobalScope": false
       },
@@ -4976,6 +5096,9 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../migrations/1602267806157-lawyers-registrations.migrations.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1602267906157-blog.migrations.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [
@@ -8274,11 +8397,165 @@
       ],
       "../src/administration/administration.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../src/administration/blog/blog.module.ts",
         "../src/administration/configurations/configurations.module.ts",
         "../src/administration/email-sender/email-sender.module.ts",
         "../src/administration/files-manager/files.module.ts",
         "../src/administration/lawyers-registrations/lawyers-registrations.module.ts",
         "../src/administration/user-auth/user-auth.module.ts"
+      ],
+      "../src/administration/blog/articles/article.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/articles/dto/create-article.dto.ts",
+        "../src/administration/blog/articles/dto/update-article.dto.ts",
+        "../src/administration/blog/contents/content.entity.ts",
+        "../src/administration/configurations/users/user.entity.ts",
+        "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts"
+      ],
+      "../src/administration/blog/articles/article.repository.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/handlebars/types/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/articles/article.entity.ts",
+        "../src/administration/blog/articles/dto/create-article.dto.ts",
+        "../src/administration/blog/articles/dto/filter-article.dto.ts",
+        "../src/administration/blog/articles/dto/update-article.dto.ts",
+        "../src/administration/configurations/users/user.entity.ts",
+        "../src/enums/enum-errorcodes.ts"
+      ],
+      "../src/administration/blog/articles/articles.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
+        "../src/administration/blog/articles/article.entity.ts",
+        "../src/administration/blog/articles/articles.service.ts",
+        "../src/administration/blog/articles/dto/create-article.dto.ts",
+        "../src/administration/blog/articles/dto/filter-article.dto.ts",
+        "../src/administration/blog/articles/dto/update-article.dto.ts",
+        "../src/administration/configurations/users/user.decorator.ts",
+        "../src/administration/configurations/users/user.entity.ts"
+      ],
+      "../src/administration/blog/articles/articles.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/administration/blog/articles/article.repository.ts",
+        "../src/administration/blog/articles/articles.controller.ts",
+        "../src/administration/blog/articles/articles.service.ts",
+        "../src/administration/user-auth/user-auth.module.ts"
+      ],
+      "../src/administration/blog/articles/articles.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/administration/blog/articles/article.entity.ts",
+        "../src/administration/blog/articles/article.repository.ts",
+        "../src/administration/blog/articles/dto/create-article.dto.ts",
+        "../src/administration/blog/articles/dto/filter-article.dto.ts",
+        "../src/administration/blog/articles/dto/update-article.dto.ts",
+        "../src/administration/configurations/users/user.entity.ts"
+      ],
+      "../src/administration/blog/articles/dto/create-article.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/administration/blog/articles/dto/filter-article.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/administration/blog/articles/dto/update-article.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/administration/blog/blog.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/administration/blog/articles/articles.module.ts",
+        "../src/administration/blog/contents/contents.module.ts",
+        "../src/administration/blog/view-articles/view-articles.module.ts"
+      ],
+      "../src/administration/blog/contents/content.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/articles/article.entity.ts",
+        "../src/administration/blog/contents/dto/create-content.dto.ts",
+        "../src/administration/blog/contents/dto/update-content.dto.ts",
+        "../src/administration/configurations/users/user.entity.ts"
+      ],
+      "../src/administration/blog/contents/content.repository.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/handlebars/types/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/contents/content.entity.ts",
+        "../src/administration/blog/contents/dto/create-content.dto.ts",
+        "../src/administration/blog/contents/dto/filter-content.dto.ts",
+        "../src/administration/blog/contents/dto/update-content.dto.ts",
+        "../src/administration/configurations/users/user.entity.ts",
+        "../src/enums/enum-errorcodes.ts"
+      ],
+      "../src/administration/blog/contents/contents.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
+        "../src/administration/blog/contents/content.entity.ts",
+        "../src/administration/blog/contents/contents.service.ts",
+        "../src/administration/blog/contents/dto/create-content.dto.ts",
+        "../src/administration/blog/contents/dto/filter-content.dto.ts",
+        "../src/administration/blog/contents/dto/update-content.dto.ts",
+        "../src/administration/configurations/users/user.decorator.ts",
+        "../src/administration/configurations/users/user.entity.ts"
+      ],
+      "../src/administration/blog/contents/contents.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/administration/blog/contents/content.repository.ts",
+        "../src/administration/blog/contents/contents.controller.ts",
+        "../src/administration/blog/contents/contents.service.ts",
+        "../src/administration/user-auth/user-auth.module.ts"
+      ],
+      "../src/administration/blog/contents/contents.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/administration/blog/contents/content.entity.ts",
+        "../src/administration/blog/contents/content.repository.ts",
+        "../src/administration/blog/contents/dto/create-content.dto.ts",
+        "../src/administration/blog/contents/dto/filter-content.dto.ts",
+        "../src/administration/blog/contents/dto/update-content.dto.ts",
+        "../src/administration/configurations/users/user.entity.ts"
+      ],
+      "../src/administration/blog/contents/dto/create-content.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/administration/blog/contents/dto/filter-content.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/administration/blog/contents/dto/update-content.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/administration/blog/view-articles/dto/filter-view-article.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/administration/blog/view-articles/view-article.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/articles/article.entity.ts",
+        "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts"
+      ],
+      "../src/administration/blog/view-articles/view-article.repository.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/view-articles/dto/filter-view-article.dto.ts",
+        "../src/administration/blog/view-articles/view-article.entity.ts"
+      ],
+      "../src/administration/blog/view-articles/view-articles.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/administration/blog/view-articles/dto/filter-view-article.dto.ts",
+        "../src/administration/blog/view-articles/view-article.entity.ts",
+        "../src/administration/blog/view-articles/view-articles.service.ts"
+      ],
+      "../src/administration/blog/view-articles/view-articles.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/administration/blog/view-articles/view-article.repository.ts",
+        "../src/administration/blog/view-articles/view-articles.controller.ts",
+        "../src/administration/blog/view-articles/view-articles.service.ts",
+        "../src/administration/user-auth/user-auth.module.ts"
+      ],
+      "../src/administration/blog/view-articles/view-articles.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/administration/blog/view-articles/dto/filter-view-article.dto.ts",
+        "../src/administration/blog/view-articles/view-article.entity.ts",
+        "../src/administration/blog/view-articles/view-article.repository.ts"
       ],
       "../src/administration/configurations/configurations.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -8305,6 +8582,8 @@
       "../src/administration/configurations/users/user.entity.ts": [
         "../node_modules/@types/node/crypto.d.ts",
         "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/articles/article.entity.ts",
+        "../src/administration/blog/contents/content.entity.ts",
         "../src/administration/configurations/users/dto/create-user.dto.ts",
         "../src/administration/configurations/users/dto/update-user.dto.ts",
         "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts",
@@ -8447,6 +8726,7 @@
       ],
       "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/articles/article.entity.ts",
         "../src/administration/configurations/users/user.entity.ts",
         "../src/administration/lawyers-registrations/lawyers/dto/create-lawyer.dto.ts",
         "../src/administration/lawyers-registrations/lawyers/dto/update-lawyer.dto.ts",
@@ -8729,6 +9009,9 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../migrations/1602267806157-lawyers-registrations.migrations.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1602267906157-blog.migrations.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [
@@ -12025,11 +12308,91 @@
         "../node_modules/typeorm/metadata/relationmetadata.d.ts",
         "../node_modules/typeorm/query-runner/queryrunner.d.ts"
       ],
+      "../src/administration/blog/articles/article.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/articles/dto/create-article.dto.ts",
+        "../src/administration/blog/articles/dto/update-article.dto.ts",
+        "../src/administration/blog/contents/content.entity.ts",
+        "../src/administration/configurations/users/user.entity.ts",
+        "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts"
+      ],
+      "../src/administration/blog/articles/article.repository.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/articles/article.entity.ts",
+        "../src/administration/blog/articles/dto/create-article.dto.ts",
+        "../src/administration/blog/articles/dto/filter-article.dto.ts",
+        "../src/administration/blog/articles/dto/update-article.dto.ts",
+        "../src/administration/configurations/users/user.entity.ts"
+      ],
+      "../src/administration/blog/articles/articles.controller.ts": [
+        "../src/administration/blog/articles/article.entity.ts",
+        "../src/administration/blog/articles/articles.service.ts",
+        "../src/administration/blog/articles/dto/create-article.dto.ts",
+        "../src/administration/blog/articles/dto/filter-article.dto.ts",
+        "../src/administration/blog/articles/dto/update-article.dto.ts",
+        "../src/administration/configurations/users/user.entity.ts"
+      ],
+      "../src/administration/blog/articles/articles.service.ts": [
+        "../src/administration/blog/articles/article.entity.ts",
+        "../src/administration/blog/articles/article.repository.ts",
+        "../src/administration/blog/articles/dto/create-article.dto.ts",
+        "../src/administration/blog/articles/dto/filter-article.dto.ts",
+        "../src/administration/blog/articles/dto/update-article.dto.ts",
+        "../src/administration/configurations/users/user.entity.ts"
+      ],
+      "../src/administration/blog/contents/content.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/articles/article.entity.ts",
+        "../src/administration/blog/contents/dto/create-content.dto.ts",
+        "../src/administration/blog/contents/dto/update-content.dto.ts",
+        "../src/administration/configurations/users/user.entity.ts"
+      ],
+      "../src/administration/blog/contents/content.repository.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/contents/content.entity.ts",
+        "../src/administration/blog/contents/dto/create-content.dto.ts",
+        "../src/administration/blog/contents/dto/filter-content.dto.ts",
+        "../src/administration/blog/contents/dto/update-content.dto.ts",
+        "../src/administration/configurations/users/user.entity.ts"
+      ],
+      "../src/administration/blog/contents/contents.controller.ts": [
+        "../src/administration/blog/contents/content.entity.ts",
+        "../src/administration/blog/contents/contents.service.ts",
+        "../src/administration/blog/contents/dto/create-content.dto.ts",
+        "../src/administration/blog/contents/dto/filter-content.dto.ts",
+        "../src/administration/blog/contents/dto/update-content.dto.ts",
+        "../src/administration/configurations/users/user.entity.ts"
+      ],
+      "../src/administration/blog/contents/contents.service.ts": [
+        "../src/administration/blog/contents/content.entity.ts",
+        "../src/administration/blog/contents/content.repository.ts",
+        "../src/administration/blog/contents/dto/create-content.dto.ts",
+        "../src/administration/blog/contents/dto/filter-content.dto.ts",
+        "../src/administration/blog/contents/dto/update-content.dto.ts",
+        "../src/administration/configurations/users/user.entity.ts"
+      ],
+      "../src/administration/blog/view-articles/view-article.repository.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/view-articles/dto/filter-view-article.dto.ts",
+        "../src/administration/blog/view-articles/view-article.entity.ts"
+      ],
+      "../src/administration/blog/view-articles/view-articles.controller.ts": [
+        "../src/administration/blog/view-articles/dto/filter-view-article.dto.ts",
+        "../src/administration/blog/view-articles/view-article.entity.ts",
+        "../src/administration/blog/view-articles/view-articles.service.ts"
+      ],
+      "../src/administration/blog/view-articles/view-articles.service.ts": [
+        "../src/administration/blog/view-articles/dto/filter-view-article.dto.ts",
+        "../src/administration/blog/view-articles/view-article.entity.ts",
+        "../src/administration/blog/view-articles/view-article.repository.ts"
+      ],
       "../src/administration/configurations/users/dto/create-user.dto.ts": [
         "../src/administration/user-auth/dto/auth-credentials.dto.ts"
       ],
       "../src/administration/configurations/users/user.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/articles/article.entity.ts",
+        "../src/administration/blog/contents/content.entity.ts",
         "../src/administration/configurations/users/dto/create-user.dto.ts",
         "../src/administration/configurations/users/dto/update-user.dto.ts",
         "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts",
@@ -12101,6 +12464,7 @@
       ],
       "../src/administration/lawyers-registrations/lawyers/lawyer.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
+        "../src/administration/blog/articles/article.entity.ts",
         "../src/administration/configurations/users/user.entity.ts",
         "../src/administration/lawyers-registrations/lawyers/dto/create-lawyer.dto.ts",
         "../src/administration/lawyers-registrations/lawyers/dto/update-lawyer.dto.ts",

@@ -23,7 +23,7 @@ export class MenuComponent implements OnInit {
   @Output()
   clickMenuItem = new EventEmitter();
 
-  constructor(private breakpointObserver: BreakpointObserver,) { }
+  constructor(private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void { }
 

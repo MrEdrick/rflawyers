@@ -61,7 +61,7 @@ export class LawyerRepository extends Repository<Lawyer> {
             query.andWhere(`"description" ILIKE '%${description}%'`);
         }
 
-        if (filterDto.description) {
+        if (filterDto.oab) {
             query.andWhere(`"oab" = ${oab}`);
         }
 

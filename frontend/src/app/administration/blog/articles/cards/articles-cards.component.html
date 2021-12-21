@@ -1,0 +1,48 @@
+<div
+  class="content"
+  fxLayout="row wrap">
+  <div
+    *ngFor="let article of articles"
+    style="margin:16px 16px 16px 0px;"
+    fxFlex="30%" 
+    fxFlex.xs="100%"
+    fxLayout="column"
+    fxLayoutAlign="start stretch">
+    <app-card 
+      fxFlex
+      fxLayout="column wrap"
+      fxLayoutAlign="center stretch"
+      [title]="article.articleTitle"
+      [subtitle]="article.lawyerFirstName + ' ' + article.lawyerLastName + ' • ' + [article.articleDate | date : 'mediumDate']"
+      [content]="article.articleDescription"
+      [cardImages]="[article.articleImage]"
+      (clickDeleteButton)="onDelete(article.articleId)"
+      (dblclick)="onDblClick(article.articleId)">
+    </app-card>
+    <button
+      fxFlex="32px"
+      *ngIf="!article.articlePublished"
+      style="margin-top: 32px; background-color: #005683; color: #d0d3d4;"
+      (click)="onPublish(article.articleId)"
+      mat-raised-button>
+      Realizar postagem
+    </button>
+    <button
+      fxFlex="32px"
+      *ngIf="article.articlePublished"
+      style="margin-top: 32px; background-color: #ffffff; color: #005683;"
+      (click)="onUnPublish(article.articleId)"
+      mat-raised-button>
+      Remover postagem
+    </button>
+  </div>
+</div>
+
+<button
+  style="background-color: #005683; color: #d0d3d4;"
+  mat-fab
+  class="fab-add"
+  fxLayoutAlign="center"
+  (click)="onClick()">
+  <mat-icon>add</mat-icon>
+</button>

@@ -40,7 +40,7 @@ export class ResumeFormComponent implements OnInit {
     if (id) {
       this.formControls.id.setValue(id);
 
-      this.service.getId(this.formControls.id.value)
+      this.service.getById(this.formControls.id.value)
         .toPromise().then(resume => {
           this.formControls.lawyerId.setValue(this.lawyerId);
           this.formControls.title.setValue(resume.title);
@@ -59,7 +59,7 @@ export class ResumeFormComponent implements OnInit {
       this.service.update(this.form.value)
         .toPromise()
         .then(
-          response => {
+          _ => {
             this.dialogRef.close();
           },
           error => {
@@ -78,7 +78,7 @@ export class ResumeFormComponent implements OnInit {
           },
           error => {
             this.submitError = error;
-            console.log(this.submitError);
+            this.dialogService.showAlert(GENERIC_SAVE_ERROR_MESSAGE);
           });
     }
   }

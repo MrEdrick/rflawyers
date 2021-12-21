@@ -56,7 +56,7 @@ let LawyerRepository = class LawyerRepository extends typeorm_1.Repository {
         if (filterDto.description) {
             query.andWhere(`"description" ILIKE '%${description}%'`);
         }
-        if (filterDto.description) {
+        if (filterDto.oab) {
             query.andWhere(`"oab" = ${oab}`);
         }
         if (filterDto.active) {

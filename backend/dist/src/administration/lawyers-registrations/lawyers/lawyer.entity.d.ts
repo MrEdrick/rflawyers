@@ -1,3 +1,4 @@
+import { Article } from "src/administration/blog/articles/article.entity";
 import { BaseEntity } from "typeorm";
 import { User } from "../../configurations/users/user.entity";
 import { Resume } from "../resumes/resume.entity";
@@ -16,6 +17,7 @@ export declare class Lawyer extends BaseEntity {
     active: boolean;
     insertionDateTime: Date;
     resumes: Resume[];
+    articles: Article[];
     user: User;
     static fromCreateDto(props: CreateLawyerDto, userId: string): Lawyer;
     static fromUpdateLawyerDto(props: UpdateLawyerDto): Lawyer;

@@ -1,0 +1,148 @@
+<div
+    fxFlex="100"
+    fxLayout="column"
+    fxLayoutAlign="start stretch" 
+    class="blog">
+
+    <mat-nav-list
+        fxHide
+        fxShow.gt-xs
+        class="list-blog"
+        role="list"
+        fxFlex="64px"
+        fxLayout="row wrap"
+        fxLayoutAlign="end center">
+
+        <mat-list-item
+            *ngIf="showWebSite"
+            fxFlex="20"
+            fxFlex.gt-sm="10"
+            role="listitem"
+            (click)="onClickWebSite()">
+            <span style="position: relative; width: 100%; text-align: center;">
+                WEBSITE
+            </span>
+        </mat-list-item>
+
+        <mat-list-item
+            *ngIf="showHome"
+            fxFlex="20"
+            fxFlex.gt-sm="10"
+            role="listitem"
+            (click)="onClickHome()">
+            <span style="position: relative; width: 100%; text-align: center;">
+                HOME
+            </span>
+        </mat-list-item>
+
+        <mat-list-item
+            *ngIf="showArticles"
+            fxFlex="20"
+            fxFlex.gt-sm="10"
+            role="listitem"
+            (click)="onClickArticles()">
+            <span style="position: relative; width: 100%; text-align: center;">
+                ARTIGOS
+            </span>
+        </mat-list-item>
+    </mat-nav-list>
+
+    <mat-nav-list
+        fxHide
+        fxShow.gt-xs
+        class="list-social-midia"
+        role="list"
+        fxFlex="100"
+        fxLayout="column wrap"
+        fxLayoutAlign="start space-between">
+    </mat-nav-list>
+
+    <mat-toolbar
+        fxHide.gt-xs
+        fxShow
+        fxFlex="100"
+        fxLayout="row wrap"
+        fxLayoutAlign="end center"
+        class="list-social-midia mat-elevation-z4">
+
+        <button
+            mat-icon-button
+            (click)="drawerOpened= !drawerOpened; drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <span style="flex: 1 1 auto;"></span>
+
+    </mat-toolbar>
+
+    <mat-sidenav-container
+        fxHide.gt-xs
+        fxShow
+        (backdropClick)="closeNavBar()"
+        [ngStyle]="{'visible': drawerOpened, 'position': drawerOpened ? 'fixed'
+        : 'unset'}">
+
+        <mat-sidenav
+            #drawer
+            class="sidenav"
+            fixedInViewport
+            [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+            [mode]="'over'"
+            [opened]="false"
+            position="start">
+
+            <mat-nav-list
+                class="list-menu-nav-bar"
+                role="list"
+                fxFlex="100"
+                fxLayout="column wrap"
+                fxLayoutAlign="start stretch">
+
+                <mat-list-item
+                    *ngIf="showWebSite"
+                    fxFlex="10"
+                    role="listitem"
+                    fxLayout="row wrap"
+                    fxLayoutAlign="start stretch"
+                    (click)="onClickWebSite()">
+                    <span
+                        fxFlex="100"
+                        style="text-align: center;">
+                        WEBSITE
+                    </span>
+                </mat-list-item>
+
+                <mat-list-item
+                    *ngIf="showHome"
+                    fxFlex="10"
+                    role="listitem"
+                    fxLayout="row wrap"
+                    fxLayoutAlign="start stretch"
+                    (click)="onClickWebSite()">
+                    <span
+                        fxFlex="100"
+                        style="text-align: center;">
+                        HOME
+                    </span>
+                </mat-list-item>
+
+                <mat-list-item
+                    *ngIf="showArticles"
+                    fxFlex="10"
+                    role="listitem"
+                    fxLayout="row wrap"
+                    fxLayoutAlign="start stretch"
+                    (click)="onClickArticles()">
+                    <span
+                        fxFlex="100"
+                        style="text-align: center;">
+                        ARTIGOS
+                    </span>
+                </mat-list-item>
+
+            </mat-nav-list>
+
+        </mat-sidenav>
+
+    </mat-sidenav-container>
+</div>

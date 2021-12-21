@@ -1,3 +1,4 @@
+import { Article } from "src/administration/blog/articles/article.entity";
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, Generated, ManyToOne, OneToMany } from "typeorm";
 import { User } from "../../configurations/users/user.entity";
 import { Resume } from "../resumes/resume.entity";
@@ -42,8 +43,11 @@ export class Lawyer extends BaseEntity {
     @Column()
     insertionDateTime: Date;
 
-    @OneToMany(type => Resume, resume => resume.user, { eager: false })
+    @OneToMany(type => Resume, resume => resume.lawyer, { eager: false })
     resumes: Resume[];
+
+    @OneToMany(type => Article, article => article.lawyer, { eager: false })
+    articles: Article[];
 
     @ManyToOne(type => User, user => user.lawyers, {eager: true})
     user: User;
