@@ -12,5 +12,5 @@ email-sender:
   tls: true
   user: 'helem@rodriguesfranceschini.com'
   pass: 'Simbito2019'
-  from: 'Helem Franceschini'
+  from: 'Rodrigues & Franceschini'
   live: true
