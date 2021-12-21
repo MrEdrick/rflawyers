@@ -44,7 +44,10 @@ let ContentRepository = class ContentRepository extends typeorm_1.Repository {
     }
     async repositoryGetByFilter(filterDto) {
         const query = this.createQueryBuilder(this.metadata.tableName);
-        const { userId, title, description, date, active } = filterDto;
+        const { articleId, userId, title, description, date, active, orderBySort, orderByOrder } = filterDto;
+        if (filterDto.articleId) {
+            query.andWhere(`"articleId" = '${articleId}'::uuid`);
+        }
         if (filterDto.userId) {
             query.andWhere(`"userId" = '${userId}'::uuid`);
         }
@@ -59,6 +62,9 @@ let ContentRepository = class ContentRepository extends typeorm_1.Repository {
         }
         if (filterDto.active) {
             query.andWhere(`"active" = ${active}`);
+        }
+        if ((filterDto.orderBySort) && (filterDto.orderByOrder)) {
+            query.orderBy('"' + orderBySort + '"', orderByOrder);
         }
         return await query.getMany();
     }

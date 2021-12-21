@@ -37,5 +37,13 @@ __decorate([
     class_validator_1.IsOptional(),
     __metadata("design:type", Boolean)
 ], FilterContentDto.prototype, "active", void 0);
+__decorate([
+    class_validator_1.IsOptional(),
+    __metadata("design:type", String)
+], FilterContentDto.prototype, "orderBySort", void 0);
+__decorate([
+    class_validator_1.IsOptional(),
+    __metadata("design:type", String)
+], FilterContentDto.prototype, "orderByOrder", void 0);
 exports.FilterContentDto = FilterContentDto;
 //# sourceMappingURL=filter-content.dto.js.map

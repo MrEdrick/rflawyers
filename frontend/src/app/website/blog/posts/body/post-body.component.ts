@@ -1,6 +1,8 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ContentDto } from 'src/app/dto/content.dto';
 import { ViewArticleDto } from 'src/app/dto/view-article.dto';
+import { ContentsService } from 'src/app/services/contents.service';
 import { ViewArticlesService } from 'src/app/services/view-articles.service';
 
 @Component({
@@ -10,13 +12,15 @@ import { ViewArticlesService } from 'src/app/services/view-articles.service';
 })
 export class PostBodyComponent implements OnInit {
   article: ViewArticleDto | undefined;
-  
+  contents: ContentDto[] = [];
+
   @Input()
   articleId = ''; 
 
   constructor(
     private route: ActivatedRoute,
-    private service: ViewArticlesService
+    private service: ViewArticlesService,
+    private serviceContents: ContentsService
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +32,15 @@ export class PostBodyComponent implements OnInit {
       this.service.getById(this.articleId)
         .toPromise().then(article => {
           this.article = article;
+          
+          this.serviceContents.getWithFilter([
+            {key: 'articleId', value: this.articleId},
+            {key: "orderBySort", value: "order"},
+            {key: "orderByOrder", value: "ASC"}])
+            .toPromise().then(contents => {
+              this.contents = contents;
+            }
+          );
         });
     }
    }

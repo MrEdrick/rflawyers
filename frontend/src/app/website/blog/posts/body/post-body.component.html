@@ -20,11 +20,12 @@
 
   <div 
     fxFlex="60"
-    fxLayout="row wrap"
+    fxLayout="column wrap"
     fxLayoutAlign="start stretch"
     fxFlexAlign="stretch">
 
     <div 
+      fxFlex
       fxLayout="column wrap"
       fxFlexAlign="stretch"
       fxLayoutAlign="start stretch"
@@ -42,10 +43,19 @@
       </h4>
     </div>
 
-    <!--p
-      fxFill
-      [innerHtml]="article?.articleDescription">
-    </p-->
+    <div
+      *ngFor="let content of contents"
+      fxFlex>
+
+      <h1
+        style="margin: 16px 0px 0px 0px !important;">
+        {{content?.subTitle}}
+      </h1>
+
+      <p  
+        [innerHtml]="content?.description">
+      </p>
+  </div>
   </div>
 
 </div>

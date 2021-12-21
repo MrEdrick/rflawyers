@@ -29,6 +29,19 @@
           <strong>Subtítulo é obrigatório</strong>
         </mat-error>
       </mat-form-field>
+
+      
+      <!--mat-form-field 
+        *ngIf="idArticleId.id"
+        fxFlex>
+        
+        <input matInput type="number" placeholder="Ordem" formControlName="order">
+        
+        <mat-error *ngIf="formControls.order.hasError('required')">
+          <strong>Ordem é obrigatório</strong>
+        </mat-error>
+      </mat-form-field-->
+          
           
       <mat-checkbox 
         fxFlex 

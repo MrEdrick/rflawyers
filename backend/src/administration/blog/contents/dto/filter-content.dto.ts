@@ -18,4 +18,10 @@ export class FilterContentDto {
 
     @IsOptional()
     active: boolean;
+
+    @IsOptional()
+    orderBySort: string;
+
+    @IsOptional()
+    orderByOrder: "ASC" | "DESC";
 }

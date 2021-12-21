@@ -44,7 +44,11 @@ export class ContentRepository extends Repository<Content> {
 
     async repositoryGetByFilter(filterDto: FilterContentDto): Promise<Content[]> {
         const query = this.createQueryBuilder(this.metadata.tableName);
-        const { userId, title, description, date, active } = filterDto;
+        const { articleId, userId, title, description, date, active, orderBySort, orderByOrder } = filterDto;
+
+        if (filterDto.articleId) {
+            query.andWhere(`"articleId" = '${articleId}'::uuid`);
+        }
 
         if (filterDto.userId) {
             query.andWhere(`"userId" = '${userId}'::uuid`);
@@ -64,6 +68,10 @@ export class ContentRepository extends Repository<Content> {
 
         if (filterDto.active) {
             query.andWhere(`"active" = ${active}`);
+        }
+
+        if ((filterDto.orderBySort) && (filterDto.orderByOrder)) {
+            query.orderBy('"' + orderBySort + '"', orderByOrder);
         }
 
         return await query.getMany();

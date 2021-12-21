@@ -6,5 +6,6 @@ export interface ContentDto {
     description: string;
     image: string;
     active: boolean;
+    order: number;
     insertionDateTime: Date;
 }

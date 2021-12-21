@@ -47,7 +47,14 @@ export class ContentsCardsComponent implements OnInit {
   }
 
   laodCards() {
-    this.service.getWithFilter([{key: 'articleId', value: this.articleId}])
+    if (!this.articleId) {
+      return;
+    }
+
+    this.service.getWithFilter([
+      {key: 'articleId', value: this.articleId},
+      {key: "orderBySort", value: "order"},
+      {key: "orderByOrder", value: "ASC"}])
       .toPromise()
       .then(contents => {
         this.contents = contents;

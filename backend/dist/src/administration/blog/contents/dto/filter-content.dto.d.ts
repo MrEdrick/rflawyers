@@ -5,4 +5,6 @@ export declare class FilterContentDto {
     description: string;
     date: Date;
     active: boolean;
+    orderBySort: string;
+    orderByOrder: "ASC" | "DESC";
 }

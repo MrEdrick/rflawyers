@@ -7,31 +7,39 @@
     *ngFor="let article of articles">
 
     <div
-        fxFlex="200px"
+        fxFlex="300px"
         fxLayout="row wrap"
-        fxLayoutAlign="start center"
+        fxLayoutAlign="start stretch"
         class="list-item"
         (click)="OnClickIem(article.articleId)">  
         <img 
             fxFlex="250px"
             mat-card-image 
-            style="margin-right: 16px;"
-            [src]="article ? article.articleImage : 'assets/images/no-image.jpg'">
+            style="margin-right: 16px; object-fit: cover"
+            [src]="article ? article.articleImage : 'assets/images/no-image.jpg'"/>
         <div
             fxFlex
+            fxLayout="column wrap"
+            fxLayoutAlign="start stretch"
             fxFlexAlign="stretch">
-            <h1 style="font-weight: 500; color: #212322; margin: 0px !important;">{{article?.articleTitle}}</h1>
-            <h4 style="font-weight: 500; color: #212322; opacity: 0.7">{{article?.lawyerFirstName}} {{article?.lawyerLastName}} • {{article?.articleDate | date : 'mediumDate'}}</h4>
-            <p 
-                style="font-weight: 400; color: #212322; opacity: 0.7"
+            <h1 
+                fxFlex="32px" 
+                style="font-weight: 500; color: #212322; margin: 0px !important;">{{article?.articleTitle}}</h1>
+            <h4 
+                fxFlex="32px"
+                style="font-weight: 500; color: #212322; opacity: 0.7">{{article?.lawyerFirstName}} {{article?.lawyerLastName}} • {{article?.articleDate | date : 'mediumDate'}}</h4>
+            <div 
+                fxFlex
+                class="description-content"
                 [innerHTML]="article?.articleDescription">
-            </p>
+            </div>
         </div>
     </div>
 
     <mat-divider 
-        fxFlex>
+        fxFlex> 
     </mat-divider>
+
 </mat-list>
 
 <mat-paginator 

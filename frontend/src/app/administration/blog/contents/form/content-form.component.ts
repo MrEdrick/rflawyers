@@ -19,6 +19,7 @@ export class ContentFormComponent implements OnInit {
     articleId: [null, Validators.required],
     subTitle: [null, Validators.required],
     description: [null, Validators.required],
+    order: [null],
     active: [true, Validators.required],
   });
 
@@ -33,13 +34,14 @@ export class ContentFormComponent implements OnInit {
 
   ngOnInit() {
     if (this.idArticleId.id) {
-      this.formControls.id.setValue(this.idArticleId.articleId);
+      this.formControls.id.setValue(this.idArticleId.id);
 
       this.service.getById(this.formControls.id.value)
         .toPromise().then(content => {
           this.formControls.articleId.setValue(this.idArticleId.articleId);
           this.formControls.subTitle.setValue(content.subTitle);
           this.formControls.description.setValue(content.description);
+          this.formControls.order.setValue(content.order);
           this.formControls.active.setValue(content.active);
         });
     } else {

@@ -32,6 +32,10 @@ export class ArticlesCardsComponent implements OnInit {
     this.router.navigate(['./article', id], { relativeTo: this.route });
   }
 
+  onClick() {
+    this.router.navigate(['./article'], { relativeTo: this.route });
+  }
+
   laodCards() {
     this.service.getAll()
       .toPromise()

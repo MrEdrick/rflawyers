@@ -1,4 +1,7 @@
-<mat-card class="mat-elevation-z4">
+<mat-card 
+    class="mat-elevation-z4"
+    fxLayout="column" 
+    fxLayoutAlign="start stretch" >
     <mat-card-header>
         <mat-card-title>{{title}}</mat-card-title>
         <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
@@ -21,10 +24,18 @@
         absolute; top: 50%; right: -20px;">
         <mat-icon>keyboard_arrow_right</mat-icon>
     </button>
-    <mat-card-content>
+    <mat-card-content
+        fxFlex="300px"
+        class="card-content">
         <p [innerHTML]="content"></p>
     </mat-card-content>
-    <mat-card-actions *ngIf="showDeleteButton" fxLayout="row" fxLayoutAlign="end center">
+    <mat-card-actions 
+        *ngIf="showDeleteButton" 
+        fxFlex="32px"
+        fxLayout="row" 
+        fxLayoutAlign="end center"
+        fxFlexAlign="end"
+        style="bottom: 0px; margin-bottom: 16px !important;">
         <button mat-icon-button (click)="onDelete()">
             <mat-icon>delete</mat-icon>
         </button>
