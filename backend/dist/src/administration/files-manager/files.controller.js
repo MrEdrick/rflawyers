@@ -48,7 +48,6 @@ let FilesController = class FilesController {
         return this.fileService
             .updateRecordWithFilePath(BASE_PATH_IMAGES + uploadFileDto.tableName + '/', file.filename, uploadFileDto)
             .catch((error) => {
-            console.log(error);
             fs.unlinkSync('./' + BASE_PATH_IMAGES + uploadFileDto.tableName + '/' + file.filename);
             if (uploadFileDto.deleteRecordIfFail = 'true') {
                 const deleteRecordDto = new delete_record_dto_1.DeleteRecordDto();

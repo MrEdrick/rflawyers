@@ -4332,7 +4332,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/files-manager/files.controller.ts": {
-        "version": "af88f08a54becf312aeaeb7e141826c254d2c38b2714553831535e59f6e44a2d",
+        "version": "7c3c9fd48bbce5706a8096b3e96374611cf780b947f56dabb12c901996d3e82b",
         "signature": "ee5422609784c214ec4115175ac9df588e8e862b3d8aea2476ab65ca59f63185",
         "affectsGlobalScope": false
       },
