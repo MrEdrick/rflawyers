@@ -1,6 +1,6 @@
 server:
   origin: https://99.79.89.235/ ##https://99.79.89.235 ##http://127.0.0.1:80 ##http://localhost:4200
-  localhost: https://99.79.89.235:3000/api/ ## https://99.79.89.235:3000/api/ http://localhost:3000/api/
+  localhost: http://99.79.89.235:3000/api/ ## http://99.79.89.235:3000/api/ http://localhost:3000/api/
 
 db:
   host: 'localhost'
