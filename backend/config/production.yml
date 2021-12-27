@@ -10,7 +10,7 @@ email-sender:
   port: 465
   secure: true
   tls: true
-  user: 'helem@rodriguesfranceschini.com'
-  pass: 'Simbito2019'
+  user: 'jddedrick42@gmail.com'
+  pass: 'r2d2paradoxo42'
   from: 'Rodrigues & Franceschini'
   live: true
