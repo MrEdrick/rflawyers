@@ -6,7 +6,7 @@ import { Resume } from "src/administration/lawyers-registrations/resumes/resume.
 import { ResumeItem } from "src/administration/lawyers-registrations/resume-items/resume-item.entity";
 import { Schooling } from "src/administration/lawyers-registrations/schooling/schooling.entity";
 
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 import * as crypto from "crypto";
 import { Article } from "src/administration/blog/articles/article.entity";
 import { Content } from "src/administration/blog/contents/content.entity";
