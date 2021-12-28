@@ -10,6 +10,7 @@ exports.EMAIL_SENDER_CONFIG = {
         adapter: new handlebars_adapter_1.HandlebarsAdapter(),
         options: {
             extName: '.hbs',
+            strict: false,
             layoutsDir: path.resolve(__dirname, '..', '..', 'templates'),
         },
     },

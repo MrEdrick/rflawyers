@@ -9,6 +9,7 @@ export const EMAIL_SENDER_CONFIG: MailerOptions = {
         adapter: new HandlebarsAdapter(),
         options: {
             extName: '.hbs',
+            strict: false,
             layoutsDir: path.resolve(__dirname, '..', '..', 'templates'),
         },
     },

@@ -4091,28 +4091,8 @@
         "signature": "17154fba66e542b633d91d7ef35aadd4cc65c690bb1ee85455c4970c6220578f",
         "affectsGlobalScope": false
       },
-      "../node_modules/handlebars/types/index.d.ts": {
-        "version": "7b184625f7d9f0c1a0a359a41271cac30ce16db90794bbd98c2dc3604015dc97",
-        "signature": "7b184625f7d9f0c1a0a359a41271cac30ce16db90794bbd98c2dc3604015dc97",
-        "affectsGlobalScope": true
-      },
-      "../node_modules/@nestjs-modules/mailer/dist/interfaces/template-adapter-config.interface.d.ts": {
-        "version": "e3aaedd996a19e1f2e7a89607a1e6a904bd5f96f6f0bd56ce67b74b966b4d304",
-        "signature": "e3aaedd996a19e1f2e7a89607a1e6a904bd5f96f6f0bd56ce67b74b966b4d304",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs-modules/mailer/dist/adapters/handlebars.adapter.d.ts": {
-        "version": "9467bf77f1273c2b74984192a792d50c803a27228216e7bd4084c295aefb549a",
-        "signature": "9467bf77f1273c2b74984192a792d50c803a27228216e7bd4084c295aefb549a",
-        "affectsGlobalScope": false
-      },
-      "../src/administration/email-sender/email-sender.config.ts": {
-        "version": "017335b594ebf48248e28898bba97b1b2a9f60ec22b0c90b55d2def522584a28",
-        "signature": "99dc5fe0b5f77153d46b73feb87b79a6c0047b14ccf794855972ec9c73ffa168",
-        "affectsGlobalScope": false
-      },
       "../src/administration/email-sender/email-sender.service.ts": {
-        "version": "633385c254f64a113ba4ae136e717af0bb692572096da9ce8a8a93b7428ce607",
+        "version": "f7c04c35cbcc1f87ba60bf5c046ecffc16b036ab0de5a137b0bbe1bdaa5283c2",
         "signature": "b78e29994433ff46e50fc043440e91bb5420d38ace8382aef75874654c005ef6",
         "affectsGlobalScope": false
       },
@@ -4199,6 +4179,26 @@
       "../src/administration/email-sender/email-sender.controller.ts": {
         "version": "3d3a4bc2c32b16bcfd996a4f2989bf29fc4ae7812a97b4e46ad0612a1ffd8845",
         "signature": "da4e9d5ab2ddac638fbb33f86bf2db31cc7afa5d8004e238c2c0edb753bd4b62",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/handlebars/types/index.d.ts": {
+        "version": "7b184625f7d9f0c1a0a359a41271cac30ce16db90794bbd98c2dc3604015dc97",
+        "signature": "7b184625f7d9f0c1a0a359a41271cac30ce16db90794bbd98c2dc3604015dc97",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/@nestjs-modules/mailer/dist/interfaces/template-adapter-config.interface.d.ts": {
+        "version": "e3aaedd996a19e1f2e7a89607a1e6a904bd5f96f6f0bd56ce67b74b966b4d304",
+        "signature": "e3aaedd996a19e1f2e7a89607a1e6a904bd5f96f6f0bd56ce67b74b966b4d304",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs-modules/mailer/dist/adapters/handlebars.adapter.d.ts": {
+        "version": "9467bf77f1273c2b74984192a792d50c803a27228216e7bd4084c295aefb549a",
+        "signature": "9467bf77f1273c2b74984192a792d50c803a27228216e7bd4084c295aefb549a",
+        "affectsGlobalScope": false
+      },
+      "../src/administration/email-sender/email-sender.config.ts": {
+        "version": "e90d38b478bafc2910d4590c3c34646565fa407a2eacf92814ec4afd864c47af",
+        "signature": "99dc5fe0b5f77153d46b73feb87b79a6c0047b14ccf794855972ec9c73ffa168",
         "affectsGlobalScope": false
       },
       "../src/administration/email-sender/email-sender.module.ts": {
@@ -8666,7 +8666,6 @@
         "../src/administration/email-sender/dto/contact-us.dto.ts",
         "../src/administration/email-sender/dto/email-confirmation.dto.ts",
         "../src/administration/email-sender/dto/recover-password.dto.ts",
-        "../src/administration/email-sender/email-sender.config.ts",
         "../src/administration/email-sender/email-sender.constants.ts"
       ],
       "../src/administration/files-manager/file.repository.ts": [

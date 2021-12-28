@@ -6,7 +6,6 @@ import { CONTACT_US_TEMPLATE, USER_EMAIL_CONFIRMATION_TEMPLATE, USER_RECOVER_PAS
 import * as config from 'config'
 import { RecoverPasswordDto } from './dto/recover-password.dto';
 import { ContactUsDto } from './dto/contact-us.dto';
-import { EMAIL_SENDER_CONFIG } from './email-sender.config';
 
 const EMAIL_SENDER = config.get('email-sender');
 
