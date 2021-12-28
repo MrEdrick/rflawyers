@@ -1,6 +1,9 @@
 server:
   port: 3000
-  
+  origin: https://99.79.89.235/ ##https://99.79.89.235 ##http://127.0.0.1:80 ##http://localhost:4200
+  localhost: https://99.79.89.235/api/ ## http://99.79.89.235:3000/api/ http://localhost:3000/api/
+  domain: https://rodriguesfranceschini.com/
+
 db:
   type: 'postgres'
   port: 5432
@@ -16,3 +19,13 @@ jwt:
 
 person-jwt:
   expiresIn: '30d'
+
+email-sender:
+  host: 'smtp.gmail.com'
+  port: 465
+  secure: true
+  tls: true
+  user: 'helem@rodriguesfranceschini.com'
+  pass: 'Curso2021'
+  from: 'Rodrigues & Franceschini'
+  live: true

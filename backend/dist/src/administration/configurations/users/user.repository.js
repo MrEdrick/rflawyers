@@ -23,7 +23,7 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
                 if (user === null || user === void 0 ? void 0 : user.confirmationToken) {
                     const serverConfig = config.get('server');
                     const emailSended = await emailSenderService.sendUserEmailConfirmation({
-                        urlFrontEnd: serverConfig.origin,
+                        urlFrontEnd: serverConfig.domain,
                         confirmationToken: user.confirmationToken,
                         email: user.email,
                         name: user.name
@@ -91,7 +91,7 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
                 if (user === null || user === void 0 ? void 0 : user.recoverToken) {
                     const serverConfig = config.get('server');
                     const emailSended = await emailSenderService.sendUserRecoverPassword({
-                        urlFrontEnd: serverConfig.origin,
+                        urlFrontEnd: serverConfig.domain,
                         recoverToken: user.recoverToken,
                         email: user.email,
                         name: user.name

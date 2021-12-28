@@ -1,7 +1,3 @@
-server:
-  origin: https://99.79.89.235/ ##https://99.79.89.235 ##http://127.0.0.1:80 ##http://localhost:4200
-  localhost: http://localhost:3000/api/ ## http://99.79.89.235:3000/api/ http://localhost:3000/api/
-
 db:
   host: 'localhost'
   username: 'postgres'
@@ -13,13 +9,3 @@ jwt:
 
 person-jwt:
   secret: 'topSecretPerson42'
-
-email-sender:
-  host: 'smtp.gmail.com'
-  port: 465
-  secure: true
-  tls: true
-  user: 'helem@rodriguesfranceschini.com'
-  pass: 'Curso2021'
-  from: 'Rodrigues & Franceschini'
-  live: true

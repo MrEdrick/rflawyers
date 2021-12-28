@@ -25,7 +25,7 @@ export class UserRepository extends Repository<User> {
 
                     const emailSended = await emailSenderService.sendUserEmailConfirmation(
                         {
-                            urlFrontEnd: serverConfig.origin,
+                            urlFrontEnd: serverConfig.domain,
                             confirmationToken: user.confirmationToken,
                             email: user.email,
                             name: user.name
@@ -107,7 +107,7 @@ export class UserRepository extends Repository<User> {
 
                     const emailSended = await emailSenderService.sendUserRecoverPassword(
                         {
-                            urlFrontEnd: serverConfig.origin,
+                            urlFrontEnd: serverConfig.domain,
                             recoverToken: user.recoverToken,
                             email: user.email,
                             name: user.name
