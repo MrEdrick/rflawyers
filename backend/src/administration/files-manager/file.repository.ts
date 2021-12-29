@@ -16,7 +16,7 @@ export class FileRepository {
     async updateRecordWithFilePath(filePathFolder: string, fileName: string, uploadFileDto: UploadFileDto): Promise<string> {
         const serverConfig = config.get('server');
 
-        const filePath = serverConfig.localhost + '/' + filePathFolder + fileName;
+        const filePath = serverConfig.domain + '/' + filePathFolder + fileName;
 
         const { tableName, columnName, tableId } = uploadFileDto;
 
