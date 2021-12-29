@@ -15,7 +15,7 @@ const DATA_BASE_SCHEMA = 'public';
 let FileRepository = class FileRepository {
     async updateRecordWithFilePath(filePathFolder, fileName, uploadFileDto) {
         const serverConfig = config.get('server');
-        const filePath = serverConfig.domain + '/' + filePathFolder + fileName;
+        const filePath = serverConfig.domain_api + filePathFolder + fileName;
         const { tableName, columnName, tableId } = uploadFileDto;
         const response = await typeorm_1.getConnection().query(`update ${DATA_BASE_SCHEMA}.${tableName}
             set ${columnName} = '${filePath}'
