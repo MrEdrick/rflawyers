@@ -8,10 +8,17 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api');
 
-  app.enableCors(
-    { origin: [serverConfig.origin, serverConfig.domain, serverConfig.domain_www] }
-  );
-
+  var whitelist = [serverConfig.origin, serverConfig.domain, serverConfig.domain_www];
+  app.enableCors({
+    origin: function (origin, callback) {
+      if (!origin || whitelist.indexOf(origin) !== -1) {
+        callback(null, true)
+      } else {
+        callback(new Error('Not allowed by CORS'))
+      }
+    },
+  });
+  
   const port = process.env.PORT || serverConfig.port;
   await app.listen(port);
 }
