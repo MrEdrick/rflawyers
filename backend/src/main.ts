@@ -9,10 +9,6 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
   app.setGlobalPrefix('api');
 
-  app.enableCors({
-    origin: '/^(https:\/\/([^\.]*\.)?rodriguesfranceschini\.com)$/i',
-  });
-
   const port = process.env.PORT || serverConfig.port;
   await app.listen(port);
 }
