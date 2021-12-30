@@ -6,15 +6,9 @@ import * as config from 'config';
 async function bootstrap() {
   const serverConfig = config.get('server');
   
-  const app = await NestFactory.create(AppModule, { cors: true });
+  const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api');
-
-  app.enableCors({
-    origin: true,
-    allowedHeaders: 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, Observe',
-    methods: "GET, PUT, POST, DELETE, UPDATE, OPTIONS",
-    credentials: true
-  });
+  app.enableCors();
 
   const port = process.env.PORT || serverConfig.port;
   await app.listen(port);
