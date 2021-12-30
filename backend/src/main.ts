@@ -5,23 +5,17 @@ import * as config from 'config';
 
 async function bootstrap() {
   const serverConfig = config.get('server');
+  
   const app = await NestFactory.create(AppModule, { cors: true });
   app.setGlobalPrefix('api');
 
-  var whitelist = [serverConfig.origin, serverConfig.domain, serverConfig.domain_www];
   app.enableCors({
-    origin: function (origin, callback) {
-      if (!origin || whitelist.indexOf(origin) !== -1) {
-        callback(null, true)
-      } else {
-        callback(new Error('Not allowed by CORS'))
-      }
-    },
+    origin: true,
     allowedHeaders: 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, Observe',
     methods: "GET, PUT, POST, DELETE, UPDATE, OPTIONS",
     credentials: true
   });
-  
+
   const port = process.env.PORT || serverConfig.port;
   await app.listen(port);
 }
