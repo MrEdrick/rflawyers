@@ -5,7 +5,7 @@ import * as config from 'config';
 
 async function bootstrap() {
   const serverConfig = config.get('server');
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
   app.setGlobalPrefix('api');
 
   var whitelist = [serverConfig.origin, serverConfig.domain, serverConfig.domain_www];

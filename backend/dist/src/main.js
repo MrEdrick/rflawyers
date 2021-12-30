@@ -5,7 +5,7 @@ const app_module_1 = require("./app.module");
 const config = require("config");
 async function bootstrap() {
     const serverConfig = config.get('server');
-    const app = await core_1.NestFactory.create(app_module_1.AppModule);
+    const app = await core_1.NestFactory.create(app_module_1.AppModule, { cors: true });
     app.setGlobalPrefix('api');
     var whitelist = [serverConfig.origin, serverConfig.domain, serverConfig.domain_www];
     app.enableCors({
