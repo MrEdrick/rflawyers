@@ -19,7 +19,9 @@ export class BaseService {
 
     this.dialogService = InjectorService.injector.get(DialogService);
     this.headers = new HttpHeaders()
-      .set('Access-Control-Allow-Origin', '*');
+      .set('Access-Control-Allow-Origin', '*')
+      .set('Access-Control-Allow-Methods', 'DELETE, POST, GET, OPTIONS')
+      .set('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
   }
 
   getById(id: any): Observable<any> {
