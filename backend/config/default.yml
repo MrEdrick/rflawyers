@@ -4,6 +4,7 @@ server:
   localhost: https://99.79.89.235/api/ ## http://99.79.89.235:3000/api/ http://localhost:3000/api/
   domain: https://rodriguesfranceschini.com/
   domain_api: https://rodriguesfranceschini.com/api/
+  domain_www: https://www.rodriguesfranceschini.com/
 
 db:
   type: 'postgres'
