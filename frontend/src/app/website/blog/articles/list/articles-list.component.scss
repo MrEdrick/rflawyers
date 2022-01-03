@@ -1,4 +1,7 @@
 :host {
+    flex-flow: column wrap;
+    place-content: start stretch;
+    align-items: stretch;
     min-width: 100%;
     width: 100%;    
     height: auto;
