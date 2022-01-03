@@ -16,6 +16,9 @@
     }
     
     :host {
+        flex-flow: row;
+        place-content: start stretch;
+        align-items: stretch;
         padding: 0% 10%;
     }
 }
