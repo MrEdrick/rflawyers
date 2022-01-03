@@ -16,22 +16,20 @@
         class="list-item"
         (click)="OnClickIem(article.articleId)">  
         <img
-            fxFlex="250px"
+            fxFlex
+            fxFlex.gt-xs="250px"
             mat-card-image
             [src]="article ? article.articleImage : 'assets/images/no-image.jpg'"/>
         <div
             fxFlex
             class="text-container"
-            fxLayout="column wrap"
+            fxLayout="column"
             fxLayoutAlign="start start">
             <h1 
-                fxFlex="20"
                 style="font-weight: 500; color: #212322; margin: 0px !important;">{{article?.articleTitle}}</h1>
             <h4 
-                fxFlex="10"
                 style="font-weight: 500; color: #212322; margin: 0px !important; opacity: 0.7">{{article?.lawyerFirstName}} {{article?.lawyerLastName}} • {{article?.articleDate | date : 'mediumDate'}}</h4>
             <div 
-                fxFlex="70"
                 class="description-content"
                 style="min-height: 100px;"
                 [innerHTML]="article?.articleDescription">
