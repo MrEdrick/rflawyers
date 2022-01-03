@@ -1,8 +1,10 @@
 :host {
-    height: 100%;
-    min-height: 100%;
+    flex-flow: column wrap;
+    place-content: start stretch;
+    align-items: stretch;
     min-width: 100%;
     width: 100%;    
+    height: auto;
 }
 
 @media only screen and (min-width: 600px) {
