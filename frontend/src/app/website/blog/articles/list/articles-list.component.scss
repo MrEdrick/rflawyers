@@ -41,6 +41,10 @@
     scrollbar-width: none;  /* Firefox */
 }
 
+img {
+    margin: 16px; 
+    object-fit: cover
+}
 
 @media only screen and (min-width: 600px) {
     :host {

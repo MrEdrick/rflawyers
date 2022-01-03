@@ -7,16 +7,16 @@
     *ngFor="let article of articles">
 
     <div
-        fxFlex="300px"
-        fxLayout="column wrap"
+        fxFlex
+        fxFlex.sm="300px"
+        fxLayout="column"
         fxLayout.sm="row wrap"
         fxLayoutAlign="start stretch"
         class="list-item"
         (click)="OnClickIem(article.articleId)">  
-        <img 
+        <img
             fxFlex="250px"
-            mat-card-image 
-            style="margin: 16px; object-fit: cover"
+            mat-card-image
             [src]="article ? article.articleImage : 'assets/images/no-image.jpg'"/>
         <div
             fxFlex
