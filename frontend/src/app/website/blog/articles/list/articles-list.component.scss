@@ -46,8 +46,16 @@ img {
     object-fit: cover
 }
 
+.text-container {
+    padding: 16px;
+}
+
 @media only screen and (min-width: 600px) {
     :host {
         padding: 0% 10%;
+    }
+
+    .text-container {
+        padding: 0px;
     }
 }

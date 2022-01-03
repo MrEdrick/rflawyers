@@ -21,9 +21,9 @@
             [src]="article ? article.articleImage : 'assets/images/no-image.jpg'"/>
         <div
             fxFlex
+            class="text-container"
             fxLayout="column wrap"
-            fxLayoutAlign="start stretch"
-            fxFlexAlign="stretch">
+            fxLayoutAlign="start start">
             <h1 
                 fxFlex
                 style="font-weight: 500; color: #212322; margin: 0px !important;">{{article?.articleTitle}}</h1>
@@ -33,6 +33,7 @@
             <div 
                 fxFlex
                 class="description-content"
+                style="min-height: 100px;"
                 [innerHTML]="article?.articleDescription">
             </div>
         </div>
