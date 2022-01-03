@@ -4,7 +4,6 @@
     align-items: stretch;
     min-width: 100%;
     width: 100%;    
-    padding: 0% 10%;
 }
 
 .list-item {
@@ -40,4 +39,11 @@
 .description-content {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+}
+
+
+@media only screen and (min-width: 600px) {
+    :host {
+        padding: 0% 10%;
+    }
 }
