@@ -25,13 +25,13 @@
             fxLayout="column wrap"
             fxLayoutAlign="start start">
             <h1 
-                fxFlex
+                fxFlex="35"
                 style="font-weight: 500; color: #212322; margin: 0px !important;">{{article?.articleTitle}}</h1>
             <h4 
-                fxFlex
+                fxFlex="15"
                 style="font-weight: 500; color: #212322; margin: 0px !important; opacity: 0.7">{{article?.lawyerFirstName}} {{article?.lawyerLastName}} • {{article?.articleDate | date : 'mediumDate'}}</h4>
             <div 
-                fxFlex
+                fxFlex="50"
                 class="description-content"
                 style="min-height: 100px;"
                 [innerHTML]="article?.articleDescription">
