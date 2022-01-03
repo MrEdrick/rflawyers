@@ -8,7 +8,7 @@
     *ngFor="let article of articles">
 
     <div
-        fxFlex="100%"
+        fxFlex
         fxFlex.gt-xs="300px"
         fxLayout="column"
         fxLayout.gt-xs="row wrap"
@@ -25,13 +25,13 @@
             fxLayout="column wrap"
             fxLayoutAlign="start start">
             <h1 
-                fxFlex="35"
+                fxFlex="20"
                 style="font-weight: 500; color: #212322; margin: 0px !important;">{{article?.articleTitle}}</h1>
             <h4 
-                fxFlex="15"
+                fxFlex="10"
                 style="font-weight: 500; color: #212322; margin: 0px !important; opacity: 0.7">{{article?.lawyerFirstName}} {{article?.lawyerLastName}} • {{article?.articleDate | date : 'mediumDate'}}</h4>
             <div 
-                fxFlex="50"
+                fxFlex="70"
                 class="description-content"
                 style="min-height: 100px;"
                 [innerHTML]="article?.articleDescription">
@@ -40,7 +40,8 @@
     </div>
 
     <mat-divider 
-        fxFlex> 
+        fxFlex="3px"
+        fxFlex.gt-xs="auto"> 
     </mat-divider>
 
 </mat-list>

@@ -7,10 +7,6 @@
     height: auto;
 }
 
-.list-item {
-    padding: 16px;
-}
-
 .list-item:hover {
     cursor: pointer;
     background-color: rgba(#efefef, 0.5);
@@ -42,7 +38,6 @@
 }
 
 img {
-    margin: 0px 16px 0px 16px; 
     object-fit: cover
 }
 
@@ -53,6 +48,14 @@ img {
 @media only screen and (min-width: 600px) {
     :host {
         padding: 0% 10%;
+    }
+    
+    img {
+        margin: 0px 16px 0px 16px;
+    }
+    
+    .list-item {
+        padding: 16px;
     }
 
     .text-container {
