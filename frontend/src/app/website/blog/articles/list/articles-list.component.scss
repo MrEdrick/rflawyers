@@ -1,9 +1,7 @@
 :host {
-    flex-flow: column wrap;
-    place-content: start stretch;
-    align-items: stretch;
     min-width: 100%;
     width: 100%;    
+    height: auto;
 }
 
 .list-item {
@@ -16,7 +14,7 @@
 }
 
 .list-container {
-    margin-top: 16px;
+    margin-top: 48px;
     ::ng-deep .mat-divider {
         border-top-width: 3px; 
     }

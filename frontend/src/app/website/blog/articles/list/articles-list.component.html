@@ -1,13 +1,14 @@
 <mat-list 
     fxFlex="auto"
-    fxLayout="column wrap"
-    fxLayoutAlign="center stretch"
+    fxLayout="row wrap"
+    fxLayout.gt-xs="column"
+    fxLayoutAlign="start stretch"
     fxFlexAlign="stretch"
     class="list-container"
     *ngFor="let article of articles">
 
     <div
-        fxFlex
+        fxFill
         fxFlex.gt-xs="300px"
         fxLayout="column"
         fxLayout.gt-xs="row wrap"
