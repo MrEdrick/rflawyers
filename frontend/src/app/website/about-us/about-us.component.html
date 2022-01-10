@@ -33,6 +33,7 @@
         style="max-width: 100%; width: 100%;">
 
         <button
+            *ngIf="lawyers?.length > 1"
             type="button"
             mat-icon-button
             color="#ffffff"
@@ -62,6 +63,7 @@
         </div>
 
         <button
+            *ngIf="lawyers?.length > 1"
             type="button"
             mat-icon-button
             color="#ffffff"
