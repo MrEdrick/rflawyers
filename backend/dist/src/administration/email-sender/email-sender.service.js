@@ -30,13 +30,13 @@ let EmailSenderService = class EmailSenderService {
             const result = await this.mailerService.sendMail({
                 template: email_sender_constants_1.CONTACT_US_TEMPLATE,
                 context: contactUsDto,
-                subject: `E-mail enviado para RODRIGUES & FRANCESCHINI Advogados Associados!`,
+                subject: `E-mail enviado para Franceschini Advogados Associados!`,
                 to: EMAIL_SENDER.user,
             }).then(async () => {
                 return await this.mailerService.sendMail({
                     template: email_sender_constants_1.CONTACT_US_TEMPLATE,
                     context: contactUsDto,
-                    subject: `Não responda: E-mail enviado para RODRIGUES & FRANCESCHINI Advogados Associados!`,
+                    subject: `Não responda: E-mail enviado para Franceschini Advogados Associados!`,
                     to: contactUsDto.email,
                 }).catch((error) => {
                     return error;

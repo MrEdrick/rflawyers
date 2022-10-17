@@ -27,7 +27,7 @@ email-sender:
   port: 465
   secure: true
   tls: true
-  user: 'helem@rodriguesfranceschini.com'
+  user: 'helem@helemfranceschini.com'
   pass: 'Curso2021'
-  from: 'Rodrigues & Franceschini'
+  from: 'Franceschini Advogados Associados'
   live: true
