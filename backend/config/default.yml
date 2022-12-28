@@ -28,6 +28,6 @@ email-sender:
   secure: true
   tls: true
   user: 'helem@helemfranceschini.com'
-  pass: 'Curso2021'
+  pass: 'Simbito2019'
   from: 'Franceschini Advogados Associados'
   live: true
