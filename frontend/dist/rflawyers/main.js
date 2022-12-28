@@ -5671,8 +5671,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     { path: 'singin', component: _user_auth_singin_singin_component__WEBPACK_IMPORTED_MODULE_3__["SingInComponent"] },
     { path: 'singup', component: _user_auth_singup_singup_component__WEBPACK_IMPORTED_MODULE_4__["SingUpComponent"] },
-    { path: 'singin/:confirmationToken', component: _user_auth_singin_singin_component__WEBPACK_IMPORTED_MODULE_3__["SingInComponent"] },
-    { path: 'reset-password/:recoverToken', component: _user_auth_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_8__["ResetPasswordComponent"] },
+    { path: 'singin?:confirmationToken', component: _user_auth_singin_singin_component__WEBPACK_IMPORTED_MODULE_3__["SingInComponent"] },
+    { path: 'reset-password?:recoverToken', component: _user_auth_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_8__["ResetPasswordComponent"] },
     {
         path: 'navigation-menu',
         component: _menu_navigation_menu_navigation_menu_component__WEBPACK_IMPORTED_MODULE_7__["NavigationMenuComponent"],

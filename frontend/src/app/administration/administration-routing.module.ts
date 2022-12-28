@@ -16,8 +16,8 @@ import { ArticlesCardsComponent } from './blog/articles/cards/articles-cards.com
 const routes: Routes = [
   { path: 'singin', component: SingInComponent },
   { path: 'singup', component: SingUpComponent },
-  { path: 'singin/:confirmationToken', component: SingInComponent },
-  { path: 'reset-password/:recoverToken', component: ResetPasswordComponent },
+  { path: 'singin?:confirmationToken', component: SingInComponent },
+  { path: 'reset-password?:recoverToken', component: ResetPasswordComponent },
   {
     path: 'navigation-menu',
     component: NavigationMenuComponent,
