@@ -33,9 +33,8 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     private dialogService: DialogService) { }
 
   ngOnInit(): void {
-    this.route.queryParamMap.pipe(takeUntil(this.destroy)).subscribe(queryParam => {
-      this.formControls.recoverToken.setValue(queryParam.get('recoverToken'));
-    });
+    const recoverToken = this.route.snapshot.params.recoverToken;
+    this.formControls.recoverToken.setValue(recoverToken);
   }
 
   ngOnDestroy(): void {

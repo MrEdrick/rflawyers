@@ -4994,9 +4994,8 @@ class ResetPasswordComponent {
         this.formControls = this.form.controls;
     }
     ngOnInit() {
-        this.route.queryParamMap.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.destroy)).subscribe(queryParam => {
-            this.formControls.recoverToken.setValue(queryParam.get('recoverToken'));
-        });
+        const recoverToken = this.route.snapshot.params.recoverToken;
+        this.formControls.recoverToken.setValue(recoverToken);
     }
     ngOnDestroy() {
         this.destroy.next();
