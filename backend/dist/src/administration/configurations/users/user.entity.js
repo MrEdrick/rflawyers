@@ -23,9 +23,6 @@ const content_entity_1 = require("../../blog/contents/content.entity");
 const { v4: uuidv4 } = require('uuid');
 let User = User_1 = class User extends typeorm_1.BaseEntity {
     async validatePassword(password) {
-        console.log(this.password);
-        console.log(this.salt);
-        console.log((await bcrypt.hash(password, this.salt)));
         return this.password === (await bcrypt.hash(password, this.salt));
     }
     static async fromCreateDto(props) {

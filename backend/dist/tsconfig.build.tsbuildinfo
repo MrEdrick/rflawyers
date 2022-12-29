@@ -3992,7 +3992,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/configurations/users/user.entity.ts": {
-        "version": "f84d880091bcca47f594f7eb0568247d35d2e6d993c5e31c871c089e049d1e3d",
+        "version": "d19697f6589e7dad7f84a8d868cdd2aae150529d28c675bcaae3d142e980b6cc",
         "signature": "82291407ac36565ff43f223c047e80bf79defc19d6de0e3babdb909f0da5de8e",
         "affectsGlobalScope": false
       },
@@ -4097,7 +4097,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/configurations/users/user.repository.ts": {
-        "version": "072fe5ea410ea5c953eb38846f07931cab560593c2bc5fbd1801124ef7f075f4",
+        "version": "b0ca5bbd997e13e12892ac229061c94a5219c5a78e368e4857d16ccc7b8389dd",
         "signature": "778fc07cf0f2abb6cc7beb598e4e271da54ce92b846e48e84746cee5a8a6a93c",
         "affectsGlobalScope": false
       },
@@ -4112,7 +4112,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/user-auth/user-auth.service.ts": {
-        "version": "2dcf475d10c540168ba5f1a3919a92253e48d9e1811130e329188909e5bfe974",
+        "version": "f09aa9adf3bd21fb534c274acf015f4c3cb4f4ae439c01354bf0a7326837c4e4",
         "signature": "2f7bec4c900479c9ce47608ec1b8362137be666eb31ecdaee2d678e0d90fb643",
         "affectsGlobalScope": false
       },

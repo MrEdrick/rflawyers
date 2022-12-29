@@ -33,6 +33,7 @@ let UserAuthService = class UserAuthService {
     async signIn(authCredentialsDto) {
         const { email, password } = authCredentialsDto;
         const user = await this.usersService.validatePassword(email, password);
+        console.log(user);
         if (!user) {
             throw new common_1.UnauthorizedException('Invalid credentials');
         }
