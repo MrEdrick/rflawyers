@@ -36,14 +36,11 @@ let UserAuthService = class UserAuthService {
         if (!user) {
             throw new common_1.UnauthorizedException('Invalid credentials');
         }
-        if (user.confirmationToken) {
+        if (!user.confirmationToken) {
             throw new common_1.UnauthorizedException('E-mail not confirmed');
         }
-        console.log(JSON.parse(JSON.stringify(user)));
         const payload = JSON.parse(JSON.stringify(user));
-        console.log(payload);
         const accessToken = await this.jwtService.sign(payload);
-        console.log(accessToken);
         return { accessToken };
     }
     async emailConfirmation(authEmailConfirmationDto) {
