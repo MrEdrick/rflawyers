@@ -3992,7 +3992,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/configurations/users/user.entity.ts": {
-        "version": "d19697f6589e7dad7f84a8d868cdd2aae150529d28c675bcaae3d142e980b6cc",
+        "version": "f84d880091bcca47f594f7eb0568247d35d2e6d993c5e31c871c089e049d1e3d",
         "signature": "82291407ac36565ff43f223c047e80bf79defc19d6de0e3babdb909f0da5de8e",
         "affectsGlobalScope": false
       },
