@@ -48,7 +48,9 @@ export class UserAuthService {
             throw new UnauthorizedException('E-mail not confirmed');
         }
 
+        console.log(JSON.parse(JSON.stringify(user)));
         const payload: UserJwtPayload = JSON.parse(JSON.stringify(user));
+        console.log(payload);
         const accessToken = await this.jwtService.sign(payload);
         console.log(accessToken);
         return { accessToken };
