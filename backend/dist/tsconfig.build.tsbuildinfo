@@ -4112,7 +4112,7 @@
         "affectsGlobalScope": false
       },
       "../src/administration/user-auth/user-auth.service.ts": {
-        "version": "f09aa9adf3bd21fb534c274acf015f4c3cb4f4ae439c01354bf0a7326837c4e4",
+        "version": "e0780f5e07cde815cee523d67e087dac3b246870f2ba4cc90a879ecfdef22d05",
         "signature": "2f7bec4c900479c9ce47608ec1b8362137be666eb31ecdaee2d678e0d90fb643",
         "affectsGlobalScope": false
       },

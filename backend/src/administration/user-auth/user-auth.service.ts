@@ -39,7 +39,7 @@ export class UserAuthService {
         const { email, password } = authCredentialsDto;
 
         const user = await this.usersService.validatePassword(email, password);
-        console.log(user);
+        
         if (!user) {
             throw new UnauthorizedException('Invalid credentials');
         }
@@ -50,7 +50,7 @@ export class UserAuthService {
 
         const payload: UserJwtPayload = JSON.parse(JSON.stringify(user));
         const accessToken = await this.jwtService.sign(payload);
-
+        console.log(accessToken);
         return { accessToken };
     }
 
