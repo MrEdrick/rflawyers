@@ -44,7 +44,6 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     if (this.formControls.password.value === this.formControls.passwordConfirmation.value) {
-      console.log(this.form);
       this.authService.resetPassword(this.form.value)
         .pipe(takeUntil(this.destroy))
         .subscribe(

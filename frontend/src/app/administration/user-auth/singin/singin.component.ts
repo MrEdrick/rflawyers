@@ -30,23 +30,23 @@ export class SingInComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     const confirmationToken = 
-      (await this.route.queryParamMap.pipe(first()).toPromise()).get('confirmationToken');
+      this.route.snapshot.params.confirmationToken;
 
-      if (confirmationToken) {
-        this.authService.emailConfirmation({ confirmationToken })
-          .toPromise()
-          .then(
-            (response) => {
-              console.log(response);
-              if (response) {
-                this.dialogService.showAlert('E-mail confirmado com sucesso!');
-              } else {
-                this.dialogService.showAlert('Ocorreu algum erro durante o processo de confirmação do e-mail. Erro: ' + response);
-              }
-            })
-          .catch((error) => {
-            this.dialogService.showAlert('Ocorreu algum erro durante o processo de confirmação do e-mail. Erro: ' + error);
-          });
+    if (confirmationToken) {
+      this.authService.emailConfirmation({ confirmationToken })
+        .toPromise()
+        .then(
+          (response) => {
+            console.log(response);
+            if (response) {
+              this.dialogService.showAlert('E-mail confirmado com sucesso!');
+            } else {
+              this.dialogService.showAlert('Ocorreu algum erro durante o processo de confirmação do e-mail. Erro: ' + response);
+            }
+          })
+        .catch((error) => {
+          this.dialogService.showAlert('Ocorreu algum erro durante o processo de confirmação do e-mail. Erro: ' + error);
+        });
     };
   }
 
