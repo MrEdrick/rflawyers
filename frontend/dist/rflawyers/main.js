@@ -5004,6 +5004,7 @@ class ResetPasswordComponent {
     }
     onSubmit() {
         if (this.formControls.password.value === this.formControls.passwordConfirmation.value) {
+            console.log(this.form);
             this.authService.resetPassword(this.form.value)
                 .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.destroy))
                 .subscribe(() => {
