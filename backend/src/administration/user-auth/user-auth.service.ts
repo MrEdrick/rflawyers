@@ -44,7 +44,7 @@ export class UserAuthService {
             throw new UnauthorizedException('Invalid credentials');
         }
 
-        if (user.confirmationToken) {
+        if (!user.confirmationToken) {
             throw new UnauthorizedException('E-mail not confirmed');
         }
 

@@ -36,7 +36,7 @@ let UserAuthService = class UserAuthService {
         if (!user) {
             throw new common_1.UnauthorizedException('Invalid credentials');
         }
-        if (user.confirmationToken) {
+        if (!user.confirmationToken) {
             throw new common_1.UnauthorizedException('E-mail not confirmed');
         }
         const payload = JSON.parse(JSON.stringify(user));
